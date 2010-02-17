@@ -1,0 +1,14 @@
+[DEFAULT]
+BASEURL=http://msdn.microsoft.com/archive/default.asp?url=/archive/en-us/dnardao/html/daotoado.asp
+[DOC#7#8]
+BASEURL=http://msdn.microsoft.com/library/shared/deeptree/asp/toolbar.asp?tbcfg=/archive/toolbarconfig.xml
+ORIGURL=/library/shared/deeptree/asp/toolbar.asp?tbcfg=/archive/toolbarconfig.xml
+[DOC#7#9#10#8#9]
+BASEURL=http://msdn.microsoft.com/library/shared/searchtab/search.asp?stcfg=/archive/searchtabconfig.xml&dtcfg=/archive/deeptreeconfig.xml&url=/archive/en-us/dnardao/html/daotoado.asp?frame=true
+ORIGURL=/library/shared/searchtab/search.asp?stcfg=/archive/searchtabconfig.xml&dtcfg=/archive/deeptreeconfig.xml&url=/archive/en-us/dnardao/html/daotoado.asp?frame=true
+[DOC#7#9#11#6#8]
+BASEURL=http://msdn.microsoft.com/archive/en-us/samples/internet/welcome.asp?frame=true
+ORIGURL=/archive/en-us/dnardao/html/daotoado.asp?frame=true
+[InternetShortcut]
+URL=http://msdn.microsoft.com/archive/default.asp?url=/archive/en-us/dnardao/html/daotoado.asp
+Modified=608C2CA25A37C50111

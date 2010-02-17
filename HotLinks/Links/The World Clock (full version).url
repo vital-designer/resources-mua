@@ -1,0 +1,7 @@
+[DEFAULT]
+BASEURL=http://www.timeanddate.com/worldclock/full.html
+[InternetShortcut]
+URL=http://www.timeanddate.com/worldclock/full.html
+Modified=30F7784B97C0C40106
+IconFile=http://www.timeanddate.com/favicon.ico
+IconIndex=1

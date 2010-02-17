@@ -1,0 +1,17 @@
+[DEFAULT]
+BASEURL=http://www.pakdata.com/quran/quran.htm
+[DOC#5#7#9]
+BASEURL=http://www.pakdata.com/quran/1_bottom.htm
+ORIGURL=blank.htm
+[DOC#5#7#9#3#4]
+BASEURL=http://www.pakdata.com/quran/1_bottom.htm
+ORIGURL=blank.htm
+[DOC#5#7#9#3#5#6]
+BASEURL=http://www.pakdata.com/quran/1_bottom.htm
+ORIGURL=blank.htm
+[DOC#5#7#9#3#5#7]
+BASEURL=http://www.pakdata.com/quran/1_bottom.htm
+ORIGURL=blank.htm
+[InternetShortcut]
+URL=http://www.pakdata.com/quran/quran.htm
+Modified=107FB3E0A0DEC40165

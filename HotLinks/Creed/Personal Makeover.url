@@ -1,0 +1,14 @@
+[DEFAULT]
+BASEURL=http://www.makeoversolutions.com/MOSIE20040601/iecheck.asp
+[DOC_O317Ql0]
+BASEURL=http://www.makeoversolutions.com/MOSIE20040601/LL.html
+ORIGURL=./LL.html
+[DOC_O317Ql0_OO1011]
+BASEURL=http://www.makeoversolutions.com/MOSIE20040601/20001231/14LL/lipliner.html
+ORIGURL=20001231/14LL/lipliner.html
+[DOC_O317Ql0_OO1011_O31OQOO]
+BASEURL=http://www.makeoversolutions.com/MOSIE20040601/20001231/14LL/LL_May04_01.html
+ORIGURL=LL_May04_01.html
+[InternetShortcut]
+URL=http://www.makeoversolutions.com/MOSIE20040601/iecheck.asp
+Modified=D03F2FC89415C50175

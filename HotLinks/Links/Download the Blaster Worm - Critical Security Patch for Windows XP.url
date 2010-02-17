@@ -1,0 +1,7 @@
+[DEFAULT]
+BASEURL=http://www.softwarepatch.com/windows/winxpsvc.html
+[InternetShortcut]
+URL=http://www.softwarepatch.com/windows/winxpsvc.html
+Modified=309260C37AE2C40106
+IconFile=http://www.softwarepatch.com/favicon.ico
+IconIndex=1

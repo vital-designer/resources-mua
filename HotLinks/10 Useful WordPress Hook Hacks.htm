@@ -1,0 +1,1611 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+
+<meta name="robots" content="index, follow, noodp">
+<meta name="description" content="Hooks are very useful in WordPress. They allow you to hook a custom function to an existing function, which allows you to modify WordPress' functionality">
+<meta name="keywords" content="functionsphp, wp-contentthemesyourtheme, Hooks resources, The problem, The solution, functionsphp, Code explanation, Source">
+<title>10 Useful WordPress Hook Hacks | Developer's Toolbox | Smashing Magazine</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.smashingmagazine.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.smashingmagazine.com/wp-includes/wlwmanifest.xml"> 
+<script type="text/javascript" src="10%20Useful%20WordPress%20Hook%20Hacks_files/jquery.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+	wpAjax = {
+		noPerm: "You do not have permission to do that.",
+		broken: "An unidentified error has occurred."
+	}
+	try{convertEntities(wpAjax);}catch(e){};
+/* ]]> */
+</script>
+<script type="text/javascript" src="10%20Useful%20WordPress%20Hook%20Hacks_files/wp-ajax-response.js"></script>
+<script type="text/javascript" src="10%20Useful%20WordPress%20Hook%20Hacks_files/thickbox.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+	wpajaxeditcomments = {
+		AEC_PluginUrl: "http://www.smashingmagazine.com/wp-content/plugins/wp-ajax-edit-comments",
+		AEC_CanScroll: "0",
+		AEC_Minutes: "minutes",
+		AEC_Minute: "minute",
+		AEC_And: "and",
+		AEC_Seconds: "seconds",
+		AEC_Second: "second",
+		AEC_Moderation: "Mark for Moderation?",
+		AEC_Approve: "Approve Comment?",
+		AEC_Spam: "Mark as Spam?",
+		AEC_Delete: "Delete this comment?",
+		AEC_Anon: "Anonymous",
+		AEC_Loading: "Loading...",
+		AEC_LoadSuccessful: "Comment Loaded Successfully",
+		AEC_Saving: "Saving...",
+		AEC_Saved: "Comment Successfully Saved",
+		AEC_Delink: "De-link Successful"
+	}
+/* ]]> */
+</script>
+<script type="text/javascript" src="10%20Useful%20WordPress%20Hook%20Hacks_files/wp-ajax-edit-comments.js"></script>
+<meta name="generator" content="WordPress 2.7.1">
+
+<link rel="stylesheet" href="10%20Useful%20WordPress%20Hook%20Hacks_files/edit-comments.css" type="text/css" media="screen"><!-- Ajax Edit Comments -->
+<!--[if IE]>
+<style>
+  .clearfix {display: inline-block;}
+  /* Hides from IE-mac \*/
+  * html .clearfix {height: 1%;}
+  .clearfix {display: block;}
+  /* End hide from IE-mac */
+</style>
+<![endif]-->
+<link rel="stylesheet" href="10%20Useful%20WordPress%20Hook%20Hacks_files/thickbox.css" type="text/css" media="all"><!--ajax edit comments --><script type="text/javascript">
+tb_pathToImage = 'http://www.smashingmagazine.com/wp-includes/js/thickbox/loadingAnimation.gif';tb_closeImage = 'http://www.smashingmagazine.com/wp-includes/js/thickbox/tb-close.png';
+</script>
+      <link rel="shortcut icon" href="http://www.smashingmagazine.com/images/favicon.ico">
+
+<link rel="stylesheet" href="10%20Useful%20WordPress%20Hook%20Hacks_files/style.css" type="text/css" media="screen">
+<!--[if IE 7]>
+<link rel="stylesheet" href="/wp-content/themes/SM-theme/css-min/ie7.css?ver=2009-05-06" type="text/css" media="screen" />
+<![endif]-->
+<link rel="stylesheet" href="10%20Useful%20WordPress%20Hook%20Hacks_files/print.css" type="text/css" media="print">
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Smashing Magazine Full RSS Feed" href="http://rss1.smashingmagazine.com/feed/">
+
+<meta http-equiv="content-language" content="en">
+<link rel="top" href="#" title="top">
+<link rel="copyright" href="http://www.smashingmagazine.com/2009/08/18/10-useful-wordpress-hook-hacks/about.php" title="about">
+<meta name="msvalidate.01" content="E7FB8078204DC42F8266D103A1B8A8EA">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.smashingmagazine.com/xmlrpc.php?rsd">
+<link rel="pingback" href="http://www.smashingmagazine.com/xmlrpc.php"></head><body id="toolbox"><div id="pagewidth">
+		
+<div id="header"><ul>
+<li><a title="Home" href="http://www.smashingmagazine.com/" class="home">Home</a></li>
+<li><a title="Graphics" href="http://www.smashingmagazine.com/category/graphics/" class="graphics">Graphics</a></li>
+<li><a title="Showcases" href="http://www.smashingmagazine.com/category/showcase/" class="showcases">Showcases</a></li>
+<li><a title="Monday Inspiration" href="http://www.smashingmagazine.com/category/monday-inspiration/" class="monday-inspiration">Inspiration</a></li>
+<li><a title="Fonts" href="http://www.smashingmagazine.com/category/fonts/" class="fonts">Fonts</a></li>
+<li><a title="How-To" href="http://www.smashingmagazine.com/category/know-how/" class="know-how">How-To</a></li>
+<li><a title="CSS" href="http://www.smashingmagazine.com/category/css/" class="css">CSS</a></li>
+<li><a title="Tools" href="http://www.smashingmagazine.com/category/toolbox/" class="toolbox">Tools</a></li>
+<li><a title="Freebies" href="http://www.smashingmagazine.com/category/freebies/" class="freebies">Freebies</a></li>
+<li><a title="Tutorials" href="http://www.smashingmagazine.com/category/tutorials/" class="tutorials">Tutorials</a></li>
+<li><a title="Jobs" href="http://jobs.smashingmagazine.com/" class="jobs">Jobs</a></li>
+<li><a title="Forum" href="http://forum.smashingmagazine.com/" class="forum">Forum</a></li>
+</ul></div><div id="main"><div id="leftcolumn">
+
+<div id="booklogosec"><a href="http://www.smashingmagazine.com/2009/08/05/the-smashing-book-pre-order-now-and-save-20/"><img original="http://www.smashingmagazine.com/wp-content/uploads/images/the-smashing-book/desbook3.gif" src="10%20Useful%20WordPress%20Hook%20Hacks_files/desbook3.gif" alt="Pre-order the Smashing Book now!" title="Pre-order the Smashing Book now!" width="302" height="105"></a></div> 
+
+<h1 class="logo"><a title="Smashing Magazine Homepage" href="http://www.smashingmagazine.com/"><img original="http://www.smashingmagazine.com/wp-content/themes/SM-theme/img/logo.gif" src="10%20Useful%20WordPress%20Hook%20Hacks_files/logo.gif" alt="Smashing Magazine ~ we smash you with the information that will make your life easier. really." width="229" height="83"></a><br><a title="Smashing Magazine Homepage" href="http://www.smashingmagazine.com/">Smashing Magazine <em>we smash you with the information that will make your life easier. really.</em></a></h1>
+<div class="leftframe">
+<h1 class="title"><a href="http://www.smashingmagazine.com/2009/08/18/10-useful-wordpress-hook-hacks/" rel="bookmark" title="10 Useful WordPress Hook Hacks">10 Useful WordPress Hook Hacks</a></h1>
+<div class="topic"><div class="top">
+<p class="published">By Jean-Baptiste Jung, August 18th, 2009 in <a href="http://www.smashingmagazine.com/category/toolbox/" title="View all posts in Developer's Toolbox" rel="category tag">Developer's Toolbox</a> | <a rel="nofollow" href="http://www.smashingmagazine.com/2009/08/18/10-useful-wordpress-hook-hacks/#comments" title="Comment on 10 Useful WordPress Hook Hacks"><strong>52 Comments</strong></a> | <a href="http://forum.smashingmagazine.com/">Forum</a>   </p> 
+</div>
+
+<div class="gsense">
+<span class="an">Advertisement</span><br>
+<!-- Smashing Magazine - Medium Rectangle ad spot -->
+<div id="mediumrectangletarget"><div id="mediumrectangle">
+	<!-- Smashing Magazine - Medium Rectangle ad spot -->
+	<script type="text/javascript"><!--// <![CDATA[
+		function_exists('OA_show') && OA_show('Medium Rectangle');
+	// ]]> --></script><script type="text/javascript"><!--// <![CDATA[
+OA_show('Medium Rectangle - Original');
+// ]]> --></script><span><script type="text/javascript"><!--// <![CDATA[
+/* openads=http://creatives.commindo-media.de/www/delivery bannerid=20 zoneid=14 source= */
+// ]]> --></script><script type="text/javascript"><!--
+google_ad_client = "pub-6779860845561969";
+google_alternate_color = "FFFFFF";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "text_image";
+google_ad_channel = "";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "A7B63F";
+google_color_text = "000000";
+google_color_url = "0040C3";
+google_ui_features = "rc:10";
+//-->
+</script>
+<script type="text/javascript" src="10%20Useful%20WordPress%20Hook%20Hacks_files/show_ads.js">
+</script><script src="10%20Useful%20WordPress%20Hook%20Hacks_files/expansion_embed.js"></script><script src="10%20Useful%20WordPress%20Hook%20Hacks_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 250px; position: relative; visibility: visible; width: 300px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 250px; position: relative; visibility: visible; width: 300px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="10%20Useful%20WordPress%20Hook%20Hacks_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" scrolling="no" width="300" frameborder="0" height="250"></iframe></ins></ins><script type="text/javascript" src="10%20Useful%20WordPress%20Hook%20Hacks_files/ag.js"></script></span><div id="beacon_1d64666c04" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_005.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+<div id="beacon_b90fb236f7" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_004.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+	</div></div>
+</div>
+
+<div id="greet_block"></div>
+
+<!-- google_ad_section_start -->
+<p>Hooks are very useful in WordPress. They allow you to “hook” a
+custom function to an existing function, which allows you to modify
+WordPress’ functionality without editing core files. In this article,
+we have compiled 10 extremely useful ready-to-use WordPress hooks,
+along with examples and coding explanations.</p>
+<div style="border: 1px dashed rgb(178, 178, 178); margin: 15px 0pt; padding: 5px 5px 6px; width: 510px;">
+<p style="margin: 0pt; padding: 3px 15px 7px 9px; float: left; display: inline;"><a href="http://www.smashingmagazine.com/2009/08/05/the-smashing-book-pre-order-now-and-save-20/?utm_source=Smashing%2BMagazine&amp;utm_medium=editorialbox&amp;utm_content=editorialbox%2Btop&amp;utm_campaign=Smashing%2BBook"><img original="http://media2.smashingmagazine.com/wp-content/uploads/images/fresh-beautiful-fonts/small-book.jpg" title="Learn more about the Smashing Book!" alt="Learn more about the Smashing Book!" src="10%20Useful%20WordPress%20Hook%20Hacks_files/small-book_002.jpg" width="75" height="74"></a> </p>
+<p style="margin: 8px auto 0pt;">Want to learn more about CSS coding and web design? Take a look at our upcoming <a href="http://www.smashingmagazine.com/2009/08/05/the-smashing-book-pre-order-now-and-save-20/?utm_source=Smashing%2BMagazine&amp;utm_medium=editorialbox&amp;utm_content=editorialbox%2Btop&amp;utm_campaign=Smashing%2BBook">Smashing Book</a> (<span style="color: rgb(204, 0, 0); font-weight: bold;">$23.90</span> <del><small>$29.90</small></del>, available worldwide). <a href="http://shop.smashingmagazine.com/smashingbook-dispatcher.php?utm_source=Smashing%2BMagazine&amp;utm_medium=editorialbox&amp;utm_content=editorialbox%2Btop%20to%20cart&amp;utm_campaign=Smashing%2BBook">Pre-order now with 20% discount!</a></p>
+<p style="clear: both;">
+</p></div>
+<h3>What Is A Hook?</h3>
+<p>To achieve a particular effect on a WordPress blog, you have to
+modify how WordPress works. Some of these modifications are made to
+what WordPress developers call “core files,” files required by
+WordPress to work properly.</p>
+<p>But modifying core files is always a bad idea. It may create a
+security loophole. Also, you will have lost the modification when you
+upgrade your WordPress installation.</p>
+<p>Still, developers need to overwrite some of WordPress’ functionality, which is why WordPress provides the <a href="http://codex.wordpress.org/Plugin_API">Plugin API</a>.</p>
+<p>Hooks are one of the main building blocks of WordPress plug-ins.
+Almost every plug-in uses a hook to overwrite WordPress’ core
+functionality.</p>
+<h4>How to Use Hooks on Your WordPress Blog</h4>
+<p>Unless you’re writing a plug-in, you would write hooks in the <em>functions.php</em> file. This file is located in the <em>wp-content/themes/yourtheme</em> directory.</p>
+<p>A hook, as you would expect, “hooks” one function to another. For
+example, you could write a custom function and attach it to one of
+WordPress’ core functions:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span>add_action&nbsp;(&nbsp;</span><span class="string">'publish_post'</span><span>,&nbsp;</span><span class="string">'myCustomFunction'</span><span>&nbsp;);&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">add_action ( 'publish_post', 'myCustomFunction' );</pre>
+<p>In this example, we hook our own custom function to WordPress’ <code>publish-post</code> function, which means that every time WordPress executes the <code>publish-post</code> function, it will also execute this hooked function.</p>
+<p>Of course, we can also remove hooks using the <code>remove_action()</code> function:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span>remove_action&nbsp;(&nbsp;</span><span class="string">'publish_post'</span><span>,&nbsp;</span><span class="string">'myCustomFunction'</span><span>&nbsp;);&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">remove_action ( 'publish_post', 'myCustomFunction' );</pre>
+
+<p><strong>Hooks resources:</strong><br></p>
+<ul>
+<li><a href="http://codex.wordpress.org/Plugin_API">WordPress plugin API Codex page</a></li>
+<li><a href="http://adambrown.info/p/wp_hooks">Adam Brown’s hook database</a></li>
+<li><a href="http://www.wprecipes.com/?s=hook">Hooks from WpRecipes</a></li>
+</ul>
+<h3>1. Disable WordPress’ Automatic Formatting</h3>
+<p><img style="display: inline;" original="http://media2.smashingmagazine.com/wp-content/uploads/images/wordpress-hooks/sm1.png" src="10%20Useful%20WordPress%20Hook%20Hacks_files/sm1.png" alt="Screenshot"></p>
+<p><strong>The problem</strong>.<br>
+You have probably noticed that, by default, WordPress converts normal
+quotes to “curly” quotes, and makes other little formatting changes
+when a post is displayed.</p>
+<p>This is very cool for people who publish normal content, but anyone
+who uses their blog to discuss code will be annoyed because, when
+pasted in a text editor, code with curly quotes returns syntax errors.</p>
+<p><strong>The solution</strong>.<br>
+Simply paste the following code in your <em>functions.php</em> file:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span class="keyword">function</span><span>&nbsp;my_formatter(</span><span class="vars">$content</span><span>)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$new_content</span><span>&nbsp;=&nbsp;</span><span class="string">''</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$pattern_full</span><span>&nbsp;=&nbsp;</span><span class="string">'{(\[raw\].*?\[/raw\])}is'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$pattern_contents</span><span>&nbsp;=&nbsp;</span><span class="string">'{\[raw\](.*?)\[/raw\]}is'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$pieces</span><span>&nbsp;=&nbsp;preg_split(</span><span class="vars">$pattern_full</span><span>,&nbsp;</span><span class="vars">$content</span><span>,&nbsp;-1,&nbsp;PREG_SPLIT_DELIM_CAPTURE);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">foreach</span><span>&nbsp;(</span><span class="vars">$pieces</span><span>&nbsp;</span><span class="keyword">as</span><span>&nbsp;</span><span class="vars">$piece</span><span>)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(preg_match(</span><span class="vars">$pattern_contents</span><span>,&nbsp;</span><span class="vars">$piece</span><span>,&nbsp;</span><span class="vars">$matches</span><span>))&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$new_content</span><span>&nbsp;.=&nbsp;</span><span class="vars">$matches</span><span>[1];&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$new_content</span><span>&nbsp;.=&nbsp;wptexturize(wpautop(</span><span class="vars">$piece</span><span>));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="vars">$new_content</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>remove_filter(<span class="string">'the_content'</span><span>,&nbsp;</span><span class="string">'wpautop'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>remove_filter(<span class="string">'the_content'</span><span>,&nbsp;</span><span class="string">'wptexturize'</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>add_filter(<span class="string">'the_content'</span><span>,&nbsp;</span><span class="string">'my_formatter'</span><span>,&nbsp;99);&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">function my_formatter($content) {
+	$new_content = '';
+	$pattern_full = '{(\[raw\].*?\[/raw\])}is';
+	$pattern_contents = '{\[raw\](.*?)\[/raw\]}is';
+	$pieces = preg_split($pattern_full, $content, -1, PREG_SPLIT_DELIM_CAPTURE);
+
+	foreach ($pieces as $piece) {
+		if (preg_match($pattern_contents, $piece, $matches)) {
+			$new_content .= $matches[1];
+		} else {
+			$new_content .= wptexturize(wpautop($piece));
+		}
+	}
+
+	return $new_content;
+}
+
+remove_filter('the_content', 'wpautop');
+remove_filter('the_content', 'wptexturize');
+
+add_filter('the_content', 'my_formatter', 99);
+</pre>
+<p>Once that’s done, you can use the <code>[raw]</code> shortcode in your posts:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span>[raw]This&nbsp;text&nbsp;will&nbsp;not&nbsp;be&nbsp;automatically&nbsp;formatted.[/raw]&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">[raw]This text will not be automatically formatted.[/raw]</pre>
+<p><strong>Code explanation</strong>.<br>
+Our first step here was to create a function that uses a regular expression to find the <code>[raw]</code> shortcode in your posts’ content.</p>
+<p>Then we hook our <code>my_formatter()</code> function to WordPress’ <code>the_content()</code> function, which means that <code>my_formatter()</code> will now be automatically called every time <code>the_content()</code> is called.</p>
+<p>To remove the automatic formatting, we use the <code>remove_filter()</code> function, which lets you delete a hook on a specific function.</p>
+<p><strong>Source:</strong></p>
+<ul>
+<li><a href="http://www.wprecipes.com/disable-wordpress-automatic-formatting-on-posts-using-a-shortcode">Disable WordPress automatic formatting on posts using a shortcode</a></li>
+</ul>
+<h3>2. Detect The Visitor’s Browser Using A Hook</h3>
+<p><img style="display: inline;" original="http://media1.smashingmagazine.com/wp-content/uploads/images/wordpress-hooks/sm2.jpg" src="10%20Useful%20WordPress%20Hook%20Hacks_files/sm2.jpg" alt="Screenshot"></p>
+<p><strong>The problem</strong>.<br>
+Cross-browser compatibility is probably the most common problem in Web
+development. You will save yourself a lot of headaches if you are able
+to detect the browsers that people use to visit your website and then
+create a custom class wrapped in the <code>body</code>
+tag. Few people are aware of it, but WordPress can already detect
+browsers, and a few global variables are available for us to use.</p>
+<p><strong>The solution</strong>.<br>
+Nothing hard here: just paste the code below in your <em>functions.php</em> file, then save the file and you’re done!</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span>&lt;?php&nbsp;&nbsp;</span></span></li><li class=""><span>add_filter(<span class="string">'body_class'</span><span>,</span><span class="string">'browser_body_class'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">function</span><span>&nbsp;browser_body_class(</span><span class="vars">$classes</span><span>)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">global</span><span>&nbsp;</span><span class="vars">$is_lynx</span><span>,&nbsp;</span><span class="vars">$is_gecko</span><span>,&nbsp;</span><span class="vars">$is_IE</span><span>,&nbsp;</span><span class="vars">$is_opera</span><span>,&nbsp;</span><span class="vars">$is_NS4</span><span>,&nbsp;</span><span class="vars">$is_safari</span><span>,&nbsp;</span><span class="vars">$is_chrome</span><span>,&nbsp;</span><span class="vars">$is_iphone</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(</span><span class="vars">$is_lynx</span><span>)&nbsp;</span><span class="vars">$classes</span><span>[]&nbsp;=&nbsp;</span><span class="string">'lynx'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">elseif</span><span>(</span><span class="vars">$is_gecko</span><span>)&nbsp;</span><span class="vars">$classes</span><span>[]&nbsp;=&nbsp;</span><span class="string">'gecko'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">elseif</span><span>(</span><span class="vars">$is_opera</span><span>)&nbsp;</span><span class="vars">$classes</span><span>[]&nbsp;=&nbsp;</span><span class="string">'opera'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">elseif</span><span>(</span><span class="vars">$is_NS4</span><span>)&nbsp;</span><span class="vars">$classes</span><span>[]&nbsp;=&nbsp;</span><span class="string">'ns4'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">elseif</span><span>(</span><span class="vars">$is_safari</span><span>)&nbsp;</span><span class="vars">$classes</span><span>[]&nbsp;=&nbsp;</span><span class="string">'safari'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">elseif</span><span>(</span><span class="vars">$is_chrome</span><span>)&nbsp;</span><span class="vars">$classes</span><span>[]&nbsp;=&nbsp;</span><span class="string">'chrome'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">elseif</span><span>(</span><span class="vars">$is_IE</span><span>)&nbsp;</span><span class="vars">$classes</span><span>[]&nbsp;=&nbsp;</span><span class="string">'ie'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else</span><span>&nbsp;</span><span class="vars">$classes</span><span>[]&nbsp;=&nbsp;</span><span class="string">'unknown'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(</span><span class="vars">$is_iphone</span><span>)&nbsp;</span><span class="vars">$classes</span><span>[]&nbsp;=&nbsp;</span><span class="string">'iphone'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="vars">$classes</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>?&gt;&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="php">&lt;?php
+add_filter('body_class','browser_body_class');
+function browser_body_class($classes) {
+	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+
+	if($is_lynx) $classes[] = 'lynx';
+	elseif($is_gecko) $classes[] = 'gecko';
+	elseif($is_opera) $classes[] = 'opera';
+	elseif($is_NS4) $classes[] = 'ns4';
+	elseif($is_safari) $classes[] = 'safari';
+	elseif($is_chrome) $classes[] = 'chrome';
+	elseif($is_IE) $classes[] = 'ie';
+	else $classes[] = 'unknown';
+
+	if($is_iphone) $classes[] = 'iphone';
+	return $classes;
+}
+?&gt;
+</pre>
+<p>Once you have saved the file, the function will automatically add a CSS class to the <code>body</code> tag, as shown in the example below:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span>&lt;body&nbsp;</span><span class="keyword">class</span><span>=</span><span class="string">"home&nbsp;blog&nbsp;logged-in&nbsp;safari"</span><span>&gt;&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">&lt;body class="home blog logged-in safari"&gt;</pre>
+<p><strong>Code explanation</strong>.<br>
+WordPress has global variables that return <code>true</code> if a visitor is using a particular browser. If the visitor’s browser is Google Chrome, the <code>$is_chrome</code> variable will return <code>true</code>. This is why we create the <code>browser_body_class()</code> function, which returns the name of the visitor’s browser. Once that’s done, we just hook the function to WordPress’ <code>body_class()</code> function.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="http://www.nathanrice.net/blog/browser-detection-and-the-body_class-function/">Browser Detection and the body_class() Function</a></li>
+<li><a href="http://www.wprecipes.com/how-to-detect-the-visitor-browser-within-wordpress">How to detect the visitor’s browser within WordPress</a></li>
+</ul>
+<h3>3. Define Default Text In TinyMCE</h3>
+<p><img style="display: inline;" original="http://media1.smashingmagazine.com/wp-content/uploads/images/wordpress-hooks/sm3.png" src="10%20Useful%20WordPress%20Hook%20Hacks_files/sm3.png" alt="Screenshot"></p>
+<p><strong>The problem</strong>.<br>
+Many bloggers almost always use the same layout for their blog posts.
+Posts on my own blog WpRecipes.com are always displayed the same way:
+some text, some code and then some more text.</p>
+<p>What about saving time by forcing tinyMCE (WordPress’ visual editor) to display default text?</p>
+<p><strong>The solution</strong>.<br>
+Once again, hooks are the solution. Just open your <em>functions.php</em> file, paste the code and let the hooks work their magic!</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span>&lt;?php&nbsp;&nbsp;</span></span></li><li class=""><span>add_filter(<span class="string">'default_content'</span><span>,&nbsp;</span><span class="string">'my_editor_content'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">function</span><span>&nbsp;my_editor_content(&nbsp;</span><span class="vars">$content</span><span>&nbsp;)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$content</span><span>&nbsp;=&nbsp;</span><span class="string">"If&nbsp;you&nbsp;enjoyed&nbsp;this&nbsp;post,&nbsp;make&nbsp;sure&nbsp;to&nbsp;subscribe&nbsp;to&nbsp;my&nbsp;rss&nbsp;feed."</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="vars">$content</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>?&gt;&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="php">&lt;?php
+add_filter('default_content', 'my_editor_content');
+
+function my_editor_content( $content ) {
+	$content = "If you enjoyed this post, make sure to subscribe to my rss feed.";
+	return $content;
+}
+?&gt;
+</pre>
+<p><strong>Code explanation</strong>.<br>
+This code is powerful, and yet the method is so simple. Just create a
+function that returns the desired text (in this example, we have
+defined some simple text that asks readers to subscribe to the blog’s
+RSS feed), and hook the function to WordPress’ <code>default_content()</code> function. That’s it.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="http://justintadlock.com/archives/2009/04/05/how-to-preset-text-in-the-wordpress-post-editor">How to preset text in the WordPress post editor</a></li>
+<li><a href="http://www.wprecipes.com/how-to-automatically-insert-text-in-wordpress-editor">How to: Automatically insert text in WordPress editor</a></li>
+</ul>
+<h3>4. Insert Content Automatically After Each Post</h3>
+<p><img style="display: inline;" original="http://media2.smashingmagazine.com/wp-content/uploads/images/wordpress-hooks/sm4.jpg" src="10%20Useful%20WordPress%20Hook%20Hacks_files/sm4.jpg" alt="Screenshot"></p>
+<p><strong>The problem</strong>.<br>
+Most blogs use the <em>single.php</em> template to insert some text, images or ads just after a post. Sure, this can be done by opening <em>single.php</em> and pasting the desired text after the <code>the_content()</code> function. But the text won’t show up in your RSS feed? Hooks and the technique described below solve this problem.</p>
+<p><strong>The solution</strong>.<br>
+One again, simply paste the code below in the <em>functions.php</em> file of your theme. That’s it.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span class="keyword">function</span><span>&nbsp;insertFootNote(</span><span class="vars">$content</span><span>)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(!is_feed()&nbsp;&amp;&amp;&nbsp;!is_home())&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$content</span><span>.=&nbsp;</span><span class="string">"&lt;div&nbsp;class='subscribe'&gt;"</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$content</span><span>.=&nbsp;</span><span class="string">"&lt;h4&gt;Enjoyed&nbsp;this&nbsp;article?&lt;/h4&gt;"</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$content</span><span>.=&nbsp;</span><span class="string">"&lt;p&gt;Subscribe&nbsp;to&nbsp;our&nbsp;&nbsp;&lt;a&nbsp;href='http://feeds2.feedburner.com/WpRecipes'&gt;RSS&nbsp;feed&lt;/a&gt;&nbsp;and&nbsp;never&nbsp;miss&nbsp;a&nbsp;recipe!&lt;/p&gt;"</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="vars">$content</span><span>.=&nbsp;</span><span class="string">"&lt;/div&gt;"</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="vars">$content</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>add_filter&nbsp;(<span class="string">'the_content'</span><span>,&nbsp;</span><span class="string">'insertFootNote'</span><span>);&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">function insertFootNote($content) {
+        if(!is_feed() &amp;&amp; !is_home()) {
+                $content.= "&lt;div class='subscribe'&gt;";
+                $content.= "&lt;h4&gt;Enjoyed this article?&lt;/h4&gt;";
+                $content.= "&lt;p&gt;Subscribe to our  &lt;a href='http://feeds2.feedburner.com/WpRecipes'&gt;RSS feed&lt;/a&gt; and never miss a recipe!&lt;/p&gt;";
+                $content.= "&lt;/div&gt;";
+        }
+        return $content;
+}
+add_filter ('the_content', 'insertFootNote');
+</pre>
+<p><strong>Code explanation</strong>.<br>
+The purpose of the <code>insertFootNote()</code> function is pretty simple: it simply concatenates text of your choice to the <code>$content</code> variable, which contains your post’s content.</p>
+<p>Then, our <code>insertFootNote()</code> function is hooked to the <code>the_content()</code> function, and it is automatically called every time the <code>the_content</code> is called. Using this function is basically the same as typing in the text at the end of each post.</p>
+<p>Notice the <code>(!is_feed)</code> condition on line 2, which
+prevents the text from being inserted in the RSS feed. If you want the
+text to appear in your RSS feed, replace line 2 with the following:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span class="keyword">if</span><span>&nbsp;(!is_home())&nbsp;{&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">if (!is_home()) {
+</pre>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="http://www.wprecipes.com/how-to-automatically-insert-content-after-each-post">How to: Automatically insert content after each post</a></li>
+</ul>
+<h3>5. Disable The “Please Update Now” Message On WordPress Dashboard</h3>
+<p><img style="display: inline;" original="http://media2.smashingmagazine.com/wp-content/uploads/images/wordpress-hooks/sm5.png" src="10%20Useful%20WordPress%20Hook%20Hacks_files/sm5.png" alt="Screenshot"></p>
+<p><strong>The problem</strong>.<br>
+Your dashboard automatically lets you know when a new version of
+WordPress is released by inserting a message at the top of admin pages.
+This is definitely a good thing, because updating gives your blog the
+latest functions and security fixes. But if the blog is a client
+project, letting the client control updates may not be a good idea.</p>
+<p><strong>The solution</strong>.<br>
+Just paste these four lines of code in your <em>functions.php</em> file:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span class="keyword">if</span><span>&nbsp;(!current_user_can(</span><span class="string">'edit_users'</span><span>))&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;add_action(&nbsp;<span class="string">'init'</span><span>,&nbsp;create_function(&nbsp;</span><span class="string">'$a'</span><span>,&nbsp;</span><span class="string">"remove_action(&nbsp;'init',&nbsp;'wp_version_check'&nbsp;);"</span><span>&nbsp;),&nbsp;2&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;add_filter(&nbsp;<span class="string">'pre_option_update_core'</span><span>,&nbsp;create_function(&nbsp;</span><span class="string">'$a'</span><span>,&nbsp;</span><span class="string">"return&nbsp;null;"</span><span>&nbsp;)&nbsp;);&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="php">if (!current_user_can('edit_users')) {
+  add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
+  add_filter( 'pre_option_update_core', create_function( '$a', "return null;" ) );
+}
+</pre>
+<p>Once you save <em>functions.php</em>, you won’t see the message on the dashboard.</p>
+<p><strong>Code explanation</strong>.<br>
+The first thing we do here is make sure the current user has sufficient
+administrative rights to update WordPress. Once we do that, we just
+create two hooks to overwrite the automatic check for updates and
+message display.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="http://www.wprecipes.com/how-to-disable-the-please-update-now-message-in-wp-dashboard">How to: Disable the “Please update now” message on WP dashboard</a></li>
+</ul>
+<h3>6. Disable WordPress From Auto-Saving Posts</h3>
+<p><img style="display: inline;" original="http://media1.smashingmagazine.com/wp-content/uploads/images/wordpress-hooks/sm6.jpg" src="10%20Useful%20WordPress%20Hook%20Hacks_files/sm6.jpg" alt="Screenshot"><br><em>Photo by <a href="http://www.flickr.com/photos/thatcanadiangirl/">thatcanadiangirl</a></em></p>
+<p><strong>The problem</strong>.<br>
+As you type a post in the dashboard, WordPress periodically saves the
+content. This is a useful feature, but sometimes you may want to
+disable it.</p>
+<p><strong>The solution</strong>.<br>
+To disable WordPress’ auto-saving functionality, simply open the <em>functions.php</em> file and paste the following function:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span class="keyword">function</span><span>&nbsp;disableAutoSave(){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;wp_deregister_script(<span class="string">'autosave'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>add_action(&nbsp;<span class="string">'wp_print_scripts'</span><span>,&nbsp;</span><span class="string">'disableAutoSave'</span><span>&nbsp;);&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">function disableAutoSave(){
+    wp_deregister_script('autosave');
+}
+add_action( 'wp_print_scripts', 'disableAutoSave' );
+</pre>
+<p><strong>Code explanation</strong>.<br>
+Again, nothing hard about this code. We simply create an action (on line 4) and hook the <code>disableAutoSave()</code> function that we created on line 1 to WordPress’ <code>wp_print_scripts()</code>.</p>
+<p>The result is that our <code>disableAutoSave()</code> function is called every time WordPress executes <code>wp_print_scripts()</code>. This way, we make sure the auto-save functionality is disabled.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="http://www.wprecipes.com/wordpress-hook-disable-posts-auto-saving">WordPress hook: Disable posts auto-saving</a></li>
+</ul>
+<h3>7. Prevent Duplicate Content On Comment Pages</h3>
+<p><img style="display: inline;" original="http://media1.smashingmagazine.com/wp-content/uploads/images/wordpress-hooks/sm7.jpg" src="10%20Useful%20WordPress%20Hook%20Hacks_files/sm7.jpg" alt="Screenshot"></p>
+<p><strong>The problem</strong>.<br>
+Duplicate content is an SEO problem for many websites. It can also be a
+problem for your WordPress blog if you don’t apply a few tricks.</p>
+<p>Introduced in version 2.7, paged comments is a great addition to
+WordPress because it lets bloggers split comments into multiple pages.
+The only problem, again, is the risk of duplicate content.</p>
+<p>Let’s use the new <code>rel="canonical"</code> attribute to prevent duplicate content in paged comments.</p>
+<p><strong>The solution</strong>.<br>
+Simply paste the following code in your <em>function.php</em> file:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span class="keyword">function</span><span>&nbsp;canonical_for_comments()&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">global</span><span>&nbsp;</span><span class="vars">$cpage</span><span>,&nbsp;</span><span class="vars">$post</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(&nbsp;</span><span class="vars">$cpage</span><span>&nbsp;&gt;&nbsp;1&nbsp;)&nbsp;:&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">echo</span><span>&nbsp;</span><span class="string">"\n"</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">echo</span><span>&nbsp;</span><span class="string">"&lt;link&nbsp;rel='canonical'&nbsp;href='"</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">echo</span><span>&nbsp;get_permalink(&nbsp;</span><span class="vars">$post</span><span>-&gt;ID&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">echo</span><span>&nbsp;</span><span class="string">"'&nbsp;/&gt;\n"</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">endif</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>add_action(&nbsp;<span class="string">'wp_head'</span><span>,&nbsp;</span><span class="string">'canonical_for_comments'</span><span>&nbsp;);&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">function canonical_for_comments() {
+	global $cpage, $post;
+	if ( $cpage &gt; 1 ) :
+		echo "\n";
+	  	echo "&lt;link rel='canonical' href='";
+	  	echo get_permalink( $post-&gt;ID );
+	  	echo "' /&gt;\n";
+	 endif;
+}
+
+add_action( 'wp_head', 'canonical_for_comments' );
+</pre>
+<p><strong>Code explanation</strong>.<br>
+First, we create a function to add the <code>rel="canonical"</code> attribute to comment pages, except page 1. Then we hook this function to WordPress’ <code>wp_head()</code> function. As simple as that!</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="http://www.wprecipes.com/wordpress-hack-canonical-links-for-comments">WordPress hack: Canonical links for comments</a></li>
+</ul>
+<h3>8. Get Entire Post Or Page In A PHP Variable</h3>
+<p><img style="display: inline;" original="http://media2.smashingmagazine.com/wp-content/uploads/images/wordpress-hooks/sm8.jpg" src="10%20Useful%20WordPress%20Hook%20Hacks_files/sm8.jpg" alt="Screenshot"></p>
+<p><strong>The problem</strong>.<br>
+Being able to get the entire current post or page as a PHP variable is
+definitely a good thing. You could, for example, replace parts of the
+content using the <code>str_replace()</code> PHP function, and much more.</p>
+<p><strong>The solution</strong>.<br>
+Once again, nothing hard. Just paste the following in your <em>function.php</em> file.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span class="keyword">function</span><span>&nbsp;callback(</span><span class="vars">$buffer</span><span>)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;modify&nbsp;buffer&nbsp;here,&nbsp;and&nbsp;then&nbsp;return&nbsp;the&nbsp;updated&nbsp;code</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="vars">$buffer</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">function</span><span>&nbsp;buffer_start()&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;ob_start(<span class="string">"callback"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">function</span><span>&nbsp;buffer_end()&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;ob_end_flush();&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>add_action(<span class="string">'wp_head'</span><span>,&nbsp;</span><span class="string">'buffer_start'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>add_action(<span class="string">'wp_footer'</span><span>,&nbsp;</span><span class="string">'buffer_end'</span><span>);&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">function callback($buffer) {
+	// modify buffer here, and then return the updated code
+	return $buffer;
+}
+
+function buffer_start() {
+	ob_start("callback");
+}
+
+function buffer_end() {
+	ob_end_flush();
+}
+
+add_action('wp_head', 'buffer_start');
+add_action('wp_footer', 'buffer_end');
+</pre>
+<p><strong>Code explanation</strong>.<br>
+To achieve this hack, we need three functions:</p>
+<ul>
+<li><code>callback()</code>: this function returns the whole page as a variable called <code>$buffer</code>. You can modify it before returning it by using regular expressions, for example.</li>
+<li><code>buffer_start()</code>: this function simply starts the buffer. It is hooked to WordPress’ <code>wp_head()</code> function.</li>
+<li><code>buffer_end()</code>: this function clears the buffer. It is hooked to WordPress’ <code>wp_footer()</code> function.</li>
+</ul>
+<p>Once we have our function, we just hook it to existing WordPress functions.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="http://www.dagondesign.com/articles/wordpress-hook-for-entire-page-using-output-buffering/">WordPress Hook for Entire Page Using Output Buffering</a></li>
+</ul>
+<h3>9. Use Hooks And Cron To Schedule Events</h3>
+<p><img style="display: inline;" original="http://media2.smashingmagazine.com/wp-content/uploads/images/wordpress-hooks/sm9.jpg" src="10%20Useful%20WordPress%20Hook%20Hacks_files/sm9.jpg" alt="Screenshot"></p>
+<p><strong>The problem</strong>.<br>
+You probably already know that WordPress can schedule events. For
+example, it can publish posts at preset dates and times. Using hooks
+and <code>wp-cron</code>, we can easily schedule our own events. In this example, we will get our WordPress blog to send us an email once hourly.</p>
+<p><strong>The solution</strong>.<br>
+Paste the following code block in the <em>functions.php</em> file of your theme.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span class="keyword">if</span><span>&nbsp;(!wp_next_scheduled(</span><span class="string">'my_task_hook'</span><span>))&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;wp_schedule_event(&nbsp;time(),&nbsp;<span class="string">'hourly'</span><span>,&nbsp;</span><span class="string">'my_task_hook'</span><span>&nbsp;);&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>add_action(&nbsp;<span class="string">'my_task_hook'</span><span>,&nbsp;</span><span class="string">'my_task_function'</span><span>&nbsp;);&nbsp;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">function</span><span>&nbsp;my_task_function()&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;wp_mail(<span class="string">'you@yoursite.com'</span><span>,&nbsp;</span><span class="string">'Automatic&nbsp;email'</span><span>,&nbsp;</span><span class="string">'Hello,&nbsp;this&nbsp;is&nbsp;an&nbsp;automatically&nbsp;scheduled&nbsp;email&nbsp;from&nbsp;WordPress.'</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="php">if (!wp_next_scheduled('my_task_hook')) {
+	wp_schedule_event( time(), 'hourly', 'my_task_hook' );
+}
+
+add_action( 'my_task_hook', 'my_task_function' ); 
+
+function my_task_function() {
+	wp_mail('you@yoursite.com', 'Automatic email', 'Hello, this is an automatically scheduled email from WordPress.');
+}
+</pre>
+<p><strong>Code explanation</strong>.<br>
+The first thing we did, of course, was create a function that performs
+the desired action. In this example, the function is called <code>my_task_function()</code> and it just sends an email to the specified email address.</p>
+<p>To schedule an event, we have to use the <code>wp_schedule_event()</code> function. The last argument has to be a hook, which is why we hook our <code>my_task_function()</code> function to <code>my_task_hook</code>.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="http://blog.slaven.net.au/archives/2007/02/01/timing-is-everything-scheduling-in-wordpress/">Timing is everything: scheduling in WordPress</a></li>
+</ul>
+<h3>10. List All Hooked Functions</h3>
+<p><img style="display: inline;" original="http://media1.smashingmagazine.com/wp-content/uploads/images/wordpress-hooks/sm10.png" src="10%20Useful%20WordPress%20Hook%20Hacks_files/sm10.png" alt="Screenshot"></p>
+<p><strong>The problem</strong>.<br>
+When things go wrong, listing all hooked functions can be very useful for debugging.</p>
+<p><strong>The solution</strong>.<br>
+As with the others, this code has to be pasted in your <em>functions.php</em> file. When you have finished debugging, don’t forget to remove the code from <em>functions.php</em>, or else the debugging message will continue to appear.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span class="keyword">function</span><span>&nbsp;list_hooked_functions(</span><span class="vars">$tag</span><span>=false){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="keyword">global</span><span>&nbsp;</span><span class="vars">$wp_filter</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="keyword">if</span><span>&nbsp;(</span><span class="vars">$tag</span><span>)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="vars">$hook</span><span>[</span><span class="vars">$tag</span><span>]=</span><span class="vars">$wp_filter</span><span>[</span><span class="vars">$tag</span><span>];&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(!</span><span class="func">is_array</span><span>(</span><span class="vars">$hook</span><span>[</span><span class="vars">$tag</span><span>]))&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;trigger_error(<span class="string">"Nothing&nbsp;found&nbsp;for&nbsp;'$tag'&nbsp;hook"</span><span>,&nbsp;E_USER_WARNING);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;<span class="keyword">else</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;<span class="vars">$hook</span><span>=</span><span class="vars">$wp_filter</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;ksort(<span class="vars">$hook</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;<span class="func">echo</span><span>&nbsp;</span><span class="string">'&lt;pre&gt;'</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="keyword">foreach</span><span>(</span><span class="vars">$hook</span><span>&nbsp;</span><span class="keyword">as</span><span>&nbsp;</span><span class="vars">$tag</span><span>&nbsp;=&gt;&nbsp;</span><span class="vars">$priority</span><span>){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="func">echo</span><span>&nbsp;</span><span class="string">"&lt;br&nbsp;/&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;\t&lt;strong&gt;$tag&lt;/strong&gt;&lt;br&nbsp;/&gt;"</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;ksort(<span class="vars">$priority</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="keyword">foreach</span><span>(</span><span class="vars">$priority</span><span>&nbsp;</span><span class="keyword">as</span><span>&nbsp;</span><span class="vars">$priority</span><span>&nbsp;=&gt;&nbsp;</span><span class="vars">$function</span><span>){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;<span class="func">echo</span><span>&nbsp;</span><span class="vars">$priority</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="keyword">foreach</span><span>(</span><span class="vars">$function</span><span>&nbsp;</span><span class="keyword">as</span><span>&nbsp;</span><span class="vars">$name</span><span>&nbsp;=&gt;&nbsp;</span><span class="vars">$properties</span><span>)&nbsp;</span><span class="func">echo</span><span>&nbsp;</span><span class="string">"\t$name&lt;br&nbsp;/&gt;"</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;<span class="func">echo</span><span>&nbsp;</span><span class="string">'&lt;/pre&gt;'</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="keyword">return</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="php">function list_hooked_functions($tag=false){
+ global $wp_filter;
+ if ($tag) {
+  $hook[$tag]=$wp_filter[$tag];
+  if (!is_array($hook[$tag])) {
+  trigger_error("Nothing found for '$tag' hook", E_USER_WARNING);
+  return;
+  }
+ }
+ else {
+  $hook=$wp_filter;
+  ksort($hook);
+ }
+ echo '&lt;pre&gt;';
+ foreach($hook as $tag =&gt; $priority){
+  echo "&lt;br /&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;\t&lt;strong&gt;$tag&lt;/strong&gt;&lt;br /&gt;";
+  ksort($priority);
+  foreach($priority as $priority =&gt; $function){
+  echo $priority;
+  foreach($function as $name =&gt; $properties) echo "\t$name&lt;br /&gt;";
+  }
+ }
+ echo '&lt;/pre&gt;';
+ return;
+}
+</pre>
+<p>Once that’s done, simply call the <code>list_hooked_functions()</code> function, as shown below, to print all hooked WordPress functions on your screen.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c"><li class="alt"><span><span>list_hooked_functions();&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="php">list_hooked_functions();</pre>
+<p><strong>Code explanation</strong>.<br>
+If no hook name is provided to the function as an argument, then hooks are printed to the screen using the global variable <code>$wp_filter</code>. Alternatively, you can list one particular hook by passing its name as an attribute:</p>
+<pre>list_hooked_functions('wp_head');</pre>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="http://www.rarst.net/">Rarst.net</a></li>
+</ul>
+<h3>Related posts</h3>
+<p>You may be interested in the following related posts:</p>
+<ul>
+<li><a href="http://www.smashingmagazine.com/2009/07/23/10-wordpress-comments-hacks/">10 Handy WordPress Comments Hacks</a></li>
+<li><a href="http://www.smashingmagazine.com/2009/07/02/power-tips-for-wordpress-template-developers/">Power Tips For WordPress Template Developers</a></li>
+<li><a href="http://www.smashingmagazine.com/2009/06/10/10-useful-wordpress-loop-hacks/">10 Useful WordPress Loop Hacks</a></li>
+<li><a href="http://www.smashingmagazine.com/2009/05/13/10-custom-fields-hacks-for-wordpress/">Custom Field Hacks For WordPress</a></li>
+<li><a href="http://www.smashingmagazine.com/2009/03/04/15-useful-twitter-plugins-and-hacks-for-wordpress/">15 Useful Twitter Hacks and Plugins For WordPress</a></li>
+<li><a href="http://www.smashingmagazine.com/2009/02/02/mastering-wordpress-shortcodes/">Mastering WordPress Shortcuts</a></li>
+</ul>
+<h4>About the Author</h4>
+<p><em>This guest post was written by Jean-Baptiste Jung, a 27-year-old WordPress expert from Belgium. He blogs about WordPress at <a href="http://www.wprecipes.com/">WpRecipes</a>, about practical Web development tips at <a href="http://www.catswhocode.com/">Cats Who Code</a> and about Photoshop and Web design at <a href="http://www.psdvibe.com/">PsdVibe</a>. You can stay in touch with Jean by following him on <a href="http://twitter.com/catswhocode">Twitter</a>.</em></p>
+<div style="border: 1px dashed rgb(178, 178, 178); margin: 15px 0pt; padding: 5px 5px 6px; width: 510px;">
+<p style="margin: 0pt; padding: 3px 15px 7px 9px; float: left; display: inline;"><a href="http://www.smashingmagazine.com/2009/08/05/the-smashing-book-pre-order-now-and-save-20/?utm_source=Smashing%2BMagazine&amp;utm_medium=editorialbox&amp;utm_content=editorialbox%2Bbottom&amp;utm_campaign=Smashing%2BBook"><img style="display: inline;" original="http://media1.smashingmagazine.com/wp-content/uploads/images/fresh-beautiful-fonts/small-book.jpg" title="Learn more about the Smashing Book!" alt="Learn more about the Smashing Book!" src="10%20Useful%20WordPress%20Hook%20Hacks_files/small-book.jpg" width="75" height="74"></a> </p>
+<p style="margin: 8px auto 0pt;">Want to learn more about CSS coding and web design? Take a look at our upcoming <a href="http://www.smashingmagazine.com/2009/08/05/the-smashing-book-pre-order-now-and-save-20/?utm_source=Smashing%2BMagazine&amp;utm_medium=editorialbox&amp;utm_content=editorialbox%2Bbottom&amp;utm_campaign=Smashing%2BBook">Smashing Book</a> (<span style="color: rgb(204, 0, 0); font-weight: bold;">$23.90</span> <del><small>$29.90</small></del>, available worldwide). <a href="http://shop.smashingmagazine.com/smashingbook-dispatcher.php?utm_source=Smashing%2BMagazine&amp;utm_medium=editorialbox&amp;utm_content=editorialbox%2Bbottom%20to%20cart&amp;utm_campaign=Smashing%2BBook">Pre-order now with 20% discount!</a></p>
+<p style="clear: both;">
+</p></div>
+<p><em>(al)</em></p>
+
+<!-- google_ad_section_end -->
+<!--
+<div style='border-style: solid; border-top: 1px solid #FFD129; border-right: 1px solid #ffd129; border-left: 1px solid #ffd129; border-bottom: 3px solid #ffd129; padding: 10px 15px; -moz-border-radius: 3px; background-color: #FFF4A6; margin-top: 15px;'>Dear friends, we try hard to meet your expectations with our posts. If you enjoyed this one, please share it via <strong>Digg</strong>, <strong>StumbleUpon</strong> or <strong>Twitter</strong>. Thank you!</div>
+-->
+
+
+<p style="float: right; display: inline;"><a href="http://www.smashingmagazine.com/2009/08/05/the-smashing-book-pre-order-now-and-save-20/?utm_source=Smashing%2BMagazibe&amp;utm_medium=banner&amp;utm_content=Badge%2B9&amp;utm_campaign=Smashing%2BBook"><img style="display: inline;" original="http://87.237.120.170/wp-content/uploads/images/the-smashing-book/smbook6.gif" src="10%20Useful%20WordPress%20Hook%20Hacks_files/smbook6.gif" alt="Pre-order the Smashing Book now!" title="Learn more about the upcoming Smashing Book!" width="250" height="100"></a></p> 
+<ul class="social" style="margin: 15px 0pt 0pt;">
+<li style="padding: 0pt 8px 0pt 0pt;">
+
+	<script type="text/javascript">
+	digg_bgcolor = '#ffffff';
+	digg_url = 'http://www.smashingmagazine.com/2009/08/18/10-useful-wordpress-hook-hacks/';
+	</script>
+<script src="10%20Useful%20WordPress%20Hook%20Hacks_files/diggthis_002.htm" type="text/javascript"></script><iframe src="10%20Useful%20WordPress%20Hook%20Hacks_files/diggthis.htm" scrolling="no" width="52" frameborder="0" height="80"></iframe>
+</li></ul>
+<p style="float: left;"><a href="http://delicious.com/post?url=http://www.smashingmagazine.com/2009/08/18/10-useful-wordpress-hook-hacks/&amp;title=" title="Bookmark on Del.icio.us!" rel="nofollow"><img style="display: inline;" original="http://media2.smashingmagazine.com/images/delic.jpg" src="10%20Useful%20WordPress%20Hook%20Hacks_files/delic.jpg" alt="Delicious button" width="62" height="70"></a> <a title="Stumble on Stumbleupon!" href="http://www.stumbleupon.com/submit?url=http://www.smashingmagazine.com/2009/08/18/10-useful-wordpress-hook-hacks/&amp;title="><img original="http://media2.smashingmagazine.com/images/stum.jpg" style="border: 0pt none ; display: inline;" src="10%20Useful%20WordPress%20Hook%20Hacks_files/stum.jpg" alt="Stumbleupon" width="67" height="70"></a> <a title="Spread the word on Twitter!" href="http://twitter.com/home?status=@tweetmeme%20@smashingmag%20Reading%20%2710%20Useful%20WordPress%20Hook%20Hacks%27%20http://tinyurl.com/oa3w9l"><img original="http://www.smashingmagazine.com/images/twitty.png" style="border: 0pt none ; display: inline;" src="10%20Useful%20WordPress%20Hook%20Hacks_files/twitty.png" alt="Spread the word on Twitter!" width="98" height="75"></a></p>
+</div></div><div class="leftframe"><div class="topic">
+<ul class="tags">
+<li class="dropped">Published in <a href="http://www.smashingmagazine.com/category/toolbox/" title="View all posts in Developer's Toolbox" rel="category tag">Developer's Toolbox</a>, August 18th, 2009</li>
+<li class="droppedtags">Tags: <a href="http://www.smashingmagazine.com/tag/hacks/" rel="tag">hacks</a>, <a href="http://www.smashingmagazine.com/tag/hooks/" rel="tag">hooks</a>, <a href="http://www.smashingmagazine.com/tag/techniques/" rel="tag">techniques</a>, <a href="http://www.smashingmagazine.com/tag/wordpress/" rel="tag">wordpress</a></li>
+</ul></div>
+<span class="an">Advertisement</span><br>
+<!-- Smashing Magazine - Comment Sponsor ad spot -->
+<div id="commentsponsortarget"><div id="commentsponsor">  
+	<script type="text/javascript"><!--// <![CDATA[
+		function_exists('OA_show') && OA_show('Comment Sponsor');
+	// ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=799__zoneid=22__cb=c14ac55e62__oadest=http%3A%2F%2Fwww.pixmac.com%2F" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/f4ea76c17127eb6b8a94bf88f3888e3b.gif" alt="Professional photos &amp; illustrations from $1" title="Professional photos &amp; illustrations from $1" width="468" border="0" height="90"></a><div id="beacon_c14ac55e62" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_013.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+	</div></div>
+
+
+</div>
+<div class="leftframe">
+
+	
+	
+		<ul class="tabset" id="post_tabs">
+			<li class="active"><a href="#" rel="comments">Comments</a></li>
+			<li><a href="#" rel="trackbacks">Trackbacks/Pings</a></li>
+		</ul>
+
+
+					<div class="comment-list" id="comments">
+				<ol>
+					
+											<li id="comment-376598">
+							<strong class="number">1.</strong>
+							<div class="top">
+								<p>Tomi (August 18th, 2009, 7:46 am)
+								  <span class="grav"><img style="display: block;" original="http://www.gravatar.com/avatar/1cd35a0fbae25fc66b812a95929f328a?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/1cd35a0fbae25fc66b812a95929f328a.png" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Great article!<br>
+Thank you!</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376604">
+							<strong class="number">2.</strong>
+							<div class="top">
+								<p>Ömer Uzun (August 18th, 2009, 7:57 am)
+								  <span class="grav"><img style="display: block;" original="http://www.gravatar.com/avatar/b7db2cd6892e17f6393f722c6004d7a1?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/b7db2cd6892e17f6393f722c6004d7a1.png" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Thank you.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376605">
+							<strong class="number">3.</strong>
+							<div class="top">
+								<p>Mathew (August 18th, 2009, 8:02 am)
+								  <span class="grav"><img style="display: block;" original="http://www.gravatar.com/avatar/4ddcb95d2042e2eb597a5afe9afcce7c?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/4ddcb95d2042e2eb597a5afe9afcce7c.png" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Wp is an amazing tool</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376607">
+							<strong class="number">4.</strong>
+							<div class="top">
+								<p>Francisco (August 18th, 2009, 8:04 am)
+								  <span class="grav"><img style="display: block;" original="http://www.gravatar.com/avatar/5d9979bd07b08043241039d3e7bdf4d2?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/5d9979bd07b08043241039d3e7bdf4d2.png" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Excellent! Thanks!</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376608">
+							<strong class="number">5.</strong>
+							<div class="top">
+								<p>Nick (August 18th, 2009, 8:06 am)
+								  <span class="grav"><img style="display: block;" original="http://www.gravatar.com/avatar/6e5acbdc9bddc10cf8f2840a66ef32cc?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/6e5acbdc9bddc10cf8f2840a66ef32cc.png" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Awesome
+post on hooks. Is there a resource to find all the available wordpress
+hooks or filters? Seems like a very powerful way of customizating
+Wordpress. I am familiar with hooks in thesis, but didn’t know
+wordpress had body hooks etc.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376615">
+							<strong class="number">6.</strong>
+							<div class="top">
+								<p>Zach Dunn (August 18th, 2009, 8:27 am)
+								  <span class="grav"><img style="display: block;" original="http://www.gravatar.com/avatar/78de79a549819ffe9ad747901ff7b357?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/78de79a549819ffe9ad747901ff7b357.png" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>These are the types of articles I love seeing on Smashing Magazine. This is genuinely useful! Excellent work Jean-Baptiste.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376623">
+							<strong class="number">7.</strong>
+							<div class="top">
+								<p>Pedro Magalhães (August 18th, 2009, 8:56 am)
+								  <span class="grav"><img style="display: block;" original="http://www.gravatar.com/avatar/851a9cff9a6796598fb0e0371447f081?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/851a9cff9a6796598fb0e0371447f081.png" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Very usefull. Thank you!</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376625">
+							<strong class="number">8.</strong>
+							<div class="top">
+								<p>Rarst (August 18th, 2009, 9:02 am)
+								  <span class="grav"><img style="display: block;" original="http://www.gravatar.com/avatar/ab89ce39f47b327f1c85e4019e865a71?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/ab89ce39f47b327f1c85e4019e865a71.png" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Wow, thanks for including my function (again)! :) I am glad other find it of use, it helped me figure out hooks a looot.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376628">
+							<strong class="number">9.</strong>
+							<div class="top">
+								<p>Rx (August 18th, 2009, 9:11 am)
+								  <span class="grav"><img style="display: block;" original="http://www.gravatar.com/avatar/8462e519347696d165c0047f51ad6126?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/8462e519347696d165c0047f51ad6126.png" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>WOW! That’s a POST! (and it means i like it)</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376630">
+							<strong class="number">10.</strong>
+							<div class="top">
+								<p>NotAlame (August 18th, 2009, 9:14 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/0e1af2392aedd0b517eb05d1af010e03?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Thanks a lot!<br>
+Every little (or big) wordpress hack is always welcomed…</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376631">
+							<strong class="number">11.</strong>
+							<div class="top">
+								<p>Dmitry (August 18th, 2009, 9:17 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/9265d78c00e567049a5138cc94640e31?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>I
+really love and respect your resource wprecipes.com, but don’t think
+it’s a great idea just to copy-paste your articles here on SM.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376635">
+							<strong class="number">12.</strong>
+							<div class="top">
+								<p>Umut Benzer (August 18th, 2009, 9:39 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/a4aacd0d89b2fd97bc09d2787786db12?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Thanks. An helpful post. :)</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376641">
+							<strong class="number">13.</strong>
+							<div class="top">
+								<p>Clifton Griffin (August 18th, 2009, 10:04 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/df1732d1d128690a5081a67d4b177da6?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>There is a plugin for number 3: <a href="http://wordpress.org/extend/plugins/simple-post-template/" rel="nofollow">Link</a> [wordpress.org] </p>
+<p>It works. I know because I wrote it. :) Your method of modifying the
+starting text is interesting…I was not aware of that particular filter.
+I may modify mine to emulate your method in the future as it is
+slightly cleaner.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376642">
+							<strong class="number">14.</strong>
+							<div class="top">
+								<p>Wes Bos (August 18th, 2009, 10:06 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/519c9ae14594667d1580086d5e9ec60f?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Great post! Something I’ve tagged under wordpress as it will be very handy in the future when doing client sites.</p>
+<p>I would like to see more advanced wordpress function posts. Having
+functions built into a theme is much easier than trying to use 4-5
+bloaty plug-ins.</p>
+<p>On a side note, does anyone know of a way to create a custom write pannel by coding from functions.php?</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376645">
+							<strong class="number">15.</strong>
+							<div class="top">
+								<p>Scott Willis (August 18th, 2009, 10:21 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/79c93af6b7ef0f33ba564b49e2d40bce?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Loads of information. Thank you so much.</p>
+<p>Scott</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376662">
+							<strong class="number">16.</strong>
+							<div class="top">
+								<p>Mark (August 18th, 2009, 11:45 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/8dbcb777becf8d8bd3347e641dce953c?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Nice - Sometimes it feels like I live and breathe WordPress and you still presented one or two NEW ideas to me. Keep it up.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376692">
+							<strong class="number">17.</strong>
+							<div class="top">
+								<p>fanta78 (August 18th, 2009, 12:36 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/ae1f429ed3c0269ca00ad85e8be7a8f4?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Great post, thanks !</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376730">
+							<strong class="number">18.</strong>
+							<div class="top">
+								<p>Frederick Luna (August 18th, 2009, 4:12 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/be19e396141c6328782a2852844d58f1?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>incredible article ! /me waves</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376732">
+							<strong class="number">19.</strong>
+							<div class="top">
+								<p>Luis Neng (August 18th, 2009, 4:27 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/5b9d87088321b1e3e83bf80360670bef?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Excelent article! Thanks for sharing! :))</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376736">
+							<strong class="number">20.</strong>
+							<div class="top">
+								<p>Yuda (August 18th, 2009, 5:14 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/d0a5c277c4d25c277c15de202a718217?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Just what I need, especially the formatting one, thanks</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376742">
+							<strong class="number">21.</strong>
+							<div class="top">
+								<p>Jeremy (August 18th, 2009, 5:58 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/ea9d37c933eea4332e1447bc3df03b9b?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>In response to <a href="#comment-376608" rel="nofollow">Nick</a> above, Mark Jaquith operates a site, <a href="http://wphooks.flatearth.org/" rel="nofollow">Link</a>
+[wphooks.flatearth.org], which is a brilliant index of all WordPress
+hooks and filters available, that will do exactly what you want.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376746">
+							<strong class="number">22.</strong>
+							<div class="top">
+								<p>phlux0r (August 18th, 2009, 6:09 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/15252720b11fe12b1e2e31f5b5e74889?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>@Wes Bos</p>
+<p>check out the <a href="http://flutter.freshout.us/" title="Flutter Plugin Home" rel="nofollow">Link</a>
+[flutter.freshout.us] for WP. It implements custom write panels for
+pages and posts and is very powerful. With this plugin, you can make WP
+much closer to a CMS than it is by default.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376759">
+							<strong class="number">23.</strong>
+							<div class="top">
+								<p>uncleboob (August 18th, 2009, 7:31 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/a6694ea253fb83281148d5283bc06c1f?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>This is wicked - thanks very much! I will use the ‘insert text after every post’ hook.<br>
+<a href="http://www.uncleboob.com/" rel="nofollow">Link</a> [www.uncleboob.com]</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376770">
+							<strong class="number">24.</strong>
+							<div class="top">
+								<p>Nick (August 18th, 2009, 9:22 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/6e5acbdc9bddc10cf8f2840a66ef32cc?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>@Jeremy Thanks a ton for the link!</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376782">
+							<strong class="number">25.</strong>
+							<div class="top">
+								<p>designcode (August 18th, 2009, 10:15 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/d91d1f505316af2eef90ce4920408ec5?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>I am loving it. Point 4, 5, 8 and 9 are deadly useful. Thanks a lot for sharing this great information</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376789">
+							<strong class="number">26.</strong>
+							<div class="top">
+								<p>ovidiu (August 18th, 2009, 11:20 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/912342332189c6c7ead8a3d59cac3556?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>regarding: 6. Disable WordPress From Auto-Saving Posts: </p>
+<p>how could I make this into a small plugin? I’d like to execute this
+globally for a wpmu isntallation… or can I just use the code and have
+it automatically inserted somehow somewhere?</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376794">
+							<strong class="number">27.</strong>
+							<div class="top">
+								<p>Ahmed El.Hussaini (August 18th, 2009, 11:43 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/07a083a8100cd057432c4e3a8b70a69b?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Really well documented article. Many thanks.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376796">
+							<strong class="number">28.</strong>
+							<div class="top">
+								<p>Dreyer (August 18th, 2009, 11:56 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/7af0ad478b245d939db6928421be448d?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>A
+really great post on WP Hooks. Especially for those starting out on WP.
+Alot of major annoyances can be resolved this way without editing core
+files.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376843">
+							<strong class="number">29.</strong>
+							<div class="top">
+								<p>Richard (August 19th, 2009, 2:38 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/bcad67ec510950dd4ab0868a244666d0?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Awesome
+article, thank you. In relation to number 8 (Get Entire Post Or Page In
+A PHP Variable) - and please excuse my ignorance - does anyone know
+whether this technique could be used to add a php call at the end of a
+page template which would produce, in code format, the entire HTML of
+the given page? I ask because there are cases where it would be really
+useful to be able to allow people to copy and paste the html of a given
+page, without having to dig through the page source.</p>
+<p>Thanks in advance for any help anyone can provide.</p>
+<p>Richard</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376847">
+							<strong class="number">30.</strong>
+							<div class="top">
+								<p>Shawn (August 19th, 2009, 3:00 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/78a6833a9449f7c5f5a4533be877fe75?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Roundabout
+way to get to my point but I find it amusing with the kill IE6
+mentality making its’ way around. Now I laughed when I saw the hook
+about detecting which browser is calling the page. Problem isn’t to
+write a custom for each user agent the problem is coders/developers not
+sticking to the spec. Solution is to write for the spec and screw it if
+the user doesn’t have a spec compliant browser. Gee I don’t know but
+maybe if the code was written to spec the code would be cleaner and
+less headaches? If the browser can’t handle it it’s a failure. IE 6
+should have been strangled when it was released but developers just
+went ohhh ok we’ll add-in workaround code for every other browser. Fast
+forward X amount of years and it’s still around because developers
+couldn’t sack up at the time.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376852">
+							<strong class="number">31.</strong>
+							<div class="top">
+								<p>Selvabalaji (August 19th, 2009, 3:16 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/d6d1426075383c630e3bb93e41444b33?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Amazing News ” super article”<br>
+Needful things<br>
+Thank you!</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376869">
+							<strong class="number">32.</strong>
+							<div class="top">
+								<p>gesmith.ca (August 19th, 2009, 5:03 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/fa592cdcc5d859f332b515b2435157e0?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Wonderfully helpful article, thank you.  No doubt I will be referring to this in the future.</p>
+<p>@shawn re IE6: If developers have extended the life of IE6 by
+accommodating for it, it is only because we are doing our jobs well and
+building sites for our end users, not for ourselves. Like it or not,
+many corporate users are still stuck on IE6. As a developer I build
+sites for paying clients who reasonably expect that users of all major
+browsers will be able to view the site they paid for. At 14% market
+share IE6 is sadly too popular to be written off just yet: in the real
+world, more people still use IE6 than Safari, Chrome and Opera
+combined. No serious client is going to be willing to forgo that
+traffic simply for the convenience of their developer. That’s why they
+pay us: to solve problems.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376882">
+							<strong class="number">33.</strong>
+							<div class="top">
+								<p>Greg (August 19th, 2009, 6:13 am)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/3127273c1f5115f380a6085e2580f18c?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Yipes! Why advise folks to use <code>rel='canonical'</code>
+to avoid duplicate content on comment pages? In effect, that tells
+search engines to ignore the material available on comment pages (like,
+say, <em>the comments</em>) and instead always look to the main post permalink. It’s far better, I would have thought, to <em>remove</em> the post content itself from the comment pages — that is what is being duplicated, after all — not include <code>rel='canonical'</code> on those pages, and leave the comments to be indexed.</p>
+<p>Greg’s High Performance SEO plugin, available at <a href="http://wordpress.org/extend/plugins/gregs-high-performance-seo/" rel="nofollow">Link</a> [wordpress.org], will take care of this duplicate content problem with aplomb (if I do say so myself, cough, sputter, ahem).</p>
+<p>All the best,<br>
+Greg</p>
+							</div>
+															</li>
+																	
+											<li id="comment-376995">
+							<strong class="number">34.</strong>
+							<div class="top">
+								<p>J Themes (August 19th, 2009, 1:03 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/6d077da111efde71393a7cec3bf3a13c?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>WordPress is more awesome than I know. Cool hacks!</p>
+							</div>
+															</li>
+																	
+											<li id="comment-377002">
+							<strong class="number">35.</strong>
+							<div class="top">
+								<p>joyologo (August 19th, 2009, 1:15 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/0f3eefdc0af097aecfa6b3fa611c5d5a?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Helpful post for wp designers, thanks for share..</p>
+							</div>
+															</li>
+																	
+											<li id="comment-377003">
+							<strong class="number">36.</strong>
+							<div class="top">
+								<p>Thiago Prado (August 19th, 2009, 1:17 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/d2423db1aa3fc81819bf10c6455e7ef3?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>I learned so much about wordpress since I started to follow smashing magazine</p>
+<p>thanks for the amazing content!</p>
+							</div>
+															</li>
+																	
+											<li id="comment-377036">
+							<strong class="number">37.</strong>
+							<div class="top">
+								<p>Jade (August 19th, 2009, 4:29 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/8f2db3325dd5fb5de4260e759ec5a7af?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>These
+are extraordinary. I was especially interested in the disabling “please
+update now” hook. Definitely a concern when building sites for clients.
+Now I don’t have to worry. Also liked the “Schedule Events” hook. I can
+see that being very handy. It would be interesting to see somebody
+write a plugin allowing you to take advantage of this hook and
+“customize” a message/action with it.</p>
+							</div>
+															</li>
+																	
+											<li id="comment-377051">
+							<strong class="number">38.</strong>
+							<div class="top">
+								<p>Amanoj (August 19th, 2009, 6:48 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/1db8969b24d65cdab7b1720381d1ea9d?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Great tips man! Keep ‘em coming!</p>
+							</div>
+															</li>
+																	
+											<li id="comment-377058">
+							<strong class="number">39.</strong>
+							<div class="top">
+								<p>Jauhari (August 19th, 2009, 7:42 pm)
+								  <span class="grav"><img original="http://www.gravatar.com/avatar/22d06c979ce8d9a46e9a67cebbd8497d?s=42&amp;d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D42&amp;r=G" alt="" src="10%20Useful%20WordPress%20Hook%20Hacks_files/blank.gif" class="avatar avatar-42 photo" width="42" height="42"></span>
+								</p>
+							</div>
+							<div class="body">
+																<p>Let’s me try on ;)</p>
+							</div>
+															</li>
+																					</ol>
+			</div>
+		
+
+		<div class="topic" id="trackbacks" style="display: none;">
+						<ul>
+									<li id="comment-376626">
+						<a href="http://www.tutz.in/6602-10-useful-wordpress-hook-hacks/" rel="external nofollow" class="url">10 Useful WordPress Hook Hacks | Tutz - Best Tutorials</a> (August 18th, 2009 at 9:04 am )
+												</li>
+									<li id="comment-376651">
+						<a href="http://www.devstorming.com/?p=1260" rel="external nofollow" class="url">Интересното от 18.08.2009 | DevStorming.com</a> (August 18th, 2009 at 10:37 am )
+												</li>
+									<li id="comment-376652">
+						<a href="http://www.makebetterwebsites.com/2009/08/18/10-useful-wordpress-hook-hacks-developers-toolbox-smashing-magazine/" rel="external nofollow" class="url">10
+Useful WordPress Hook Hacks | Developer’s Toolbox | Smashing Magazine -
+Make Better Websites - Inspiration &amp; Showcase for Quality Design
+and CSS Websites</a> (August 18th, 2009 at 10:52 am )
+												</li>
+									<li id="comment-376709">
+						<a href="http://weblogtoolscollection.com/archives/2009/08/18/10-useful-wordpress-hook-hacks/" rel="external nofollow" class="url">10 Useful WordPress Hook Hacks | Weblog Tools Collection</a> (August 18th, 2009 at 2:51 pm )
+												</li>
+									<li id="comment-376762">
+						<a href="http://www.kkovacs.hu/2009/08/elsewhere-on-august-19th/" rel="external nofollow" class="url">Elsewhere, on August 19th - Once a nomad, always a nomad</a> (August 18th, 2009 at 8:02 pm )
+												</li>
+									<li id="comment-376792">
+						<a href="http://blog.qmerdesign.net/10-kullanisli-wordpress-uygulamasi/" rel="external nofollow" class="url">10 Kullanışlı Wordpress Uygulaması | QmerDesign</a> (August 18th, 2009 at 11:27 pm )
+												</li>
+									<li id="comment-376812">
+						<a href="http://blog.newsnavigators.de/2009/08/19/bookmarks-von-18-03-2009-bis-19-09-2009/" rel="external nofollow" class="url">Bookmarks von 18-03-2009 bis 19-09-2009 | News Navigators gebloggt</a> (August 19th, 2009 at 1:03 am )
+												</li>
+									<li id="comment-376820">
+						<a href="http://www.myitn.info/10-interesantes-hook-hack-para-wordpress" rel="external nofollow" class="url">10 interesantes Hook Hack para Wordpress | My Info ITN</a> (August 19th, 2009 at 1:11 am )
+												</li>
+									<li id="comment-376821">
+						<a href="http://gabriel.ppgr.com.br/?p=46" rel="external nofollow" class="url">Hook Hacks « Blog do Gabriel</a> (August 19th, 2009 at 1:13 am )
+												</li>
+									<li id="comment-376848">
+						<a href="http://wpxl.se/tips/wordpress-tips-lankar-v34-09/" rel="external nofollow" class="url">WordPress tips &amp; länkar v34-09 | wpxl</a> (August 19th, 2009 at 3:00 am )
+												</li>
+									<li id="comment-376993">
+						<a href="http://listdub.com/?p=8175" rel="external nofollow" class="url">LISTDUB» 10 Useful WordPress Hook Hacks</a> (August 19th, 2009 at 12:51 pm )
+												</li>
+									<li id="comment-376994">
+						<a href="http://toproundups.com/2009/08/18/10-useful-wordpress-hook-hacks/" rel="external nofollow" class="url">10 Useful WordPress Hook Hacks | TopRoundups</a> (August 19th, 2009 at 12:54 pm )
+												</li>
+									<li id="comment-377034">
+						<a href="http://design-tutorials.co.cc/?p=17" rel="external nofollow" class="url">10 Useful WordPress Hook Hacks « Web And Graphics Design Tutorials</a> (August 19th, 2009 at 4:22 pm )
+												</li>
+							</ul>
+					</div>
+
+	
+
+			<div class="topic">
+			<h2>Leave a Reply</h2>
+			
+
+				<form name="commentform" action="/wp-commentspost.php" method="post" id="commentform" class="comment-form">
+					<input name="comment_post_ID" value="9541" type="hidden">
+					<input name="comment_parent" value="0" type="hidden">
+
+					<fieldset>
+						<dl>
+															<dt><label for="author">Name (required)</label></dt>
+								<dd><input name="author" id="author" value="" size="22" tabindex="1" type="text"></dd>
+
+								<dt><label for="email">Mail (will not be published) (required)</label></dt>
+								<dd><input name="email" id="email" value="" size="22" tabindex="2" type="text"></dd>
+
+                                <!--
+								<dt><label for="url">Website</label></dt>
+								<dd><input type="text" name="url" id="url" value="" size="22" tabindex="3" /></dd>
+                                -->
+
+							
+							<dd class="allowed-tags"><div><div><div><strong>Allowed Tags:</strong>
+&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym
+title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt;
+&lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q
+cite=""&gt; &lt;strike&gt; &lt;strong&gt; </div></div></div></dd>
+
+							<dt><label for="comment"><strong>rel="nofollow" in use - no link dropping, no keywords or domains as names; do not spam, and do not advertise!</strong></label></dt>
+							<dd><textarea name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea></dd>
+							<dd class="submit"><input name="submit" tabindex="5" src="10%20Useful%20WordPress%20Hook%20Hacks_files/btn-submit.gif" alt="Submit Comment" type="image"></dd>
+						</dl>
+					</fieldset>
+
+				<script type="text/javascript">
+				  var blogTool               = "WordPress";
+				  var blogURL                = "http://www.smashingmagazine.com";
+				  var blogTitle              = "Smashing Magazine";
+				  var postURL                = "http://www.smashingmagazine.com/2009/08/18/10-useful-wordpress-hook-hacks/";
+				  var postTitle              = "10 Useful WordPress Hook Hacks";
+				  				      var commentAuthorFieldName = "author";
+				  				  var commentAuthorLoggedIn  = false;
+				  var commentFormID          = "commentform";
+				  var commentTextFieldName   = "comment";
+				  var commentButtonName      = "submit";
+				  var cocomment_force        = false;
+				</script>
+
+								</form>
+
+					</div>
+	</div></div><div id="rightcolumn"><div id="gsmall">
+<span class="an">Advertisement</span><br>
+<div id="premiumsponsortarget"><div id="premiumsponsor">
+	<script type="text/javascript"><!--// <![CDATA[
+		function_exists('OA_show') && OA_show('Sponsor no. 1');
+	// ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=325__zoneid=38__cb=286dd20e76__oadest=http%3A%2F%2Fwww.mailchimp.com%2Fpower_features%2F%3Fpid%3Dsmashing%26source%3Dwebsite" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/ai.gif" alt="You Design. Me Deliver." title="You Design. Me Deliver." width="220" border="0" height="75"></a><div id="beacon_286dd20e76" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_010.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+	</div></div>
+</div>
+<div id="rss"><p><a href="http://rss1.smashingmagazine.com/feed/" title="Grab the Smashing Magazine RSS Feed!" rel="nofollow"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/smash-rss.gif" alt="RSS Feed" width="76" height="76"></a></p>
+<div class="feedcountdiv"><p><a href="http://rss1.smashingmagazine.com/feed/"><span class="feedcount"><span class="subscribers">145956</span><span class="after">subscribers</span></span></a></p></div>
+</div><div id="gsearch">
+<!-- SiteSearch Google -->
+<form method="get" action="http://www.smashingmagazine.com/search-results/" target="_top">
+<table bgcolor="#ffffff" border="0">
+<tbody><tr><td valign="top" align="left" height="32" nowrap="nowrap">
+
+</td>
+<td nowrap="nowrap">
+<input name="domains" value="www.smashingmagazine.com" type="hidden">
+<label for="sbi" style="display: none;">Enter your search terms</label>
+<input name="q" size="30" maxlength="255" value="" id="sbi" type="text">
+<label for="sbb" style="display: none;">Submit search form</label>
+<input name="sa" value="Google Search" id="sbb" type="submit">
+</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td nowrap="nowrap">
+<table>
+<tbody><tr>
+<td>
+<input name="sitesearch" value="" id="ss0" type="radio">
+<label for="ss0" title="Search the Web"><span class="goo">Web</span></label></td>
+<td>
+<input name="sitesearch" value="www.smashingmagazine.com" checked="checked" id="ss1" type="radio">
+<label for="ss1" title="Search www.smashingmagazine.com"><span class="goo">smashingmagazine.com</span></label></td>
+</tr>
+</tbody></table>
+<input name="client" value="pub-6779860845561969" type="hidden">
+<input name="forid" value="1" type="hidden">
+<input name="channel" value="3942503296" type="hidden">
+<input name="ie" value="UTF-8" type="hidden">
+<input name="oe" value="UTF-8" type="hidden">
+<input name="safe" value="active" type="hidden">
+<input name="flav" value="0000" type="hidden">
+<input name="sig" value="ZKMPj-qL6g57hzX6" type="hidden">
+<input name="cof" value="LH:50;LW:138;L:http://www.smashingmagazine.com/wp-content/themes/SM-theme/img/logo.gif;S:http://www.smashingmagazine.com;FORID:11" type="hidden">
+<input name="hl" value="en" type="hidden">
+</td></tr></tbody></table>
+</form>
+<!-- SiteSearch Google -->
+</div>
+
+<ul class="opt">
+<li class="sponsors"><h3>Sponsors</h3></li>
+<li class="visible"><a href="mailto:advertising@smashingmagazine.com" title="Advertise with us!">Advertise with us!</a></li>
+</ul>
+
+<!-- Smashing Magazine - Premium Sponsor ad slots 2 -->
+<div id="sponsorlisttarget"><ul id="sponsorlist" class="banner-list">
+  <li>
+    <script type="text/javascript"><!--// <![CDATA[
+    /* [id11] Sponsor-Werbeplaetze 1-8 */
+    function_exists('OA_show') && OA_show('Sponsor 1');
+    // ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=761__zoneid=11__cb=7633efbe7b__oadest=http%3A%2F%2Fwww.getharvest.com%2Fpowerful%3Fr%3Dsmashingmag" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/fb98b511ecd0c9ea7c79730c8cb5c6af.png" alt="Track Time &amp;amp; Send Invoices Online" title="Track Time &amp;amp; Send Invoices Online" width="200" border="0" height="125"></a><br><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=761__zoneid=11__cb=7633efbe7b__oadest=http%3A%2F%2Fwww.getharvest.com%2Fpowerful%3Fr%3Dsmashingmag" target="_blank">Track Time &amp;amp; Send Invoices</a><div id="beacon_7633efbe7b" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_009.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+  </li>
+  <li>
+    <script type="text/javascript"><!--// <![CDATA[
+    /* [id11] Sponsor-Werbeplaetze 1-8 */
+    function_exists('OA_show') && OA_show('Sponsor 2');
+    // ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=798__zoneid=11__cb=67127b52cc__oadest=http%3A%2F%2Fwww.pixmac.com%2F" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/259a2411ecf93b5a6e9da6b56b084b06.gif" alt="Professional photos &amp; more from 1$" title="Professional photos &amp; more from 1$" width="200" border="0" height="125"></a><br><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=798__zoneid=11__cb=67127b52cc__oadest=http%3A%2F%2Fwww.pixmac.com%2F" target="_blank">Professional photos &amp; more</a><div id="beacon_67127b52cc" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_006.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+  </li>
+  <li>
+    <script type="text/javascript"><!--// <![CDATA[
+    /* [id11] Sponsor-Werbeplaetze 1-8 */
+    function_exists('OA_show') && OA_show('Sponsor 3');
+    // ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=666__zoneid=11__cb=747cf16fb6__oadest=http%3A%2F%2Fwww.vectorstock.com" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/6eece0fe0e128cfe25b941980687f223.gif" alt="Free + Royalty-Free Vectors" title="Free + Royalty-Free Vectors" width="200" border="0" height="125"></a><br><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=666__zoneid=11__cb=747cf16fb6__oadest=http%3A%2F%2Fwww.vectorstock.com" target="_blank">Free + Royalty-Free Vectors</a><div id="beacon_747cf16fb6" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_003.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+  </li>
+  <li>
+    <script type="text/javascript"><!--// <![CDATA[
+    /* [id11] Sponsor-Werbeplaetze 1-8 */
+    function_exists('OA_show') && OA_show('Sponsor 4');
+    // ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=622__zoneid=11__cb=8ae57b3425__oadest=http%3A%2F%2Fwww.psd2html.com%2Forder-now.html" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/8573ecaf912c8518330a55b29dd2c8c1.jpg" alt="PSD to HTML, PSD to XHTML Service by PSD2HTML.com. You Design - We XHTML / CSS." title="PSD to HTML, PSD to XHTML Service by PSD2HTML.com. You Design - We XHTML / CSS." width="200" border="0" height="125"></a><br><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=622__zoneid=11__cb=8ae57b3425__oadest=http%3A%2F%2Fwww.psd2html.com%2Forder-now.html" target="_blank">PSD2HTML: You Design -We XHTML</a><div id="beacon_8ae57b3425" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_007.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+  </li>
+  <li>
+    <script type="text/javascript"><!--// <![CDATA[
+    /* [id11] Sponsor-Werbeplaetze 1-8 */
+    function_exists('OA_show') && OA_show('Sponsor 5');
+    // ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=66__zoneid=11__cb=1838cd8090__oadest=http%3A%2F%2Fw3-markup.com%2Forder" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/w3edge200x125.jpg" alt="PSD to HTML Services" title="PSD to HTML Services" width="200" border="0" height="125"></a><br><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=66__zoneid=11__cb=1838cd8090__oadest=http%3A%2F%2Fw3-markup.com%2Forder" target="_blank">PSD to HTML Services</a><div id="beacon_1838cd8090" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_002.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+  </li>
+  <li>
+    <script type="text/javascript"><!--// <![CDATA[
+    /* [id11] Sponsor-Werbeplaetze 1-8 */
+    function_exists('OA_show') && OA_show('Sponsor 6');
+    // ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=253__zoneid=11__cb=589dbd35af__oadest=http%3A%2F%2Fwww.activecollab.com%2F" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/dca92d6ed58fce8ae93534611a8aab8c.gif" alt="Project Management &amp; Collaboration" title="Project Management &amp; Collaboration" width="200" border="0" height="125"></a><br><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=253__zoneid=11__cb=589dbd35af__oadest=http%3A%2F%2Fwww.activecollab.com%2F" target="_blank">Online Project Management</a><div id="beacon_589dbd35af" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_014.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+  </li>
+  <li>
+    <script type="text/javascript"><!--// <![CDATA[
+    /* [id11] Sponsor-Werbeplaetze 1-8 */
+    function_exists('OA_show') && OA_show('Sponsor 7');
+    // ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=766__zoneid=11__cb=0d85af1e33__oadest=http%3A%2F%2Fwww.campaignmonitor.com%2Flp.php%3Futm_source%3Dfusion%26utm_content%3D0004%26utm_campaign%3DJul09" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/daa81a1d08581414ab0333d04ad2ee20.png" alt="Campaign Monitor - Email marketing software for designers" title="Campaign Monitor - Email marketing software for designers" width="200" border="0" height="125"></a><br><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=766__zoneid=11__cb=0d85af1e33__oadest=http%3A%2F%2Fwww.campaignmonitor.com%2Flp.php%3Futm_source%3Dfusion%26utm_content%3D0004%26utm_campaign%3DJul09" target="_blank">Email marketing for designers</a><div id="beacon_0d85af1e33" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_008.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+  </li>
+  <li>
+    <script type="text/javascript"><!--// <![CDATA[
+    /* [id11] Sponsor-Werbeplaetze 1-8 */
+    function_exists('OA_show') && OA_show('Sponsor 8');
+    // ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=637__zoneid=11__cb=33ddb4f7c1__oadest=http%3A%2F%2Fwww.wix.com%2Ffree%2Fwebsite-new%3Futm_campaign%3Dsmashing%26experiment_id%3Dsmashflash5" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/dcd3c585b014ad7d5036650c6edc9e3b.jpg" alt="Create free stunning flash websites!" title="Create free stunning flash websites!" width="200" border="0" height="125"></a><br><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=637__zoneid=11__cb=33ddb4f7c1__oadest=http%3A%2F%2Fwww.wix.com%2Ffree%2Fwebsite-new%3Futm_campaign%3Dsmashing%26experiment_id%3Dsmashflash5" target="_blank">Create free stunning flash websites!</a><div id="beacon_33ddb4f7c1" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+
+  </li>
+  </ul></div>
+
+
+<div class="two"><div class="left">
+
+<div class="box"><h3>Smashing Links</h3>
+<ul><li><a href="http://www.smashingmagazine.com/about/">About us</a></li>
+<li><a href="http://www.smashingmagazine.com/a-smashing-team-of-authors/">Authors</a></li>
+<li><a href="http://www.smashingmagazine.com/before-sending-an-email-please-note/">Contact us</a></li>
+<li><a href="http://www.smashingmagazine.com/how-to-become-a-smashing-magazine-author/">Become an Author</a></li>
+<li><a href="http://www.smashingmagazine.com/tagcloud/">List of Tags</a></li>
+<li><a href="http://www.smashingmagazine.com/publishing-policy/">Publishing Policy</a></li>
+</ul>
+</div>
+
+<div class="box"><h3>Stay in touch</h3>
+<ul>
+<li class="inline"><a href="http://forum.smashingmagazine.com/">Forum</a></li>
+<li class="inline"><a href="http://twitter.com/smashingmag">Follow us on Twitter</a> <a href="http://twitter.com/smashingmag"><img style="display: inline; position: relative; top: 3px;" src="10%20Useful%20WordPress%20Hook%20Hacks_files/twitter.png" alt="Follow us on Twitter" width="18" height="18"></a></li>
+<li class="inline"><a href="http://rss1.smashingmagazine.com/feed/">Subscribe to RSS-Feed</a>
+<a href="http://rss1.smashingmagazine.com/feed/"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/rss.png" style="display: inline; position: relative; left: -1px; top: 4px;" alt="Subscribe to our RSS-feed" width="14" height="14"></a></li>
+</ul>
+</div>
+
+<div class="box"><h3>Popular Posts</h3><ul>
+<li><a href="http://www.smashingmagazine.com/2008/01/08/100-excellent-free-high-quality-wordpress-themes/">100 Wordpress Themes</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/02/09/83-beautiful-wordpress-themes-you-probably-havent-seen/">83 Wordpress Themes</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/06/20/ajax-javascript-solutions-for-professional-coding/">80 AJAX Solutions</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/11/75-really-useful-javascript-techniques/">75 JavaScript Techniques</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/01/10/adobe-photoshop-tutorials-best-of/">70 Best Photoshop Tutorials</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/02/05/illustrator-tutorials-best-of/">70 Best Illustrator Tutorials</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/01/19/53-css-techniques-you-couldnt-live-without/">53 CSS Techniques</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/23/50-beautiful-blog-designs/">50 Blog Designs</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/14/tribute-to-graffiti-50-beautiful-graffiti-artworks/">50 Graffiti Artworks</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/04/28/really-stunning-pictures-and-photos/">50 Brilliant Photos</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/12/50-beautiful-movie-posters/">50 Movie Posters</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/11/08/40-excellent-freefonts-for-professional-design/">40 Free Fonts</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/03/40-creative-design-layouts-getting-out-of-the-box/">40 Creative Layouts</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/03/06/35-really-incredible-free-icon-sets/">35 Beautiful Icon Sets</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/05/15/more-really-stunning-desktop-wallpapers/">Beautiful Desktop Wallpapers</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/21/25-beautiful-macro-photography-shots-photos/">Beautiful Macro Photos</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/19/25-beautiful-examples-of-underwater-photography/">Beautiful Underwater Photos</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/02/14/free-design-templates/">Free Design Templates</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/01/12/free-css-layouts-and-templates/">Free CSS Layouts</a></li>
+</ul></div>
+<div class="box"><h3>All Posts</h3><ul>
+<li><a href="http://www.smashingmagazine.com/2007/04/20/35-designers-x-5-questions/">35 Designers × 5 Questions</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/09/05/50-designers-x-6-questions/">50 Designers × 6 Questions</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/08/17/404-error-pages-reloaded/">404 Error Pages</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/11/15/ajax-dhtml-and-javascript-libraries/">AJAX Libraries</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/06/20/ajax-javascript-solutions-for-professional-coding/">AJAX Solutions</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/16/50-excellent-ajax-tutorials/">AJAX Tutorials</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/05/19/handcraft-strikes-back-buttons-badges-pins-and-clips/">Badges and Pins</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/02/15-useful-batch-image-processors/">Batch Image Processing</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/06/09/beautiful-black-and-white-photography/">Black &amp; White Photography</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/06/12/block-quotes-and-pull-quotes-examples-and-good-practices/">Block Quotes</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2007/08/28/45-excellent-blog-designs/">Blog Designs 1</a>, <a href="http://www.smashingmagazine.com/2007/11/22/30-more-excellent-blog-designs/">2</a>, <a href="http://www.smashingmagazine.com/2008/02/20/45-more-excellent-blog-designs/">3</a>, <a href="http://www.smashingmagazine.com/2008/05/08/now-more-than-ever-50-more-excellent-blog-designs/">4</a>, <a href="http://www.smashingmagazine.com/2008/10/23/50-beautiful-blog-designs/">5</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/03/05/blog-headers-for-free-download/">Blog Headers</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/04/14/excellent-book-covers-and-paperbacks/">Book Covers</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/06/16/beautiful-brochures-and-booklets/">Brochures and Booklets</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/11/21/web-browsers-you-have-never-heard-of/">Browsers Round-Up</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/10/02/browser-tests-services-and-compatibility-test-suites/">Browser Test Suites</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/11/24/buzz-monitoring-observing-und-tracking/">Buzz-Monitoring</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/06/23/creative-calendar-designs/">Calendar Designs</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/09/01/test-aosu/">Charts and Diagrams: Tools</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/10/30/cheat-sheet-round-up-ajax-css-latex-ruby/">Cheat Sheets</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/07/12/time-savers-code-beautifier-and-formatter/">Code Beautifier</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/07/07/copyright-explained-i-may-copy-it-right/">Copyright Explained</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/02/21/powerful-css-techniques-for-effective-coding/">CSS Coding Techniques</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2006/12/19/50-beautiful-css-based-web-designs-in-2006/">CSS Designs 1</a>, <a href="http://www.smashingmagazine.com/2007/03/26/keep-it-simple-stupid-showcase-of-simple-and-clean-designs/">2</a>, <a href="http://www.smashingmagazine.com/2007/05/21/60-elegant-and-visually-appealling-designs/">3</a>, <a href="http://www.smashingmagazine.com/2007/03/05/45-fresh-clean-and-impressive-designs/">4</a>, <a href="http://www.smashingmagazine.com/2007/01/13/30-dark-designs-you-shouldve-seen/">5</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/08/18/7-principles-of-clean-and-optimized-css-code/">CSS Clean Code</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/06/19/css-editors-reviewed/">CSS Editors</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/09/07/170-expert-ideas-from-worlds-leading-developers/">CSS Expert Ideas</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/">CSS Float Theory</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/09/21/css-frameworks-css-reset-design-from-scratch/">CSS Frameworks</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/02/14/free-design-templates/">CSS Free Templates</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/01/09/css-based-footers-modern-solutions/">CSS Footers</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2006/11/11/css-based-forms-modern-solutions/">CSS Forms 1</a>, <a href="http://www.smashingmagazine.com/2008/04/17/web-form-design-modern-solutions-and-creative-ideas/">2</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/12/21/creme-de-la-creme-of-css-list-of-css-galleries/">CSS Galleries</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/05/10/70-expert-ideas-for-better-css-coding/"> CSS Ideas</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/01/12/free-css-layouts-and-templates/">CSS Layouts</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/03/14/css-based-navigation-menus-modern-solutions/">CSS Menus</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/02/21/printing-the-web-solutions-and-techniques/">CSS Print-Layouts</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/">CSS Specificity</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/05/02/improving-code-readability-with-css-styleguides/">CSS Styleguides</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/12/29/css-based-tables-modern-solutions/">CSS Tables</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/10/25/css-techniques-tutorials-layouts/">CSS Tutorials</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/01/19/53-css-techniques-you-couldnt-live-without/"> CSS-Techniques</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/09/02/list-of-css-tools/">CSS Tools</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/05/30/tables-and-data-grids-with-ajax-dhtml-javascript/">Data Grids and Tables</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2007/08/02/data-visualization-modern-approaches/">Data Visualization 1</a>, <a href="http://www.smashingmagazine.com/2008/01/14/monday-inspiration-data-visualization-and-infographics/">2</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/02/22/gallery-of-date-stamps-and-calendars/">Date Stamps</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2007/09/04/40-books-for-professional-design-development/">Design Books 1</a>, <a href="http://www.smashingmagazine.com/2008/01/24/usability-and-interface-design-books/">2</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/03/19/40-designtech-magazines-to-read/">Design Magazines</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/08/10/10-designers-checkpoints-to-be-aware-of/">Designer's Checkpoints</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/05/29/applying-divine-proportion-to-web-design/" rel="bookmark" title="Applying Divine Proportion To Your Web Designs">Divine Proportion</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/06/28/domain-tools-and-articles-about-domain-names/">Domain Tools</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/04/04/adobe-dreamweaver-tutorials/">Dreamweaver Tutorials</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/24/drupal-developers-toolbox/">Drupal</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/10/16/best-practices-for-bulletproof-e-mail-delivery/">E-Mail Delivery</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2007/01/31/inspire-yourself-50-remarkable-favicons/">Favicons 1</a>, <a href="http://www.smashingmagazine.com/2007/03/29/inspire-yourself-more-creative-favicons/">2</a>, <a href="http://www.smashingmagazine.com/2007/06/14/creative-favicons-when-small-is-beautiful/">3</a>, <a href="http://www.smashingmagazine.com/2007/09/11/creative-favicons-tiny-artwork/">4</a>, <a href="http://www.smashingmagazine.com/2008/01/01/favicons-episode-5-the-delicate-beauties/">5</a>, <a href="http://www.smashingmagazine.com/2008/03/21/favicon-episode-6-black-abstract-and-hand-drawing/">6</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/02/27/firefox-themes-in-an-overview/">Firefox Themes</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/03/18/adobe-fireworks-tutorials-and-downloads-best-of/">Fireworks Tutorials</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/10/30/65-excellent-flash-designs/">Flash Designs</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/10/12/flash-based-galleries-for-your-images/">Flash Slideshows</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/01/17/adobe-flash-tutorials-best-of/">Flash Tutorials</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2007/11/08/40-excellent-freefonts-for-professional-design/">Fonts 1</a>, <a href="http://www.smashingmagazine.com/2007/02/24/five-more-freefonts-chucara-preface-colaborate/">2</a>, <a href="http://www.smashingmagazine.com/2007/04/02/free-fonts-of-the-month-geo-sans-ot-versa-diavlo/">3</a>, <a href="http://www.smashingmagazine.com/2007/06/08/free-brilliant-high-quality-fonts/">4</a>, <a href="http://www.smashingmagazine.com/2008/02/14/free-fonts-of-the-month-advent-pro-telegrafico/">5</a>, <a href="http://www.smashingmagazine.com/2008/06/13/free-fonts-of-the-month-anivers-gentium-fresco/">6</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/05/25-font-management-tools-reviewed/">Font Management</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2008/07/04/web-form-design-patterns-sign-up-forms/" rel="bookmark" title="Web Form Design Patterns: Sign-Up Forms">Form Design Patterns</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/05/01/professional-web-design-forums/">Forums</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/17/50-phenomenal-fractal-art-pictures/">Fractals</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2008/01/07/monday-inspiration-innovative-designs-and-devices/">Gadgets 1</a>, <a href="http://www.smashingmagazine.com/2008/02/04/15-stunning-cutting-edge-gadgets-and-technologies/">2</a>, <a href="http://www.smashingmagazine.com/2008/02/18/25-mind-blowing-product-gadgets/">3</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/03/22/google-adsense-facts-faqs-and-tools/">Google AdSense</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/06/05/google-pagerank-what-do-we-really-know-about-it/">Google PageRank</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/14/tribute-to-graffiti-50-beautiful-graffiti-artworks/">Graffiti</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/08/21/creativity-spark-from-masters-of-graphic-design/">Graphics Design</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2007/04/14/designing-with-grid-based-approach/">Grid-Based Design 1</a>, <a href="http://www.smashingmagazine.com/2008/03/26/grid-based-design-six-creative-column-techniques/">2</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2008/01/29/grunge-style-in-modern-web-design/">Grunge Design 1</a>, <a href="http://www.smashingmagazine.com/2008/03/11/the-secrets-of-grunge-design/">2</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2008/01/03/hand-drawing-style-in-modern-web-design/">Hand-Drawing Style 1</a>, <a href="http://www.smashingmagazine.com/2008/06/18/hand-drawing-style-in-modern-web-design-volume-2/">2</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/04/07/beautiful-handwriting-lettering-and-calligraphy/">Handwriting and Lettering</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/07/20/developers-alarm-200-hotkeys-to-boost-your-productivity/">Hotkeys</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/03/10/35-fantastic-hdr-pictures/">HDR Pictures</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/10/01/html-template-systems-in-php/">HTML Template Systems</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2008/03/06/35-really-incredible-free-icon-sets/">Icon Sets 1</a>, <a href="http://www.smashingmagazine.com/2008/05/21/40-professional-icon-sets-for-free-download/">2</a>, <a href="http://www.smashingmagazine.com/2007/08/25/20-free-and-fresh-icon-sets/">3</a>, <a href="http://www.smashingmagazine.com/2007/11/29/icons-for-your-desktop-and-icons-for-your-web-designs/">4</a>, <a href="http://www.smashingmagazine.com/2008/03/06/35-really-incredible-free-icon-sets/">5</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2007/05/24/freebies-round-up-icons-buttons-and-templates/">Icons, Templates 1</a>, <a href="http://www.smashingmagazine.com/2006/09/03/symbols-buttons-and-icons-for-free/">2</a>, <a href="http://www.smashingmagazine.com/2006/12/03/more-symbols-buttons-and-icons-for-free/">3</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2008/02/05/illustrator-tutorials-best-of/">Illustrator Tutorials 1</a>, <a href="http://www.smashingmagazine.com/2007/02/03/adobe-illustrator-tutorials/">2</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/11/75-really-useful-javascript-techniques/">JavaScript Techniques</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/16/jquery-examples-and-best-practices/">jQuery</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/03/17/laptop-sleeves-skins-and-stickers/">Laptop Sleeves</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/03/31/slick-laptop-designs-and-concepts/">Laptop Designs</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/05/28/golden-rules-of-linkbaiting-principles-strategies-and-effective-rules/">Link Building</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/07/01/should-links-open-in-new-windows/">Links in New Windows?</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/21/25-beautiful-macro-photography-shots-photos/">Macro Photography</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/01/15/isnt-it-sweet-mascots-in-modern-web-design/">Mascots</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/22/moleskine-art-beautiful-examples-and-talented-artists/">Moleskine Art</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/01/28/monday-inspiration-graphics-in-motion/">Motion Graphics</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/08/24/45-beautiful-motion-blur-photos/">Motion Blur Photos</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/12/50-beautiful-movie-posters/">Movie Posters</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/01/21/monday-inspiration-brilliant-music-videos/">Music Videos</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/02/26/navigation-menus-trends-and-examples/">Navigation Menus</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/02/11/award-winning-newspaper-designs/">Newspaper Designs</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/04/10/online-converters/">Online Converters</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/11/09/online-generators/">Online Generators</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/06/02/beautiful-and-expressive-packaging-design/" rel="bookmark" title="Beautiful and Expressive Packaging Design">Packaging Design</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/11/16/pagination-gallery-examples-and-good-practices/">Pagination</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/04/22/inspirational-pdf-magazines/">PDF Magazines</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/20/the-ultimate-collection-of-useful-photoshop-actions/">Photoshop Actions</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2008/01/10/adobe-photoshop-tutorials-best-of/">Photoshop Tutorials 1</a>, <a href="http://www.smashingmagazine.com/2007/01/12/hand-picked-photoshop-tutorials/">2</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/05/05/pixels-go-mad-the-celebration-of-pixel-art/">Pixel Art</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/05/14/useful-podcasts-for-designers-and-developers/" rel="bookmark" title="Useful Podcasts For Designers And Developers">Podcasts</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/04/16/getting-creative-with-transparency-in-web-design/">PNG Transparency</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/03/04/creating-a-successful-online-portfolio/">Portfolios</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/13/pricing-tables-showcase-examples-and-best-practices/">Pricing Tables</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/05/26/beautiful-and-original-product-designs/">Product Designs</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/07/35-brilliant-examples-of-rain-photography/">Rain Photography</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/11/02/rss-best-design-practices-and-icons/">RSS Best Design Practices</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/04/01/fresh-free-and-gorgeous-rssfeed-icons/">RSS Feed Icons</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/08/19/screencasting-how-to-start/">Screencasting</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/10/04/screensavers-best-of/">Screensavers</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/09/22/complete-list-of-best-seo-tools/">SEO Tools</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/02/07/shopping-carts-gallery-examples-and-good-practices/">Shopping Carts</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/03/03/25-brilliant-animated-short-movies/">Short Movies</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/05/18/30-best-solutions-for-image-galleries-slideshows-lightboxes/">Slideshows &amp; Lightboxes</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/05/celebration-of-smoke-photography-and-smoke-art/">Smoke Photography</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/05/07/35-useful-source-code-editors-reviewed/">Source Code Editors</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/10/11/splash-pages-do-we-really-need-them/">Splash Pages</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/07/17/exploring-design-outstanding-start-pages/">Start Pages</a></li>
+<li><a href="http://www.smashingmagazine.com/2006/10/20/stock-icons-an-overview/">Stock Icons</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/06/11/space-wallpapers-and-nebula-wallpapers/">Space, Nebula wallpapers</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/04/18/14-tab-based-inferface-techniques/">Tab-Based Interfaces</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/11/07/tag-clouds-gallery-examples-and-good-practices/">Tag Clouds</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/05/27/smashing-texture-contest-results/">Textures</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/01/02/where-can-i-find-textures-and-background-images/">Textures &amp; Backgrounds</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/07/09/textures-and-patterns-design-showcase/">Texture Design</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/06/12/tooltips-scripts-ajax-javascript-css-dhtml/">Tooltips Scripts</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/01/26/tutorials-round-up-ajax-css-javascript-php-mysql-and-more/">Tutorials </a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2007/08/08/80-beautiful-fonts-typefaces-for-professional-design/">Typefaces 1</a>, <a href="http://www.smashingmagazine.com/2008/03/20/60-brilliant-typefaces-for-corporate-design/">2</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/04/23/5-principles-and-ideas-of-setting-type-on-the-web/">Type Setting Principles</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/02/25/breathtaking-typographic-posters/">Typographic Posters</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/11/19/monday-inspiration-typography-in-motion/">Typography In Motion</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2007/10/15/the-showcase-of-big-typography/">Typography Showcase 1</a> <a href="http://www.smashingmagazine.com/2008/05/20/the-showcase-of-big-typography-second-edition/">2</a>, <a href="http://www.smashingmagazine.com/2008/05/12/sexy-bold-and-experimental-typography/" rel="bookmark" title="Sexy, Bold And Experimental Typography">3</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/19/25-beautiful-examples-of-underwater-photography/">Underwater Photography</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/01/24/usability-and-interface-design-books/">Usability Books</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/10/09/30-usability-issues-to-be-aware-of/">Usability Glossary</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/09/27/10-usability-nightmares-you-should-be-aware-of/">Usability Nightmares</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/01/31/10-principles-of-effective-web-design/">Usability Principles</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/11/26/monday-inspiration-user-experience-of-the-future/">User Interfaces</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/18/the-top-7-open-source-version-control-systems/">Version Control Systems</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/04/21/celebration-of-vintage-and-retro-design/">Vintage &amp; Retro Posters</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/07/retro-and-vintage-in-modern-web-design/">Vintage &amp; Retro Designs</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/10/14/30-beautiful-vintageretro-photoshop-tutorials/">Vintage &amp; Retro Tutorials</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2008/02/12/really-stunning-desktop-wallpapers/">Wallpapers 1</a>, <a href="http://www.smashingmagazine.com/2006/12/07/selected-wallpapers-for-desktop-and-web-design/">2</a>, <a href="http://www.smashingmagazine.com/2007/02/22/more-creative-and-beautiful-wallpapers/">3</a>, <a href="http://www.smashingmagazine.com/2007/09/21/selected-wallpapers-for-your-desktop/">4</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2007/03/10/web-20-tutorials-round-up/">Web 2.0 Tutorials</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/08/29/10-weblog-engines-reviewed/">Weblog Engines</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/01/12/white-space-and-simplicity-an-overview/">Whitespace &amp; Simplicity</a></li>
+<li><a href="http://www.smashingmagazine.com/2007/06/29/wordpress-plugins-tutorials-your-pick/">Wordpress Plugins</a></li>
+<li class="inline"><a href="http://www.smashingmagazine.com/2008/01/08/100-excellent-free-high-quality-wordpress-themes/">Wordpress Themes 1</a>, <a href="http://www.smashingmagazine.com/2007/02/09/83-beautiful-wordpress-themes-you-probably-havent-seen/">2</a>, <a href="http://www.smashingmagazine.com/2007/06/26/21-fresh-usable-and-elegant-wordpress-themes/">3</a>, <a href="http://www.smashingmagazine.com/2008/08/25/30-free-high-quality-wordpress-themes/">4</a></li>
+<li><a href="http://www.smashingmagazine.com/2008/09/15/wordpress-developers-toolbox/">Wordpress Toolbox</a></li>
+<li class="inline">  <a href="http://www.smashingmagazine.com/2008/05/06/25-wysiwyg-editors-reviewed/" rel="bookmark" title="25 Useful WYSIWYG Editors Reviewed">WYSIWYG Editors</a></li>
+</ul></div>
+
+<p><a href="http://twitter.com/smashingmag" title="Follow us on Twitter!"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/twitter-2.jpg" alt="Follow us on Twitter!" width="190" height="103"></a><br><a href="http://rss1.smashingmagazine.com/feed/" title="Subscribe to our RSS-feed!"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/rss-feed2.jpg" alt="Subscribe to our RSS-feed!" width="176" height="79"></a></p>
+
+</div><div class="right">
+
+<span class="an">Advertisement</span><br>
+<div id="sidebaradtarget"><div id="sidebarad">
+	<script type="text/javascript"><!--// <![CDATA[
+		function_exists('OA_show') && OA_show('Sidebar');
+	// ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=322__zoneid=37__cb=c67e6e672d__oadest=http%3A%2F%2Fwww.dreamtemplate.com+" target="_blank"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/ai_002.gif" alt="Premium Website Templates" title="Premium Website Templates" width="190" border="0" height="400"></a><div id="beacon_c67e6e672d" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_011.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+	</div></div>
+<br>
+
+<div class="box"><h3>Fresh Bookmarks</h3><p class="delicious"><a href="http://webdesignledger.com/resources/14-easy-to-implement-drop-down-menu-solutions" class="delicious-link">14 Easy to Implement Drop Down Menus</a><br><span class="delicious-desc">A good and well executed drop down menu can make navigating a large site easy for the user.</span></p><p class="delicious"><a href="http://sixrevisions.com/user-interface/20-fresh-new-design-galleries/" class="delicious-link">20 Fresh and New Design Galleries</a><br><span class="delicious-desc">New galleries that may provide just the inspiration you have been looking for.</span></p><p class="delicious"><a href="http://www.copyblogger.com/blogging-sins/" class="delicious-link">The 7 Deadly Sins of Blogging</a><br><span class="delicious-desc">Do you commit one of these seven deadly sins with your content?</span></p><p class="delicious"><a href="http://naldzgraphics.net/freebies/free-icons-6-adorable-twitter-icon-pack/" class="delicious-link">6 Cute Twitter Icons</a><br><span class="delicious-desc">six free icons in .png format.</span></p><p class="delicious"><a href="http://www.labnol.org/internet/browser-address-bar-commands/9379/" class="delicious-link">Do More From Your Browser Address Bar</a><br><span class="delicious-desc">Browser address bar commands.</span></p><p class="delicious"><a href="http://dzineblog.com/2009/08/getting-creative-with-javascript-30-websites-with-cool-slider-and-scrollers.html" class="delicious-link">30 Examples of Javascript Slider and Scrollers</a><br><span class="delicious-desc">Using frameworks like jQuery, Mootools , Scriptallicious and Prototype.</span></p><p class="delicious"><a href="http://useful-usability.blogspot.com/2009/03/15-valuable-usability-pdfs-you-never.html" class="delicious-link">15 Valuable Usability PDFs You Never Heard Of</a><br><span class="delicious-desc">A few helpful papers.</span></p><p class="delicious"><a href="http://www.labnol.org/software/pdf-document-organizer/9370/" class="delicious-link">Manage Your PDF Documents with Free Tools</a><br><span class="delicious-desc">Some useful web apps and software tools that will help.</span></p><p class="delicious"><a href="http://www.webdesignerdepot.com/2009/08/17-techniques-for-creating-designs-inspired-by-nature/" class="delicious-link">17 Techniques for Creating Designs Inspired by Nature</a><br><span class="delicious-desc">Looking at the world we live in and finding a way to integrate it into a design.</span></p><p class="delicious"><a href="http://spyrestudios.com/20-tools-for-the-freelance-designer-on-a-shoestring-budget/" class="delicious-link">20 Budget Tools For The Freelance Designer</a><br><span class="delicious-desc">All these tools and services are either free or pretty cheap.</span></p></div>
+
+<div class="box"><h3>Blogroll</h3><ul>
+<li><a href="http://www.bittbox.com/">Bittbox</a></li>
+<li><a href="http://www.catswhocode.com/">CatsWhoCode</a></li>
+<li><a href="http://www.colorburned.com/">Colorburned</a></li>
+<li><a href="http://wp-themes.designdisease.com/">Design Disease</a></li>
+<li><a href="http://designm.ag/">Designm.ag</a></li>
+<li><a href="http://www.dezinerfolio.com/">Deziner Folio</a></li>
+<li><a href="http://www.drweb.de/">Dr. Web Magazin (.de)</a></li>
+<li><a href="http://shop.drweb.de/">Dr. Web Shop (.de)</a></li>
+<li><a href="http://freshome.com/">Freshome Blog</a></li>
+<li><a href="http://www.fudgegraphics.com/">FudgeGraphics</a></li>
+<li><a href="http://www.ilovetypography.com/">I Love Typography</a></li>
+<li><a href="http://www.makeuseof.com/">MakeUseOf.com</a></li>
+<li><a href="http://naldzgraphics.net/">Naldzgraphics</a></li>
+<li><a href="http://www.noupe.com/">Noupe.com</a></li>
+<li><a href="http://www.problogdesign.com/">Pro Blog Design</a></li>
+<li><a href="http://www.search-this.com/">Search-This</a></li>
+<li><a href="http://www.sixrevisions.com/">Six Revisions</a></li>
+<li><a href="http://www.smileycat.com/">SmileyCat</a></li>
+<li><a href="http://www.blog.spoongraphics.co.uk/">Spoon Graphics</a></li>
+<li><a href="http://typesites.com/">Typesites</a></li>
+<li><a href="http://www.usabilitypost.com/">Usability Post</a></li>
+<li><a href="http://www.walyou.com/">Walyou</a></li>
+<li><a href="http://www.webdesignerdepot.com/">Webdesigner Depot</a></li>
+<li><a href="http://weburbanist.com/">Weburbanist</a></li>
+<li><a href="http://www.wellmedicated.com/">Wellmedicated</a></li>
+<li><a href="http://www.wpbeginner.com/">WPBeginner</a></li>
+</ul>
+</div>
+
+<div id="badges"><ul>
+<li><a href="http://www.9rules.com/" title="Proud member of 9Rules Network"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/shadow_leaf.gif" alt="9Rules Logo" width="80" height="112"></a></li><li><a href="http://www.quicksprout.com/"><img alt="Quicksprout Logo" src="10%20Useful%20WordPress%20Hook%20Hacks_files/qp.png" width="125" height="50"></a></li></ul></div></div></div>
+</div></div></div><div id="footer">
+<p>2006-2009 <a href="http://www.smashingmagazine.com/about/">Smashing Media GmbH</a> Theme by Smashing Magazine &amp; <a href="http://w3-markup.com/examples" title="Web Designers">W3-Markup</a>.</p>
+</div>
+
+<script src="10%20Useful%20WordPress%20Hook%20Hacks_files/smash-packed.js" type="text/javascript"></script>
+<!-- <script src="http://jobs.smashingmagazine.com/jobs/latest_json" type="text/javascript"></script> -->
+<script type="text/javascript" src="10%20Useful%20WordPress%20Hook%20Hacks_files/spcjs.js"></script><script type="text/javascript" src="10%20Useful%20WordPress%20Hook%20Hacks_files/spc.js"></script><script type="text/javascript" src="10%20Useful%20WordPress%20Hook%20Hacks_files/fl.js"></script>
+
+
+<div id="adpool" style="visibility: hidden;">
+  
+
+	
+	
+	<div id="logoad">
+	<script type="text/javascript"><!--// <![CDATA[
+		function_exists('OA_show') && OA_show('Logo');
+	// ]]> --></script><a href="http://creatives.commindo-media.de/www/delivery/ck.php?oaparams=2__bannerid=790__zoneid=68__cb=ba8b47f21c__oadest=http%3A%2F%2Fwww.smashingmagazine.com%2F2009%2F08%2F05%2Fthe-smashing-book-pre-order-now-and-save-20%2F%3Futm_source%3DSmashing%252BMagazibe%26utm_medium%3Dbanner%26utm_content%3DBadge%252B5%26utm_campaign%3DSmashing%252BBook" target="_parent"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/e03f04cce73f996c679b67e2dd5c532e.jpg" alt="" title="" width="228" border="0" height="94"></a><div id="beacon_ba8b47f21c" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="10%20Useful%20WordPress%20Hook%20Hacks_files/lg_012.gif" alt="" style="width: 0px; height: 0px;" width="0" height="0"></div>
+
+	</div> 
+	
+		
+	
+ 
+</div>
+
+<script type="text/javascript"><!--// <![CDATA[
+function_exists('OA_show') && OA_show('Non-Banner');
+// ]]> --></script>
+
+<noscript><p><img alt="Clicky" src="http://in.getclicky.com/2727-db2.gif" /></p></noscript>
+
+<!-- Dynamic page generated in 0.349 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2009-08-19 22:41:28 -->
+<!-- super cache --></body></html>

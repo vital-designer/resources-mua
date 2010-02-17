@@ -1,0 +1,4 @@
+<%@ Control language="vb" CodeBehind="~/admin/Containers/container.vb" AutoEventWireup="false" Explicit="True" Inherits="DotNetNuke.Container" %>
+<%@ Register TagPrefix="dnn" TagName="ACTIONS" Src="~/Admin/Containers/SolPartActions.ascx" %>
+<%@ Register TagPrefix="dnn" TagName="TITLE" Src="~/Admin/Containers/Title.ascx" %>
+<table width="100%" cellpadding="0" cellspacing="0">	<tr>		<td valign="top">					<table width="100%" cellpadding="0" cellspacing="0" border="0">				<tr>					<td class="containerHEADL"></td>					<td class="containerHEADC"><dnn:ACTIONS runat="server" id="dnnACTIONS" /> <dnn:TITLE runat="server" id="dnnTITLE" /></td>					<td class="containerHEADR"></td>				</tr>			</table>					</td>	</tr>	<tr>		<td valign="top">						<table width="100%" cellpadding="0" cellspacing="0" border="0">				<tr>					<td class="containerTD" id="ContentPane" runat="server" valign="top"></td>				</tr>							</table>				</td>	</tr></table>

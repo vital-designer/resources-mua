@@ -1,0 +1,12 @@
+Important
+---------
+Use at your own risk. 
+Please test on developmental site before going live.
+
+From
+----
+http://www.freedotnetnukeskins.com
+
+Author
+------ 
+Thuan V. Nguyen

@@ -1,0 +1,20 @@
+I was working on a aspx file where I need to show a alert bo on page load. but the problem was that no script was working .. I was very amazed , my aspx code only have following line
+
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ShareDua.aspx.vb" Inherits="ShareDua" %>
+
+
+than I just put another line
+
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ShareDua.aspx.vb" Inherits="ShareDua" %>
+<form id="form1" runat="server"></form>
+
+and the script starts to execute .. So I concluded that asp.net needs one default form so that it can javascrtipt code..
+
+I removed the form line from aspx page and inserts the following code and wallao .. my script is working .. 
+
+Page.Controls.Add(New HtmlForm())
+Dim myscript As String = "document.title='" & dua.DuaName & "';"
+Me.Page.ClientScript.RegisterClientScriptBlock(Me.Page.GetType(), "HelloAlert", myscript, True)
+
+
+you can download the sample site here <a href="sample_clientscript.zip">Download</a>

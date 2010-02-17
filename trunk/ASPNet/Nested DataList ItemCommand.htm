@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<script type="text/javascript">
+  // <![CDATA[
+  var eeTimerStart = new Date().getTime();
+  var eeTimerCnt = 0;
+  var eeAdsLoaded = 0;
+  var ourMs = 0;
+  var adMs = 0;
+  
+  function eeEncode(str)
+  {
+     str = escape(str);
+     str = str.replace('+', '%2B');
+     str = str.replace('%20', '+');
+     str = str.replace('*', '%2A');
+     str = str.replace('/', '%2F');
+     str = str.replace('@', '%40');
+     return str;
+  }
+  
+  function endEETimer()
+  {
+      if (++eeTimerCnt == 4) {
+         ourMs = (new Date().getTime() - eeTimerStart);
+         eeTimerStart = new Date().getTime();
+      
+      } 
+      if (eeTimerCnt == 5 && eeAdsLoaded == 1) {
+         adMs = (new Date().getTime() - eeTimerStart);
+         eeTimerStart = new Date().getTime();
+      }
+      if (eeTimerCnt == 6) {
+         var omnitureMs = (new Date().getTime() - eeTimerStart);
+         var img = document.createElement("img");
+         img.src="/pageLoaded.jsp?url=" + eeEncode(document.location.href) + 
+                 "&isNew=0" +
+                 "&adMs=" + adMs + "&ourMs=" + ourMs + "&omnitureMs=" + omnitureMs + 
+                 "&isSecure=0" + 
+                 "&isExpertSkin=0" + 
+                 "&isVS=0" + 
+                 "&isUsingOptVS1=0" + 
+                 "&isUsingCDN=0" +
+                 "&isUsingEELevel3CDN=1" +
+                 "&isUsingEEDigitalWestCDN=0" +
+                 "&isConsolidatedCSS=1"; 
+         
+
+         document.body.appendChild(img)
+ 
+
+      }
+  }
+ 
+  // ]]>
+  </script>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="http://www.experts-exchange.com/images/ee.ico" type="image/x-icon">
+
+<style type="text/css">@import "http://images.experts-exchange.com/getCSS?key=/ee_NS|--base,xp--base,--component,xp--component,--formFactory,xp--formFactory,xp--button,xp-include-infoBox&t=1246488800000";</style>
+<style type="text/css">@import "http://images.experts-exchange.com/getCSS?key=/ee_NS|-jsp-codeSnippetPopup,-include-question,xp-include-question,-include-popup&t=1246488800000";</style>
+<link href="http://www.experts-exchange.com/images/ee.ico" rel="shortcut icon">
+
+  <title>Experts Exchange Code Snippet</title>
+  <script src="Nested%20DataList%20ItemCommand_files/eeSubs.htm" type="text/javascript"></script>
+<meta name="robots" content="noindex, nofollow">
+</head><body class="Firefox3">
+<div id="minWidth"></div>
+  <div class="outerBodyWrap codeSnippetPopupJSP">
+    <div class="bodyWrap">
+      <div id="outerWrap">
+        <div class="innerWrap">
+          <div id="pageMain">
+            <div id="minWidthMain"></div>
+
+<div class="codeSnippet"><table>
+    <tbody><tr>
+      <td class="lineNumbers">
+        <pre>1:
+2:
+3:
+4:
+5:
+6:
+7:
+8:
+9:
+10:
+11:
+12:
+13:
+14:
+15:
+16:
+17:
+18:
+</pre>
+      </td>
+      <td class="codeBody">
+        <pre class="prettyprint">    &lt;asp:DataList ID="DataList1" runat="server"&gt;
+        &lt;ItemTemplate&gt;
+            &lt;asp:Label ID="Label1" runat="server" Text='&lt;%# Eval("Brands") %&gt;'&gt;&lt;/asp:Label&gt;
+            &lt;asp:DataList ID="DataList2" runat="server" OnItemCommand="DataList1_ItemCommand"&gt;
+                &lt;ItemTemplate&gt;
+                    &lt;asp:Button ID="Button1" runat="server" Text="Button"  CommandName="bottonget" /&gt;
+                &lt;/ItemTemplate&gt;
+            &lt;/asp:DataList&gt;
+        &lt;/ItemTemplate&gt;
+    &lt;/asp:DataList&gt;
+ 
+ 
+    Protected Sub DataList1_ItemCommand(ByVal source As Object, ByVal e As System.Web.UI.WebControls.DataListCommandEventArgs)
+        If e.CommandName = "bottonget" Then
+            Response.Write("Hello World")
+        End If
+ 
+    End Sub
+</pre>
+      </td>
+    </tr>
+  </tbody></table></div>
+
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </body></html>

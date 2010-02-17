@@ -1,0 +1,5 @@
+[DEFAULT]
+BASEURL=https://eforms.paysystems.com/AuthorizeNet/form.pay
+[InternetShortcut]
+URL=https://eforms.paysystems.com/AuthorizeNet/form.pay
+Modified=30D773B50CB5C501B6

@@ -1,0 +1,487 @@
+/* ================================
+    CSS STYLES FOR DotNetNuke
+   ================================
+*/
+#one{font-weight:bold;}
+body {
+	background: #e7e7e7;
+}
+table, tr, td, p {
+	font-family: tahoma;
+	font-size: 11px;
+	line-height: 1.4em;
+}
+td.r1TD1 {
+	background: url(tl3_bkg.gif) no-repeat top left;
+	height: 140;
+	width:14;
+}
+td.r1TD2 {
+	background: url(tm3_bkg.gif) top left;
+	height: 140;
+	width:100%;
+}
+td.r1TD3 {
+	background: url(tr3_bkg.gif) no-repeat top right;
+	height: 140;
+	width:14;
+}
+td.r2TD1 {
+	background: url(ml_bkg.gif) no-repeat left;
+	height: 24;
+	width:14;
+}
+td.r2TD2 {
+	background: url(mm_bkg.gif) left;
+	height: 24;
+	width:100%;
+}
+td.r2TD2a {
+	height: 24;
+	width:100%;
+}
+td.r2TD2b{
+	font-weight:bold;
+	height: 24;
+	width:100%;
+}
+td.r2TD3 {
+	background: url(mr_bkg.gif) no-repeat right;
+	height: 24;
+	width:14;
+}
+td.r3TD1 {
+	background: url(bcl2_bkg.gif) no-repeat top left;
+	height: 38;
+	width:14;
+}
+td.r3TD2 {
+	background: url(bcm2_bkg.gif) top left;
+	height: 38;
+	width:100%;
+}
+td.r3TD3 {
+	background: url(bcr2_bkg.gif) no-repeat top right;
+	height: 38;
+	width:14;
+}
+td.r4TD1 {
+	background: url(cl_bkg.gif) repeat-y top left;
+	height:100%;
+	width:14;
+}
+td.r4TD2 {
+	background-color: #ffffff;
+	height:100%;
+	width:100%;
+}
+td.r4TD2a {
+	background: url(tablebk_n.gif) no-repeat middle center;
+	height:100%;
+	width:100%;
+	padding: 0px 8px 8px 8px;
+}
+td.r4TD3 {
+	background:url(cr_bkg.gif) repeat-y top right;
+	height:100%;
+	width:14;
+}
+td.r5TD1 {
+	background: url(cl_bkg.gif) repeat-y top left;
+	height:2;
+	width:14;
+}
+td.r5TD2 {
+	background:#FFFFFF;
+	height:2;
+	width:100%;
+}
+td.r5TD2a {
+	background:#FFFCAF;
+	height:2;
+	width:100%;
+}
+td.r5TD3 {
+	background:url(cr_bkg.gif) repeat-y top right;
+	height:2;
+	width:14;
+}
+td.r6TD1 {
+	background: url(cl_bkg.gif) repeat-y top left;
+	height:100%;
+	width:14;
+}
+td.r6TD2 {
+	background: #FFFFFF;
+	height:100%;
+	width:100%;
+}
+td.r6TD2a {
+	background: #FFFFFF;
+	height:24;
+	width:100%;
+}
+td.r6TD2b {
+	background: #FFFFFF;
+	height:100%;
+	width:100%;
+}
+td.r6TD2c {
+	background: #FFFFFF;
+	height:24;
+	width:100%;
+}
+td.r6TD3 {
+	background: url(cr_bkg.gif) repeat-y top right;
+	height:100%;
+	width:14;
+}
+td.r7TD1 {
+	background: url(bl_bkg.gif) no-repeat top left;
+	height: 14;
+	width:14;
+}
+td.r7TD2 {
+	background: url(bmc_bkg.gif) top;
+	height: 14;
+	width:100%;
+}
+td.r7TD3 {
+	background:url(br_bkg.gif) no-repeat top right;
+	height: 14;
+	width:14;
+}
+label, .normal, .Normal {
+	font-family: tahoma;
+	font-size: 11px;
+}
+table {
+	padding: 0;
+}
+select, input {
+	font-family: tahoma;
+	font-size: 11px;
+	color: #333;
+}
+h3 {
+	font-family: tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #f6f6f6;
+	padding: 2px 0 1px 7px;
+	background: #888;
+	margin-top: 20px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 5px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 11px;
+}
+
+/* text style for the unselected tabs */
+
+.OtherTabs {
+    font-size: 11px;
+    color: #000;
+    font-family: tahoma;
+    text-decoration: none;
+}
+
+/* hyperlink style for the unselected tabs */
+
+#one{font-weight:bold;}
+A.OtherTabs:link {
+	text-decoration:    none;
+    color: #2c2c2c;
+	background-color: transparent;
+	border: 0;
+	font-weight: bold;
+}
+A.OtherTabs:visited  {
+    text-decoration: none;
+    color: #2c2c2c;
+	background-color: transparent;
+	border: 0;
+	font-weight: bold;
+}
+A.OtherTabs:active   {
+    text-decoration: none;
+    color: #2c2c2c;
+	background-color: transparent;
+	border: 0;
+	font-weight: bold;
+}
+A.OtherTabs:hover    {
+    text-decoration: underline;
+    color: #2c2c2c;
+	background-color: transparent;
+	border: 0;
+	font-weight: bold;
+}
+
+/*=============== START DEFAULT MENU STYLES ============================================*/
+
+
+.MainMenu_MenuContainer {
+	background-color: transparent;
+}
+.MainMenu_MenuBar {
+	cursor: hand;
+}
+.MainMenu_MenuItem {
+	background: url(mm_bkg.gif) left;
+	cursor: hand;
+	color: #000;
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	font-style: normal;
+	border-bottom: #fffcaf 1px solid;
+	border-top: #fffcaf 1px solid;
+	padding: 2px 10px 3px 10px;
+}
+.MainMenu_MenuItemSel {
+	background: url(mm_bkg.gif) left;
+	cursor: hand;
+	color: #000;
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	font-style: normal;
+	border-bottom: #fffcaf 1px solid;
+	border-top: #fffcaf 1px solid;
+	padding: 2px 10px 3px 10px;        
+	background-color: #fffcaf; 
+    text-decoration: underline;
+}
+.MainMenu_MenuIcon {
+	display: none;
+}
+.MainMenu_SubMenu {
+	cursor: hand;
+	background: #fffcaf;
+	border: 0px solid #f6f6f6;
+	border-right: #f1f1f1 1px solid;
+	border-top: #f1f1f1 1px solid;
+	border-left: #f1f1f1 1px solid;
+	border-bottom: #f1f1f1 1px solid;
+}
+.MainMenu_MenuArrow {
+	display: none;
+}
+.MainMenu_RootMenuArrow {
+	display: none;
+	background: #fffcaf;
+}
+
+/*=============== END DEFAULT MENU STYLES ============================================*/
+
+/* Menu-Styles */
+/* Module Title Menu
+----------------------------------------------------------------------------------------*/
+.ModuleTitle_MenuContainer {
+	color: #2c2c2c;
+}
+.ModuleTitle_MenuBar {
+	cursor: pointer;
+	cursor: hand;
+	height: 21px;
+}
+
+/* Module Title Menu
+----------------------------------------------------------------------------------------*/
+.ModuleTitle_MenuItem {
+	color: #fff;
+	background: #8FA850;
+	cursor: pointer;
+	cursor: hand;
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	font-style: normal;
+	padding: 2px 10px 3px 5px;
+	height: 21px;
+	border-bottom: #8FA850 1px solid;
+	border-top: #8FA850 1px solid;
+}
+.ModuleTitle_MenuIcon {
+	cursor: pointer;
+	cursor: hand;
+	color: #fff;
+	text-align: center;
+	padding-right: 0px;
+	padding-left: 3px;
+	background: transparent;
+	display: none;
+}
+.ModuleTitle_SubMenu {
+	z-index: 1000;
+	cursor: pointer;
+	cursor: hand;
+	color: #fff;
+	background: #8FA850;
+	margin-top: 5px;
+	border: 2px solid #fff;
+	padding: 0px 1px 1px 1px;
+	filter: none;
+}
+.ModuleTitle_MenuBreak {
+	display: none;
+}
+.ModuleTitle_MenuItemSel {
+	color: #fff;
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	font-style: normal;
+	padding: 2px 10px 3px 5px;
+	height: 21px;
+	border: 0;
+	background: #677E1B;
+}
+.ModuleTitle_MenuArrow {
+	display: none;
+}
+.ModuleTitle_RootMenuArrow {
+	display: none;
+}
+
+
+/* for the date and copyright---------------------------------------------------*/
+.SelectedTab {
+    color: #2c2c2c;
+	font-family: tahoma;
+	font-weight: bold;
+	font-size: 11px;
+}
+/* Item titles on edit and admin pages
+----------------------------------------------------------------------------------------*/
+.SubHead    {
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    color: #2c2c2c;
+	padding: 0;
+}
+/* linky linky */
+a.SubHead:link, a.SubHead:visited {
+	color: #6E8E05;
+	text-decoration: none;
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: normal;
+}
+a.SubHead:hover {
+	color: #2c2c2c;
+	text-decoration: none;
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: normal;
+}
+a.CommandButton:link, a.CommandButton:visited {
+	color: #fff;
+	border-top: 1px solid #9CBC34;
+	border-bottom: 1px solid #536B03;
+	border-left: 1px solid #9CBC34;
+	border-right: 1px solid #536B03;
+	padding: 1px 5px 2px 6px;
+	font-family: tahoma;
+	font-weight: normal;
+	font-size: 11px;
+	text-decoration: none;
+	background: #6E8E05;
+}
+a.CommandButton:hover {
+	color: #fff;
+	padding: 1px 5px 2px 6px;
+	border-top: 1px solid #6C8710;
+	border-bottom: 1px solid #3B4C02;
+	border-left: 1px solid #6C8710;
+	border-right: 1px solid #3B4C02;
+	font-family: tahoma;
+	font-weight: normal;
+	font-size: 11px;
+	text-decoration: none;
+	background: #516A03;
+}
+a.Normal:link, a.Normal:visited {
+	color: #6E8E05;
+	font-family: tahoma;
+	font-weight: normal;
+	font-size: 11px;
+	text-decoration: none;
+}
+a.Normal:hover {
+	color: #ff6600;
+	font-family: tahoma;
+	font-weight: normal;
+	font-size: 11px;
+	text-decoration: underline;
+}
+a:link, a:visited {
+	color: #6E8E05;
+	font-family: tahoma;
+	font-weight: normal;
+	font-size: 11px;
+	text-decoration: none;
+}
+a:hover {
+	color: #ff6600;
+	font-family: tahoma;
+	font-weight: normal;
+	font-size: 11px;
+	text-decoration: underline;
+}
+.Head {
+	font-size: 10px;
+	color: #333;
+	background: transparent;
+	font-weight: bold;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	padding: 0;
+}
+.NormalRed {
+	color: #D08D00;
+	font-family: tahoma;
+	font-weight: bold;
+	font-size: 11px;
+}
+.NormalBold {
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: bold;
+}
+.NormalTextBox {
+	color: #555;
+	padding-left: 4px;
+	line-height: 12px;
+	font-family: tahoma;
+	font-weight: normal;
+	font-size: 11px;
+	scrollbar-face-color: #fff;
+	scrollbar-track-color: #fff;
+	scrollbar-arrow-color: #686868;
+	scrollbar-3dlight-color: #fff;
+	scrollbar-shadow-color: #fff;
+	scrollbar-highlight-color: #fff;
+	scrollbar-darkshadow-color: #fff;
+}
+td.NormalTextBox {
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	visibility: invisible;
+}
+/*----------------------------------------------------------------------------------------*/
+
+
+
+

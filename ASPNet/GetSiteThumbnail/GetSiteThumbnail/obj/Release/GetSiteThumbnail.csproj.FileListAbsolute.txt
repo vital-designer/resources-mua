@@ -1,0 +1,10 @@
+E:\GetSiteThumbnail\GetSiteThumbnail\bin\Release\GetSiteThumbnail.exe
+E:\GetSiteThumbnail\GetSiteThumbnail\bin\Release\GetSiteThumbnail.pdb
+E:\GetSiteThumbnail\GetSiteThumbnail\obj\Release\ResolveAssemblyReference.cache
+E:\GetSiteThumbnail\GetSiteThumbnail\obj\Release\GetSiteThumbnail.exe
+E:\GetSiteThumbnail\GetSiteThumbnail\obj\Release\GetSiteThumbnail.pdb
+E:\Work\MyBlog\ASPNet\GetSiteThumbnail\GetSiteThumbnail\obj\Release\GetSiteThumbnail.exe
+E:\Work\MyBlog\ASPNet\GetSiteThumbnail\GetSiteThumbnail\obj\Release\GetSiteThumbnail.pdb
+E:\Work\MyBlog\ASPNet\GetSiteThumbnail\GetSiteThumbnail\bin\Release\GetSiteThumbnail.exe
+E:\Work\MyBlog\ASPNet\GetSiteThumbnail\GetSiteThumbnail\bin\Release\GetSiteThumbnail.pdb
+E:\Work\MyBlog\ASPNet\GetSiteThumbnail\GetSiteThumbnail\obj\Release\ResolveAssemblyReference.cache

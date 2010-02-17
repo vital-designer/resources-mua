@@ -1,0 +1,152 @@
+/* http://www.freedotnetnukeskins.com */ 
+
+/*Control panel ___________________________________________________________________________________*/
+.controlpanel{ background:#FFF; border:#B7B7B7 solid; border-width:0px 0px 2px; }
+.controlpanel IMG{ margin:15px 5px 0px; }
+.controlpanel TD TD TD TD IMG{ margin:0px; }
+.controlpanel TD TD TD{ width:auto; }
+.controlpanel DIV{ border:#B7B7B7 solid; border-width:0px 1px; width:3px; height:100px; }
+.controlpanel TD .SubHead{ background:#fff; font-size:12px; color:#333; font-weight:bold; }
+.controlpanel TD TD TD .SubHead{ background:transparent; border:0px; font-size:11px; color:#333; font-weight:normal; }
+.controlpanel TD TD TD input{ background:#EFEFEF; font-size:11px; color:#000; font-weight:bold; padding-left:4px; }
+.controlpanel TD TD TD select{ background:#EFEFEF; font-size:11px; color:#333; }
+.controlpanel A.CommandButton{ font-size:10px; text-decoration:none; }
+.controlpanel A.CommandButton:link{ color:#000; text-decoration:none; }
+.controlpanel A.CommandButton:visited{ color:#000; text-decoration:none; }
+.controlpanel A.CommandButton:hover{ color:#F00; text-decoration:underline;}
+.controlpanel A.CommandButton:active{ color:#000; text-decoration:none; }
+
+/* Table __________________________________________________________________________________________*/
+.body{ width:100%; height:100%; text-align:center; background:#fff;}
+.Head{ font-size:15px; font-weight:bold; color:#333; }
+.SubHead{ font-size:14px; font-weight:bold; color:#999; }
+.SubSubHead{ font-size:13px; font-weight:bold; color:#666; }
+.Normal{ font-size:13px; }
+TD,TH,DIV,SPAN{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; }
+
+/* Sections _______________________________________________________________________________________*/
+.top{ width:100%; text-align:right; padding:4px 10px 0px 10px; background:url(media/top_bg.jpg); background-position:bottom left; background-repeat:no-repeat; }
+.wraptable{ width:970px; height:100%; margin:0px auto; background:#fff; }	
+.menubg{ background:url(media/transparent.jpg); padding-left:10px; }
+.image{ background:url(media/image_v4.jpg); background-position:center left; background-repeat:no-repeat; }
+.bottom{ width:100%; height:60px; text-align:left; padding:20px 0px 0px 30px; background:url(media/bottom.jpg); background-repeat:no-repeat; }
+
+/* Panes __________________________________________________________________________________________*/
+.toppane{ padding:10px; text-align:center;  }
+.leftpane{ padding-left:10px; text-align:center;  }
+.rightpane{ padding-right:10px; text-align:center;  }
+.contentpane{ padding:0px 15px; text-align:center;  }
+.bottompane{ padding:10px; text-align:center;  }
+
+/* Links ___________________________________________________________________________________________*/
+a:link{ color:#000099; text-decoration:none; }
+a:visited{ color:#000099; text-decoration:none; }
+a:hover{ color:#000099; text-decoration:underline; }
+a:active{ color:#000099; text-decoration:none; }
+
+/* User ___________________________________________________________________________________________*/
+.user{ color:#666; font-size:12px; }
+a.user:link{ color:#666; text-decoration:none; }
+a.user:visited{ color:#666; text-decoration:none; }
+a.user:hover{ color:#000099; text-decoration:none; }
+a.user:active{ color:#666; text-decoration:none; }
+
+/* Search _________________________________________________________________________________________*/
+a.search{ vertical-align:middle; color:#666; }
+a.search:link{ color:#666; text-decoration:none; }
+a.search:hover{ color:#000099; text-decoration:none; }
+.search input{ border:1px #DDD solid; }
+
+/* Bread Crumb _________________________________________________________________________________________*/
+a.breadcrumb{ color:#fff; font-size:2.5em;}
+a.breadcrumb:link{ color:#fff; text-decoration:none; font-size:2.5em; }
+a.breadcrumb:hover{ color:#333; text-decoration:none; font-size:2.5em; }
+a.breadcrumb:visited{ color:#fff; text-decoration:none; font-size:2.5em; }
+
+/* Footer _________________________________________________________________________________________*/
+.footer{ color:#666; font-size:12px; }
+a.footer:link{ color:#666; text-decoration:none; }
+a.footer:visited{ color:#666; text-decoration:none; }
+a.footer:hover{ color:#000099; text-decoration:none; }
+a.footer:active{ color:#666; text-decoration:none; }
+
+/* Main Menu ______________________________________________________________________________________*/
+.MainMenu_MenuContainer{ width:98%; background:transparent; }
+.MainMenu_RootMenuArrow{ display:none; }
+.MainMenu_MenuIcon{ display:none; }
+.MainMenu_MenuArrow{ display:none; }
+.MainMenu_MenuBreak{ display:none; }
+.submenu{
+	z-index:1000;
+	background:#fff;  
+	border:1px #bbb solid; 
+	padding:2px;
+	margin-left:2px;
+	-moz-border-right-colors: ThreeDShadow ThreeDShadow transparent;
+	-moz-border-bottom-colors: ThreeDShadow ThreeDShadow transparent;
+}
+.rootmenuitem TD{
+	color:#666; 
+	font-size:12px; 
+	font-weight:bold;
+	border:0px;
+	background:url(media/transparent.jpg); 	
+	padding:0px 4px 2px 4px;
+	height:38px;
+}
+.rootmenuitemselected TD{
+	color:#ccc; 
+	font-size:12px; 
+	font-weight:bold;
+	border:0px; 
+	background:url(media/transparent.jpg); 
+	padding:0px 4px 2px 4px;
+	height:38px;
+}
+.rootmenuitembreadcrumb TD{
+	color:#FF6600; 
+	font-size:12px; 
+	font-weight:bold;
+	border:0px;
+	background:url(media/transparent.jpg); 
+	padding:0px 4px 2px 4px;
+	height:38px;
+}
+.MainMenu_MenuItem{
+	color:#333; 
+	font-size:11px; 
+	font-weight:bold;
+	border-width:0px;
+	background:#EBEBEB;
+	padding:4px 10px 4px 5px;
+	margin-bottom:0px;
+	margin-top:0px;	 
+}
+.submenuitembreadcrumb{
+	color:#FF6600; 
+	font-size:11px; 
+	font-weight:bold;
+	border-width:0px;
+	background:#EBEBEB;
+	padding:4px 10px 4px 5px;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+.submenuitemselected{
+	color:#999;
+	font-size:11px; 
+	font-weight:bold;
+	border-width:0px;
+	background:#EBEBEB;
+	padding:4px 10px 4px 5px;
+	margin-bottom:0px;
+	margin-top:0px;	
+}
+
+/* http://www.freedotnetnukeskins.com ______________________________________________________________ */ 
+
+
+
+
+
+

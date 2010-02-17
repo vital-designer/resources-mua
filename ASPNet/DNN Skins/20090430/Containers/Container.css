@@ -1,0 +1,255 @@
+/* http://www.freedotnetnukeskins.com */ 
+
+/* One ___________________________________________________________________________________________*/
+.container1_whole {
+	width: 100%;
+}
+.container1_tl {
+	width:20px;
+	height:30px;
+	background-image:url(container1_tl.jpg);
+	color: #333;
+}
+.container1_tm {		
+	width:100%;
+	height:30px;
+	background-image:url(container1_tm.jpg);
+	color: #333;
+}
+.container1_tr {	
+	width:20px;
+	height:30px;
+	background-image:url(container1_tr.jpg);
+	color: #333;
+}
+.container1_ml {	
+	width:20px;
+	background-image:url(container1_ml.jpg);
+	color: #333;
+}
+.container1_mm {	
+	width:100%;
+	background-image:url(container1_mm.jpg);
+}
+.container1_mr {	
+	width:20px;
+	background-image:url(container1_mr.jpg);
+	color: #333;
+}
+.container1_bl {	
+	width:20px;
+	height:30px;
+	background-image:url(container1_bl.jpg);
+	color: #333;
+}
+.container1_bm {		
+	width:100%;
+	height:30px;
+	background-image:url(container1_bm.jpg);
+	color: #333;
+}
+.container1_br {	
+	width:20px;
+	height:30px;
+	background-image:url(container1_br.jpg);
+	color: #333;
+}
+.container1_title {
+	color: #666;	
+	height:20px;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration:underline;
+	vertical-align:bottom;
+}
+
+/* Two _________________________________________________________________________________________*/
+.container2_whole {
+	width: 100%;
+}
+.container2_tl {
+	width:20px;
+	height:30px;
+	background-image:url(container2_tl.jpg);
+	color: #333;
+}
+.container2_tm {		
+	width:100%;
+	height:30px;
+	background-image:url(container2_tm.jpg);
+	color: #333;
+}
+.container2_tr {	
+	width:20px;
+	height:30px;
+	background-image:url(container2_tr.jpg);
+	color: #333;
+}
+.container2_ml {	
+	width:20px;
+	background-image:url(container2_ml.jpg);
+	color: #333;
+}
+.container2_mm {	
+	width:100%;
+	background-image:url(container2_mm.jpg);
+}
+.container2_mr {	
+	width:20px;
+	background-image:url(container2_mr.jpg);
+	color: #333;
+}
+.container2_bl {	
+	width:20px;
+	height:30px;
+	background-image:url(container2_bl.jpg);
+	color: #333;
+}
+.container2_bm {		
+	width:100%;
+	height:30px;
+	background-image:url(container2_bm.jpg);
+	color: #333;
+}
+.container2_br {	
+	width:20px;
+	height:30px;
+	background-image:url(container2_br.jpg);
+	color: #333;
+}
+.container2_title {
+	color: #666;	
+	height:20px;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration:underline;
+	vertical-align:bottom;
+}
+	
+/* Three ___________________________________________________________________________________________*/
+.container3_whole {
+	width: 100%;
+}
+.container3_tl {
+	width:20px;
+	height:30px;
+	background-image:url(container3_tl.jpg);
+	color: #333;
+}
+.container3_tm {		
+	width:100%;
+	height:30px;
+	background-image:url(container3_tm.jpg);
+	color: #333;
+}
+.container3_tr {	
+	width:20px;
+	height:30px;
+	background-image:url(container3_tr.jpg);
+	color: #333;
+}
+.container3_ml {	
+	width:20px;
+	background-image:url(container3_ml.jpg);
+	color: #333;
+}
+.container3_mm {	
+	width:100%;
+	background-image:url(container3_mm.jpg);
+}
+.container3_mr {	
+	width:20px;
+	background-image:url(container3_mr.jpg);
+	color: #333;
+}
+.container3_bl {	
+	width:20px;
+	height:30px;
+	background-image:url(container3_bl.jpg);
+	color: #333;
+}
+.container3_bm {		
+	width:100%;
+	height:30px;
+	background-image:url(container3_bm.jpg);
+	color: #333;
+}
+.container3_br {	
+	width:20px;
+	height:30px;
+	background-image:url(container3_br.jpg);
+	color: #333;
+}
+.container3_title {
+	color: #666;	
+	height:20px;
+	font-size: 13px;
+	font-weight: bold;
+	vertical-align:bottom;
+}
+
+/* Four ___________________________________________________________________________________________*/
+.container4_whole {
+	width: 100%;
+}
+.container4_tl {
+	width:20px;
+	height:30px;
+	background-image:url(container4_tl.jpg);
+	color: #333;
+}
+.container4_tm {		
+	width:100%;
+	height:30px;
+	background-image:url(container4_tm.jpg);
+	color: #333;
+}
+.container4_tr {	
+	width:20px;
+	height:30px;
+	background-image:url(container4_tr.jpg);
+	color: #333;
+}
+.container4_ml {	
+	width:20px;
+	background-image:url(container4_ml.jpg);
+	color: #333;
+}
+.container4_mm {	
+	width:100%;
+	background-image:url(container4_mm.jpg);
+}
+.container4_mr {	
+	width:20px;
+	background-image:url(container4_mr.jpg);
+	color: #333;
+}
+.container4_bl {	
+	width:20px;
+	height:30px;
+	background-image:url(container4_bl.jpg);
+	color: #333;
+}
+.container4_bm {		
+	width:100%;
+	height:30px;
+	background-image:url(container4_bm.jpg);
+	color: #333;
+}
+.container4_br {	
+	width:20px;
+	height:30px;
+	background-image:url(container4_br.jpg);
+	color: #333;
+}
+.container4_title {
+	color: #666;	
+	height:20px;
+	font-size: 13px;
+	font-weight: bold;
+	vertical-align:bottom;
+}
+
+/* http://www.freedotnetnukeskins.com */ 
+
+

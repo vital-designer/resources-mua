@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+	<Item>
+		<ItemName>Item1</ItemName>
+		<ItemDescription>Item1 Description</ItemDescription>
+		<ItemPrice>1.50</ItemPrice>
+		<ItemInStock>Y</ItemInStock>
+	</Item>
+	<Item>
+		<ItemName>Item2</ItemName>
+		<ItemDescription>Item2 Description</ItemDescription>
+		<ItemPrice>2.50</ItemPrice>
+		<ItemInStock>Y</ItemInStock>
+	</Item>
+	<Item>
+		<ItemName>Item3</ItemName>
+		<ItemDescription>Item3 Description</ItemDescription>
+		<ItemPrice>3.50</ItemPrice>
+		<ItemInStock>Y</ItemInStock>
+	</Item>
+	<Item>
+		<ItemName>Item4</ItemName>
+		<ItemDescription>Item4 Description</ItemDescription>
+		<ItemPrice>4.50</ItemPrice>
+		<ItemInStock>Y</ItemInStock>
+	</Item>		
+	<Item>
+		<ItemName>Item5</ItemName>
+		<ItemDescription>Item5 Description</ItemDescription>
+		<ItemPrice>5.50</ItemPrice>
+		<ItemInStock>Y</ItemInStock>
+	</Item>	
+	<Item>
+		<ItemName>Item6</ItemName>
+		<ItemDescription>Item6 Description</ItemDescription>
+		<ItemPrice>6.50</ItemPrice>
+		<ItemInStock>Y</ItemInStock>
+	</Item>	
+	<Item>
+		<ItemName>Item7</ItemName>
+		<ItemDescription>Item7 Description</ItemDescription>
+		<ItemPrice>7.50</ItemPrice>
+		<ItemInStock>Y</ItemInStock>
+	</Item>			
+</Items>

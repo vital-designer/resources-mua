@@ -1,0 +1,13 @@
+if msxml is not working then use this code
+
+Set objWinHttp = server.CreateObject("WinHttp.WinHttpRequest.5.1")
+objWinHttp.Open "POST", "http://www.4Guysfromrolla.com/"
+objWinHttp.SetProxy 2,"18.87.8.3:1991"
+comment 18.87.8.3 is the ip and 1991 is the port number
+objWinHttp.SetRequestHeader "CONTENT-TYPE","application/x-www-form-urlencoded"
+objWinHttp.SetTimeouts 30000, 30000, 30000, 30000
+objWinHttp.Send m_cPostBuffer
+strHTML = objWinHttp.ResponseText
+response.write strHTML
+Set objWinHttp = Nothing 
+

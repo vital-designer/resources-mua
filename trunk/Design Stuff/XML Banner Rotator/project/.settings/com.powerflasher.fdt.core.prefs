@@ -1,0 +1,5 @@
+#Fri Aug 07 10:12:54 EEST 2009
+com.powerflasher.fdt.core.DefaultOutputFolder=deploy
+com.powerflasher.fdt.core.Language=AS3
+com.powerflasher.fdt.core.LanguageType=Flex_3_SDK_0
+eclipse.preferences.version=1

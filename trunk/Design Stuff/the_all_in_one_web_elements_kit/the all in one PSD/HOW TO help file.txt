@@ -1,0 +1,64 @@
+Thank you for downloading this file,
+
+
+This file is created by Gunay Donmez, http://www.trialabs.com
+Exclusively for BestBlogBox http://www.bestblogbox.com
+Under the following licence and copyright terms:
+
+CC Creative Common licence http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+You are free to use this file for your personal and customer projects, however:
+You may not redistribute, resell, or claim exclusive ownership rights over this file!
+
+For further informations regarding restrictions: http://www.trialabs.com/contact
+
+--------------------------------------------------------
+
+Font used is an system font (Arial) so you dont need to worry about the font is missing.
+
+Below please find some basic instructions on how to use your file:
+---------------------------------------------------------
+
+If you are not comfortable to work with the "the_all_in_one_PSD" file where all elements are together
+in single layers, you may find to use single items much more easy. All you have to do is open the
+"single item PSD files" folder and from there select the file you want to use.
+---------------------------------------------------------
+
+Editing Text Parts:
+
+Once you have your file open in your Photoshop program, you will see the layers panel on the right
+side. To edit text parts of your items (in the layers panel they use the "T" icon), you will need to first
+sellect the layer you wish to edit. Then go to your tools panel located on the left side and from there
+sellect the text editing tool (it uses the "T" icon). Go on the text you want to edit and click once on that
+text...here you can change the text and text color to whatever you wish.
+
+
+Editing color:
+
+This file uses layer styles, so it quite easy to change the colors of your items. In the layers panel, you
+wil lsee some layers uses the effect icon (is the small round icon with an "f" on it). Double click the "f"
+icon and window will popup where you can see which effects are used. To edit this effects, double click
+the effects that have their "checkbox" checked. Another window will popup where you can adjust/change
+this effects. Make sure to save your changes before closing this popup windows, other wise the changes
+you have applied wont appear.
+
+------------------------------------------------------------
+
+How to use the Pattern:
+
+As you can see, i have included the "pattern_source" file. This file is the background you have seen on
+the page where you have purchaised this item. If you are planing to use this pattern, you will need to
+install it first. To instal the patter is very easy...all you have to do is, open the file in Photoshop, from the
+top menu select "Edit" and scroll down to the part where you see the "Define Pattern" and select it.
+A window will popup with the name for the pattern (you can leave it as it is, or change to something)...
+click "Ok"...the pattern now is instaled on your photoshop.
+
+To use the pattern now, create a new layer...while this layer is selected, go again to "Edit" from the top
+navigation of photoshop. Scroll down to "Fill"...a poput window will apprear. From the "Use" dropdown
+sellect "Pattern". From the "Custom Pattern" drop down sellect the pattern you have just created. Once this
+done click "0k"...you wil lsee now the layer you have just created will fill with the pattern and you can use
+this pattern as background for your project.
+
+------------------------------------------------------------
+
+If you have further questions about editing the items, please feel free to contact Gunay Donmez at www.trialabs.com/contact

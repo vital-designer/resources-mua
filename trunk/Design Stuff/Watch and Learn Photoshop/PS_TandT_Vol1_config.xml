@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+   <config>
+      <hasPipVideo type="Boolean">0</hasPipVideo>
+      <hasPipOverlay type="Boolean">0</hasPipOverlay>
+      <hasToc type="Boolean">1</hasToc>
+      <hasAudio type="Boolean">1</hasAudio>
+      <mainVidIsFlv type="Boolean">0</mainVidIsFlv>
+      <skinTheme>goog</skinTheme>
+      <autoStart type="Boolean">1</autoStart>
+      <backgroundColor>FFFFFF</backgroundColor>
+      <showLoadingMov type="Boolean">0</showLoadingMov>      
+      <loadingMovPercentToLoad type="Number">10</loadingMovPercentToLoad>
+      <loadingMovMinDuration type="Number">3</loadingMovMinDuration>
+      <controllerColor type="Number"></controllerColor>
+      <showAbout type="Boolean">0</showAbout>
+      <aboutBoxText></aboutBoxText>
+      <timeDisplayFormat>MM:SS</timeDisplayFormat>
+      <showDuration type="Boolean">1</showDuration>
+      <showElapsedTime type="Boolean">1</showElapsedTime>
+      <timeDisplayFont>Arial</timeDisplayFont>
+      <timeDisplayFontColor type="Number">0x000000</timeDisplayFontColor>
+      <okLabel>OK</okLabel>
+      <localSecurityWarningTitle>Important</localSecurityWarningTitle>
+      <localSecurityWarning>This action is not allowed by the default Flash Player security settings when the content is played from a hard drive or CD.  Once the content is moved to a web server, it should function as expected, and you should not see this message.
+
+For other distribution methods, or to understand how the Flash Player security settings affect this content, please see the &quot;Flash Player Security&quot; topic in the Camtasia Studio help file.
+
+
+
+ </localSecurityWarning>
+      <includeScoreInEmail type="Boolean">0</includeScoreInEmail>
+      <rememberQuizAnswers type="Number">0</rememberQuizAnswers>
+      <endAction>Stop</endAction>
+      <!-- delete this line to disable warning -->
+      <endActionParam></endActionParam>
+      <controlsWidth type="Number">800</controlsWidth>
+      <controlsHeight type="Number">600</controlsHeight>
+      <hasCaptions type="Boolean">0</hasCaptions>
+      <captionsVisible type="Boolean">0</captionsVisible>
+      <caption>         
+         <font>
+            <type type="String">Microsoft Sans Serif</type>
+            <size type="Number">23</size>
+            <weight type="Boolean">0</weight>
+            <color type="Number">0xFFFFFF</color>
+            <cpl type="Number">32</cpl>
+         </font>
+         <panel>
+            <background>
+               <color type="Number">0x000000</color>
+               <alpha type="Number">50</alpha>
+            </background>
+            <animation>
+               <speed type="Number">40</speed>
+            </animation>
+         </panel>
+      </caption>
+      <video1>
+         <width type="Number">800</width>
+         <height type="Number">600</height>
+      </video1>
+      <pip>
+         <width type="Number">160</width>
+         <height type="Number">120</height>
+      </pip>
+      <toc>
+         <x type="Number">0</x>
+         <y type="Number">0</y>
+         <width type="Number">160</width>
+         <height type="Number">600</height>
+         <!-- AlternatingRowColors takes precedence over BackgroundColor and RowDepthColors takes precedence over both AlternatingRowColors and BackgroundColor -->
+         <backgroundColor type="Number"></backgroundColor>
+         <!-- accepts a hex value -->
+         <alternatingRowColors>
+            <!-- row alternate color based on the array of color values (row 1 = the value of the first color, row 2 = the value of the second color, row 3 equals the value of the first color, etc. -->
+            <array>
+               <!-- accepts two or more hex colors ( add additional Colors tags if more are needed ) -->
+               <colors type="Number"></colors>
+               <colors type="Number"></colors>
+            </array>
+         </alternatingRowColors>
+         <rowDepthColors>
+            <!-- color is based on the rows depth in the tree hierarchy -->
+            <array>
+               <!-- accepts two or more hex colors colors in the form of 0xFFFFFF ( add additional Colors tags if more are needed ) -->
+               <colors type="Number"></colors>
+               <!-- accepts a hex value -->
+               <colors type="Number"></colors>
+               <!-- accepts a hex value -->
+            </array>
+         </rowDepthColors>
+         <rowRollOverColor type="Number">0xA4A4A4</rowRollOverColor>
+         <!-- color of the row on mouse roll over - ignored if UseRollOver is false -->
+         <rowSelectedColor type="Number">0xC0C0C0</rowSelectedColor>
+         <!-- color of the row when it is the currently active row -->
+         <rowIndentation>10</rowIndentation>
+         <!-- number of pixels each row of a tree is indented -->
+         <borderStyle>solid</borderStyle>
+         <!-- none, inset, outset, solid -->
+         <textColor type="Number">0x000000</textColor>
+         <!-- the font color of tree items -->
+         <fontFamily>_sans</fontFamily>
+         <!-- the name of the font to be used, i.e. Arial, Times New Roman, HelveticaNeueLT Std  -->
+         <fontSize type="Number">12</fontSize>
+         <fontWeight>none</fontWeight>
+         <!-- none, bold -->
+         <textAlign>left</textAlign>
+         <!-- left, right, center -->
+         <textDecoration>none</textDecoration>
+         <!-- none, underline -->
+         <textIndent type="Number">0</textIndent>
+         <textRollOverColor type="Number">0x000000</textRollOverColor>
+         <!-- color of text on mouse roll over - ignored if UseRollOver is false -->
+         <textSelectedColor type="Number">0x000000</textSelectedColor>
+         <!-- color of text when row is selected -->
+         <useRollOver type="Boolean">0</useRollOver>
+         <!-- Use boolean numerical equivalents( 0 = false, 1 = true ) if set to false the rollover colors for the text and row are ignored -->
+         <collapsible type="Boolean">0</collapsible>
+         <!-- if false, the collapsible nature of the tree is disabled -->
+      </toc>
+      <quiz>
+         <disableFeedback type="Boolean">0</disableFeedback>
+         <txtQuestionOf>Question @ of @</txtQuestionOf>
+         <txtPrev>Prev</txtPrev>
+         <txtSubmit>Submit</txtSubmit>
+         <txtNext>Next</txtNext>
+         <txtDone>Done</txtDone>
+         <txtPreview>Preview</txtPreview>
+         <txtSend>Send</txtSend>
+         <txtMainMessage>You have reached the end of the questions and this video. Your answers are ready to be sent.</txtMainMessage>
+         <txtEmailContents>E-mail Contents</txtEmailContents>
+         <txtEmailTo>E-mail to </txtEmailTo>
+         <txtAnswersSent>Your answers have been sent.</txtAnswersSent>
+         <txtsummary>You have completed @ of @ questions.</txtsummary>
+         <txtScore>Score = @/@</txtScore>
+         <txtSummaryTitle>Answers Summary</txtSummaryTitle>
+      </quiz>
+   </config>
+   <playlist>
+      <array>
+         <fileset>
+            <video1>
+               <duration type="Number">436.29</duration>
+               <uri>PS_TandT_Vol1-0.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">436.29</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-0_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">173.71</duration>
+               <uri>PS_TandT_Vol1-1.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">173.71</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-1_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">254.29</duration>
+               <uri>PS_TandT_Vol1-2.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">254.29</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-2_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">445.00</duration>
+               <uri>PS_TandT_Vol1-3.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">445.00</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-3_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">431.29</duration>
+               <uri>PS_TandT_Vol1-4.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">431.29</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-4_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">216.00</duration>
+               <uri>PS_TandT_Vol1-5.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">216.00</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-5_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">342.86</duration>
+               <uri>PS_TandT_Vol1-6.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">342.86</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-6_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">582.00</duration>
+               <uri>PS_TandT_Vol1-7.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">582.00</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-7_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">361.43</duration>
+               <uri>PS_TandT_Vol1-8.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">361.43</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-8_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">252.86</duration>
+               <uri>PS_TandT_Vol1-9.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">252.86</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-9_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">421.43</duration>
+               <uri>PS_TandT_Vol1-10.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">421.43</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-10_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">490.71</duration>
+               <uri>PS_TandT_Vol1-11.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">490.71</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-11_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">279.71</duration>
+               <uri>PS_TandT_Vol1-12.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">279.71</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-12_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">284.00</duration>
+               <uri>PS_TandT_Vol1-13.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">284.00</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-13_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">616.43</duration>
+               <uri>PS_TandT_Vol1-14.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">616.43</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-14_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">151.71</duration>
+               <uri>PS_TandT_Vol1-15.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">151.71</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-15_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">369.00</duration>
+               <uri>PS_TandT_Vol1-16.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">369.00</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-16_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">540.71</duration>
+               <uri>PS_TandT_Vol1-17.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">540.71</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-17_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">360.00</duration>
+               <uri>PS_TandT_Vol1-18.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">360.00</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-18_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+         <fileset>
+            <video1>
+               <duration type="Number">862.86</duration>
+               <uri>PS_TandT_Vol1-19.swf</uri>
+               <frameRate type="Number">7</frameRate>
+               <keyframeRate type="Number">0</keyframeRate>
+               <blendingMode>Normal</blendingMode>
+               <isFlv type="Boolean">0</isFlv>
+            </video1>
+            <pip>
+               <duration type="Number">862.86</duration>
+               <frameRate type="Number">10</frameRate>
+               <keyframeRate type="Number">30</keyframeRate>
+               <uri>PS_TandT_Vol1-19_PIP.flv</uri>   
+            </pip>
+            <hasPipVideo type="Boolean">0</hasPipVideo>
+            <hotspotInfo>
+               
+               <array>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               <hotspot>
+               </hotspot>
+               </array>
+
+            </hotspotInfo>
+            <quizInfo>
+               
+            </quizInfo>
+            <captionInfo>
+               
+            </captionInfo>
+
+         </fileset>
+      </array>
+
+   </playlist>   
+   <tocInfo>
+            <node label="&nbsp;&nbsp;1. 3D Reflection Effect" fileset="0" time="0.00" />
+      <node label="&nbsp;&nbsp;2. Censoring an Image" fileset="1" time="0.00" />
+      <node label="&nbsp;&nbsp;3. Color Adjustment" fileset="2" time="0.00" />
+      <node label="&nbsp;&nbsp;4. Wooden Frame" fileset="3" time="0.00" />
+      <node label="&nbsp;&nbsp;5. Glossy Reflection" fileset="4" time="0.00" />
+      <node label="&nbsp;&nbsp;6. Making Pictures Glow" fileset="5" time="0.00" />
+      <node label="&nbsp;&nbsp;7. Gradual Focus" fileset="6" time="0.00" />
+      <node label="&nbsp;&nbsp;8. Grassy Fields" fileset="7" time="0.00" />
+      <node label="&nbsp;&nbsp;9. Grunge Text Effect" fileset="8" time="0.00" />
+      <node label="10. Ink Drawing" fileset="9" time="0.00" />
+      <node label="11. Lightning" fileset="10" time="0.00" />
+      <node label="12. Ancient Map Effect" fileset="11" time="0.00" />
+      <node label="13. Matching Color" fileset="12" time="0.00" />
+      <node label="14. Custom Motion Blur" fileset="13" time="0.00" />
+      <node label="15. Panorama" fileset="14" time="0.00" />
+      <node label="16. Perspective Cropping" fileset="15" time="0.00" />
+      <node label="17. Blurring Backgrounds" fileset="16" time="0.00" />
+      <node label="18. Creating a Planet" fileset="17" time="0.00" />
+      <node label="19. Plastic Text" fileset="18" time="0.00" />
+      <node label="20. Reflection Effect" fileset="19" time="0.00" />
+
+   </tocInfo>
+</main>

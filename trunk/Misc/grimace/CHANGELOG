@@ -1,0 +1,2 @@
+Version 1.0.1 (2009-03-01)
+	- Fixed minor bug in demo.js: wrong path to SaveFile.php

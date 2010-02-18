@@ -1,0 +1,11 @@
+D:\Work\PProjects\VideoWatch\ffmpeg>ffmpeg -f image2 -i U2U_01.jpg -i U2U_02.jpg
+ -i bismillah.wav -r 12 -s cif foo.flv
+
+
+D:\Work\PProjects\VideoWatch\ffmpeg>ffmpeg -f image2 -i U2U_01.jpg -i bismillah.
+wav -ar 22050 -r 25 -s cif foo.avi
+
+
+
+D:\Work\PProjects\VideoWatch\ffmpeg>ffmpeg -r 1 -f image2 -i U2U_%02d.jpg -r 5 -
+s cif foo.avi

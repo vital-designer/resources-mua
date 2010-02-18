@@ -1,0 +1,19 @@
+/* page navigation */
+		.page-navigation{
+	font-family: "Trebuchet MS", "Segoe UI", trebuchet, helvetica, arial, geneva, sans-serif;
+	color:#424242; text-align:left;
+	font-size: 75%; /* Resets 1em to 12px */
+
+
+			display:block; float:none; clear:both; overflow:hidden;
+			margin:0; padding:0.5em 0;
+		}
+			.page-navigation a, .page-navigation a:visited, .page-navigation span {color:#ff3100;padding:0 4px; text-decoration:none;}
+			.page-navigation a:hover {text-decoration:underline;}
+			
+			.page-navigation a.previous, .page-navigation a.previous:visited, .page-navigation span.previous{
+				padding:0 4px 0 16px;
+			}
+			.page-navigation a.next, .page-navigation a.next:visited, .page-navigation span.next{
+				padding:0 16px 0 4px;
+			}

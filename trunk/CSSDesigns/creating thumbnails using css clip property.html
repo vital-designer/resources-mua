@@ -1,0 +1,1145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>  Creating Thumbnails Using the CSS Clip Property</title>
+<script language="javascript" type="text/javascript" src="creating%20thumbnails%20using%20css%20clip%20property_files/script.js"></script>
+<link rel="stylesheet" href="creating%20thumbnails%20using%20css%20clip%20property_files/style.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Seifi.org RSS Feed" href="http://feedproxy.google.com/seifiorg">
+<link rel="pingback" href="http://www.seifi.org/xmlrpc.php">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.seifi.org/os-description" title="Seifi.org">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.seifi.org/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.seifi.org/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 2.7.1">
+
+
+<link rel="stylesheet" href="creating%20thumbnails%20using%20css%20clip%20property_files/wp-syntax.css" type="text/css" media="screen">
+<script src="creating%20thumbnails%20using%20css%20clip%20property_files/raEH2VDEF1VMSKJC7XMR.com%25252F&amp;screen=1152x864&amp;localtime=10%25253A7" type="text/javascript"></script><script src="creating%20thumbnails%20using%20css%20clip%20property_files/cookie2X0BZGHEZ2A5SCWQ1C6NTEHIQWCB9LDKidle0raW6DU95MGFLCU1XBX0S9" type="text/javascript"></script><script src="creating%20thumbnails%20using%20css%20clip%20property_files/cookie2X0BZGHEZ2A5SCWQ1C6NTEHIQWCB9LDKidle10ra8DKMJLF34GTBQC804V" type="text/javascript"></script><script src="creating%20thumbnails%20using%20css%20clip%20property_files/cookie2X0BZGHEZ2A5SCWQ1C6NTEHIQWCB9LDKidle42raL2BB6SC9O4I10TNBY2" type="text/javascript"></script><script src="creating%20thumbnails%20using%20css%20clip%20property_files/cookie2X0BZGHEZ2A5SCWQ1C6NTEHIQWCB9LDKidle0ra8FEVEVJD1MZ9AL4OEXC" type="text/javascript"></script><script src="creating%20thumbnails%20using%20css%20clip%20property_files/cookie2X0BZGHEZ2A5SCWQ1C6NTEHIQWCB9LDKidle0raXOLTEMMYXSGB63WR7FP" type="text/javascript"></script><script src="creating%20thumbnails%20using%20css%20clip%20property_files/cookie2X0BZGHEZ2A5SCWQ1C6NTEHIQWCB9LDKidle0raEW2Z44C9PVBB7ULFIRY" type="text/javascript"></script></head><body>
+<div id="page">
+<div id="outside">
+<div id="banner"><div class="topleft"><div class="topright"><a class="seifi" href="http://www.seifi.org/"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/seifi.gif" alt="mojo seifi.org" width="239" border="0" height="69"></a></div></div></div>
+
+<div id="start">
+			<div id="tabwrapper"><div id="tabs">
+				<ul>
+					<li class="tabhome"><a href="http://www.seifi.org/" title="Seifi.org - A Web Development Blog by Mojo Seifi - seifi.org">Home</a></li>
+					<li class="tabnews"><a href="http://www.seifi.org/about/">About</a></li>
+					<li class="tabrss"><a href="http://feedproxy.google.com/seifiorg" onmouseover="document.getElementById('rss').src='http://www.seifi.org/wp-content/themes/mojo/images/rss_on.gif'" onmouseout="document.getElementById('rss').src='http://www.seifi.org/wp-content/themes/mojo/images/rss_off.gif'"><img id="rss" src="creating%20thumbnails%20using%20css%20clip%20property_files/rss_off.gif" alt="RSS" width="33" border="0" height="33"></a></li>
+				</ul>
+			</div></div>
+<div id="seifiboxwrapper"><div id="seifibox"><a href="http://www.seifi.org/">A Web Development Blog by Mojo Seifi - seifi.org</a></div></div>
+</div>
+	<div id="top">
+		<div id="main">
+	<div id="content">
+				<div class="post" id="post-553">
+<div class="post_info">Written on May 13th, 2007 by Mojo about <a href="http://www.seifi.org/category/css" title="View all posts in css" rel="category tag">css</a>,  <a href="http://www.seifi.org/category/design" title="View all posts in design" rel="category tag">design</a>  </div>
+				<h1><a href="http://www.seifi.org/css/creating-thumbnails-using-the-css-clip-property.html" rel="bookmark" title="Permanent Link to Creating Thumbnails Using the CSS Clip Property">Creating Thumbnails Using the CSS Clip Property</a></h1>
+				<div class="entry">
+					<p>One of the least used properties in CSS is the Clip property. Clip is part of the visual effects module of <a href="http://www.w3.org/TR/CSS21/">CSS 2.1</a>
+and its job is to place a visible window on top of an object that is
+being clipped. It is useful for clipping images and creating thumbnails
+without having to create additional files. This trick can be used to
+create square thumbnails, or to create other varieties of thumbnails
+without actually duplicating files on the server. Here is the rundown.<br>
+<span id="more-553"></span><br>
+Clippings are currently only offered in the shape of a rectangle but
+more shapes might be supported in the future. You can create a
+rectangle clipping using the <em>rect</em> shape. Using <em>rect</em>
+requires four coordinates Top, Right, Bottom, Left (TRBL). Let’s take a
+closer look at how clip calculates the clipping region since it tends
+to cause some confusion. Keep in mind that the bottom starts from the
+top, and the right starts from the left.</p>
+<div style="background: transparent url(http://www.seifi.org/wp-content/uploads/2007/05/clip_castle.jpg) no-repeat scroll left top; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 300px;">
+<img src="creating%20thumbnails%20using%20css%20clip%20property_files/clip_overlay.gif" alt="CSS Clip" width="300" height="225">
+</div>
+<h3>Example</h3>
+<p>Here is a sample image we want to clip:<br>
+<img src="creating%20thumbnails%20using%20css%20clip%20property_files/castle.jpg" alt="Castle"></p>
+<p>The CSS and HTML look like this:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="html4strict" style="font-family: monospace;"><span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(0, 0, 0); font-weight: bold;">div</span> <span style="color: rgb(0, 0, 102);">class</span><span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 0, 0);">"clipwrapper"</span>&gt;</span>
+    <span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(0, 0, 0); font-weight: bold;">div</span> <span style="color: rgb(0, 0, 102);">class</span><span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 0, 0);">"clip"</span>&gt;</span>
+     <span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(0, 0, 0); font-weight: bold;">img</span> <span style="color: rgb(0, 0, 102);">src</span><span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 0, 0);">"castle.jpg"</span> <span style="color: rgb(102, 204, 102);">/</span>&gt;</span>
+    <span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(102, 204, 102);">/</span><span style="color: rgb(0, 0, 0); font-weight: bold;">div</span>&gt;</span>
+<span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(102, 204, 102);">/</span><span style="color: rgb(0, 0, 0); font-weight: bold;">div</span>&gt;</span></pre></div></div>
+
+
+<div class="wp_syntax"><div class="code"><pre class="css" style="font-family: monospace;">.clipwrapper<span style="color: rgb(0, 170, 0);">{</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">position</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">relative</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">height</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">225px</span><span style="color: rgb(0, 170, 0);">;</span>
+<span style="color: rgb(0, 170, 0);">}</span>
+.<span style="color: rgb(0, 0, 0); font-weight: bold;">clip</span><span style="color: rgb(0, 170, 0);">{</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">position</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">absolute</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">clip</span><span style="color: rgb(0, 170, 0);">:</span>rect<span style="color: rgb(0, 170, 0);">(</span><span style="color: rgb(153, 51, 51);">50px</span> <span style="color: rgb(153, 51, 51);">218px</span> <span style="color: rgb(153, 51, 51);">155px</span> <span style="color: rgb(153, 51, 51);">82px</span><span style="color: rgb(0, 170, 0);">)</span><span style="color: rgb(0, 170, 0);">;</span>
+<span style="color: rgb(0, 170, 0);">}</span></pre></div></div>
+
+<blockquote><p>NOTE: The W3C <a href="http://www.w3.org/TR/CSS21/">recommendation</a> suggests using commas between the coordinates, however this is broken <a href="http://msdn2.microsoft.com/en-us/library/ms530748.aspx">in Internet Explorer</a>.
+Strangely using the commas in IE does not work when in
+standards-compliant mode, but it does work when in quirks mode. To
+alleviate this issue I am not using commas which seems to work in all
+browsers including FireFox.</p></blockquote>
+<p>and the result looks like this:</p>
+<div class="clipwrapper">
+<div class="clip">
+     <img src="creating%20thumbnails%20using%20css%20clip%20property_files/castle.jpg" alt="CSS Clip">
+    </div>
+</div>
+<p style="clear: both;">
+</p><p>Our class (.clip) sets the clipping region using the TRBL
+rotation syntax. I’m using pixels lengths but you can also try other
+lengths or percentages here and they can be positive or negative. You
+can also use <em>auto</em>, which would skip clipping that specific edge. You can also try nested clips. </p>
+<p>The other important thing to note is that the clipping class
+position must be set to absolute for the clip property to work. Here, I
+have used a relatively positioned wrapper div to keep our image where
+we want. Also specifying the height of the container div keeps the next
+line from overlapping with the clipped areas.</p>
+<h3>Removing the clipped areas</h3>
+<p>Keep in mind that the size of the clipped image doesn not change,
+but you may want to get rid of the clipped off areas. This is easy to
+do using the top and left offsets. First we have to set the width and
+height of the container div to the size of the clipped image. Now we
+just add negative offsets to the top and left of the clipped div to
+match the top and left settings in the clipping class. So now our new
+classes are like this:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="css" style="font-family: monospace;">.clipout<span style="color: rgb(0, 170, 0);">{</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">position</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">relative</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">width</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">136px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">height</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">105px</span><span style="color: rgb(0, 170, 0);">;</span>
+<span style="color: rgb(0, 170, 0);">}</span>
+.clipin<span style="color: rgb(0, 170, 0);">{</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">position</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">absolute</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">clip</span><span style="color: rgb(0, 170, 0);">:</span>rect<span style="color: rgb(0, 170, 0);">(</span><span style="color: rgb(153, 51, 51);">50px</span> <span style="color: rgb(153, 51, 51);">218px</span> <span style="color: rgb(153, 51, 51);">155px</span> <span style="color: rgb(153, 51, 51);">82px</span><span style="color: rgb(0, 170, 0);">)</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">top</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">-50px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">left</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">-82px</span><span style="color: rgb(0, 170, 0);">;</span>
+<span style="color: rgb(0, 170, 0);">}</span></pre></div></div>
+
+<p>and the result look like this:</p>
+<div class="clipout">
+<div class="clipin">
+     <img src="creating%20thumbnails%20using%20css%20clip%20property_files/castle.jpg" alt="CSS Clip">
+    </div>
+</div>
+<p></p>
+<h3>Add Some Drop Shadow</h3>
+<p>Finally to add some drop shadow to the clipped thumbnail I am using
+three wrapper divs with negative offsets of slightly varying background
+colors to create a shade effect. So our final HTML and CSS look like
+this:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="html4strict" style="font-family: monospace;"><span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(0, 0, 0); font-weight: bold;">div</span> <span style="color: rgb(0, 0, 102);">class</span><span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 0, 0);">"shade1"</span>&gt;&lt;<span style="color: rgb(0, 0, 0); font-weight: bold;">div</span> <span style="color: rgb(0, 0, 102);">class</span><span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 0, 0);">"shade2"</span>&gt;&lt;<span style="color: rgb(0, 0, 0); font-weight: bold;">div</span> <span style="color: rgb(0, 0, 102);">class</span><span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 0, 0);">"shade3"</span>&gt;</span>
+   <span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(0, 0, 0); font-weight: bold;">div</span> <span style="color: rgb(0, 0, 102);">class</span><span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 0, 0);">"clipout"</span>&gt;</span>
+    <span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(0, 0, 0); font-weight: bold;">div</span> <span style="color: rgb(0, 0, 102);">class</span><span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 0, 0);">"clipin"</span>&gt;</span>
+     <span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(0, 0, 0); font-weight: bold;">img</span> <span style="color: rgb(0, 0, 102);">src</span><span style="color: rgb(102, 204, 102);">=</span><span style="color: rgb(255, 0, 0);">"castle.jpg"</span> <span style="color: rgb(102, 204, 102);">/</span>&gt;</span>
+    <span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(102, 204, 102);">/</span><span style="color: rgb(0, 0, 0); font-weight: bold;">div</span>&gt;</span>
+   <span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(102, 204, 102);">/</span><span style="color: rgb(0, 0, 0); font-weight: bold;">div</span>&gt;</span>
+<span style="color: rgb(0, 153, 0);">&lt;<span style="color: rgb(102, 204, 102);">/</span><span style="color: rgb(0, 0, 0); font-weight: bold;">div</span>&gt;&lt;<span style="color: rgb(102, 204, 102);">/</span><span style="color: rgb(0, 0, 0); font-weight: bold;">div</span>&gt;&lt;<span style="color: rgb(102, 204, 102);">/</span><span style="color: rgb(0, 0, 0); font-weight: bold;">div</span>&gt;</span></pre></div></div>
+
+
+<div class="wp_syntax"><div class="code"><pre class="css" style="font-family: monospace;">.clipout<span style="color: rgb(0, 170, 0);">{</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">position</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">relative</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">width</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">136px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">height</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">105px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">top</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">-1px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">left</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">-1px</span><span style="color: rgb(0, 170, 0);">;</span>
+<span style="color: rgb(0, 170, 0);">}</span>
+.clipin<span style="color: rgb(0, 170, 0);">{</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">position</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">absolute</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">clip</span><span style="color: rgb(0, 170, 0);">:</span>rect<span style="color: rgb(0, 170, 0);">(</span><span style="color: rgb(153, 51, 51);">50px</span> <span style="color: rgb(153, 51, 51);">218px</span> <span style="color: rgb(153, 51, 51);">155px</span> <span style="color: rgb(153, 51, 51);">82px</span><span style="color: rgb(0, 170, 0);">)</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">top</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">-50px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">left</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">-82px</span><span style="color: rgb(0, 170, 0);">;</span>
+<span style="color: rgb(0, 170, 0);">}</span>
+.shade1<span style="color: rgb(0, 170, 0);">{</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">width</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">136px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">height</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">105px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">background-color</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(204, 0, 204);">#e8e8e8</span><span style="color: rgb(0, 170, 0);">;</span>
+<span style="color: rgb(0, 170, 0);">}</span>
+.shade2<span style="color: rgb(0, 170, 0);">{</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">position</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">relative</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">width</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">136px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">height</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">105px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">background-color</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(204, 0, 204);">#cbcbcb</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">top</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">-2px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">left</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">-2px</span><span style="color: rgb(0, 170, 0);">;</span>
+<span style="color: rgb(0, 170, 0);">}</span>
+.shade3<span style="color: rgb(0, 170, 0);">{</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">position</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">relative</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">width</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">136px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">height</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">105px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">background-color</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(204, 0, 204);">#a0a0a0</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">top</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">-1px</span><span style="color: rgb(0, 170, 0);">;</span>
+  <span style="color: rgb(0, 0, 0); font-weight: bold;">left</span><span style="color: rgb(0, 170, 0);">:</span><span style="color: rgb(153, 51, 51);">-1px</span><span style="color: rgb(0, 170, 0);">;</span>
+<span style="color: rgb(0, 170, 0);">}</span></pre></div></div>
+
+<p>and here is the result:</p>
+<div class="shade1">
+<div class="shade2">
+<div class="shade3">
+<div class="clipout">
+<div class="clipin">
+     <img src="creating%20thumbnails%20using%20css%20clip%20property_files/clip_castle.jpg" alt="CSS Clip">
+    </div>
+</div>
+</div>
+</div>
+</div>
+<p></p>
+<p>The CSS3 working draft includes a <a href="http://www.w3.org/TR/css3-box/#the-crop">crop</a>
+property which is very similar to the clip property but would also crop
+off the area we have removed, so that the original object is actually
+replaced with the cropped section. As far as I can see no browsers have
+implemented this property as of now.</p>
+<style>
+.shade1{
+  width:136px;
+  height:105px;
+  background-color:#e8e8e8;
+}
+.shade2{
+  position:relative;
+  width:136px;
+  height:105px;
+  background-color:#cbcbcb;
+  top:-2px;
+  left:-2px;
+}
+.shade3{
+  position:relative;
+  width:136px;
+  height:105px;
+  background-color:#a0a0a0;
+  top:-1px;
+  left:-1px;
+}
+.clipout{
+  position:relative;
+  width:136px;
+  height:105px;
+  top:-1px;
+  left:-1px;
+}
+.clipin{
+  position:absolute;
+  clip:rect(50px 218px 155px 82px);
+  top:-50px;
+  left:-82px;
+}
+.clipwrapper{
+  height: 225px;
+  position:relative;
+}
+.clip{
+  position:absolute;
+  clip:rect(50px 218px 155px 82px);
+}
+</style>
+Visited 7678 times, 3 so far today</div>
+			</div>
+	
+
+<h3 id="comments">43 Comments on “Creating Thumbnails Using the CSS Clip Property”</h3>
+<ol class="commentlist">
+<li class="alt" id="comment-27">
+<div class="comment-left">
+<h4>1</h4>
+<div class="comment-author">From <a href="http://ideanewmedia.net/" rel="external nofollow" class="url">Mike</a></div>
+<div class="comment-date"><a href="#comment-27" title="">on May 14, 2007<br> at 9:00 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>But you are still requiring the user to download the entire image.
+All you are doing is hiding parts of it. It doesn’t make sense to use
+this anywhere that you could use a simple server-side thumbnail
+generator.</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-28">
+<div class="comment-left">
+<h4>2</h4>
+<div class="comment-author">From <a href="http://seifi.org/" rel="external nofollow" class="url">Mojo</a></div>
+<div class="comment-date"><a href="#comment-28" title="">on May 14, 2007<br> at 9:24 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>Mike, The case where this comes in very handy is if you already have
+a thumbnail that is a rectangle but you need a square thumbnail. If you
+have multiple pages where on one page you use square thumbs and on
+another page you use aspect ratio thumbs, the image is already cached
+on the user side, so you would actually save bandwidth and disk space.<br>
+As an example, flickr actually creates and stores multiple thumbnails
+on the server, where as they could easily use this method to simulate
+the square thumbnail.<br>
+<a href="http://www.flickr.com/photo_zoom.gne?id=41482884&amp;size=t" rel="nofollow"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/41482884_56629ba0f6_s.jpg" alt="sqare" border="0"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/41482884_56629ba0f6_t.jpg" alt="thumb" border="0"></a></p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-87">
+<div class="comment-left">
+<h4>3</h4>
+<div class="comment-author">From <a href="http://www.thomthom.net/" rel="external nofollow" class="url">Thomas Thomassen</a></div>
+<div class="comment-date"><a href="#comment-87" title="">on May 22, 2007<br> at 9:36 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>I’ve used the technique Mojo decribes on my own website. For my
+gallery section my PHP generates a small thumbnail from my uploaded
+pictures.<br>
+My gallery section then displays these. I vary the way these are
+presented by using .listview.thumbnail.small,
+.listview.thumbnail.medium .listview.thumbnail.large</p>
+<p>I plan to implement a javascript where each time a lsit of thumbnail
+is displayed the user can set desired size of thumbnails via a slider.</p>
+<p>For this the clip is key.</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-339">
+<div class="comment-left">
+<h4>4</h4>
+<div class="comment-author">From Andrew Davey</div>
+<div class="comment-date"><a href="#comment-339" title="">on Jun 13, 2007<br> at 4:25 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>You might notice that Facebook uses this when you add a profile
+picture. I assume they use a dynamically updated clip. As there seems
+like no other way to do this? Or is there?</p>
+<p>Either way i think the idea is a good one and will look into using it as and when i am able to.</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-684">
+<div class="comment-left">
+<h4>5</h4>
+<div class="comment-author">From <a href="http://www.eng.tau.ac.il/%7Euuddii" rel="external nofollow" class="url">Udi</a></div>
+<div class="comment-date"><a href="#comment-684" title="">on Jun 27, 2007<br> at 1:55 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>Thanks Mojo,   Very good explain regarding the clip.<br>
+I liked the tip how to drop the extra areas.</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-775">
+<div class="comment-left">
+<h4>6</h4>
+<div class="comment-author">From <a href="http://www.marziacompassi.it/gestire-le-immagini-in-ogni-occasione" rel="external nofollow" class="url">Gestire le immagini in ogni occasione | Marzia Compassi</a></div>
+<div class="comment-date"><a href="#comment-775" title="">on Jul 2, 2007<br> at 4:51 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] ai tre che ho presentato non molto tempo fa in Gallerie di
+miniature non omogenee:si tratta di Creating Thumbnails Using the CSS
+Clip Property che, come dice il titolo, usa la propriet clip per
+tagliare la parte eccedente [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-1890">
+<div class="comment-left">
+<h4>7</h4>
+<div class="comment-author">From <a href="http://www.genetic.edu.vn/" rel="external nofollow" class="url">vik</a></div>
+<div class="comment-date"><a href="#comment-1890" title="">on Aug 7, 2007<br> at 12:15 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>I think this is a great idea! I like it! Thank for your article!</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-1953">
+<div class="comment-left">
+<h4>8</h4>
+<div class="comment-author">From <a href="http://www.chromasynthetic.com/blog/archive/70" rel="external nofollow" class="url">chromaSYNTHETIC Journal » Blog Archive » Cool Flash Effect Without Flash</a></div>
+<div class="comment-date"><a href="#comment-1953" title="">on Aug 8, 2007<br> at 11:21 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] like this: clip: rect(20, 100, 100, 20). For more info on
+using the clip property, try this thumbnail tutorial. Luckily, while
+searching the Mootools forums, I came across Fx.CSS.Clip. Here’s how I
+[...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-3420">
+<div class="comment-left">
+<h4>9</h4>
+<div class="comment-author">From <a href="http://www.fatihhayrioglu.com/?p=391" rel="external nofollow" class="url">Fatih Hayrioğlu’nun not defteri » Kutu Modeli - Görünürlük Özellikleri</a></div>
+<div class="comment-date"><a href="#comment-3420" title="">on Sep 6, 2007<br> at 8:41 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] <a href="http://www.seifi.org/css/creating-thumbnails-using-the-css-clip-property.html" rel="nofollow">http://www.seifi.org/css/creating-thumbnails-using-the-css-clip-property.html</a> [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-10209">
+<div class="comment-left">
+<h4>10</h4>
+<div class="comment-author">From <a href="http://joeabiraad.com/" rel="external nofollow" class="url">Jo</a></div>
+<div class="comment-date"><a href="#comment-10209" title="">on Dec 16, 2007<br> at 12:06 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>Ouufff I cant believe i didn’t know this property before… </p>
+<p>Very nice</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-10211">
+<div class="comment-left">
+<h4>11</h4>
+<div class="comment-author">From <a href="http://zurich.dailyphoto.forthmedia.com/" rel="external nofollow" class="url">Richard</a></div>
+<div class="comment-date"><a href="#comment-10211" title="">on Dec 16, 2007<br> at 1:42 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>@mike. Mojos function is very useful especially if you want to
+present a matrix of square thumbnails, and then allow a mouseover which
+pops up the full-size thubmnail for example. You don’t need to retreive
+the image from the server on the mousover</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-16668">
+<div class="comment-left">
+<h4>12</h4>
+<div class="comment-author">From <a href="http://www.obvius.com.br/blog" rel="external nofollow" class="url">Majesticskull</a></div>
+<div class="comment-date"><a href="#comment-16668" title="">on Apr 15, 2008<br> at 3:53 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>Very cool, i did not know this property.</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-19370">
+<div class="comment-left">
+<h4>13</h4>
+<div class="comment-author">From <a href="http://www.pluff-sky.net/" rel="external nofollow" class="url">Borislav</a></div>
+<div class="comment-date"><a href="#comment-19370" title="">on Jun 14, 2008<br> at 10:54 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>This guide is actually only usable Clip guide I’ve found!</p>
+<p>Thanks for sharing!</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-19497">
+<div class="comment-left">
+<h4>14</h4>
+<div class="comment-author">From <a href="http://csshack.wordpress.com/2008/08/26/165-bugs-in-ie7-browser/" rel="external nofollow" class="url">165 bugs in IE7 Browser « Css Hack</a></div>
+<div class="comment-date"><a href="#comment-19497" title="">on Aug 25, 2008<br> at 11:49 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...]  [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-19594">
+<div class="comment-left">
+<h4>15</h4>
+<div class="comment-author">From <a href="http://wigginsdesign.wordpress.com/2008/12/22/css-crop-image-to-square/" rel="external nofollow" class="url">CSS crop image to Square « Idea Blog</a></div>
+<div class="comment-date"><a href="#comment-19594" title="">on Dec 22, 2008<br> at 3:42 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] December 22, 2008 I need to size and crop an image into a
+square thumbnail using CSS
+&nbsp;http://www.seifi.org/css/creating-thumbnails-using-the-css-clip-property.html
+[...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-19636">
+<div class="comment-left">
+<h4>16</h4>
+<div class="comment-author">From JohnV</div>
+<div class="comment-date"><a href="#comment-19636" title="">on Jan 29, 2009<br> at 11:32 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>This is excellent.  Thank you and nice job!</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-19647">
+<div class="comment-left">
+<h4>17</h4>
+<div class="comment-author">From <a href="http://www.thatcssguy.com/css-gems-you-might-be-missing-out-on/" rel="external nofollow" class="url">CSS Gems You Might Be Missing Out On&nbsp;|&nbsp;That Css Guy!</a></div>
+<div class="comment-date"><a href="#comment-19647" title="">on Feb 9, 2009<br> at 2:28 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] Seifi.org does a nice write up on using clip to create thumbnails. Have a read! [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-20187">
+<div class="comment-left">
+<h4>18</h4>
+<div class="comment-author">From jenny</div>
+<div class="comment-date"><a href="#comment-20187" title="">on May 1, 2009<br> at 11:44 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>I still wonder what this property is good for. By the markup you
+used, you could have get the exact same effect by a combination of
+overflow:hidden with width and hight on the outer element and
+position:absolute on the inner element.</p>
+<p>I assume its the hope for more shapes than rect that makes the difference.</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-20759">
+<div class="comment-left">
+<h4>19</h4>
+<div class="comment-author">From Bucksuper</div>
+<div class="comment-date"><a href="#comment-20759" title="">on May 13, 2009<br> at 10:50 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>I really can’t see how anyone would complain about this tutorial. It’s very sick and I really appreciate it!</p>
+<p>Awesome Job!!!</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-20940">
+<div class="comment-left">
+<h4>20</h4>
+<div class="comment-author">From <a href="http://www.howtoweb.it/articoli/5-ottimi-links-sui-css-che-non-puoi-perderti/" rel="external nofollow" class="url">5 ottimi links sui css che non puoi perderti | Howtoweb.it</a></div>
+<div class="comment-date"><a href="#comment-20940" title="">on May 16, 2009<br> at 10:13 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] Creare thumbnail grazie alla proprrietà clip [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21209">
+<div class="comment-left">
+<h4>21</h4>
+<div class="comment-author">From <a href="http://www.planetaikon.com/" rel="external nofollow" class="url">anuja</a></div>
+<div class="comment-date"><a href="#comment-21209" title="">on Jun 5, 2009<br> at 1:07 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>Good Article, But this clip function cannot be called as the
+thumbnail creation, but used only for cropping of the original images,
+as thumbnail images are the small version of the original image, and
+not the cropped ones…cause while cropping some portion of the image may
+be cut from the images, whereas in thumbnail the entire image is seen
+but in miniature form…take the above image as an example, the green
+garden at the left and right side has been cut off entirely….</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21214">
+<div class="comment-left">
+<h4>22</h4>
+<div class="comment-author">From <a href="http://www.havesmile.com/" rel="external nofollow" class="url">Mentionality</a></div>
+<div class="comment-date"><a href="#comment-21214" title="">on Jun 8, 2009<br> at 12:04 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>Great post. Thanks very much, guy</p>
+<p>Keep it up.</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21243">
+<div class="comment-left">
+<h4>23</h4>
+<div class="comment-author">From <a href="http://www.netcrema.com/?p=7508" rel="external nofollow" class="url">Creating Thumbnails Using the CSS Clip Property « Netcrema - creme de la social news via digg + delicious + stumpleupon + reddit</a></div>
+<div class="comment-date"><a href="#comment-21243" title="">on Jul 14, 2009<br> at 2:15 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] Creating Thumbnails Using the CSS Clip Propertyseifi.org [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21246">
+<div class="comment-left">
+<h4>24</h4>
+<div class="comment-author">From <a href="http://simplyfull.com/" rel="external nofollow" class="url">Steve Rose</a></div>
+<div class="comment-date"><a href="#comment-21246" title="">on Jul 14, 2009<br> at 3:45 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>This may be useful for me. I have several corporate logos to display
+as content images rather than background images. I was wondering if
+there was a “css sprite method” that would be useful, and this might
+work. Thanks.</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21247">
+<div class="comment-left">
+<h4>25</h4>
+<div class="comment-author">From <a href="http://www.andysowards.com/blog/nerdy-daily-web-development-design-links/daily-links-260" rel="external nofollow" class="url">Daily
+Links | AndySowards.com :: Professional Web Design, Development,
+Programming, Hacks, Downloads, Math and being a Web 2.0 Hipster?</a></div>
+<div class="comment-date"><a href="#comment-21247" title="">on Jul 14, 2009<br> at 6:02 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] Creating Thumbnails Using the CSS Clip Property Interesting
+use of CSS Clip property (tags: design webdesign tutorial development
+webdev gallery resize crop) [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21250">
+<div class="comment-left">
+<h4>26</h4>
+<div class="comment-author">From nonbreakingspace</div>
+<div class="comment-date"><a href="#comment-21250" title="">on Jul 14, 2009<br> at 7:23 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>An alternative, that I find supported in more browsers is simply
+using the normal CSS Clipping style, you’ve even got the same markup
+(though perhaps i’d change the second div for a span)</p>
+<p>-also your post captcha doesn’t work with javascript disabled <img src="creating%20thumbnails%20using%20css%20clip%20property_files/icon_sad.gif" alt=":(" class="wp-smiley"> </p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21251">
+<div class="comment-left">
+<h4>27</h4>
+<div class="comment-author">From <a href="http://zyzik.wordpress.com/2009/07/15/30-fresh-links-2/" rel="external nofollow" class="url">30 fresh links! « Adrian Zyzik’s Weblog</a></div>
+<div class="comment-date"><a href="#comment-21251" title="">on Jul 15, 2009<br> at 7:35 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] Tools To Create Wi… 60+ Vintage Style Textures Every Designer
+Should Have – Web Design Creating Thumbnails Using the CSS Clip
+Property 40 Sexy And Creative Typographic Logo Designs Spyre Studios
+Advanced jQuery Photojojo How to Make [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21252">
+<div class="comment-left">
+<h4>28</h4>
+<div class="comment-author">From <a href="http://www.redesignyourbiz.com/" rel="external nofollow" class="url">Web Design Mumbai</a></div>
+<div class="comment-date"><a href="#comment-21252" title="">on Jul 15, 2009<br> at 7:51 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>wow, this is a really wonderful tutorial. very helpful.</p>
+<p>thanks</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21253">
+<div class="comment-left">
+<h4>29</h4>
+<div class="comment-author">From <a href="http://www.merlinvicki.in/" rel="external nofollow" class="url">merlinvicki</a></div>
+<div class="comment-date"><a href="#comment-21253" title="">on Jul 15, 2009<br> at 9:43 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>Thanks. had completely forgotten about it. Good for pages where you are not using many thumbnails.</p>
+<p>vicki pandit | User Interface<br>
+<a href="http://twitter.com/merlinvicki" rel="nofollow">http://twitter.com/merlinvicki</a></p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21254">
+<div class="comment-left">
+<h4>30</h4>
+<div class="comment-author">From cjlambre</div>
+<div class="comment-date"><a href="#comment-21254" title="">on Jul 15, 2009<br> at 10:03 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>It’s a very interesting tutorial; great information and useful
+documentation of a CSS property I would not have otherwise thought of
+or considered. But it also seems like you have to be careful in it’s
+use. I don’t think it would work well for creating thumbnails of photos
+of people, for example. Because you’re clipping and not actually
+shrinking the original image to create the thumbnail, a photo of a
+person’s face might clip to a thumbnail of their left nostril.</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21255">
+<div class="comment-left">
+<h4>31</h4>
+<div class="comment-author">From <a href="http://www.4exp.net/links-for-2009-07-15/" rel="external nofollow" class="url">links for 2009-07-15 » 4exp.net</a></div>
+<div class="comment-date"><a href="#comment-21255" title="">on Jul 15, 2009<br> at 10:07 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] Creating Thumbnails Using the CSS Clip Property (tags: css xhtml images html javascript tutorial) [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21259">
+<div class="comment-left">
+<h4>32</h4>
+<div class="comment-author">From <a href="http://www.lowdownandirty.com/" rel="external nofollow" class="url">Jared Lyvers</a></div>
+<div class="comment-date"><a href="#comment-21259" title="">on Jul 15, 2009<br> at 3:16 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>Hmm, lat post cut off. Gonna Try again.</p>
+<p>After reading over this tutorial one of my colleges mentioned to
+just set the image as a background and then use positioning to get the
+same effect. The while reading the comments I noticed that one comment
+mentioned that you could simply use the overflow:hidden to get the same
+effect. Another comment mentioned this would only work for images that
+were not of peoples faces.</p>
+<p>Using the clip property is one of those that needs to be used with
+thought. I have found that the best solution for using the clip
+property is as follows:</p>
+<p>I use the PHP function getimagesize() to find the width and height
+of each image being loaded. You can then reduce that by 50%. This will
+allow you to place the image at a reduced size thus reducing the risk
+of only showing part of a fingernail or a nostril. Once you have done
+that you can add in an anchor tag that surrounds the .clipin div so you
+can use the hover tag to show the full reduced view of the image on
+rollover. This will also allow you to add in a thickBox statement to
+preview the full sized image that has already been loaded into cache
+thus reducing overall hits back to the server.</p>
+<p>The new code is as follows:<br>
+.clipout{<br>
+  position:relative;<br>
+  width:136px;<br>
+  height:105px;<br>
+  top:-1px;<br>
+  left:-1px;<br>
+}<br>
+.clipin{<br>
+  position:absolute;<br>
+  clip:rect(50px 218px 155px 82px);<br>
+  top:-50px;<br>
+  left:-82px;<br>
+  z-index:50 !important;<br>
+}<br>
+a:hover .clipin{<br>
+	position:absolute;<br>
+	clip:rect(auto, auto, auto, auto);<br>
+  	top:0px;<br>
+  	left:0px;<br>
+	z-index:100 !important;<br>
+	}<br>
+img{<br>
+	border:none;<br>
+	outline:none;<br>
+	}</p>
+<p>&lt;?php<br>
+	// get width and height and dump into $img array<br>
+	$img = getimagesize(”imgName.jpg”);<br>
+	// reduce the width and height of each image<br>
+	$reducedWidth = round($img[0]/1.4);<br>
+	$reducedHeight = round($img[1]/1.4);<br>
+?&gt;</p>
+<p>&lt;div class=”clipout”&gt;<br>
+    &lt;a href=”#”&gt;<br>
+        &lt;div class=”clipin”&gt;<br>
+        	&lt;img src=”imgName.jpg” width=”&lt;?php echo $reducedWidth;?&gt;” height=”&lt;?php echo $reducedHeight;?&gt;” /&gt;<br>
+        &lt;/div&gt;<br>
+    &lt;/a&gt;<br>
+&lt;/div&gt;</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21270">
+<div class="comment-left">
+<h4>33</h4>
+<div class="comment-author">From <a href="http://www.anieto2k.com/2009/07/31/crea-miniaturas-con-la-propiedad-clip-de-css/" rel="external nofollow" class="url">Crea miniaturas con la propiedad clip de CSS | aNieto2K</a></div>
+<div class="comment-date"><a href="#comment-21270" title="">on Jul 31, 2009<br> at 1:24 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] me he encontrado con este artículo (que creo es un poco
+antiguo) en el que nos muestran como crear miniaturas con CSS,
+concretamente [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21271">
+<div class="comment-left">
+<h4>34</h4>
+<div class="comment-author">From <a href="http://blogografia.com/crea-miniaturas-con-la-propiedad-clip-de-css.html" rel="external nofollow" class="url">Crea miniaturas con la propiedad clip de CSS : Blogografia</a></div>
+<div class="comment-date"><a href="#comment-21271" title="">on Jul 31, 2009<br> at 2:01 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] me he encontrado con este artículo (que creo es un poco
+antiguo) en el que nos muestran como crear miniaturas con CSS,
+concretamente [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21272">
+<div class="comment-left">
+<h4>35</h4>
+<div class="comment-author">From <a href="http://sepehr.mp/" rel="external nofollow" class="url">Sepehr Lajevardi</a></div>
+<div class="comment-date"><a href="#comment-21272" title="">on Jul 31, 2009<br> at 7:47 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>great article, thanks <img src="creating%20thumbnails%20using%20css%20clip%20property_files/icon_wink.gif" alt=";)" class="wp-smiley"> </p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21273">
+<div class="comment-left">
+<h4>36</h4>
+<div class="comment-author">From <a href="http://tinybrandsrock.com/" rel="external nofollow" class="url">Marty</a></div>
+<div class="comment-date"><a href="#comment-21273" title="">on Jul 31, 2009<br> at 8:26 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>Is this a css 3 feature, because it isn’t working for me. </p>
+<p>this is my html:</p>
+<p>this is my css:</p>
+<p>.clipwrapper 					{ position: relative; height:314px; }<br>
+.clip							{ position: absolute; clip: 50px 118px 55px 82px; }</p>
+<p>this is the page:</p>
+<p><a href="http://martyandbeth.com/tutorials/css/" rel="nofollow">http://martyandbeth.com/tutorials/css/</a></p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21274">
+<div class="comment-left">
+<h4>37</h4>
+<div class="comment-author">From <a href="http://www.neurosoftware.ro/programming-blog/blogposter/web-resources/creating-thumbnails-using-the-css-clip-property/" rel="external nofollow" class="url">Creating Thumbnails Using the CSS Clip Property - Programming Blog</a></div>
+<div class="comment-date"><a href="#comment-21274" title="">on Jul 31, 2009<br> at 5:28 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] is useful for clipping images and creating thumbnails without
+having to create additional files. Creating Thumbnails Using the CSS
+Clip Property can be used to create square thumbnails, or to create
+other varieties of thumbnails without [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21275">
+<div class="comment-left">
+<h4>38</h4>
+<div class="comment-author">From <a href="http://www.extratuts.com/css-only-images-tutorials-renewable" rel="external nofollow" class="url">CSS-Only Images Tutorials ( renewable ) | ExtraTuts</a></div>
+<div class="comment-date"><a href="#comment-21275" title="">on Jul 31, 2009<br> at 8:39 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] Creating Thumbnails Using the CSS Clip Property [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21276">
+<div class="comment-left">
+<h4>39</h4>
+<div class="comment-author">From <a href="http://craftyman.net/generar-thumbnails-con-css/" rel="external nofollow" class="url">Generar Thumbnails con CSS - Craftyman Blog</a></div>
+<div class="comment-date"><a href="#comment-21276" title="">on Jul 31, 2009<br> at 11:52 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] Mas detalles: Seifi.org [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21277">
+<div class="comment-left">
+<h4>40</h4>
+<div class="comment-author">From <a href="http://trackteq.com/2009/creating-thumbnails-using-the-css-clip-property/" rel="external nofollow" class="url">Creating Thumbnails Using the CSS Clip Property | trackteq.com</a></div>
+<div class="comment-date"><a href="#comment-21277" title="">on Aug 1, 2009<br> at 1:00 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] for writing images as well as formulating thumbnails but
+carrying to emanate one more files. Creating Thumbnails Using a CSS
+Clip Property can be used to emanate block thumbnails, or to emanate
+alternative varieties of thumbnails but [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21278">
+<div class="comment-left">
+<h4>41</h4>
+<div class="comment-author">From <a href="http://marceloferreiro.com/varios/temas-interesantes/?p=35" rel="external nofollow" class="url">Crea miniaturas con la propiedad clip de CSS « Cosas interesantes que encontré en la web</a></div>
+<div class="comment-date"><a href="#comment-21278" title="">on Aug 1, 2009<br> at 11:01 pm</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] me he encontrado con este artículo (que creo es un poco
+antiguo) en el que nos muestran como crear miniaturas con CSS,
+concretamente [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="" id="comment-21279">
+<div class="comment-left">
+<h4>42</h4>
+<div class="comment-author">From <a href="http://dubo.cl/links-for-2009-08-01/" rel="external nofollow" class="url">links for 2009-08-01 &amp;raquo Dubo.cl</a></div>
+<div class="comment-date"><a href="#comment-21279" title="">on Aug 2, 2009<br> at 6:06 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] Creating Thumbnails Using the CSS Clip Property Como hacer
+crop a una foto con la propiedad clip de CSS (tags: css howto tutorial
+clip crop photos pictures) Otros artículoslinks for 2009-07-31links for
+2009-04-30links for 2009-01-06links for 2009-05-31links for 2009-01-20
+[...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+<li class="alt" id="comment-21280">
+<div class="comment-left">
+<h4>43</h4>
+<div class="comment-author">From <a href="http://www.tudormoldovan.com/blog/de-pe-net-4/" rel="external nofollow" class="url">tudor moldovan · blog personal</a></div>
+<div class="comment-date"><a href="#comment-21280" title="">on Aug 3, 2009<br> at 6:25 am</a> </div>
+</div>
+<div class="comment_right">
+<div class="comment-text">
+<p>[...] Tutorial CSS Clip pentru decuparea imaginilor cu CSS – foarte
+util Tutorial – Margini rotunde cu CSS3 Harta Clujului pentru iPhone
+Apple tablet se lanseaza in septembrie The Expendables (2010) –
+interesanta distributia filmului: Stallone, Jet Li, Schwarzenegger,
+Jason Statham, Burce Willis etc [...]</p>
+</div>
+</div><div style="clear: both; height: 2px;"></div>
+</li>
+</ol>
+
+
+
+<h3 id="respond"><span>Leave a Reply</span>
+<div id="spread">
+<a href="http://del.icio.us/post?v=2&amp;url=http://www.seifi.org/css/creating-thumbnails-using-the-css-clip-property.html&amp;title=Creating%20Thumbnails%20Using%20the%20CSS%20Clip%20Property"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/delicious.png" alt="" width="16" border="0" height="16"></a>
+<a href="http://digg.com/submit?phase=3&amp;url=http://www.seifi.org/css/creating-thumbnails-using-the-css-clip-property.html&amp;title=Creating%20Thumbnails%20Using%20the%20CSS%20Clip%20Property"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/digg.png" alt="" width="16" border="0" height="16"></a>
+<a href="http://www.dzone.com/links/add.html?url=http://www.seifi.org/css/creating-thumbnails-using-the-css-clip-property.html&amp;title=Creating%20Thumbnails%20Using%20the%20CSS%20Clip%20Property&amp;description="><img src="creating%20thumbnails%20using%20css%20clip%20property_files/dzone.png" alt="" width="16" border="0" height="16"></a>
+<a href="http://reddit.com/submit?url=http://www.seifi.org/css/creating-thumbnails-using-the-css-clip-property.html&amp;title=Creating%20Thumbnails%20Using%20the%20CSS%20Clip%20Property"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/reddit.png" alt="" width="16" border="0" height="16"></a>
+<a href="http://technorati.com/faves/?add=http://www.seifi.org"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/technorati.png" alt="" width="16" border="0" height="16"></a>
+<a href="http://www.stumbleupon.com/submit?url=http://www.seifi.org/css/creating-thumbnails-using-the-css-clip-property.html"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/stumbleupon.png" alt="" width="16" border="0" height="16"></a>
+</div>
+</h3>
+<form action="http://www.seifi.org/wp-comments-post.php" method="post" id="commentform">
+<p><input name="author" id="author" value="" size="22" tabindex="1" type="text">
+<label for="author">Name (required)</label></p>
+<p><input name="email" id="email" value="" size="22" tabindex="2" type="text">
+<label for="email">Mail (will not be published) (required)</label></p>
+<p><input name="url" id="url" value="" size="22" tabindex="3" type="text">
+<label for="url">Website</label><div id="answerdiv">
+       
+       
+    	     <p>
+            <input name="answer" id="answer" size="6" tabindex="4" type="text"> <label for="answer">Please add 3 and 7</label>     
+
+
+            </p>
+        </div></p>
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; &lt;pre lang=&quot;&quot; line=&quot;&quot; escaped=&quot;&quot;&gt; </small></p>-->
+<p><textarea name="comment" id="comment" cols="20" rows="6" tabindex="4"></textarea></p>
+<p><input name="submit" id="submit" tabindex="5" value="Submit Comment" type="submit">
+<input name="comment_post_ID" value="553" type="hidden">
+</p>
+
+        
+        
+         <script type="text/javascript">
+            var urlField = document.getElementById("url");
+            var submitp = urlField.parentNode;
+            var answerDiv = document.getElementById("answerdiv");
+            submitp.appendChild(answerDiv, urlField);
+        </script>
+        
+        </form>
+		</div>
+		</div>
+		<div id="rightbar">
+<div id="archive"><div id="archivewrap">
+<h3><span>Recent Write-ups</span></h3>
+<ul>
+	<li><a href="http://www.seifi.org/javascript/wishlist-browsers-contain-major-javascript-libraries-in-memory.html" title="Wishlist: Browsers contain major JavaScript libraries in memory">Wishlist: Browsers contain major JavaScript libraries in memory</a></li>
+	<li><a href="http://www.seifi.org/design/how-to-import-your-old-emails-into-gmail-the-right-way.html" title="How to Import Your Old Emails into Gmail the right way">How to Import Your Old Emails into Gmail the right way</a></li>
+	<li><a href="http://www.seifi.org/design/lucky-night-at-the-carcass-gig-in-hollywood.html" title="Lucky night at the Carcass gig in Hollywood">Lucky night at the Carcass gig in Hollywood</a></li>
+	<li><a href="http://www.seifi.org/business/what-the-captcha-or-why-ticketmaster-is-lame.html" title="What the Captcha? or why TicketMaster is lame">What the Captcha? or why TicketMaster is lame</a></li>
+	<li><a href="http://www.seifi.org/microsoft/seinfeld-microsoft-ads.html" title="Seinfeld Microsoft Ads">Seinfeld Microsoft Ads</a></li>
+	<li><a href="http://www.seifi.org/javascript/google-chrome-first-impressions.html" title="Google Chrome First Impressions">Google Chrome First Impressions</a></li>
+	<li><a href="http://www.seifi.org/javascript/javascript-arguments.html" title="JavaScript Arguments">JavaScript Arguments</a></li>
+	<li><a href="http://www.seifi.org/css/yummy-yummy-new-delicious-design.html" title="Yummy Yummy, New Delicious Design">Yummy Yummy, New Delicious Design</a></li>
+<li class="moreless"><a href="http://www.seifi.org/archives/">Article Archives »</a></li>
+</ul>				
+</div></div>
+
+<div class="adbanner1">
+
+<ul>
+<li> <a href="http://www.reverselookupsite.com/">Reverse Phone Number Search</a> </li>
+<li> <a href="http://www.synotac.com/">Portland Web Development</a> </li>
+<li> <a href="http://www.onlydare.com/">LG Dare Accessories</a> </li>
+<li> <a href="http://www.misc-perl-info.com/perl-basics.html">Perl Basics Tutorial</a> </li>
+<li> <a href="http://www.interspire.com/shoppingcart">shopping cart software</a> </li>
+</ul></div>
+
+<div id="bookmarks"><div id="bookmarkswrap"><h3><span>Link Gold Mine</span></h3>
+<ul class="delicious"><li class="delicious-item"><a href="http://www.cheeseandburger.com/" class="delicious-link">Cheese &amp; Burger Society</a><br><span class="delicious-desc">Getting Hungry</span></li><li class="delicious-item"><a href="http://flxhr.flensed.com/" class="delicious-link">flXHR - Cross-Domain Ajax using Flash</a></li><li class="delicious-item"><a href="http://listen.grooveshark.com/" class="delicious-link">Grooveshark</a><br><span class="delicious-desc">Listen to Free Music</span></li><li class="delicious-item"><a href="http://www.spotify.com/en/download/windows/" class="delicious-link">Goodbye Pandora, Hello Spotify</a></li><li class="delicious-item"><a href="http://piecesofrakesh.blogspot.com/2009/03/downloading-javascript-files-in.html" class="delicious-link">Downloading JavaScript Files in Parallel</a></li><li class="delicious-item"><a href="http://androgeek.com/wp-content/uploads/2009/07/middle-east-western-us-citieis-3g-speed-performancel.gif" class="delicious-link">3G Speed Comparison</a></li><li class="delicious-item"><a href="http://www.imaging-resource.com/IMCOMP/COMPS01.HTM" class="delicious-link">Comparometer</a><br><span class="delicious-desc">compare DSLR cameras with real photos</span></li><li class="delicious-item"><a href="http://robgalbraith.com/bins/camera_multi_page.asp?cid=6007-9424" class="delicious-link">SD Card Write Speed Comparison Charts</a><br><span class="delicious-desc">Canon EOS Rebel</span></li></ul></div></div>
+
+<div style="margin: 10px 0pt 0pt; text-align: center;"><a href="http://www.anrdoezrs.net/click-3532088-10683031" target="_top" style="margin-right: 10px;"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/image-3532088-10683031.jpg" alt="Sync your files across computers with Dropbox" width="125" border="0" height="125"></a><a href="http://www.anrdoezrs.net/click-3532088-10572024" target="_top"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/image-3532088-10572024.gif" alt="MacMall's Apple Sale! " width="125" border="0" height="125"></a><br>
+<a href="http://www.jdoqocy.com/click-3532088-10590056" target="_top" style="margin: 10px 10px 0pt 0pt;"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/image-3532088-10590056.jpg" alt="Guitar Hero Metallica is Now Shipping!" width="125" border="0" height="125"></a><a href="http://www.tkqlhce.com/click-3532088-10451795" target="_top" style="margin: 10px 0pt 0pt;"><img src="creating%20thumbnails%20using%20css%20clip%20property_files/image-3532088-10451795.jpg" alt="Once You Know, You Newegg" width="125" border="0" height="125"></a></div>
+
+</div>
+	</div>
+	<div id="bottom">
+		<div id="bottom_wrap">
+			<div id="bottom_left">
+
+<div id="links">
+					<h3><span>Reference</span></h3>
+<ul>
+<li><a href="http://developer.mozilla.org/en/docs/Gecko_DOM_Reference">DOM</a></li>
+<li><a href="http://en.wikipedia.org/wiki/DOM_Events">DOM Events</a></li>
+<li><a href="http://prototypejs.org/api">Prototype API</a></li>
+<li><a href="http://www.sergiopereira.com/articles/prototype.js.html">Using Prototype</a></li>
+<li><a href="http://codepunk.hardwar.org.uk/css2js.htm">CSS to JS</a></li>
+<li><a href="http://www.json.org/">JSON</a></li>
+<li><a href="http://jquery.com/">Jquery</a></li>
+<li><a href="http://dojotoolkit.org/">Dojo</a></li>
+<li><a href="http://openrico.org/rico/home.page">Rico</a></li>
+<li><a href="http://mootools.net/">Moo</a></li>
+<li><a href="http://getahead.org/dwr">DWR</a></li>
+<li><a href="http://developer.yahoo.com/yui/">Yahoo UI</a></li>
+<li><a href="http://code.google.com/">Google Code</a></li>
+<li><a href="http://www.ccs.neu.edu/home/dherman/javascript/behavior/">Behaviour</a></li>
+<li><a href="http://mochikit.com/">Mochikit</a></li>
+<li><a href="http://script.aculo.us/">Scriptaculous</a></li>
+<li><a href="http://www.eclipse.org/atf/">Eclipse ATF</a></li>
+<li><a href="http://xmljs.sourceforge.net/index.html">XML Script</a></li>
+</ul>
+</div>
+	
+			</div>
+			<div id="bottom_right">
+				<div id="tags">
+					<h3><span>Tags</span></h3>
+					<ul>	<li class="cat-item cat-item-339"><a href="http://www.seifi.org/category/ajax" title="View all posts filed under ajax">ajax</a>
+</li>
+	<li class="cat-item cat-item-309"><a href="http://www.seifi.org/category/apple" title="View all posts filed under apple">apple</a>
+</li>
+	<li class="cat-item cat-item-313"><a href="http://www.seifi.org/category/browsers" title="View all posts filed under browsers">browsers</a>
+</li>
+	<li class="cat-item cat-item-289"><a href="http://www.seifi.org/category/business" title="View all posts filed under business">business</a>
+</li>
+	<li class="cat-item cat-item-306"><a href="http://www.seifi.org/category/cool" title="View all posts filed under cool">cool</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://www.seifi.org/category/css" title="css">css</a>
+</li>
+	<li class="cat-item cat-item-327"><a href="http://www.seifi.org/category/design" title="View all posts filed under design">design</a>
+</li>
+	<li class="cat-item cat-item-338"><a href="http://www.seifi.org/category/domains" title="View all posts filed under domains">domains</a>
+</li>
+	<li class="cat-item cat-item-33"><a href="http://www.seifi.org/category/email" title="View all posts filed under email">email</a>
+</li>
+	<li class="cat-item cat-item-290"><a href="http://www.seifi.org/category/family" title="View all posts filed under family">family</a>
+</li>
+	<li class="cat-item cat-item-279"><a href="http://www.seifi.org/category/firebug" title="View all posts filed under firebug">firebug</a>
+</li>
+	<li class="cat-item cat-item-278"><a href="http://www.seifi.org/category/firefox" title="View all posts filed under firefox">firefox</a>
+</li>
+	<li class="cat-item cat-item-291"><a href="http://www.seifi.org/category/food" title="View all posts filed under food">food</a>
+</li>
+	<li class="cat-item cat-item-319"><a href="http://www.seifi.org/category/gadgets" title="View all posts filed under gadgets">gadgets</a>
+</li>
+	<li class="cat-item cat-item-311"><a href="http://www.seifi.org/category/google" title="View all posts filed under google">google</a>
+</li>
+	<li class="cat-item cat-item-336"><a href="http://www.seifi.org/category/iphone" title="View all posts filed under iphone">iphone</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.seifi.org/category/javascript" title="javascript">javascript</a>
+</li>
+	<li class="cat-item cat-item-293"><a href="http://www.seifi.org/category/life" title="View all posts filed under life">life</a>
+</li>
+	<li class="cat-item cat-item-321"><a href="http://www.seifi.org/category/local" title="View all posts filed under local">local</a>
+</li>
+	<li class="cat-item cat-item-312"><a href="http://www.seifi.org/category/maps" title="View all posts filed under maps">maps</a>
+</li>
+	<li class="cat-item cat-item-324"><a href="http://www.seifi.org/category/microsoft" title="View all posts filed under microsoft">microsoft</a>
+</li>
+	<li class="cat-item cat-item-297"><a href="http://www.seifi.org/category/music" title="View all posts filed under music">music</a>
+</li>
+	<li class="cat-item cat-item-302"><a href="http://www.seifi.org/category/people" title="View all posts filed under people">people</a>
+</li>
+	<li class="cat-item cat-item-314"><a href="http://www.seifi.org/category/performance" title="View all posts filed under performance">performance</a>
+</li>
+	<li class="cat-item cat-item-344"><a href="http://www.seifi.org/category/photos" title="View all posts filed under photos">photos</a>
+</li>
+	<li class="cat-item cat-item-323"><a href="http://www.seifi.org/category/php" title="View all posts filed under php">php</a>
+</li>
+	<li class="cat-item cat-item-337"><a href="http://www.seifi.org/category/plugins" title="View all posts filed under plugins">plugins</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.seifi.org/category/portals" title="View all posts filed under portals">portals</a>
+</li>
+	<li class="cat-item cat-item-342"><a href="http://www.seifi.org/category/ror" title="View all posts filed under ror">ror</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.seifi.org/category/searching" title="search egnines">search</a>
+</li>
+	<li class="cat-item cat-item-343"><a href="http://www.seifi.org/category/seo" title="View all posts filed under seo">seo</a>
+</li>
+	<li class="cat-item cat-item-325"><a href="http://www.seifi.org/category/server" title="View all posts filed under server">server</a>
+</li>
+	<li class="cat-item cat-item-283"><a href="http://www.seifi.org/category/software" title="View all posts filed under software">software</a>
+</li>
+	<li class="cat-item cat-item-303"><a href="http://www.seifi.org/category/sports" title="View all posts filed under sports">sports</a>
+</li>
+	<li class="cat-item cat-item-340"><a href="http://www.seifi.org/category/stats" title="View all posts filed under stats">stats</a>
+</li>
+	<li class="cat-item cat-item-335"><a href="http://www.seifi.org/category/testing" title="View all posts filed under testing">testing</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.seifi.org/category/ui" title="user interface">ui</a>
+</li>
+	<li class="cat-item cat-item-334"><a href="http://www.seifi.org/category/video" title="View all posts filed under video">video</a>
+</li>
+	<li class="cat-item cat-item-300"><a href="http://www.seifi.org/category/web20" title="View all posts filed under web2.0">web2.0</a>
+</li>
+	<li class="cat-item cat-item-310"><a href="http://www.seifi.org/category/windows" title="View all posts filed under windows">windows</a>
+</li>
+	<li class="cat-item cat-item-333"><a href="http://www.seifi.org/category/wordpress" title="View all posts filed under wordpress">wordpress</a>
+</li>
+	<li class="cat-item cat-item-328"><a href="http://www.seifi.org/category/yahoo" title="View all posts filed under yahoo">yahoo</a>
+</li>
+</ul>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+<div id="footer">
+	Copyright © 2004-2009 Seifi.org
+</div>
+
+</div>
+</div>
+
+<script type="text/javascript">
+var woopra_id = '1665567130';
+</script>
+<script src="creating%20thumbnails%20using%20css%20clip%20property_files/woopra.js"></script>
+
+<script src="creating%20thumbnails%20using%20css%20clip%20property_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1796620-1";
+urchinTracker();
+</script>
+
+<script src="creating%20thumbnails%20using%20css%20clip%20property_files/3109.js" type="text/javascript"></script>
+<noscript><p><img alt="Performancing Metrics" src="http://pmetrics.performancing.com/3109ns.gif" /></p></noscript>
+
+<!-- Dynamic Page Served (once) in 1.769 seconds -->
+<!-- Cached page served by WP-Cache -->
+</body></html>

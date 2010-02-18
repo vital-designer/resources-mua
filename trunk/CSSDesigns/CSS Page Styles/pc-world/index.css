@@ -1,0 +1,43 @@
+/*Dixon.*/
+.productbodytext {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: normal;
+	color: #000000;
+}
+.pagenumber-active {
+	font-family : verdana, arial, helvetica;
+
+	font-size : 10px;
+		float: left;
+		width: 20px;
+		border: solid 1px #990099;
+		background-color: #e5e5e5;
+		text-align: center;
+		margin: 2px 2px 2px 2px;
+	}
+	
+	 .pagenumber-inactive a, .pagenumber-inactive a:visited, .pagenumber-inactive a:link {
+	font-family : verdana, arial, helvetica;
+text-decoration: none;
+	font-size : 10px;
+		float: left;
+		width: 20px;
+		border: solid 1px #cccccc;
+		text-align: center;
+		margin: 2px 2px 2px 2px;
+	}
+	
+	 .pagenumber-inactive a:hover {
+	font-family : verdana, arial, helvetica;
+		
+	font-size : 10px;
+		float: left;
+		width: 20px;
+		border: solid 1px #990099;
+		text-align: center;
+		margin: 2px 2px 2px 2px;
+		text-decoration: none;
+	}
+

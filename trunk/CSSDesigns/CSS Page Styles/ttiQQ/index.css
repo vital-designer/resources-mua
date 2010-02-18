@@ -1,0 +1,14 @@
+/*TtiQQ*/
+a,a:link,a:link,a:link,a:hover {cursor:pointer} 
+a:link {color:#101AA7} 
+a:visited {color:#101AA7} 
+a:hover,a:active {color:#000000} 
+
+ /* PAGE NUMBERING NAVINGATION */ 	 
+	.paginationTTIQ {background: #f2f2f2;color:#666;padding: 4px 2px 4px 7px;border: 1px solid #ddd;margin: 0 0 1.5em}
+	.paginationTTIQ p {position:relative;text-align:right}
+	.paginationTTIQ p a:link, .paginationTTIQ p a:visited, .paginationTTIQ p a:hover, .paginationTTIQ p a:active {color:#101AA7;text-decoration:none;background:#fff;padding:2px 5px;border: 1px solid #ccc; margin-right:1px}
+	.paginationTTIQ p a:hover {background:#101AA7;color:#fff}
+	.paginationTTIQ p span {text-decoration:none;background:#fff;padding:2px 5px;border: 1px solid #ccc;color:#ccc; margin-right:1px}
+	.paginationTTIQ * {margin:0}
+	.paginationTTIQ h4 {margin-top:-1.45em;padding:0;border:none}

@@ -1,0 +1,14 @@
+/* BEGIN PageBar */
+
+
+
+.pagebarUTH { font-size: 0.6em;font-family:verdana; padding: 0.2em 0.5em; margin-right: 0.1em; border: 1px solid #FFF; background: #FFF; text-decoration: none; }
+.pagebarUTH a, .pageList .this-page {color: #693; text-decoration: underline;border: 1px solid #E3E3E3; text-decoration: none; padding: 0.2em 0.5em; }
+.pagebarUTH a:hover {border: 1px solid #693;} 
+.pagebarUTH a:visited {color: #693; text-decoration: underline; border: 1px solid #E3E3E3; text-decoration: none; padding: 0.2em 0.5em; }
+.pagebarUTH .break { padding: 2px 6px; border: none; background: #FFF; text-decoration: none; }
+.pagebarUTH .this-page { border: 1px solid #693; padding: 0.2em 0.5em; font-weight: bold; background: #693; color: #FFF; }
+.pagebarUTH a:active{color: #360; text-decoration: underline;
+}
+
+/* END PageBar */

@@ -1,0 +1,13 @@
+/*	--------------------------------------------------
+	=ZURB Print Styles
+	-------------------------------------------------- */
+	
+	body { width: 100% !important; }
+	
+	
+	div#admin-header,
+	ul.tabs,
+	div#sidebar,
+	div#site-info { display: none !important; }
+	
+	div.secondary.page-header { display: none !important; }

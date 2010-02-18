@@ -1,0 +1,18 @@
+XML Banner Rotator
+
+This is a highly customizable XML Banner Rotator with more than 35 XML options, including the masking size and speed.
+
+You can control the position of the elements on the screen, the number of images, as well as the colors - all from XML.
+
+As always, you can use this Flabell Flash Component in any size you need, as well as in other HTML or FLA files.
+
+
+
+
+If you have any feedback at all, please send it to us at feedback@flabell.com, or in the comments page.
+
+
+
+
+Thank you for your business,
+The Flabell Team

@@ -1,0 +1,1092 @@
+<!DOCTYPE HTML>
+<html class="enhancements"><head>
+
+	
+	<title>jQuery
+Visualize Plugin: Accessible Charts &amp; Graphs from Table Elements
+using HTML 5 Canvas | Filament Group, Inc., Boston, MA</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="At Filament Group, we build elegant communications and interactions that help people understand, work, and collaborate effectively across a variety of media - from web sites to wireless, to interactive exhibits and print.">
+<meta name="keywords" content="UI, interface design, interaction design, web design, web application design, software application design, web tools, usability, functionality design, extranet design, intranet design, dashboard design, portal design, logical, intuitive, dhtml, mobile applications, handheld workforce automation application, branding, interaction design, content strategy, coding, usability, accessiblity, progressive enhancement, access-oriented, front-end coding, standards-compliant HTML and CSS, jQuery, jQuery UI, information architecture, rapid prototyping, data visualization, Todd Parker, Patty Toland, Maggie Costello, Scott Jehl, Boston">
+
+        <link rel="shortcut icon" href="http://www.filamentgroup.com/images/favicon2.ico" type="image/x-icon">	
+<link rel="alternate" type="application/rss+xml" title="Filament RSS Feed" href="http://www.filamentgroup.com/lab/rss_2.0">
+<link rel="alternate" type="application/atom+xml" title="Filament Atom Feed" href="http://www.filamentgroup.com/lab/atom">
+	<link rel="stylesheet" type="text/css" href="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/basic.css">
+	<script src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/testUserDevice.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		testuserdevice({
+			loadScripts: ['/js/jQuery.js,jQuery.plugins.js,enhanced.js'],
+			loadStyles: [{url: '/css/enhanced.css', media: 'screen'}]
+		});
+	</script>
+	<script src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/a_003" type="text/javascript"></script><script src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/a_002" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/enhanced.css"><script type="text/javascript" src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/jQuery.js"></script><script src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/a" type="text/javascript"></script></head><body id="whatwerethinking">
+
+		<div id="contain">
+
+
+	<div id="header">
+	<div id="headerInner" class="clearfix">
+					<p id="filament_logo"><a href="http://www.filamentgroup.com/">Filament Group, Inc</a></p>
+				
+		<ul id="primaryNavigation" class="clearfix">
+			<li class="whatwedo"><a href="http://www.filamentgroup.com/services">What we do</a></li>
+			<li class="whatwevedone"><a href="http://www.filamentgroup.com/portfolio">What we've done</a></li>
+			<li class="whatwerethinking"><a href="http://www.filamentgroup.com/lab">What we're thinking</a></li>
+			<li class="whoweare"><a href="http://www.filamentgroup.com/about">Who we are</a></li>
+			<li class="contactus"><a href="http://www.filamentgroup.com/contact">Contact Us<span class="arrow"><span></span></span></a></li>
+		</ul>
+	</div><!-- /headerInner -->
+</div><!-- /header -->
+
+	<div id="content" class="clearfix">
+		<div id="primaryContent">
+
+					
+<div class="entry">
+					<div id="overview">
+						<h1>jQuery Visualize Plugin: Accessible Charts &amp; Graphs from Table Elements using HTML 5 Canvas</h1>
+<p class="postData">Posted by Scott on 07/02/2009</p>
+
+<dl class="topics">
+					<dt>Topics:</dt>
+					<dd><a href="http://www.filamentgroup.com/lab/tag/accessibility/" rel="tag">accessibility</a></dd><dd><a href="http://www.filamentgroup.com/lab/tag/canvas/" rel="tag">canvas</a></dd><dd><a href="http://www.filamentgroup.com/lab/tag/javascript/" rel="tag">javascript</a></dd><dd><a href="http://www.filamentgroup.com/lab/tag/jquery/" rel="tag">jQuery</a></dd><dd><a href="http://www.filamentgroup.com/lab/tag/progressive_enhancement/" rel="tag">progressive enhancement</a></dd><dd><a href="http://www.filamentgroup.com/lab/tag/ui_design/" rel="tag">ui design</a></dd><dd><a href="http://www.filamentgroup.com/lab/tag/usability/" rel="tag">usability</a></dd><dd><a href="http://www.filamentgroup.com/lab/tag/visual_design/" rel="tag">visual design</a></dd><dd><a href="http://www.filamentgroup.com/lab/tag/web_standards/" rel="tag">web standards</a></dd>
+				</dl>
+						<p>Accessible
+data visualization in HTML has always been tricky to achieve,
+particularly because elements such as images allow only the most basic
+features for providing textual information to non-visual users. A while
+back, we wrote <a href="http://www.filamentgroup.com/lab/creating_accessible_charts_using_canvas_and_jquery/" title="Creating accessible charts using Canvas and jQuery">an article</a>
+describing a technique we came up with to use JavaScript to scrape data
+from an HTML table and generate charts using the HTML 5 Canvas element.
+The technique is particularly useful because the data for the
+visualization already exists in the page in structured tabular format,
+making it accessible to people who browse the web with a screen reader
+or other assistive technology.</p>
+<p>We've now rewritten and extended the code behind this technique and
+packaged it up as a new jQuery plugin called "visualize", which you can
+download below. The plugin provides a simple method for generating bar,
+line, area, and pie charts from an HTML table, and allows you to
+configure them in a variety of ways. </p>
+					</div>
+		
+					<h2>First, a quick demo</h2>
+<p>In the example below, we have an HTML table populated with sample
+data of a number of employees and their sales by store department.
+We've generated 4 charts from this table, which are shown below.</p>
+<p><iframe src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/a.htm" style="height: 104em;" frameborder="0"></iframe><a title="* This link opens in a new window" href="http://www.filamentgroup.com/examples/charting_v2/" class="iframe external" data-style="height: 104em;">View this example in a new window</a></p>
+
+<h2>So how does it work?</h2>
+<p>First, you'll need to create the table markup:</p>
+
+<pre><code>
+&lt;table &gt;
+	&lt;caption&gt;2009 Individual Sales by Category&lt;/caption&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;/td&gt;
+			&lt;th&gt;food&lt;/th&gt;
+			&lt;th&gt;auto&lt;/th&gt;
+			&lt;th&gt;household&lt;/th&gt;
+			&lt;th&gt;furniture&lt;/th&gt;
+			&lt;th&gt;kitchen&lt;/th&gt;
+			&lt;th&gt;bath&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Mary&lt;/th&gt;
+			&lt;td&gt;150&lt;/td&gt;
+			&lt;td&gt;160&lt;/td&gt;
+			&lt;td&gt;40&lt;/td&gt;
+			&lt;td&gt;120&lt;/td&gt;
+			&lt;td&gt;30&lt;/td&gt;
+			&lt;td&gt;70&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Tom&lt;/th&gt;
+			&lt;td&gt;3&lt;/td&gt;
+			&lt;td&gt;40&lt;/td&gt;
+			&lt;td&gt;30&lt;/td&gt;
+			&lt;td&gt;45&lt;/td&gt;
+			&lt;td&gt;35&lt;/td&gt;
+			&lt;td&gt;49&lt;/td&gt;
+		&lt;/tr&gt;
+		<strong><em>...repetitive rows removed for brevity.</em></strong>	
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</code>
+</pre>
+
+<p>Note that we've used a <code>caption</code> element to summarize the
+table data. This will be used by the visualize plugin to create a title
+on your graph. We've also defined our table headings using <code>th</code> elements, letting the script know which cells it should use as the titles for a data set.</p>
+
+
+<p>Now that we have our HTML table, we can generate a chart. Just attach <a href="http://jquery.com/" title="jQuery">jQuery</a> and our visualize plugin's <a href="http://www.filamentgroup.com/examples/charting_v2/visualize.jQuery.js" title="visualize.jQuery.js">JavaScript</a> and  <a href="http://www.filamentgroup.com/examples/charting_v2/visualize.jQuery.css" title="visualize.jQuery.css">CSS</a> files to your page, and call the <code>visualize()</code> method on the table, like this:</p>
+<pre><code>
+$('table').visualize();
+</code>
+</pre>
+
+<p>That's it! By default, the visualize plugin will generate the first
+bar chart shown above and append it to your page directly after the
+table.</p>
+
+
+
+<h3>Working with a generated chart</h3>
+
+<h4>Finding the generated chart on the page</h4>
+<p>Once you call the <code>visualize()</code> method on a table, the
+new chart element will be returned to the method, allowing you to
+continue your jQuery chain acting upon the chart instead of the table.
+Charts generated by this plugin are contained within a div element with
+a class of "visualize" as well as a class of the chart type, such as
+"visualize-pie". These classes make it easy to find your chart after
+it's generated, for additional presentation and behavioral
+modifications. Another nice way to do this is to store your generated
+chart in a variable, like this: <code>var myChart = $('table').visualize();</code>. Then you can simply reference myChart later on in your script to make any modifications to it, or to remove it from the page.</p>
+
+
+<h4>Updating a chart</h4>
+<p>Every chart generated by the visualize plugin has a custom event
+that can be used to refresh itself using its original settings,
+including which table it should pull data from. This is handy for
+dynamic pages with charts that can update frequently. In fact, we made
+use of this event when creating the editable table example above. To
+refresh an existing chart, simple trigger the <code>visualizeRefresh</code> event on the generated chart element, like this:</p>
+<pre><code>
+$('.visualize').trigger('visualizeRefresh');
+</code>
+</pre>
+
+<h4>Appending the chart to other areas of the page</h4>
+<p>Since calling the <code>visualize()</code> method returns the new chart element, it's easy to immediately append the chart to another area of the page using jQuery's <code>appendTo</code> method. However, once you move the chart to another area in the DOM, you must trigger the <code>visualizeRefresh</code>
+method on it in order for it to display properly in Internet Explorer 6
+and 7. The following code demonstrates appending the chart to the end
+of the page, and then triggering the <code>visualizeRefresh</code> method on it:</p>
+
+<pre><code>
+$('table')
+   .visualize()
+   .appendTo('body')
+   .trigger('visualizeRefresh');
+</code>
+</pre>
+
+<h4>Use CSS to Configure the Text</h4>
+<p>The CSS file that accompanies the visualize plugin handles much of
+the presentation for the key, title, grid lines, and axis labels. So
+for instance, if you need to change the placement of the key, simply
+edit the CSS rules that apply to it (we customized the key in the pie
+chart example above using this same approach).</p>
+
+<h2>Configuring Visualize with options</h2>
+<p>The following options are available in this plugin:</p>
+
+<ul>
+<li><strong>type:</strong> <em>string</em>. Accepts 'bar', 'area', 'pie', 'line'. Default: 'bar'.</li>
+<li><strong>width:</strong> <em>number</em>. Width of chart. Defaults to table width</li>
+<li><strong>height:</strong> <em>number</em>. Height of chart. Defaults to table height</li>
+<li><strong>appendTitle:</strong> <em>boolean</em>. Add title to chart. Default: true.</li>
+<li><strong>title:</strong> <em>string</em>. Title for chart. Defaults to text of table's Caption element.</li>
+<li><strong>appendKey:</strong> <em>boolean</em>. Add the color key to the chart. Default: true.</li>
+<li><strong>colors:</strong> <em>array</em>. Array items are hex
+values, used in order of appearance. Default:
+['#be1e2d','#666699','#92d5ea','#ee8310','#8d10ee','#5a3b16','#26a4ed','#f45a90','#e9e744']</li>
+<li><strong>textColors:</strong>  <em>array</em>. Array items are hex
+values. Each item corresponds with colors array. null/undefined items
+will fall back to CSS text color. Default: [].</li>
+<li><strong>parseDirection:</strong> <em>string</em>. Direction to parse the table data. Accepts 'x' and 'y'. Default: 'x'.</li>
+<li><strong>pieMargin:</strong> <em>number</em>. Space around outer circle of Pie chart. Default: 20.</li>
+<li><strong>pieLabelPos:</strong> <em>string</em>. Position of text labels in Pie chart. Accepts 'inside' and 'outside'. Default: 'inside'.</li>
+<li><strong>lineWeight:</strong> <em>number</em>. Stroke weight for lines in line and area charts. Default: 4.</li>
+<li><strong>barGroupMargin:</strong> <em>number</em>. Space around each group of bars in a bar chart. Default: 10.</li>
+<li><strong>barMargin:</strong> number. Creates space around bars in bar chart (added to both sides of each bar). Default: 1</li>
+</ul>
+<p>To use the options, simply pass them as an argument to the <code>visualize()</code> method using object literal notation, just like most other jQuery plugins you're used to ( for example: <code>visualize({  optionA: valueA, optionB: valueB});</code>).</p>
+
+
+
+<h2>Live Options Configuration Demo</h2>
+<p>To experiment with these options, try out the following configuration demo:</p>
+<p><iframe src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/index_2.htm" style="height: 50em;" frameborder="0"></iframe><a title="* This link opens in a new window" href="http://www.filamentgroup.com/examples/charting_v2/index_2.php" class="iframe external" data-style="height: 50em;">View this example in a new window</a></p>
+
+
+<h2>Download the Code!</h2>
+<p>You can download the scripts and a demo page in the following zip file: <a href="http://www.filamentgroup.com/examples/charting_v2/visualize.filamentgroup.zip">visualize.filamentgroup.zip</a>. The plugin itself is licensed for free distribution with MIT and GPL licenses, just like jQuery itself.  </p>
+
+
+<h2>Browser Support</h2>
+<p>We have tested this plugin in the following browsers: IE6, IE7, IE8, Firefox 2, Firefox 3.5, Safari 3 and 4, Opera 9.</p>
+<h3>Note for Internet Explorer support</h3>
+<p>This plugin uses the HTML 5 canvas element, which is not supported
+in an version of Internet Explorer at this time. Fortunately, Google
+maintains a library that translates canvas scripting into VML, allowing
+it to work in all versions of internet explorer. The script is included
+in the zip. To use it, just be sure to include the script in your page
+using a conditional comment, like this:</p>
+<pre><code>
+&lt;!--[if IE]&gt;&lt;script type="text/javascript" src="excanvas.compiled.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;
+</code>
+</pre>
+
+<h2>Still to-do</h2>
+<p>While this plugin is fairly feature-complete and works well across
+the major browsers, we would like to consider implementing the
+following features:</p>
+<ul>
+<li><strong>Key text formatting:</strong> The ability to configure the text in the keys to show member title, total percentage, total amount, and more</li>
+<li><strong>Interactivity:</strong> We may experiment with adding datapoint tooltips, and other ways to interact with the visualization.</li>
+<li><strong>Support for data subsets:</strong> The ability to specify a subset of the table rows and columns for visualizing.</li>
+</ul>
+
+<h2>Thoughts? Feedback?</h2>
+<p>We'd love to hear what you think of this plugin. Please leave us a comment below!</p>
+
+
+<div class="socialData">
+<script type="text/javascript">digg_url = 'http://www.filamentgroup.com/lab/jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas/'; </script>
+<script src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/diggthis_002.htm" type="text/javascript"></script><iframe src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/diggthis.htm" scrolling="no" width="52" frameborder="0" height="80"></iframe>
+</div>
+					
+</div>
+
+
+					
+
+
+
+
+
+
+
+
+
+
+<div id="comments">
+
+<h2>Comments</h2>
+
+	<div id="commentNumber1" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Very nice, would there be a posibillity to have the barcharts be clickable?
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber1">Comment</a> by <a href="http://www.schwingsoft.com/">Armand</a>  on  07/06 &nbsp;at&nbsp; 02:58 PM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber2" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Is there a way to add a text based
+differentiators for the data as it appears the charts and graphs rely
+on color alone. For example is their a method to add the names of the
+people to the pieces of the pie in the pie chart?
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber2">Comment</a> by <a href="http://www.paciellogroup.com/blog/">steve faulkner</a>  on  07/07 &nbsp;at&nbsp; 01:51 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber3" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Woooooow !
+<br>
+Great !
+<br>
+The ability to specify the which cols and/or rows to use for visualisation will make the script perfect !
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber3">Comment</a> by <a href="http://www.atkati.com/">Atkati</a>  on  07/07 &nbsp;at&nbsp; 02:02 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber4" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>thank you - just great code!
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber4">Comment</a> by <a href="http://www.lukas119.de/">Lukas119</a>  on  07/07 &nbsp;at&nbsp; 02:31 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber5" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Amazing code, thanks a lot!
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber5">Comment</a> by Jake  on  07/07 &nbsp;at&nbsp; 03:49 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber6" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Hi,
+</p>
+<p>
+great job but needs some input into the article :
+<br>
+- the data table is still needed in the page if you want to be truly accessible (and not using display none to hide it)
+<br>- with or without the table for user of screenreader, the script
+add some useless (even confusing sometimes) text to the page like
+series of figures or terms without relationship (even with the aria
+role presentation)
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber6">Comment</a> by goetsu  on  07/07 &nbsp;at&nbsp; 04:50 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber7" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>It seems to have trouble with negative
+numbers--the graph items just go offscreen and the baseline stays at
+zero. At least, that’s what happens when I edit the table in HTML.
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber7">Comment</a> by anon  on  07/07 &nbsp;at&nbsp; 08:48 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber8" class="commentEntry fg">
+
+<div class="commentBody">
+
+	<p>Thanks everyone for the great
+feedback! We’re glad you like this technique and we appreciate the
+comments that point out flaws with the code or suggest improvements to
+the technique.
+</p>
+<p>@Armand: Possibly. We worked up a little script for coordinate-based
+event bindings to do that sort of thing, but didn’t end up including it
+in the release. What sort of behavior would you want to see when
+clicking a bar?
+</p>
+<p>
+@steve faulkner: Currently, no, but we’re considering adding some text options for the labels and key text.
+</p>
+<p>@goetsu: Thanks for your feedback. I don’t think we are using
+display: none; anywhere to hide the table data. Did you see that
+somewhere in the code (maybe we missed it)? We agree with your point
+though: in order for the data to remain accessible, you must not remove
+the table from the page, or from “view” from a screenreader (which
+means don’t use display: none, visibility: hidden). In our second demo,
+we’re applying a class called “accesshide” to hide the table, which
+basically positions it absolutely, way off the left edge of the page. <br>
+Secondly, we gave the chart container element (which contains the
+chart, labels, and color key) a role of “presentation” in hopes that it
+would alert a screenreader user that the contained content was purely
+for visual purposes. I suppose that won’t be very helpful for older
+screenreader versions that don’t support role attributes, though.&nbsp;
+Do you have any recommendations for something we should do in addition
+to the role (or instead)? Thanks!
+</p>
+<p>
+@ anon: thanks. We’ll look into that one soon. It shouldn’t be too difficult to make it work better with negative values.
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber8">Comment</a> by Scott <span class="fgCommenter">(Filament)</span>  on  07/07 &nbsp;at&nbsp; 09:37 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber9" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Neat, but seems to plot the values incorrectly, at least in Firefox 3.5 (Windows).
+</p>
+<p>e.g. Set everything to 5, then set the first two cells (going
+downwards) to 100 and 30 respectively. The bar for 30 ends below the 30
+line on the left.
+</p>
+<p>(It looks wrong in a lot of cases but I thought maybe my brain was
+just perceiving things incorrectly. The 100 &amp; 30 example is one
+where it’s definitely not my brain and the chart which is wrong, unless
+I’ve misunderstood what the table/units/charts represent.)
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber9">Comment</a> by <a href="http://www.pretentiousname.com/">Leo Davidson</a>  on  07/07 &nbsp;at&nbsp; 10:00 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber10" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>...Actually, even from the default values it looks wrong.
+</p>
+<p>
+e.g. Mary’s food value is 150 but the bar ends just below 135. Kate’s bath value is 119 but the bar for it ends just below 108.
+</p>
+<p>Maybe it’s just the scale on the left which is wrong. The top value
+seems right but the way it’s divided up doesn’t match the bars, and
+it’s using unusual numbers for a scale as well (e.g. lines for “81” and
+“27” rather than rounded numbers like 80 and 25).
+</p>
+<p>
+Here’s what I’m seeing in my browser in case it isn’t the same as what you see:
+</p>
+<p>
+<a href="http://www.pretentiousname.com/temp/jqvis.png">http://www.pretentiousname.com/temp/jqvis.png</a>
+</p>
+<p>
+Sorry if it’s all working fine and I’m just being stupid and missing something. <img src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/smile.gif" alt="smile" style="border: 0pt none ;" width="19" height="19">
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber10">Comment</a> by <a href="http://www.pretentiousname.com/">Leo Davidson</a>  on  07/07 &nbsp;at&nbsp; 10:06 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber11" class="commentEntry fg">
+
+<div class="commentBody">
+
+	<p>@Leo: Thanks. I think a little
+rounding error may have popped up while addressing another issue. We’ll
+check into it and post a comment with a fix soon.
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber11">Comment</a> by Scott <span class="fgCommenter">(Filament)</span>  on  07/07 &nbsp;at&nbsp; 10:13 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber12" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>As I say the role presentation is not sufficient because :
+<br>
+- old screenreader doesn’t support ARIA role presentation, 
+<br>- new one will still read the text node in element with the role
+presentation as say the aria spec : “The user agent MAY choose not to
+present all structural aspects of the element being repurposed. For
+example, for a table marked as presentation, the user agent would
+remove the table, td, th, tr, etc. elements from the accessibility API
+mapping, while preserving the individual text elements within them”.
+</p>
+<p>
+possible solutions : 
+<br>
+- render everything within the canvas element
+<br>
+- using some more accesshide text and adding some others aria role to recreate the relationship between value and heading
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber12">Comment</a> by goetsu  on  07/07 &nbsp;at&nbsp; 10:22 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber13" class="commentEntry fg">
+
+<div class="commentBody">
+
+	<p>@goetsu: interesting info, thanks.
+Text rendering in the canvas might be tricky for all the browsers we’re
+supporting (though it’s a good idea to look into). Hmm, what about
+leading the chart block with a visually-hidden message noting the
+visual nature of the following content and an anchor link to skip the
+user past it? Just thinking out loud…
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber13">Comment</a> by Scott <span class="fgCommenter">(Filament)</span>  on  07/07 &nbsp;at&nbsp; 10:39 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber14" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>uhm… amazing script. I’m sure that we’ll use it soon at vizzuality! Thanks!
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber14">Comment</a> by <a href="http://www.simplizzity.net/">saleiva</a>  on  07/07 &nbsp;at&nbsp; 12:58 PM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber15" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Excellent code.
+</p>
+<p>
+Off the topic: Why can’t I select more than one paragraph in each comment? Weird…
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber15">Comment</a> by Alex  on  07/07 &nbsp;at&nbsp; 03:20 PM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber16" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Excellent work <img src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/smile.gif" alt="smile" style="border: 0pt none ;" width="19" height="19">
+</p>
+<p>
+To add a bit to the rounding error pointed out @Leo.
+<br>
+The vertical axis divisions are displayed differently by non-Webkit browsers
+</p>
+<p>
+Safari4 &amp; Chrome2 display: 0, 25, 50,… which increments in a rounded fashion whereas
+<br>
+Firefox3 displays: 0, 27, 54,… (above normal values)
+<br>
+IE8 displays: 0, 24, 48.. (below normal values)
+</p>
+<p>
+Hope this helps.. <img src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/smile.gif" alt="smile" style="border: 0pt none ;" width="19" height="19">
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber16">Comment</a> by Ram  on  07/08 &nbsp;at&nbsp; 08:56 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber17" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Very cool, thanks for sharing your plugin.
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber17">Comment</a> by infocyde  on  07/08 &nbsp;at&nbsp; 01:10 PM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber18" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>This is very impressive, but if you haven’t already seen it, you might want to look at the ‘flot’ charting library? (<a href="http://code.google.com/p/flot/">http://code.google.com/p/flot/</a>).
+It generates some very attractive charts. Rather than writing your own
+charting code, you could consider providing just the part needed to
+turn tables into usable data and then invoking flot to render the data.
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber18">Comment</a> by AngusM  on  07/09 &nbsp;at&nbsp; 06:47 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber19" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>I was working into something similar but did not think about a jQuery plugin, well done!
+</p>
+<p>
+Finally, and hopefully, we could start to use:
+<br>
+&lt;!--[if lt IE 9]&gt; ...
+<br>
+for excanvas library, can we? :D
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber19">Comment</a> by <a href="http://webreflection.blogspot.com/">Andrea Giammarchi</a>  on  07/09 &nbsp;at&nbsp; 09:46 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber20" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Very Nice!&nbsp; I would love to see a
+Google Charts renderer as well, just so business people can right
+click, save chart and send it in email/attachment what have you.
+</p>
+<p>
+Looking forwrd to watching this project.
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber20">Comment</a> by Ivan  on  07/09 &nbsp;at&nbsp; 10:44 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber21" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Amazing stuff!
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber21">Comment</a> by Akash Mehta  on  07/09 &nbsp;at&nbsp; 11:31 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber22" class="commentEntry fg">
+
+<div class="commentBody">
+
+	<p>@ Ram: thanks, we just noticed that as well. Look out for an update soon regarding the Y label/line rounding issue.
+</p>
+<p>@ AngusM: We agree, flot is really nice! The reason we wrote our own
+charting package is to provide a simple chart style for the basic chart
+types (pie, bar, area, line). Flot looks great, and we’d love to see a
+table parser script that supplies flot, but does flot offer more than
+just line charts? </p>
+<p>
+@Andrea: don’t hold your breath <img src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/smile.gif" alt="smile" style="border: 0pt none ;" width="19" height="19">
+</p>
+<p>
+@ Ivan: Indeed, like the comment about Flot, it would be great to send
+the data to google charts as well, particularly considering the amount
+of options that API offers. We think canvas charting has it’s own value
+though, such as not requiring HTTP requests for chart images, which is
+particularly nice when the charts are updated on the fly.
+</p>
+<p>
+@Alex, @infocide, @Akash: Thank you!
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber22">Comment</a> by Scott <span class="fgCommenter">(Filament)</span>  on  07/09 &nbsp;at&nbsp; 11:37 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber23" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Flot offers various types of line and
+area graphs, plus bar graphs (technically, column graphs). Pie charts
+aren’t yet part of the main package, but it looks as if there are
+plugins in development that add that feature. I’d guess other types are
+on the roadmap for the 1.0 version.
+</p>
+<p>I can see arguments both for working with current front-runners in
+the JS charting space (i.e. flot), and for implementing your own system
+so that you can offer all the functionality you need in a single
+package. Maybe a modular architecture would offer the best of both
+worlds?
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber23">Comment</a> by AngusM  on  07/09 &nbsp;at&nbsp; 12:57 PM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber24" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Looks wonderful. I’ll probably start using this on some of my sites. Now the next step is to get some 3d charts going on ;P
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber24">Comment</a> by <a href="http://www.edgedesign.ca/">Kurtis</a>  on  07/09 &nbsp;at&nbsp; 03:05 PM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber25" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Very nice. Is there a way to create horizontal bar graphs rather than vertical bar graphs?
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber25">Comment</a> by Matt  on  07/09 &nbsp;at&nbsp; 04:56 PM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber26" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>With the line graphs, it would be nice
+if one of the table cells was missing a value, to not set it to zero,
+but basically connect the dots either side of it. If the first or last
+values were missing, the line graph could start with the second point /
+finish on the second last respectively. Only really applicable with the
+line graphs I think.
+</p>
+<p>
+If it did this, I’d replace my existing server-side graphing library
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber26">Comment</a> by <a href="http://www.adocentral.com.au/">Adam Hill</a>  on  07/10 &nbsp;at&nbsp; 05:02 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber27" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>nice plugin. One thing i miss are (optional) values at datapoints in line/bar/area graphs.
+</p>
+<p>
+you did a great job
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber27">Comment</a> by paul  on  07/10 &nbsp;at&nbsp; 05:59 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber28" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>@Scott
+</p>
+<p>Well just be able to link to an url would be great. Lets say I use
+the bar for a news by day view within one week then i would click on
+the bar of the day i wanted to see al the news off
+</p>
+<p>
+Armand
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber28">Comment</a> by <a href="http://www.schwingsoft.com/">Armand</a>  on  07/10 &nbsp;at&nbsp; 08:11 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber29" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>Tab indexing on the grid would be awesome.
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber29">Comment</a> by <a href="http://evancarroll.com/">Evan Carroll</a>  on  07/10 &nbsp;at&nbsp; 11:11 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber30" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>I’m not (yet) a user of JQuery but plugins like this make me think that I should be…
+</p>
+<p>One thing I’d love to see is support for the Google visuliastion API
+query language, so that charts can be generated on the fly in the clint
+using data pulled in from Google spreadsheets.
+</p>
+<p>
+My first proof of concept can be found here:
+<br>
+<a href="http://ouseful.wordpress.com/2009/05/22/first-steps-towards-a-generic-google-spreadsheets-query-tool/">http://ouseful.wordpress.com/2009/05/22/first-steps-towards-a-generic-google-spreadsheets-query-tool/</a>
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber30">Comment</a> by <a href="http://ouseful.info/">Tony Hirst</a>  on  07/11 &nbsp;at&nbsp; 06:53 AM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+	<div id="commentNumber31" class="commentEntry">
+
+<div class="commentBody">
+
+	<p>This effect is so cool!!!
+<br>
+Wonderful job guys.
+</p>
+
+	</div>
+		<p class="posted"><a href="#commentNumber31">Comment</a> by <a href="http://sydney.at9t.com/">悉尼</a>  on  07/11 &nbsp;at&nbsp; 09:36 PM<span class="arrow"></span></p>
+	</div>
+
+
+	
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+		
+		<h2 class="addComment">Add a Comment:<span class="required">* required fields</span></h2>		
+		<div class="commentForm">
+			<form id="comment_form" method="post" action="http://www.filamentgroup.com/lab/jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas/">
+<div class="hiddenFields">
+<input name="ACT" value="1" type="hidden">
+<input name="RET" value="http://www.filamentgroup.com/lab/jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas/" type="hidden">
+<input name="URI" value="/lab/jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas/" type="hidden">
+<input name="PRV" value="" type="hidden">
+<input name="XID" value="1e0649a0ec0a171702953033679c0a3ccce14322" type="hidden">
+<input name="entry_id" value="95" type="hidden">
+<input name="site_id" value="1" type="hidden">
+</div>
+
+
+			
+						<label for="name">Name:<span class="required">*</span></label>
+			<input class="text" name="name" id="name" value="" size="50" type="text">
+			
+			<label for="email">Email:<span class="required">*</span></label>
+			<input class="text" name="email" id="email" value="" size="50" type="text">
+			
+			<label for="url">URL:</label>
+			<input class="text" name="url" id="url" value="http://" size="50" type="text">
+			
+						
+			<label for="url">Comment:<span class="required">*</span></label>
+			<textarea name="comment" id="comment" cols="50" rows="12"></textarea>
+			
+						<input name="save_info" value="yes" type="hidden">
+						
+						
+			<button type="submit" name="submit" id="submit">Submit Comment</button>
+						<input name="notify_me" id="notify_me" value="yes" type="checkbox">
+			<label for="notify_me">Notify me of follow-up comments?</label>
+			
+			<div style="display: none;">
+				<label for="goaway">PLEASE LEAVE THIS FIELD BLANK! (it's for comment quality assurance):</label>
+				<input value="" id="goaway" name="goaway" type="text">
+			</div>
+			
+			</form>
+		</div>
+
+
+
+
+
+
+		</div><!-- /primaryContent -->
+<div id="twitterUpdate" class="commentEntry fg">
+
+	<h3 class="recentlyHeader">Recently on Twitter...</h3>
+	<p class="tweet_text">
+	Just submitted a presentation idea for SXSWi 2010 </p>
+	<p class="posted tweet_by"><a href="http://twitter.com/filamentgroup/">@filamentgroup</a> <a href="http://twitter.com/filamentgroup/status/2573403332" class="statusLink">
+	2 days ago...</a>
+	<span class="arrow"></span>
+	</p>
+
+</div>
+
+
+		<div id="secondaryContent">
+				<h3>Subscribe to our Lab</h3>
+				<ul>
+					<li class="rss"><a href="http://www.filamentgroup.com/lab/atom/">Atom</a></li>
+					<li class="rss"><a href="http://www.filamentgroup.com/lab/rss_2.0/">RSS 2.0</a></li>
+				</ul>
+
+	
+				<h3>Recent Articles</h3>
+<ul>
+
+<li><a href="http://www.filamentgroup.com/lab/jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas/">jQuery Visualize Plugin: Accessible Charts &amp; Graphs from Table Elements using HTML 5 Canvas</a></li>
+
+<li><a href="http://www.filamentgroup.com/lab/accessible_custom_designed_checkbox_radio_button_inputs_styled_css_jquery/">Accessible, Custom Designed Checkbox and Radio Button Inputs Styled with CSS (and a dash of jQuery)</a></li>
+
+<li><a href="http://www.filamentgroup.com/lab/jquery_ui_selectmenu_an_aria_accessible_plugin_for_styling_a_html_select/">jQuery UI Selectmenu: An ARIA-Accessible Plugin for Styling a Custom HTML Select Element</a></li>
+
+<li><a href="http://www.filamentgroup.com/lab/update_jquery_plugin_for_retaining_scalable_interfaces_with_pixel_to_em_con/">Update: jQuery Plugin for Retaining Scalable Interfaces with Pixel-to-Em Conversion</a></li>
+
+<li><a href="http://www.filamentgroup.com/lab/update_styling_the_button_element_with_css_sliding_doors_now_with_image_spr/">Update: Styling the Button Element with CSS Sliding Doors - now with Image Sprites and IE 8 Support</a></li>
+
+<li><a href="http://www.filamentgroup.com/lab/access_oriented_web_design_building_highly_interactive_web_apps_that_work_f/">Access-Oriented Web Design: Building highly-interactive web apps that work for everyone</a></li>
+
+<li><a href="http://www.filamentgroup.com/lab/update_jquery_ui_slider_from_a_select_element_now_with_aria_support/">Update: jQuery UI Slider from a Select Element - now with ARIA Support</a></li>
+
+<li><a href="http://www.filamentgroup.com/lab/jquery_ipod_style_and_flyout_menus/">jQuery Menu: Dropdown, iPod Drilldown, and Flyout styles with ARIA Support and ThemeRoller Ready</a></li>
+
+<li id="view-all-articles"><a href="http://www.filamentgroup.com/lab/">View All</a></li>
+</ul>
+
+	
+	
+							</div> <!-- /secondaryContent -->        
+        <div id="footerInterior" class="clearfix">
+<div id="footerContain">
+	<div id="footerServices" class="clearfix">
+		<h4><a href="http://www.filamentgroup.com/services">Learn about what we do</a></h4>
+		<ul class="clearfix">
+		
+					<li id="servicesItem1"><a href="http://www.filamentgroup.com/services/analysis_planning/">Analysis, planning and prototypes</a></li>
+		
+					<li id="servicesItem2"><a href="http://www.filamentgroup.com/services/brand_visual/">Brand, visual &amp; infographics</a></li>
+		
+					<li id="servicesItem3"><a href="http://www.filamentgroup.com/services/user_interface_design/">Website and application UI design</a></li>
+		
+					<li id="servicesItem4"><a href="http://www.filamentgroup.com/services/web_development/">HTML coding &amp; integration support</a></li>
+		
+		</ul>
+	</div>
+
+
+	<div id="footerPortfolio" class="clearfix">
+		<h4><a href="http://www.filamentgroup.com/portfolio">Explore what we've done</a></h4>
+		<ul class="clearfix">
+		
+					<li id="portfolioItem1"><a href="http://www.filamentgroup.com/portfolio/academic_approach/">Academic Approach</a></li>
+		
+					<li id="portfolioItem2"><a href="http://www.filamentgroup.com/portfolio/adoramapix/">AdoramaPix</a></li>
+		
+					<li id="portfolioItem3"><a href="http://www.filamentgroup.com/portfolio/berkshire_partners/">Berkshire Partners</a></li>
+		
+					<li id="portfolioItem4"><a href="http://www.filamentgroup.com/portfolio/bose_corporation/">Bose Corporation</a></li>
+		
+					<li id="portfolioItem5"><a href="http://www.filamentgroup.com/portfolio/coalesix/">Coalesix  </a></li>
+		
+					<li id="portfolioItem6"><a href="http://www.filamentgroup.com/portfolio/cuesol_for_stop_shop/">Cuesol (for Stop &amp; Shop)</a></li>
+		
+					<li id="portfolioItem7"><a href="http://www.filamentgroup.com/portfolio/cymfony/">Cymfony</a></li>
+		
+					<li id="portfolioItem8"><a href="http://www.filamentgroup.com/portfolio/empirix/">Empirix</a></li>
+		
+					<li id="portfolioItem9"><a href="http://www.filamentgroup.com/portfolio/fast_search_transfer/">Fast Search &amp; Transfer</a></li>
+		
+					<li id="portfolioItem10"><a href="http://www.filamentgroup.com/portfolio/fidelity_charitable_gift_fund_fidelity_charitable_services/">Fidelity Charitable Gift &amp; FCS</a></li>
+		
+					<li id="portfolioItem11"><a href="http://www.filamentgroup.com/portfolio/forest_city_enterprises/">Forest City Enterprises</a></li>
+		
+					<li id="portfolioItem12"><a href="http://www.filamentgroup.com/portfolio/frito_lay_inc/">Frito-Lay, Inc.</a></li>
+		
+					<li id="portfolioItem13"><a href="http://www.filamentgroup.com/portfolio/getconnected/">GetConnected</a></li>
+		
+					<li id="portfolioItem14"><a href="http://www.filamentgroup.com/portfolio/iron_mountain/">Iron Mountain</a></li>
+		
+					<li id="portfolioItem15"><a href="http://www.filamentgroup.com/portfolio/jquery_ui_and_themeroller/">jQuery UI and ThemeRoller</a></li>
+		
+					<li id="portfolioItem16"><a href="http://www.filamentgroup.com/portfolio/leasehold_capital/">Leasehold Capital</a></li>
+		
+					<li id="portfolioItem17"><a href="http://www.filamentgroup.com/portfolio/nymbler/">Nymbler</a></li>
+		
+					<li id="portfolioItem18"><a href="http://www.filamentgroup.com/portfolio/radius_via_matta/">Radius &amp; Via Matta</a></li>
+		
+					<li id="portfolioItem19"><a href="http://www.filamentgroup.com/portfolio/spring_partners/">Spring Partners</a></li>
+		
+					<li id="portfolioItem20"><a href="http://www.filamentgroup.com/portfolio/vistra/">Vistra</a></li>
+		
+		</ul>
+	</div>
+</div><!-- end  footer contain -->
+</div><!-- end interior footer -->
+</div><!-- /content -->
+	<div id="copyright" class="vcard clearfix"><a class="enhancements_toggleResult" tabindex="0" href="#">View Low-bandwidth version</a>
+	<p class="company"><a href="http://filamentgroup.com/" class="fn url org">Filament Group, Inc.</a></p>
+	<p class="adr">
+		<span class="street-address">102 South Street</span>
+		<span class="bldg-unit">, 3<sup>rd</sup> floor</span>
+		<span class="locality">Boston</span>
+		<span class="region">MA</span>
+		<span class="postal-code">02111</span>
+	</p>
+	 <dl class="tel">
+		<dt class="type">Phone:</dt>
+		<dd>617.482.7120</dd>
+	</dl>
+	<dl class="eml">
+		<dt>Email:</dt>
+		<dd><a class="email" href="mailto:hello@filamentgroup.com">hello@filamentgroup.com</a></dd>
+	</dl>
+	<p class="copyright">© 2009 Filament Group, Inc. All rights reserved.</p> 
+	</div>
+		
+	</div><!-- / contain  -->
+	
+	<script src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-564032-1";urchinTracker();</script>
+<script src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/a_003" type="text/javascript"></script>
+</body></html>

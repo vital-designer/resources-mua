@@ -1,0 +1,75 @@
+/* Safari */
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	.entry_meta ul {
+		margin-bottom: 15px;
+	}
+	textarea {
+    	resize: vertical;
+	} 
+	#content .trackbacks {
+		padding-bottom: 45px;
+	}
+	#content .single_meta {
+		padding-bottom: 10px;
+	}
+	#content .related_posts {
+		padding-bottom: 30px;
+	}
+}
+/* IE 7 */
+* + html h3.ie_fix {
+	padding-top: 30px;
+}
+* + html .single_meta {
+	padding-bottom: 25px;
+	margin-bottom: 20px;
+}
+* + html #comments .single_comment {
+	width: 470px;
+}
+* + html .textarea_arrow {
+	left: 104px;
+}
+* + html #comment_form {
+	width: 513px;
+}
+* + html .input {
+	width: 503px;
+}
+* + html #submit {
+	padding: 0.6em 0 0.6em 0;
+}
+* + html #content .trackbacks, * + html #content .related_posts {
+	padding-bottom: 40px;
+}
+/* IE 6 */
+* html .single_meta {
+	padding-bottom: 25px;
+	margin-bottom: 20px;
+}
+* html #comments .single_comment {
+	width: 470px;
+}
+* html .textarea_arrow {
+	left: 104px;
+}
+* html #submit {
+	padding: 0.6em 0 0.6em 0;
+	cursor: pointer;
+}
+* html #comment_form {
+	width: 511px;
+}
+* html .input {
+	width: 501px;
+}
+* html #sidebar {
+	width: 169px;
+}
+* html #sidebar #advert_div img {
+	padding: 5px 0;
+}
+* html #content .related_posts {
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+}

@@ -1,0 +1,98 @@
+body
+{
+	font-size: 11px;
+	margin: 0px;
+	border: 0px;
+	background-color: #acc0e9;
+	cursor: default;
+	font-family: Segoe UI;
+}
+
+
+tr
+{
+	background-color: #fff;
+	text-align:left ; 
+	height:10px;
+}
+
+.alternativeRowColor
+{
+	background-color: #F8F8F8;
+	text-align:left ; 
+}
+
+div
+{
+	vertical-align:middle;
+	text-align:center ; 
+}
+
+p
+{
+	font-size:20px;
+	font-weight :bold;
+	font-family:Segoe UI; 
+}
+
+
+.tdBorderLeftMostCell
+{
+	font-size: 11px;
+	border-bottom: solid 1px #acc0e9;
+	border-left: solid 1px #acc0e9;
+	border-right: solid 1px #acc0e9;
+	cursor: default;
+	padding: 2px;
+	text-align: left;
+}
+
+.TableHeading
+{
+	background-color: #738AAD;
+	border-bottom: 1px solid #00347B;
+	border-left: 0px solid #ADC3E7;
+	border-right: 0px solid #00347B;
+	border-top: 0px solid #ADC3E7;
+	color: #FFFFFF;
+	height: 20px;
+	font-weight: bold;
+	padding-left: 4px;
+	padding-top: 4px;
+	text-align: left;
+}
+
+
+.tdMiddleCells
+{
+	font-size: 11px;
+	border-bottom: solid 1px #acc0e9;
+	border-right: solid 1px #acc0e9;
+	cursor: default;
+	padding: 2px;
+	text-align: left;
+}
+
+.tdBorderTopLeftMostCell
+{
+	font-size: 11px;
+	border-bottom: solid 1px #acc0e9;
+	border-top: solid 1px #acc0e9;
+	border-left: solid 1px #acc0e9;
+	border-right: solid 1px #acc0e9;
+	cursor: default;
+	padding: 2px;
+	text-align: left;
+}
+
+
+.tdBorderTopMostCell
+{
+	font-size: 11px;
+	border-bottom: solid 1px #acc0e9;
+	border-top: solid 1px #acc0e9;
+	border-right: solid 1px #acc0e9;
+	cursor: default;
+	padding: 2px;
+	text-align: left;
+}

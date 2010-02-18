@@ -1,0 +1,8 @@
+		
+.products{
+	float:left;
+	position:relative;
+	margin:10px;
+	overflow:hidden;
+}
+img.front{display:none;}

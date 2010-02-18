@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>jqDock : a jQuery plugin</title>
+  <link rel='stylesheet' type='text/css' href='style.css' />
+  <link rel='stylesheet' type='text/css' href='shadowbox.css' />
+  <script type='text/javascript' src='jquery-1.2.6.min.js'></script>
+  <script type='text/javascript' src='jquery.shadowbox.js'></script>
+  <script type='text/javascript' src='jquery.jqDock.min.js'></script>
+  <script type='text/javascript' src='demo.js'></script>
+  <script type='text/javascript'>
+  jQuery(function($){
+/*********************
+** JQDOCK SETUPS... **
+*********************/
+    //make images that are not enclosed in anchors clickable...
+    //(some will simply reload the current page, but then some of the links will do that anyway, so...)
+    $('div.demo>img').each(function(i){
+        $(this).one('click', function(){ location.href = 'index.php?dt='+(i%5); return false; });
+      });
+    //apply jqDock to each of the demo menus, setting varying options for each one...
+    $('div.demo').each(function(i){ //opts updated so as not to use null as 'don't override default' - jQuery v1.2.5 changed extend() to not ignore nulls!
+        var opts = { align:        [ 'bottom', 'right', 'top' , 'middle', 'left', 'center' ][i] || 'bottom' //default
+                   , size:         [  48     ,  48    ,  48   ,  48     ,  36   ,  60      ][i] || 36       //default
+                   , distance:     [  60     ,  60    ,  60   ,  60     ,  48   ,  80      ][i] || 54       //default
+                   , coefficient : [  1.5    ,  1.5   ,  1.5  ,  1      ,  1.5  ,  1.5     ][i] || 1.5      //default
+                   , labels:       [  true   ,  'mc'  ,  true ,  'br'   ,  true ,  false   ][i] || false    //default
+                   , duration:     500 //default
+                     //for menu1 and menu7, set a function to use the 'alt' attribute if present, else construct a PNG path from the 'src'...
+                   , source:       (i==0 || i==6) ? function(i){ return (this.alt) ? false : this.src.replace(/(jpg|gif)$/,'png'); } : false //default
+                   };
+        $(this).jqDock(opts);
+      });
+    //handle clicking label for images within links :
+    //if labels are enabled, and you have images within links, clicking on the label
+    //will do nothing!
+    //in order to get the link to activate you will need to provide some sort of click
+    //handler on the image (which jqDock will trigger) - if there is not one already?
+    //for example, on everything except #menu1, I will apply the following click handler
+    //to all my images-within-links...
+    //(ie. clicking a label on an image-within-a-link on #menu1 will still do nothing!)
+    $('div.demo a>img').not($('#menu1 a>img')).bind('click', function(){
+        var Href = $(this).parent().get(0).href;
+        //I don't have any hrefs that are not straightforward links, but for the sake of completeness,
+        //one could take this as being indicative of the likelihood that there is no click handler...
+        if(Href && !/^javascript:/i.test(Href)){ //change location...
+          location.href = Href;
+        }else{ //trigger a click handler?...
+          $(this).parent().trigger('click');
+        }
+        return false;
+      });
+  });
+  </script>
+
+</head>
+<body>
+<div id='page'>
+  <div id='eop' class='inset200 grey'><em>[End of Demo Page]</em></div>
+  <div id='buttons' class='inset130'>
+    <div id='pagebuttons'>
+      <input id='index0' class='pagebtn' type='button' value='XHTML 1.0 Transitional' /><input
+             id='index1' class='pagebtn' type='button' value='XHTML 1.0 Strict' /><input
+             id='index2' class='pagebtn' type='button' value='HTML 4.01 Transitional' /><input
+             id='index3' class='pagebtn' type='button' value='HTML 4.01 Strict' /><input
+             id='index4' class='pagebtn' type='button' value='No DOCTYPE!' />
+    </div>
+    <div id='sboxbuttons'>
+      <ul><li><a class='sboxbtn' title='Introduction, Change Log, Credits' href='#jqdockintro'>Introduction</a></li>
+
+          <li><a class='sboxbtn' title='Basic Usage' href='#basicusage'>Basic Usage</a></li>
+          <li><a class='sboxbtn' title='jqDock() Options' href='#jqdockoptions'>Options</a></li>
+          <li><a class='sboxbtn' title='jqDock() Styling' href='#jqdockstyling'>Styling</a></li>
+          <li><a class='sboxbtn' title='jqDock : Example CSS' href='style.css.php'>Example CSS</a></li>
+          <li><a class='sboxbtn' title='FAQs' href='#faqs'>FAQs</a></li>
+          <li><a id='goDownload' href='http://www.wizzud.com/component/option,com_remository/Itemid,27/func,fileinfo/filecatid,62/parent,category/' title='Go to Download page'>Download Script...</a></li>
+
+      </ul>
+    </div>
+  </div>
+  <h2 id='pagetitle' class='inset200'>jqDock<span id='jqDockVersion'></span> ... a jQuery plugin</h2>
+  <h3 class='inset200 grey'>DOCTYPE : XHTML 1.0 Transitional</h3>
+  <div class='inset200'><em>Transform a set of images into a Mac-like Dock menu,
+    <br />horizontal or vertical, with icons that expand on rollover!</em></div>
+
+    <div class='inset200 grey small'>(Minimum requirement : jQuery v1.2.3)</div>
+
+  <!-- menu1 can use jpg images that have a white background -->
+  <div id='menu1' class='demo'>
+    <a href='index.php?dt=1' title='Clock'>
+	    <img src='images/m1/Clock.jpg' alt='' />
+    </a>
+    <img src='images/m1/Connect.jpg' alt='' title='Connect' />
+    <a href='index.php?dt=1' title='Music'>
+
+      <img src='images/m1/Music.jpg' alt='' />
+    </a>
+    <img src='images/m1/Pictures.jpg' alt='' title='Pictures' />
+    <a href='index.php?dt=1' title='Search'>
+      <img src='images/m1/Search.jpg' alt='' />
+    </a>
+    <a href='index.php?dt=1' title='System'>
+      <img src='images/m1/System.jpg' alt='' />
+    </a>
+
+    <img src='images/m1/Trash.jpg' alt='' title='Trash' />
+  </div>
+
+  <div id='menu2' class='demo'>
+    <a href='index.php?dt=2' title='Camera'>
+	    <img src='images/m2/Camera.png' alt='' />
+    </a>
+    <img src='images/m2/Floppy.png' alt='Floppy' title='Floppy' />
+    <a href='index.php?dt=2' title='iMac'>
+
+      <img src='images/m2/iMac.png' alt='' />
+    </a>
+    <img src='images/m2/iPod.png' alt='iPod' title='iPod' />
+    <a href='index.php?dt=2' title='Notebook'>
+      <img src='images/m2/Notebook.png' alt='' />
+    </a>
+    <a href='index.php?dt=2' title='Printer'>
+      <img src='images/m2/Printer.png' alt='' />
+    </a>
+
+    <img src='images/m2/Speakerbox.png' alt='Speakerbox' title='Speakerbox' />
+  </div>
+
+  <div id='menu3' class='demo'>
+    <a href='index.php?dt=1' title='Address Book'>
+	    <img src='images/m3/Addressbook.png' alt='' />
+    </a>
+    <img src='images/m3/DVD-Player.s.png' alt='images/m3/DVD-Player.png' title='DVD Player' />
+    <a href='index.php?dt=2' title='eMail'>
+
+      <img src='images/m3/eMail.s.png' alt='images/m3/eMail.png' />
+    </a>
+    <img src='images/m3/Instant_Messaging.s.png' alt='images/m3/Instant_Messaging.png' title='Instant Messaging' />
+    <a href='index.php?dt=3' title='QuickTime'>
+      <img src='images/m3/QuickTime.s.png' alt='images/m3/QuickTime.png' />
+    </a>
+    <a href='index.php?dt=4' title='Safari'>
+      <img src='images/m3/Safari.s.png' alt='images/m3/Safari.png' />
+    </a>
+
+    <img src='images/m3/Terminal.png' alt='Terminal' title='Terminal' />
+  </div>
+
+  <div id='menu4' class='demo'>
+    <a href='index.php?dt=1' title='Forbidden'>
+	    <img src='images/m4/Forbidden.png' alt='' />
+    </a>
+    <img src='images/m4/Games.png' alt='Games' title='Games' />
+    <a href='index.php?dt=2' title='Library'>
+
+      <img src='images/m4/Library.png' alt='' />
+    </a>
+    <img src='images/m4/Private.png' alt='Private' title='Private' />
+    <a href='index.php?dt=3' title='Records'>
+      <img src='images/m4/Records.png' alt='' />
+    </a>
+    <a href='index.php?dt=4' title='Stuff'>
+      <img src='images/m4/Stuff.png' alt='' />
+    </a>
+
+    <img src='images/m4/Windows.png' alt='Windows' title='Windows' />
+  </div>
+
+  <!-- menu5 can use png32 images that have a black background -->
+  <div id='menu5' class='demo'>
+    <a href='index.php?dt=1' title='Chat'>
+	    <img src='images/m5/128_ChatFolder.png' alt='' />
+    </a>
+    <img src='images/m5/128_DownloadsFolder.png' alt='Downloads' title='Downloads' />
+
+    <a href='index.php?dt=2' title='Favourites'>
+      <img src='images/m5/128_FavouritesFolder.png' alt='' />
+    </a>
+    <img src='images/m5/128_MyMusicFolder.png' alt='My Music' title='My Music' />
+    <a href='index.php?dt=3' title='My Videos'>
+      <img src='images/m5/128_MyVideosFolder.png' alt='' />
+    </a>
+    <a href='index.php?dt=4' title='System'>
+      <img src='images/m5/128_SystemFolder.png' alt='' />
+
+    </a>
+    <img src='images/m5/128_WebFolder.png' alt='Web' title='Web' />
+  </div>
+
+  <div id='menu6' class='demo'>
+    <a href='index.php?dt=1' title='Doc'>
+	    <img src='images/m6/doc.png' alt='' />
+    </a>
+    <img src='images/m6/htm.png' alt='Htm' title='Htm' />
+
+    <a href='index.php?dt=2' title='Ini'>
+      <img src='images/m6/ini.png' alt='' />
+    </a>
+    <img src='images/m6/mp3.png' alt='MP3' title='MP3' />
+    <a href='index.php?dt=3' title='PDF'>
+      <img src='images/m6/pdf.png' alt='' />
+    </a>
+    <a href='index.php?dt=4' title='SWF'>
+      <img src='images/m6/swf.png' alt='' />
+
+    </a>
+    <img src='images/m6/zip.png' alt='Zip' title='Zip' />
+  </div>
+
+  <div id='menu7' class='demo'>
+    <img src='images/m7/a.gif' alt='images/m7/a.png' />
+    <img src='images/m7/b.gif' alt='' />
+    <img src='images/m7/c.gif' alt='images/m7/c.png' />
+    <img src='images/m7/d.gif' alt='' />
+
+  </div>
+
+  <div id='jqdockintro' class='hideThis'>
+    <div class='sbox'>
+      <h2>jqDock</h2>
+      <h3>A jQuery Plugin</h3>
+      <p>The Dock - as anyone familiar with a Mac will know - is a set of iconic
+        images that expand when rolled over with the cursor, and usually perform
+        some action when clicked. This plugin mimics that behaviour by transforming
+        a contiguous set of HTML images into an expanding Dock, vertical or horizontal,
+        with or without labels.</p>
+      <div style='text-align:center;'>
+
+        <img style='float:right;padding-left:20px;' src='images/intro2.jpg' alt='Example of a vertical Dock' title='Example of a vertical Dock' />
+        <img src='images/intro1.jpg' alt='Example of a horizontal Dock' title='Example of a horizontal Dock' />
+      </div>
+      <div>
+      <p>Basically, all the Dock does is expand a reduced size image towards its full size
+        when the cursor is on or near it. You can specify a vertical or
+        horizontal orientation for the Dock, and select the direction in which the
+        image should expand and whether to show labels or not. The styling and positioning
+        of the Dock is (almost) entirely down to you.</p>
+      <p>You can use 2 different images for clarity,
+        one for the minimised 'at rest' state, and one for performing the enlargement
+        to its full size. Alternatively, you can just use the one larger image as
+        long as you are happy with its definition when reduced by the browser.</p>
+      <p>There is no restriction on the type of image that can be used, but obviously
+        if you are applying any styling to your Dock that makes it stand out against
+        the background (such as a border or background colour), then  a transparent
+        GIF or PNG8 (an IE6 limitation) may be preferable to an image that displays with an opaque background.
+        The images can be enclosed within links, or not, depending on how you wish
+        to control your navigation or application. The only requirement is that the parent container,
+        probably a DIV, holds only images and/or anchors that enclose an image.</p>
+
+      <p>You may need to ensure that the placement of your menu allows for expansion, either
+        horizontally or vertically depending on the assigned alignment. The Dock will
+        extend both ends of its major axis as the images are rolled over, as well as
+        enlarging the relevant images themselves, and you want to avoid having it disappear
+        off screen, or under other elements, if you can help it. The Dock will always
+        do its very best to position itself centrally (along its major axis) within
+        what it thinks is the maximum space required for any expansion. However there
+        are times - such as when applying extra padding as spacing between images -
+        when this might not be accurately calculable and may require positional tweaks
+        to keep the Dock in view.</p>
+      <p>The Dock uses all the document's original HTML, in other words it does not
+        create clones and append them to the end of the document. This means that the
+        container element to which you apply jqDock() is what controls the position
+        of the Dock, and what elements the Dock can appear on top of. Although absolute
+        positioning is used, and a few wrapper elements are added below the container
+        element, any elements that come later in the document than the container element
+        have the opportunity of obscuring all or part of the Dock. It is therefore
+        recommended that the container element be placed or positioned with care within
+        your document such that the Dock will not appear underneath any other elements
+        on the page.</p>
+      <h3>Change Log</h3>
+      <ul class='changesList'>
+        <li><strong>v1.2</strong>
+          <ul>
+            <li>adding handling of Opera 9.5</li>
+
+            <li>updated demo to use jQuery v1.2.6</li>
+          </ul>
+        </li>
+        <li><strong>v1.1</strong>
+          <ul>
+            <li>some speed optimisation within the functions called by the event handler</li>
+            <li>added positioning of labels (top/middle/bottom and left/center/right)</li>
+
+            <li>added click handler to label (triggers click event on related image)</li>
+            <li>added jqDockLabel(Link|Image) class to label, depending on type of current image</li>
+            <li>updated demo and documentation for label positioning and clicking on labels</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Credits</h3>
+
+      <p>jqDock was inspired by, and owes full credit to, Isaac Rocca's "iconDock" plugin
+        - <a class='targetBlank' href='http://icon.cat/software/iconDock/'>http://icon.cat/software/iconDock/</a>.
+        I have simply re-modelled it, tweaked it, expanded it, and re-packaged it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id='basicusage' class='hideThis'>
+    <div class='sbox'>
+      <h3>HTML</h3>
+
+        Example:
+<pre class='dgrey'>&lt;div id='menu'&gt;
+  &lt;img src='image1.gif' alt='image1.png' title='' /&gt;
+  ...
+  &lt;a href='page.html' title=''&gt;
+    &lt;img src='imageN.png' alt='' title='' /&gt;&lt;/a&gt;
+  ...
+
+&lt;/div&gt;</pre>
+        <p>A menu contains images, which may or may not be within links - you can mix
+          and match as you wish. You should provide css styling as necessary to position your menu
+          where you want the Dock to appear. You can hide it if you wish (display:none;),
+          and you can set the width and/or height styles on the images, but you should
+          avoid using the width and height IMG attributes.</p>
+        <p>If the 'alt' attribute contains what looks like an image path (ends with
+          a dot-suffix of gif, png or, jp[e]g) then 'src' will be used as the small
+          image and 'alt' as the larger, expanding one.</p>
+        <p>Images are always expanded to their full natural width/height, or a fraction
+          thereof, depending on the position of the cursor at the time. You can not
+          control the ultimate dimensions of the expanding image by css, because
+          jqDock overrides it, and if you try using the width/height attributes things
+          won't work as expected.</p>
+        <p>By default the 'labels' option is off, and jqDock will remove any values
+          for 'title' and 'alt' attributes (after examination), in an attempt to prevent
+          the browser displaying a tooltip when hovering over an image (causes 'fluttering'
+          in some browsers if the cursor is allowed to move over the tooltip). Also,
+          jqDock will remove all text nodes within the menu - this helps to ensure a known
+          and standard presentation of the Dock, and smooth animation.</p>
+      <h3>jQuery</h3>
+
+        <p><span class='red'><strong>Important!</strong></span> This plugin requires at least
+          jQuery v1.2.3, because it uses API constructs that only became available
+          in that version.</p>
+        <p>Link in the jqDock source (full or compressed) after jQuery itself...</p>
+          Example:
+<pre class='dgrey'>&lt;script type='text/javascript' src='jquery-1.2.3.min.js'&gt;&lt;/script&gt;
+&lt;script type='text/javascript' src='jquery.jqDock.js'&gt;&lt;/script&gt;</pre>
+        <p>To convert your HTML into a Dock, simply call the jqDock function in the
+          standard manner...</p>
+
+          Example:
+<pre class='dgrey'>jQuery(document).ready(function(){
+  jQuery('#menu').jqDock(<a class='inPageLink' href='javascript:void(0);' title='jqDock() Options'>options</a>);
+});</pre>
+        <p>jqDock() supports full chaining, and noConflict().</p>
+    </div>
+  </div>
+
+  <div id='jqdockoptions' class='hideThis'>
+    <div class='sbox'>
+
+      <h3>Options</h3>
+      <p>There are a number of options available, which can be set on per-Dock basis.
+        None of the options are mandatory since they all have defaults.</p>
+      Example:
+<pre class='dgrey'>var opts =
+  // horizontal Dock with images expanding downwards in the vertical axis...
+{ align: 'top'
+  // set the maximum minor axis (vertical) image dimension to 48px
+, size: 48
+  // add labels..
+, labels: true
+  // swap the GIF extension for PNG extension for the larger image...
+, source: function(i){ return this.src.replace(/gif$/,'png'); }
+};
+$(this).jqDock(opts);</pre>
+      <ul class='optionsList'>
+        <li><div><strong>align</strong> : string, default = 'bottom',
+              values = 'top', 'middle', 'bottom', left', center', 'right'</div>
+
+            <div>Fixes the horizontal/vertical main axis, and direction of expansion.
+              A value of 'top', 'middle' or 'bottom' produces a horizontal Dock with,
+              for example, 'bottom' fixing the bottom edge of the images in place
+              such that they only expand upwards in the minor (vertical) axis. Likewise,
+              values of 'left', 'center' or 'right' provide a Dock with a vertical main axis,
+              with images expanding from the left edge, from the centre, or
+              from the right edge respectively.</div></li>
+        <li><div><strong>coefficient</strong> : number, default = 1.5</div>
+            <div>Attenuation coefficient. This controls the relationship between the
+            <em>distance</em> from the cursor and the amount of expansion of any
+            affected image within that <em>distance</em>. A coefficient of 1 makes
+            the expansion linear with respect to distance from cursor; a larger coefficient
+            gives a greater degree of expansion the closer to the cursor the affected
+            image is (within <em>distance</em>).</div></li>
+
+        <li><div><strong>distance</strong> : integer, default = 54 [px]</div>
+            <div>Attenuation distance from cursor, ie the distance (in pixels) from
+            the cursor that an image has to be within in order to have any expansion applied.
+            <br /><br />Note that attenuation is always calculated as if the Dock
+            was 'at rest' (no images expanded), even though there may be expanded images
+            at the time.</div></li>
+        <li><div><strong>duration</strong> : integer, default = 500 [ms]</div>
+            <div>The duration (in milliseconds) of the initial 'on-Dock' expansion,
+            and the 'off-Dock' shrinkage.</div></li>
+
+        <li><div><strong>labels</strong> : boolean or string, default = false,
+            values = true, 'tl', 'tc', 'tr', 'ml', 'mc', 'mr', 'bl', 'bc', 'br'</div>
+            <div>This enables/disables display of a label on the current image.
+            <br />Allowed string values are 2 characters in length: the first character
+            indicates horizontal position (t=top, m=middle, b=bottom) and the second
+            indicates vertical position (l=left, c=center, r=right). So 'br' means
+            <em>bottom-right</em>! In the case of either <em>middle</em> or <em>center</em>
+            the position is calculated with respect to the center of the actual image (any extra padding
+            applied by css styling is ignored); the other settings all take into account any extra padding.
+            <br />If simply set to <strong>true</strong>, jqDock will use its default positioning for the label,
+            which for 'left' and 'right' alignment is the top opposite corner to the
+            fixed edge (ie. for alignment 'left', the default is 'tr', <em>top-right</em>); for any other
+            alignment, the default is 'tc' (<em>top-center</em>).
+            <br />To determine the text for the label, jqDock looks firstly for text in
+            the image's 'title' attribute; if not found, it will
+            then look for text in the 'title' attribute of the parent link - if there
+            is one - and use that if found.
+            <br /><br />Please be aware that enabling this option will have a slight
+            effect on the performance of the Dock, simply due to the additional processing
+            required to position the label correctly.
+            </div></li>
+
+        <li><div><strong>loader</strong> : string, default = null, values = 'image', 'jquery'</div>
+            <div>This overrides the default image loader used by jqDock. Depending on
+            the browser, jqDock uses an image loader based on either "new Image()", or
+            the jQuery HTML constructor "jQuery('&lt;img /&gt;')...". If your Dock is
+            not being displayed, and you have triple checked all your image paths, try
+            setting this option to 'image' or 'jquery' to override the default loader.</div></li>
+        <li><div><strong>size</strong> : integer, default = 36 [px]</div>
+            <div>This is the maximum value of the <strong>minor</strong> axis dimension for the shrunken
+            images. For example, an image of natural dimensions 90x120 (width x height), placed
+            in a horizontal Dock (say, 'align' = 'bottom') would, by default, be
+            sized down to 27x36. This is because height is the minor axis in a horizontal
+            Dock, and to keep the presentation of the 'at rest' images neat and tidy
+            it is the height that is governed by the <em>size</em> option. Conversely,
+            in a vertical Dock it would be the width that was capped at the <em>size</em>
+
+            value, with height being set proportionately.</div></li>
+        <li><div><strong>source</strong> : function, default = false</div>
+            <div>Function for providing an alternate large image source path.
+            For instances where you are either unable, or do not want to put the
+            large image's path in the IMG's 'alt' attribute, but you still want to
+            have a small and large image for clarity, this function may be useful.
+            <br /><br />If provided, it is called once per image during setup, and
+            is given the context of the image element and passed the index of the image
+            within the current Dock; it is expected to return a valid image path, or false/null
+            to continue using the defaults ('alt' or 'src'). (See example above)</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id='jqdockstyling' class='hideThis'>
+    <div class='sbox'>
+      <h2>HTML Transform</h2>
+      <p>The HTML transform varies slightly depending on the vertical/horizontal orientation of
+        the Dock. There are also inline styles (not show below) included on the additional elements
+        which can vary depending on the browser in use at the time. As an example...</p>
+        <span class='dgrey'>Grey</span> : <em>Original HTML</em>
+
+        <br /><span class='transformAdd'>Blue</span> : <em>Added by jqDock()</em>
+        <br /><span class='transformAddV'>Purple</span> : <em>Added by jqDock(), vertical Docks only</em>
+        <br /><span class='transformAddL'>Green</span> : <em>Added by jqDock(), only if 'labels' option has been enabled</em>
+
+        <br /><span class='transformRemove'>Red</span> : <em>Removed by jqDock()</em>
+<pre class='dgrey'>&lt;div id='menu'&gt;
+  <span class='transformAdd'>&lt;div&gt;</span>
+    <span class='transformAdd'>&lt;div class='jqDock'&gt;</span>
+      <span class='transformAddV'>&lt;div&gt;</span>
+
+        &lt;img src='image1.gif' alt='<span class='transformRemove'>image1.png</span>' <span class='transformRemove'>title=''</span> <span class='transformAdd'>class='jqDockMouse0_0'</span> /&gt;
+      <span class='transformAddV'>&lt;/div&gt;</span>
+        ...
+      <span class='transformAddV'>&lt;div&gt;</span>
+
+        &lt;a href='page.html' <span class='transformRemove'>title=''</span>&gt;
+          &lt;img src='imageN.png' alt='' <span class='transformRemove'>title=''</span> <span class='transformAdd'>class='jqDockMouse0_n'</span> /&gt;&lt;/a&gt;
+      <span class='transformAddV'>&lt;/div&gt;</span>
+        ...
+    <span class='transformAdd'>&lt;/div&gt;</span>
+
+    <span class='transformAddL'>&lt;div class='jqDockLabel jqDockMouse0_00 jqDockLabel(Link|Image)'&gt;</span>
+      <span class='transformAddL'>Label Text</span>
+    <span class='transformAddL'>&lt;/div&gt;</span>
+  <span class='transformAdd'>&lt;/div&gt;</span>
+&lt;/div&gt;</pre>
+      <h2>CSS Styling</h2>
+
+      <p>Using the <strong>jqDock</strong> and <strong>jqDockLabel</strong> classes, you can apply CSS styles to modify
+        the presentation of the Dock and labels (if enabled). For examples, I suggest
+        looking at the later part of the style.css stylesheet used by these pages
+        (<a class='inPageLink' href='javascript:void(0);' title='jqDock : Example CSS'>Example CSS</a>)
+        - it is fully commented and, given the number of demo Docks, should provide all
+        the hints you need.</p>
+      <p>The jqDockMouseX_Y classes are used internally by the mouse events handler
+        to determine the Dock (X) and the image (Y) being targeted, with a
+        special double-zero ('_00') suffix for the Dock's label.</p>
+      <p>The Dock's label has an additional class - jqDockLabelLink or jqDockLabelImage -
+        which indicates whether the current image is an image within a link, or just
+        an image, respectively. You can use this class to, for example, set the cursor
+        for the label to be the same as the image beneath it.</p>
+
+    </div>
+  </div>
+
+  <div id='faqs' class='hideThis'>
+    <div class='sbox'>
+      <h2>Tested Browsers</h2>
+      <p>I have tested this demo page, in each of its DOCTYPE (or not) incarnations,
+        in the following browsers/operating systems:</p>
+      <ul>
+
+        <li>IE6 (Win XP)</li>
+        <li>IE7 (Win XP)</li>
+        <li>Firefox 2.0.0.11 (Mac)</li>
+        <li>Firefox 2.0.0.12 (Linux)</li>
+        <li>Firefox 2.0.0.13 (Win XP)</li>
+        <li>Opera 9.24 (Mac)</li>
+
+        <li>Opera 9.26 (Win XP)</li>
+        <li>Opera 9.5 (Win XP) <em>- as of v1.2</em></li>
+        <li>Safari 3.1 (Mac &amp; WinXP)</li>
+      </ul>
+      <p>If anyone can confirm that jqDock works - or doesn't! - in other browsers
+        and/or operating systems, please let me know.</p>
+
+      <h2>Other Questions</h2>
+      <ol class='faqslist'>
+        <li><strong>What files do I need in order to run jqDock?</strong>
+          <ul>
+            <li>Just the script file - jquery.jqDock.js or jquery.jqDock.min.js
+              (compressed version).</li>
+          </ul>
+        </li>
+
+        <li><strong>Why isn't the Dock being displayed?</strong>
+          <ul>
+            <li>Check that all your image paths are correct, because if
+              jqDock fails to load any image the Dock will not be shown.</li>
+            <li>See if the Dock diplays correctly in another browser - there is
+              always the possibility that jqDock doesn't work for your browser/operating
+              system combination.</li>
+            <li>Try changing the image loader (options.loader = 'image' or 'jquery').
+              jqDock uses 2 types of image loader, and it could be that the default for
+              your browser is incorrect.</li>
+            <li>Check for any elements other than images or link-wrapped images
+              (IMG or A>IMG) in the menu that you are attempting to turn into a Dock.</li>
+
+          </ul>
+        </li>
+        <li><strong>Why is nothing happening when I move my mouse over the images?</strong>
+          <ul>
+            <li>Check that jqDock() is being called after the document has loaded. (Ref.
+              the jQuery tutorial : <a target='_blank'
+              href='http://docs.jquery.com/Tutorials:How_jQuery_Works#Launching_Code_on_Document_Ready'>Launching Code on Document Ready</a>).</li>
+            <li>Check that some other element of your page is not obscuring the Dock,
+              and thereby intercepting the events (unlikely, yet possible!).</li>
+
+          </ul>
+        </li>
+        <li><strong>Why is the text of my links not being displayed?</strong>
+          <ul>
+            <li>jqDock removes <strong>all</strong> text nodes within the scope of the menu element,
+              including link text. Not doing so would cause variations in the presentation
+              of the Dock between browsers and DOCTYPE'd pages; it would also make
+              the width/height calculations almost impossible.</li>
+          </ul>
+
+        </li>
+        <li><strong>Why am I not seeing labels on the Dock images?</strong>
+          <ul>
+            <li>The <em>labels</em> option is off by default.</li>
+            <li>Labels only appear on expanded images, and then only on the image
+              currently beneath the cursor.</li>
+            <li>The text for a label is taken firstly from the <em>title</em> attribute
+              of the menu image; if that is not available, and the image is wrapped in
+              a link, then the <em>title</em> attribute of the link will be used.
+              If neither of these are available, then no label will be displayed.</li>
+
+          </ul>
+        </li>
+        <li><strong>Can I change the position of the label?</strong>
+          <ul>
+            <li>As of v1.1, yes (see <a class='inPageLink' href='javascript:void(0);' title='jqDock() Options'>Options</a>).</li>
+            <li>The positions can be 'tweaked' by css styling
+              of div.jqDockLabel, eg. adding padding to the label (see the
+              <a class='inPageLink' href='javascript:void(0);' title='jqDock : Example CSS'>Example CSS</a>).</li>
+
+          </ul>
+        </li>
+        <li><strong>How do I change the style of the labels?</strong>
+          <ul>
+            <li>Add a CSS style for div.jqDockLabel, setting font, color, etc, as
+              required. See the examples at the bottom of
+              <a class='inPageLink' href='javascript:void(0);' title='jqDock : Example CSS'>Example CSS</a>.</li>
+          </ul>
+        </li>
+
+        <li><strong>How do I stop the image expansion being 'jerky'?</strong>
+          <ul>
+            <li>There is actually very little you can do. Different browsers, different
+              operating systems, and different machines, all make for a varied experience
+              (I found Safari 3.1 on Win XP to be very jerky compared to the Mac version - but no
+              surprise there really). I have reduced the
+              processing overhead in the events handler as much as possible, and about
+              the only thing you can try is turning off labels (if they are enabled), and
+              possibly reducing the <em>distance</em> option (the fewer images that
+              are in an expansion state at any time, the less the processing involved). Sorry.</li>
+          </ul>
+        </li>
+        <li><strong>Why can't I use an earlier version of jQuery than v1.2.3?</strong>
+
+          <ul>
+            <li>The jqDock plugin utilises some of the optimised API features of v1.2.3
+              in order to keep the codebase footprint as low as possible without compromising
+              readability. Also, from a purely selfish point of view, it is easier to
+              pick the current (at the time) version and test it, than it is to use
+              an earlier version and have to test all subsequent versions as well.</li>
+          </ul>
+        </li>
+        <li><strong>Why is the Dock disappearing under other element(s) on the page?</strong>
+          <ul>
+            <li>Because the target menu element (and its surrounding elements?) have
+            not been correctly positioned in order to avoid just such a situation.</li>
+
+            <li>jqDock does <strong>not</strong> rearrange
+              the page's original HTML, it merely enhances it with a few insertions
+              within the target menu element's scope. The position of the Dock is
+              totally dependent on the styling applied to the target menu element, plus
+              any additional styling you apply to div.jqDock.</li>
+            <li>Absolute positioning is limited to the immediately containing element,
+              so because jqDock does not move the target menu elements to the end of
+              the body element, it is impossible for jqDock itself to ensure that
+              the Dock will be fully visible.</li>
+          </ul>
+        </li>
+        <li><strong>How do I change the appearance of the Dock?</strong>
+          <ul>
+
+            <li>Apply css styling to the div.jqDock that is inserted within the target
+              menu element's scope. See the examples in the
+              <a class='inPageLink' href='javascript:void(0);' title='jqDock : Example CSS'>Example CSS</a>.</li>
+          </ul>
+        </li>
+        <li><strong>Can I dynamically add/remove images on an existing Dock?</strong>
+          <ul>
+            <li>Yes, of course, with jQuery you can do almost anything you like ...
+              but you'll corrupt the Dock's layout and positioning.</li>
+
+          </ul>
+        </li>
+        <li><strong>Can I disable elements of the Dock?</strong>
+          <ul>
+            <li>You can enable/disable clicks in the same manner that you would any other
+              element.</li>
+            <li>jqDock does not control what happens when/if an element is
+              clicked - you do. If your menu has any pure images (not wrapped in
+              links) then you will have to bind any required click events to them.
+              If there are linked images in the Dock then what happens when the link
+              (the image) is clicked is down to you.</li>
+          </ul>
+
+        </li>
+        <li><strong>Why do I need a large and a small image?</strong>
+          <ul>
+            <li>You don't, you can just use the larger image. However, some images
+              do not retain good clarity when reduced by a browser, so you therefore have
+              the option of providing a more defined small image for when it is not
+              being expanded.</li>
+          </ul>
+        </li>
+        <li><strong>Can I remove jqDock from a menu element?</strong>
+
+          <ul>
+            <li>No, sorry, there is no 'un-jqDock' facility.</li>
+          </ul>
+        </li>
+        <li><strong>Can a Dock be given a 'fixed' position?</strong>
+          <ul>
+            <li>I don't know, it's not something I have tried. Bear in mind, though,  that IE6
+              (and IE7, quirks mode) can't cope with fixed position per se, and it has
+              to be simulated.</li>
+
+          </ul>
+        </li>
+        <li><strong>Why does nothing happen when I click on a label?</strong>
+          <ul>
+            <li>If the related image is contained within a link, and has no click
+              handler of its own, then the link will not be activated. You will
+              need to provide some sort of click handler on the image - see the script
+              on the demo page(s) for an example.</li>
+            <li>When a label is clicked, jqDock triggers the 'click' event for the
+              image. However, the native action for a link can not be activated from other elements/events,
+              hence the need for a click handler.</li>
+          </ul>
+
+        </li>
+      </ol>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>  Ajax upload</title>
+    
+    <link href="Ajax%20upload_files/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="Ajax%20upload_files/browser_fix.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="Shortcut Icon" href="http://valums.com/wp-content/themes/sharp_blue/favicon.ico" type="image/x-icon">
+	<link href="Ajax%20upload_files/prettify.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="Ajax%20upload_files/prettify.js"></script>       
+    <script src="Ajax%20upload_files/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="Ajax%20upload_files/comments.js"></script>    
+    <script type="text/javascript" src="Ajax%20upload_files/smooth.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			prettyPrint();
+		});
+		Scroller.speed=40
+	</script> 
+<!--[if lt IE 7.]>
+<script type="text/javascript" src="http://valums.com/wp-content/themes/sharp_blue/js/pngfix.js"></script>
+<![endif]-->
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds2.feedburner.com/valums">
+	<link rel="pingback" href="http://valums.com/xmlrpc.php">
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://valums.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://valums.com/wp-includes/wlwmanifest.xml"> 
+	<script type="text/javascript">
+		if (window != top){
+			top.location.replace(window.location);
+		}
+	</script>
+</head><body>
+<div id="header">
+	<div id="bloginfo">
+    	<div class="logo small_img"><a href="http://valums.com/">Valums</a>
+        </div>
+  		<div class="description">The home of Andrew Valums</div>
+     </div>
+  <ul id="navigation">
+    <li class="page_item"><a href="http://valums.com/">Blog</a></li>
+    <li class="page_item"><a href="http://valums.com/category/plugins/">Plugins</a></li>
+    <li class="page_item"><a href="http://valums.com/about/">About</a></li>
+    <li class="subscribe"><a rel="nofollow" href="http://feeds2.feedburner.com/valums" title="RSS Entries">Subscribe</a></li>
+  </ul>
+</div>
+<div id="wrapper">
+    <div id="content">
+    <div class="single_entry" id="post-3">
+      <div class="entry_meta">
+      	<ul class="post-categories">
+		<li><a href="http://valums.com/category/javascript/">JavaScript</a></li><li><a href="http://valums.com/category/plugins/">Plugins</a></li>		</ul>
+        <ul>
+          <li class="date">February 5</li>
+        </ul>
+      </div>
+      <h1>Ajax upload</h1>
+        <p>Browsers
+force us to use file inputs (&lt;input type=”file” /&gt;) for uploads,
+which are impossible to style. Moreover, form-based uploads look
+obsolete in modern AJAX applications. We can use flash to solve this
+problem, but JavaScript works nice too.<span id="more-3"></span></p>
+<p><strong>AJAX Upload</strong> allows you to easily upload multiple
+files without refreshing the page and use any element to show file
+selection window. It works in all major browsers and starting from
+version 2.0 doesn’t require any library to run (although it will use
+some jQuery functions if it’s already loaded on the page). AJAX Upload
+doesn’t pollute the global namespace, so it’s compatible with jQuery,
+Prototypejs, Mootools, and other JavaScript libraries.</p>
+<h2>Demo</h2>
+<p>View an usage examples for <a rel="nofollow" href="http://valums.com/wp-content/uploads/ajax-upload/demo-jquery.htm">jquery</a> and <a rel="nofollow" href="http://valums.com/wp-content/uploads/ajax-upload/demo-prototype.htm">prototype</a> with various options.</p>
+<h2>Download</h2>
+<p><a rel="nofollow" href="http://valums.com/wp-content/uploads/ajax-upload/ajaxupload.3.5.js">Version 3.5</a> was released on 24.06.2009</p>
+<h3><a rel="nofollow" href="http://valums.com/ajax-upload-changelog/">Changelog</a></h3>
+<h2>How to use it?</h2>
+<h3>Creating the uploader</h3>
+<p>First, you should create button. (You can use any element).</p>
+<pre class="code prettyprint"><span class="pun">&lt;</span><span class="tag">div</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"upload_button"</span><span class="pun">&gt;</span><span class="pln">Upload</span><span class="pun">&lt;/</span><span class="tag">div</span><span class="pun">&gt;</span></pre>
+<p>Next, you should create ajax upload instance. In it’s simplest form, you can create it using the following code:</p>
+<pre class="code"><span class="com">// You must create it only after the DOM is ready for manipulations</span><span class="pln"><br></span><span class="com">// Use $(document).ready for jquery</span><span class="pln"><br></span><span class="com">// document.observe("dom:loaded" for prototype</span><span class="pln"><br></span><span class="kwd">new</span><span class="pln"> </span><span class="typ">AjaxUpload</span><span class="pun">(</span><span class="str">'upload_button_id'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln">action</span><span class="pun">:</span><span class="pln"> </span><span class="str">'upload.php'</span><span class="pun">});</span></pre>
+<h3>Configuring ajax upload</h3>
+<pre class="code"><span class="kwd">new</span><span class="pln"> </span><span class="typ">AjaxUpload</span><span class="pun">(</span><span class="str">'#upload_button_id'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="com">// Location of the server-side upload script</span><span class="pln"><br>&nbsp; action</span><span class="pun">:</span><span class="pln"> </span><span class="str">'upload.php'</span><span class="pun">,</span><span class="pln"><br>&nbsp; </span><span class="com">// File upload name</span><span class="pln"><br>&nbsp; name</span><span class="pun">:</span><span class="pln"> </span><span class="str">'userfile'</span><span class="pun">,</span><span class="pln"><br>&nbsp; </span><span class="com">// Additional data to send</span><span class="pln"><br>&nbsp; data</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; example_key1 </span><span class="pun">:</span><span class="pln"> </span><span class="str">'example_value'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; example_key2 </span><span class="pun">:</span><span class="pln"> </span><span class="str">'example_value2'</span><span class="pln"><br>&nbsp; </span><span class="pun">},</span><span class="pln"><br>&nbsp; </span><span class="com">// Submit file after selection</span><span class="pln"><br>&nbsp; autoSubmit</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln"><br>&nbsp; </span><span class="com">// The type of data that you're expecting back from the server.</span><span class="pln"><br>&nbsp; </span><span class="com">// HTML (text) and XML are detected automatically.</span><span class="pln"><br>&nbsp; </span><span class="com">// Useful when you are using JSON data as a response, set to "json" in that case.</span><span class="pln"><br>&nbsp; </span><span class="com">// Also set server response type to text/html, otherwise it will not work in IE6</span><span class="pln"><br>&nbsp; responseType</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln"><br>&nbsp; </span><span class="com">// Fired after the file is selected</span><span class="pln"><br>&nbsp; </span><span class="com">// Useful when autoSubmit is disabled</span><span class="pln"><br>&nbsp; </span><span class="com">// You can return false to cancel upload</span><span class="pln"><br>&nbsp; </span><span class="com">// @param file basename of uploaded file</span><span class="pln"><br>&nbsp; </span><span class="com">// @param extension of that file</span><span class="pln"><br>&nbsp; onChange</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">file</span><span class="pun">,</span><span class="pln"> extension</span><span class="pun">){},</span><span class="pln"><br>&nbsp; </span><span class="com">// Fired before the file is uploaded</span><span class="pln"><br>&nbsp; </span><span class="com">// You can return false to cancel upload</span><span class="pln"><br>&nbsp; </span><span class="com">// @param file basename of uploaded file</span><span class="pln"><br>&nbsp; </span><span class="com">// @param extension of that file</span><span class="pln"><br>&nbsp; onSubmit</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">file</span><span class="pun">,</span><span class="pln"> extension</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{},</span><span class="pln"><br>&nbsp; </span><span class="com">// Fired when file upload is completed</span><span class="pln"><br>&nbsp; </span><span class="com">// WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!</span><span class="pln"><br>&nbsp; </span><span class="com">// @param file basename of uploaded file</span><span class="pln"><br>&nbsp; </span><span class="com">// @param response server response</span><span class="pln"><br>&nbsp; onComplete</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">file</span><span class="pun">,</span><span class="pln"> response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{}</span><span class="pln"><br></span><span class="pun">});</span></pre>
+<p>Note: Do not use the data parameter to attach dynamic data, like
+this “data: {txt: textfield.value}”, because it will assign data when
+the instance of the AJAX Upload is created and will not change later.
+If you want to pass additional data from textfields use setData method
+in a onSubmit callback.</p>
+<p>Instance methods</p>
+<ul>
+<li>submit - Submits file to the server (useful when autoSubmit is disabled)</li>
+<li>disable - Disables upload button</li>
+<li>enable - Enables upload button</li>
+<li>destroy - Method that cleans up the AjaxUpload object</li>
+<li>setData(data) - Overwrites data parameter</li>
+</ul>
+<pre class="code"><span class="com">//You can use these methods, to configure </span><em><span class="com">AJAX Upload</span></em><span class="com"> later.</span><span class="pln"><br></span><span class="kwd">var</span><span class="pln"> upload </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">AjaxUpload</span><span class="pun">(</span><span class="str">'#div_id'</span><span class="pun">,{</span><span class="pln">action</span><span class="pun">:</span><span class="pln"> </span><span class="str">'upload.php'</span><span class="pun">});</span><span class="pln"><br></span><span class="com">//For example when user selects something, set some data</span><span class="pln"><br>upload</span><span class="pun">.</span><span class="pln">setData</span><span class="pun">({</span><span class="str">'example_key'</span><span class="pun">:</span><span class="pln"> </span><span class="str">'value'</span><span class="pun">});</span><span class="pln"><br><br></span><span class="com">//Or you can use these methods directly inside event function</span><span class="pln"><br></span><span class="kwd">new</span><span class="pln"> </span><span class="typ">AjaxUpload</span><span class="pun">(</span><span class="str">'div_id'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; action</span><span class="pun">:</span><span class="pln"> </span><span class="str">'upload.php'</span><span class="pun">,</span><span class="pln"><br>&nbsp; onSubmit</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">// allow only 1 upload</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">disable</span><span class="pun">();</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">});</span><span class="pln"><br></span><span class="pun">});</span></pre>
+<h3>How do I access the uploaded files?</h3>
+<p>For the server-side code it looks like the file is uploaded with the
+simple upload form, because of that you can use any language you want.</p>
+<p>You can access the uploaded file with:</p>
+<ul>
+<li>PHP: $_FILES['userfile']</li>
+<li>Rails: params[:userfile]</li>
+</ul>
+<p>Note that “userfile” is the default value for the option ‘name’.</p>
+<p>You can access the additional data with:</p>
+<ul>
+<li>PHP: $_POST['yourkey']</li>
+<li>Rails: params[:yourkey]</li>
+</ul>
+<h3>Server-side script</h3>
+<p>If you are using php, here is a simplest example that I got straight from php manual</p>
+<pre class="code prettyprint"><span class="pln">$uploaddir </span><span class="pun">=</span><span class="pln"> </span><span class="str">'/var/www/uploads/'</span><span class="pun">;</span><span class="pln"><br>$uploadfile </span><span class="pun">=</span><span class="pln"> $uploaddir </span><span class="pun">.</span><span class="pln"> basename</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">'userfile'</span><span class="pun">][</span><span class="str">'name'</span><span class="pun">]);</span><span class="pln"><br><br></span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">move_uploaded_file</span><span class="pun">(</span><span class="pln">$_FILES</span><span class="pun">[</span><span class="str">'userfile'</span><span class="pun">][</span><span class="str">'tmp_name'</span><span class="pun">],</span><span class="pln"> $uploadfile</span><span class="pun">))</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; echo </span><span class="str">"success"</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="com">// WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!</span><span class="pln"><br>&nbsp; </span><span class="com">// Otherwise onSubmit event will not be fired</span><span class="pln"><br>&nbsp; echo </span><span class="str">"error"</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span></pre>
+<p>ColdFusion based file upload. (Default barebones solution)</p>
+<pre><span class="pun">&lt;</span><span class="tag">cffunction</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"uploadFile"</span><span class="pln"> </span><span class="atn">access</span><span class="pun">=</span><span class="atv">"remote"</span><span class="pln"> </span><span class="atn">output</span><span class="pun">=</span><span class="atv">"false"</span><span class="pun">&gt;</span><span class="pln"><br>&nbsp; </span><span class="pun">&lt;</span><span class="tag">cfargument</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"userFile"</span><span class="pun">&gt;</span><span class="pln"><br>&nbsp; </span><span class="pun">&lt;</span><span class="tag">cffile</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"upload"</span><span class="pln"> </span><span class="atn">fileField</span><span class="pun">=</span><span class="atv">"userFile"</span><span class="pln"> </span><span class="atn">destination</span><span class="pun">=</span><span class="atv">"directory/path/on/server/"</span><span class="pun">&gt;</span><span class="pln"><br>&nbsp; </span><span class="pun">&lt;</span><span class="tag">cfreturn</span><span class="pln"> </span><span class="atv">"whatever"</span><span class="pun">&gt;</span><span class="pln"><br></span><span class="pun">&lt;/</span><span class="tag">cffunction</span><span class="pun">&gt;</span></pre>
+<p>And here is an ASPX handler, please modify it to suit your needs:</p>
+<pre class="code prettyprint"><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="typ">Web</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="pln">IO</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">FileHandler</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="typ">IHttpHandler</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">ProcessRequest</span><span class="pun">(</span><span class="typ">HttpContext</span><span class="pln"> context</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">string</span><span class="pln"> strFileName </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Path</span><span class="pun">.</span><span class="typ">GetFileName</span><span class="pun">(</span><span class="pln">context</span><span class="pun">.</span><span class="typ">Request</span><span class="pun">.</span><span class="typ">Files</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="typ">FileName</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">string</span><span class="pln"> strExtension </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Path</span><span class="pun">.</span><span class="typ">GetExtension</span><span class="pun">(</span><span class="pln">context</span><span class="pun">.</span><span class="typ">Request</span><span class="pun">.</span><span class="typ">Files</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="typ">FileName</span><span class="pun">).</span><span class="typ">ToLower</span><span class="pun">();</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">string</span><span class="pln"> strSaveLocation </span><span class="pun">=</span><span class="pln"> context</span><span class="pun">.</span><span class="typ">Server</span><span class="pun">.</span><span class="typ">MapPath</span><span class="pun">(</span><span class="str">"Upload"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="str">""</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> strFileName</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; context</span><span class="pun">.</span><span class="typ">Request</span><span class="pun">.</span><span class="typ">Files</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="typ">SaveAs</span><span class="pun">(</span><span class="pln">strSaveLocation</span><span class="pun">);</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; &nbsp; context</span><span class="pun">.</span><span class="typ">Response</span><span class="pun">.</span><span class="typ">ContentType</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"text/plain"</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; context</span><span class="pun">.</span><span class="typ">Response</span><span class="pun">.</span><span class="typ">Write</span><span class="pun">(</span><span class="str">"success"</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">bool</span><span class="pln"> </span><span class="typ">IsReusable</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">get</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span></pre>
+<h3>How to allow only certain file types?</h3>
+<p>The best way is to check the file type of selected function in a
+onSubmit callback function and return false to cancel upload if invalid
+file is selected</p>
+<pre class="code prettyprint"><span class="kwd">new</span><span class="pln"> </span><span class="typ">AjaxUpload</span><span class="pun">(</span><span class="str">'#button2'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; action</span><span class="pun">:</span><span class="pln"> </span><span class="str">'upload.php'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; onSubmit </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">file </span><span class="pun">,</span><span class="pln"> ext</span><span class="pun">){</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ext </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="str">/^(jpg|png|jpeg|gif)$/</span><span class="pun">.</span><span class="pln">test</span><span class="pun">(</span><span class="pln">ext</span><span class="pun">))){</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// extension is not allowed</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alert</span><span class="pun">(</span><span class="str">'Error: invalid file extension'</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com">// cancel upload</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">});</span></pre>
+<h2>How it works?</h2>
+<p>Plugin creates invisible file input on top of the button you
+provide, so when user clicks on your button the normal file selection
+window is shown. And after user selects a file, plugin submits form
+that contains file input to an iframe. So it isn’t true ajax upload,
+but brings same user experience.</p>
+<h2>Licensing &amp; Terms of Use</h2>
+<p>Ajax upload plugin is completely free and licensed under <a rel="nofollow" href="http://valums.com/mit-license">MIT license</a></p>
+<h2>Contribute</h2>
+<p>If you see anything that needs patching or have suggestions, please contact me using valums - gmail - com.</p>
+ 
+
+	 <div class="social">
+	 	<div class="digg">	
+			<script type="text/javascript">
+			digg_url = 'http://valums.com/ajax-upload/';
+			</script>
+			<script src="Ajax%20upload_files/diggthis_002.htm" type="text/javascript"></script><iframe src="Ajax%20upload_files/diggthis.htm" scrolling="no" width="52" frameborder="0" height="80"></iframe>
+		</div>
+		<div class="reddit">	
+			<script type="text/javascript">
+				reddit_url='http://valums.com/ajax-upload/';
+				reddit_title='Ajax upload';
+			</script>
+			<script type="text/javascript" src="Ajax%20upload_files/button.js"></script><iframe src="Ajax%20upload_files/button_content.htm" scrolling="no" width="69" frameborder="0" height="52"></iframe>
+		</div>
+		<a class="first" rel="nofollow" href="http://www.reddit.com/submit?url=http://valums.com/ajax-upload/&amp;title=Ajax%20upload"><span>Reddit</span></a>
+		<a rel="nofollow" href="http://delicious.com/post?url=http://valums.com/ajax-upload/&amp;title=Ajax%20upload"><span>Delitious</span></a>	
+		<a rel="nofollow" href="http://feeds2.feedburner.com/valums" class="rss"><span>RSS</span></a>	
+		<a rel="nofollow" href="http://twitter.com/home?status=@valums%20Ajax%20upload%20http://valums.com/ajax-upload/"><span>Twitit</span></a>	
+		<a rel="nofollow" href="http://www.stumbleupon.com/submit?url=http://valums.com/ajax-upload/&amp;title=Ajax%20upload"><span>Stumbleit</span></a>
+	</div>
+
+      
+      <!--<br class="clear" />
+      
+      <div class="single_meta">
+        <ul class="single_author">
+          <li><a href="http://valums.com/ajax-upload/#post_author">By Andrew Valums</a></li>
+        </ul>
+        <ul class="social_bookmarks">
+          <li><a href="http://digg.com/submit?phase=2&url=http://valums.com/ajax-upload/&title=Ajax upload"><img src="http://valums.com/wp-content/themes/sharp_blue/images/social_bookmark_1.png" alt="digg it" /></a></li>
+          <li><a href="http://www.designfloat.com/submit.php?url=http://valums.com/ajax-upload/&title=Ajax upload"><img src="http://valums.com/wp-content/themes/sharp_blue/images/social_bookmark_2.png" alt="Design Float" /></a></li>
+          
+          <li><a href="http://del.icio.us/post?url=http://valums.com/ajax-upload/&title=Ajax upload"><img src="http://valums.com/wp-content/themes/sharp_blue/images/social_bookmark_3.png" alt="del.icio.us" /></a></li>
+          <li><a href="http://www.stumbleupon.com/submit?url=http://valums.com/ajax-upload/&title=Ajax upload"><img src="http://valums.com/wp-content/themes/sharp_blue/images/social_bookmark_4.png" alt="Stumble Upon" /></a></li>
+        </ul>
+        <br class="clear" />
+      </div>
+      <br class="clear" />-->
+        
+          	<h3 class="a_heading ie_fix">
+	<a href="http://valums.com/ajax-upload/#comment" title="Leave a comment">Comments</a>
+</h3>
+
+
+  <div id="comments">
+  
+<ol class="comment_list">
+            <li id="comment-205">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/3a93495e4cd34f4034113a7d7645cd29.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> Jerboaman            <span>February 27th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>I’m
+having an issue with the page zooming out in firefox 3 on Linux after
+selecting a file. I think it may have to do with adding the iframe. Not
+sure tho, any help would be appreciated.<br>
+I’ve put:</p>
+<pre class="code"><span class="pln">jQuery</span><span class="pun">.</span><span class="pln">each</span><span class="pun">(</span><span class="pln">jQuery</span><span class="pun">.</span><span class="pln">browser</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> val</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">if</span><span class="pun">(</span><span class="pln">i</span><span class="pun">==</span><span class="str">"mozilla"</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> jQuery</span><span class="pun">.</span><span class="pln">browser</span><span class="pun">.</span><span class="pln">version</span><span class="pun">.</span><span class="pln">substr</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="lit">3</span><span class="pun">)==</span><span class="str">"1.9"</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; gBrowser</span><span class="pun">.</span><span class="pln">selectedBrowser</span><span class="pun">.</span><span class="pln">markupDocumentViewer</span><span class="pun">.</span><span class="pln">fullZoom </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">});</span></pre>
+<p>on the onComplete event to temporarily fix the firefox3 zoom issue I was having.</p>
+<p>Andrew: This bug only appears on Linux, and I don’t have it on my
+computer. I would be grateful for anyone who would approve and/or fix
+this bug.</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-266">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/85258b497e07d1f82418769febbf1650.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> Jon Wu            <span>March 5th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>In
+Firefox 3 I can’t get something like example 2 to have a pointer over
+the link. It looks like once you initialize the script, no matter how
+you try and force cursor:pointer on the link you make, you just get a
+brief pointer style flash onmouseover but then the cursor turns into a
+text style one. The link does work as you’d hope in IE 8 and Chrome
+though.</p>
+<p>Andrew: Firefox doesn’t allow to change cursor style for file input
+element, and my plugin uses it to show file browser. I advise use to
+use a hover class, that AJAX upload adds to your element when someone
+hovers it, so users will see that the element is clickable.</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-280">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/5def821066a553718454d40a8140997a.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> luizuc            <span>March 6th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>Hi
+Andrew, you did a great job!!! Is there any way to upload multiple
+files on submit (when autosubmit is false)? or as an alternate approach
+is there any way to enqueue ajax requests in order not to use too many
+connections to the server when you are uploading many big files?<br>
+Many thanks</p>
+<p>Andrew: Sorry, but it’s not possible yet, and I’m not planning to implement this function any soon.</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-399">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/a5bf4bfaec877a4008196dd40e00d8a8.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> <a href="http://url%28optional%29/" rel="external nofollow" class="url">chinchih</a>            <span>March 20th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>Hi,
+could you please give an example on how to access the uploaded file(s)
+using server-side Java? How does your plugin work, for example, with
+Apache common’s fileupload?</p>
+<p>Andrew: For the server-side code it looks like the file is uploaded with the simple upload form.</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-554">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/9e1ac12721ac2ee8089e1a1445315eda.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> Alex            <span>April 7th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>Is it possible to select a class of elements to do the upload?</p>
+<p>Andrew Valums: If you are using jQuery:</p>
+<pre><span class="pln">$</span><span class="pun">(</span><span class="str">'.someClass'</span><span class="pun">).</span><span class="pln">each</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(){</span><span class="pln"><br>&nbsp;</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">AjaxUpload</span><span class="pun">(</span><span class="kwd">this</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="com">// some code</span><span class="pln"><br>&nbsp;</span><span class="pun">}</span><span class="pln"><br></span><span class="pun">});</span></pre>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-665">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/be09e384c9ac81f875d8f8e2944c1cba.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> <a href="http://url%28optional%29/" rel="external nofollow" class="url">rob</a>            <span>April 17th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>Will the new versions of this take in mind that the target attribute for forms has been deprecated in HTML 4.01?<br>
+Andrew Valums: Unfortunately I really need to use it.</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-679">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/f490759aa19b93fa5f8d2ebfc322beec.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> <a href="http://url%28optional%29/" rel="external nofollow" class="url">Frosty</a>            <span>April 19th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>Your
+claim that this plugin lets you “easily upload multiple files without
+refreshing the page” isn’t correct because the demo, once used, locks
+you into that page and there’s no way to click the back button, or
+press Alt-Left, to go back to the previous page. I don’t know how it’s
+happening, but it is, and there’s a refresh going on there</p>
+<p>Andrew Valums: I don’t really see a way to fix this problem. :(</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-691">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/299dcde8bdf453c2d523330b937631e0.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> <a href="http://url%28optional%29/" rel="external nofollow" class="url">NordWind</a>            <span>April 21st</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>When
+I try send some data via POST between two different servers I have got
+same error in FF (iframe.contentDocument). File sucessfully submitted,
+but script can`t return doc.readyState. Any Ideas ?</p>
+<p>Andrew Valums: Due to security concerns, accessing iframes from
+outher domain is not allowed, so if you want to use AJAX Upload for
+cross-site uploads, you should add a server-side proxy.</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-878">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/b200eb1d4ecf9f63fd3d672376a26769.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> <a href="http://www.erif.org/" rel="external nofollow" class="url">Kaolin Fire</a>            <span>May 28th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>@Yon @Jerboaman –</p>
+<p>I’m using this ajax upload with jquery and fixed the zoom by editing
+ajaxupload.3.2.js line 486 (right after the settings.onComplete.call …)</p>
+<p>        $(iframe).empty();</p>
+<p>instead of</p>
+<p>         iframe.src = “about:blank”</p>
+<p>seems to be working for me.</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-971">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/aa410e6efec0831f8635666d8b07deec.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> <a href="http://url%28optional%29/" rel="external nofollow" class="url">Aaron</a>            <span>June 24th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>Maybe me not looking properly, but can you point me in to the direction of the onError function?<br>
+I am checking the file-size server side and return an error if the file is to big.</p>
+<p>Andrew: Use response in the onSuccess function to detect an error.</p>
+<p>So what happens if the post does not reach the server?  i strongly suggest implementing an onerror function.</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-975">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/01d86b78e7eca28244ee660c6595ebb6.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> MarcelV            <span>June 25th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>Hi, i detect some leak memory on ajax upload.<br>
+The sIEve application is reporting that.<br>
+Can you take a look?</p>
+<p>Thanks.<br>
+sorry, my english is not so good.</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-978">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/8e9afebff0f71cdd6d746f6650c4825a.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> <a href="http://url%28optional%29/" rel="external nofollow" class="url">Chary</a>            <span>June 26th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>how can restrict user to upload only 500kb file size<br>
+Andrew: Do it on the server side.</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-981">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/2b021655a5ca22b930b611e741d7e76e.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> <a href="http://url%28optional%29/" rel="external nofollow" class="url">Alex</a>            <span>June 27th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>Hi, how can I show an image in the loading time?</p>
+<p>And if I want to show the image uploaded what is the code to use?</p>
+<p>becase if in PHP I return this code ” the script return the code as a string not as an image</p>
+<p>Thank you</p>
+          </div>
+        <br class="clear">
+	</li>
+                    <li id="comment-986">
+    <div class="comment_author">
+	    	<img alt="" src="Ajax%20upload_files/5b786a918c434eb9de8b734096e9dd66.jpg" class="avatar avatar-80 photo" width="80" height="80">            <p> <a href="http://getmytemplate.com/" rel="external nofollow" class="url">S.Krol</a>            <span>June 29th</span></p>
+          </div>
+          <div class="single_comment"> <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="comment_arrow" width="32" height="31">
+            <p>Hello!
+I want to use more than 1 Uplaod filelds in my Form. The Problem is
+that i dont know how i can make it variable, somethik like this:</p>
+<p>$(document).ready(function(){<br>
+var ID=getTheCurrentFormID();</p>
+<p>	new AjaxUpload(’#'+ID, {<br>
+        //…</p>
+          </div>
+        <br class="clear">
+	</li>
+              </ol>
+  <div class="comment_form">
+          <h3><a name="comment">Add Yours</a></h3>
+<ul>
+            <li class="comment_author"><img src="Ajax%20upload_files/default_avatar.png" alt="Author Avatar" width="80" height="80">
+              <p style="padding-left: 25px;">YOU</p>
+              <br class="clear">
+            </li>
+          </ul>
+          <img src="Ajax%20upload_files/comment_arrow.png" alt="Comment Arrow" class="textarea_arrow" width="32" height="31">
+          
+<form action="http://valums.com/wp-comments-post.php" method="post" id="comment_form">
+					<fieldset>
+
+                    <textarea name="comment" id="comment" rows="8" cols="10" tabindex="1" class="input textarea required" defaultvalue="Your Message..."></textarea>
+  				
+  					<input name="author" id="author" size="22" tabindex="2" class="input required" defaultvalue="Name" value="" type="text">
+        			<input name="email" id="email" size="22" tabindex="3" class="input required" defaultvalue="Email" value="" type="text">
+        			<input name="url" id="url" size="22" tabindex="4" class="input" defaultvalue="URL (Optional)" value="" type="text">
+  				  
+  <!--<p><small><strong>XHTML:</strong> You can use these tags: &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </small></p>-->
+
+    <input name="submit" id="submit" tabindex="5" value="Add Comment" type="submit">
+    <input name="comment_post_ID" value="3" type="hidden">
+  
+		<br class="clear">
+        </fieldset></form></div>
+      <br class="clear">
+      </div>
+      <br>
+
+<h3 class="ie_fix" id="post_author">About Author</h3>
+	<a name="post_author"></a>
+      <div id="about_author"> <img alt="" src="Ajax%20upload_files/162f0a7daf7c6ccc35d45e3495c4dd1a.png" class="avatar avatar-80 photo" width="80" height="80">        <div class="author_text">
+          <h4><a href="http://valums.com/" title="Visit Andrew Valums's website" rel="external">Andrew Valums</a></h4>
+          <p>
+          I'm a 18 year old web developer living in Latvia. I currently work as a freelancer, so you can hire me.          <a href="http://valums.com/about/">Read about me.</a>
+          </p>
+          <br class="clear">
+        </div>
+      </div>
+</div>
+      </div>
+<!-- end content -->
+<div id="sidebar">
+  <div class="search_div">
+    <form id="searchform" method="get" action="http://valums.com">
+      <fieldset>
+      <input name="s" id="s" class="search_term" type="text">
+      </fieldset>
+    </form>
+  </div>
+  <div id="advert_div">
+    <div id="advert_div_inner">
+		<script type="text/javascript">
+			Vertical1237246 = false;
+			ShowAdHereBanner1237246 = true;
+			RepeatAll1237246 = false;
+			NoFollowAll1237246 = false;
+			BannerStyles1237246 = new Array(
+				"a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;}",
+				"img{border:0;clear:right;}",
+				"a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}",
+				"a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
+			);
+			
+			document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1237246/1237246.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+		</script><script src="Ajax%20upload_files/1237246.txt" type="text/javascript"></script><div id="bsaz_1237246" class="adblock"><style type="text/css">div#bsaz_1237246.adblock {width:100%;display:block;} div#bsaz_1237246.adblock a{width:125px;} div#bsaz_1237246.adblock a img{padding:0;} div#bsaz_1237246.adblock a em{font-style:normal;} div#bsaz_1237246.adblock a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;} div#bsaz_1237246.adblock img{border:0;clear:right;} div#bsaz_1237246.adblock a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;} div#bsaz_1237246.adblock a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;} div#bsaz_1237246.adblock a.adhere{width:125px;height:125px;line-height:1000%;} html>body div#bsaz_1237246.adblock a.adhere{width:123px;height:123px;} div#bsaz_1237246.adblock img.s{height:0;width:0;}</style><a href="http://my.tmdhosting.com/link.php?id=7" onclick="_bsa.rocks('click',4697,1237246)" title="Web Hosting" id="bsa_4697" target="_blank"><img src="Ajax%20upload_files/20805_2009032603044_1237246.gif" alt="Web Hosting" width="125" height="125"></a><a href="http://www.elegantthemes.com/" onclick="_bsa.rocks('click',4996,1237246)" title="Elegant Wordpress Themes" id="bsa_4996" target="_blank"><img src="Ajax%20upload_files/22066_2009040764535_1237246.gif" alt="Elegant Wordpress Themes" width="125" height="125"></a><a href="http://www.interspire.com/shoppingcart" onclick="_bsa.rocks('click',5143,1237246)" title="shopping cart software" id="bsa_5143" target="_blank"><img src="Ajax%20upload_files/22725_20090410152204_1237246.gif" alt="shopping cart software" width="125" height="125"></a><a href="http://buysellads.com/buy/detail/1937" title="Advertise Here" id="bsa_1937000" class="adhere" target="_blank">Advertise Here</a></div>  
+      <br class="clear">
+    </div>
+  </div>
+  <div class="subscribe_div">
+    <h3>Subscribe</h3>
+    <ul>
+     <li><a rel="nofollow" href="http://feeds2.feedburner.com/valums">RSS Feed</a></li>
+     <li><a href="http://twitter.com/valums">Twitter</a></li>
+    </ul>
+  </div>
+    <div class="sidebox_div">
+    <h3>Categories</h3>
+    <ul>
+      	<li class="cat-item cat-item-10"><a href="http://valums.com/" title="View all posts filed under Frontpage">Frontpage</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://valums.com/category/javascript/" title="View all posts filed under JavaScript">JavaScript</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://valums.com/category/plugins/" title="View all posts filed under Plugins">Plugins</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://valums.com/category/wordpress/" title="View all posts filed under Wordpress">Wordpress</a>
+</li>
+    </ul>
+  </div>
+  <div class="sidebox_div">
+    <h3>Friends</h3>
+    <ul>
+      <li><a href="http://www.thetechlabs.com/">Flash Tutorials</a></li>
+    </ul>
+  </div>  
+  <!--  <div class="sidebox_div">
+    <h3>Archives</h3>
+    <ul>
+      	<li><a href='http://valums.com/2009/04/' title='April 2009'>April 2009</a></li>
+	<li><a href='http://valums.com/2009/03/' title='March 2009'>March 2009</a></li>
+	<li><a href='http://valums.com/2009/02/' title='February 2009'>February 2009</a></li>
+	<li><a href='http://valums.com/2009/01/' title='January 2009'>January 2009</a></li>
+    </ul>
+  </div>-->
+ 
+</div>
+<br class="clear">
+</div>
+<!-- end wrapper -->
+<div id="footer">
+  <p>Made with love by <a href="http://valums.com/about/">Andris Valums.</a></p>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Ajax%20upload_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6346996-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!--12 queries in 0.166 seconds.--></body></html>

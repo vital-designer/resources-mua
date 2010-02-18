@@ -1,0 +1,1822 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+
+
+
+	<title>jQuery Tabbed Content Rotator | Raymond Selda</title>
+		
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="PICS-Label" content="(PICS-1.1 &quot;http://www.classify.org/safesurf/&quot; L gen true for &quot;http://www.raymondselda.com/&quot; r (SS~~000 1))">
+	<meta name="verify-v1" content="c3Wy71PDqnqVVe6VMm/WpNcQIMVN9Yh0WHMhu3YG2HI=">
+	<link rel="stylesheet" type="text/css" href="jQuery%20Tabbed%20Content%20Rotator_files/style.css" media="screen">
+	<script src="jQuery%20Tabbed%20Content%20Rotator_files/jquery.js" type="text/javascript"></script>
+	
+	<link rel="alternate" type="application/rss+xml" title="Raymond Selda RSS Feed" href="http://www.raymondselda.com/feed/">
+	<link rel="pingback" href="http://www.raymondselda.com/xmlrpc.php">
+	<link rel="shortcut icon" href="http://www.raymondselda.com/wp-content/themes/rsminimal/favicon.ico">
+
+	<!-- Syntax Highlighter Styles -->
+	<link rel="stylesheet" type="text/css" href="jQuery%20Tabbed%20Content%20Rotator_files/SyntaxHighlighter.css" media="screen">
+
+	<link rel="alternate" type="application/rss+xml" title="Raymond Selda » Create A Tabbed Content Rotator Using jQuery Comments Feed" href="http://www.raymondselda.com/create-a-tabbed-content-rotator-using-jquery/feed/">
+<link rel="stylesheet" id="wp-pagenavi-css" href="jQuery%20Tabbed%20Content%20Rotator_files/pagenavi-css.css" type="text/css" media="all">
+<script type="text/javascript" src="jQuery%20Tabbed%20Content%20Rotator_files/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.raymondselda.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.raymondselda.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Raymond Selda" href="http://www.raymondselda.com/">
+<link rel="start" title="Scenery CSS Tweak" href="http://www.raymondselda.com/little-wordpress-problem-solved/">
+<link rel="prev" title="What Should I Write About?" href="http://www.raymondselda.com/what-should-i-write-about/">
+<link rel="next" title="Harness The Power of Wordpress Child Themes" href="http://www.raymondselda.com/harness-the-power-of-wordpress-child-themes/">
+<meta name="generator" content="WordPress 2.8.2">
+	<link href="jQuery%20Tabbed%20Content%20Rotator_files/SyntaxHighlighter.css" type="text/css" rel="stylesheet">
+	<meta name="description" content="We are going to create a tabbed content rotator using jQuery and jQuery UI. This effect can be used to present your products and services.">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<script type="text/javascript">
+var userflyHost = (("https:" == document.location.protocol) ? "https://secure.userfly.com" : "http://asset.userfly.com");
+document.write(unescape("%3Cscript src='" + userflyHost + "/users/24180/userfly.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="jQuery%20Tabbed%20Content%20Rotator_files/userfly.htm" type="text/javascript"></script>
+<script src="jQuery%20Tabbed%20Content%20Rotator_files/r.com%25252Fdemo%25252Ftabbed-rotator%25252F&amp;screen=1152x864&amp;localtime" type="text/javascript"></script><script src="jQuery%20Tabbed%20Content%20Rotator_files/cookieQHJ5HXMLWQIJ8SJHL989MP5VUJ7XYGX1idle0raAUDWYZ38RPDWKX51EK0" type="text/javascript"></script><script src="jQuery%20Tabbed%20Content%20Rotator_files/cookieQHJ5HXMLWQIJ8SJHL989MP5VUJ7XYGX1idle0ra2SMEEC4K8EFZBX55L6O" type="text/javascript"></script><script src="jQuery%20Tabbed%20Content%20Rotator_files/cookieQHJ5HXMLWQIJ8SJHL989MP5VUJ7XYGX1idle0raRORY88CLFPV04AKET5C" type="text/javascript"></script></head><body>
+
+<div class="container_12">
+	<div id="header" class="grid_12">
+		<a href="http://www.raymondselda.com/"><img src="jQuery%20Tabbed%20Content%20Rotator_files/logo.gif" alt="Raymond Selda Logo" id="logo" width="47" height="77"></a>
+				<a href="http://www.raymondselda.com/" id="site-title">Raymond Selda</a>
+		
+
+						<div class="site-menu"><ul><li><a href="http://www.raymondselda.com/">Home</a></li><li class="page_item page-item-1428"><a href="http://www.raymondselda.com/services/" title="Services">Services</a></li><li class="page_item page-item-1179"><a href="http://www.raymondselda.com/portfolio/" title="Portfolio">Portfolio</a></li><li class="page_item page-item-1365 current_page_parent"><a href="http://www.raymondselda.com/blog/" title="Blog">Blog</a></li><li class="page_item page-item-2"><a href="http://www.raymondselda.com/about/" title="About">About</a></li><li class="page_item page-item-12"><a href="http://www.raymondselda.com/contact/" title="Contact">Contact</a></li></ul></div>
+
+	</div><!-- end header -->
+    
+		
+		<h1 id="post-title" class="grid_9">Create A Tabbed Content Rotator Using jQuery</h1>
+		
+		<div id="postdata" class="grid_12">May 7, 2009 in <a href="http://www.raymondselda.com/category/jquery/" title="View all posts in jQuery" rel="category tag">jQuery</a> with <a href="#comments">76 Comments</a> </div><!-- end postdata -->
+		
+		<div id="main-content" class="grid_9">
+			<div class="single-post" id="post-958">
+			
+				<p><span class="dropcaps">T</span>oday
+we are going to create a tabbed content rotator (not sure what to call
+it really) using everyone’s favorite Javascript framework, <a href="http://jquery.com/">jQuery</a> and an interface library called <a href="http://jqueryui.com/home">jQuery UI</a>. This effect can be used effectively on your homepage to present customers with your products and services.</p>
+<p><span id="more-958"></span></p>
+<div class="promotion-block">
+<a rel="nofollow" href="http://www.packtpub.com/user-interface-library-for-jquery/book/mid/0906098ia3mh"><img src="jQuery%20Tabbed%20Content%20Rotator_files/jqueryui16book.jpg" alt="jQuery UI 1.6 Book" title="jQuery UI 1.6 Book" class="alignleft size-full wp-image-1281" width="152" height="188"></a>
+<h2>jQuery UI 1.6 – The User Interface Library for jQuery</h2>
+<p>Javascript is not really my cup of tea that’s why I use jQuery, a
+framework for easily interacting with Javascript. jQuery UI is a
+library built on top of jQuery which allows you to create interactions,
+full-featured widgets and animation effects. <a rel="nofollow" href="http://www.packtpub.com/user-interface-library-for-jquery/book/mid/0906098ia3mh">jQuery UI 1.6: The User Interface Library for jQuery</a>, written by Dan Wellman, is a book that will give you a good foundation in learning jQuery UI.</p>
+<p><a rel="nofollow" href="http://www.packtpub.com/user-interface-library-for-jquery/book/mid/0906098ia3mh">jQuery UI 1.6: The User Interface Library for jQuery</a>
+has in-depth explanations on each component; building from its default
+basic state into a more advanced state. Additionally, the book also
+looks at how components can be used in real world scenarios. This book
+is aimed at user interface designers and developers who need to learn
+how to implement jQuery UI quickly.
+</p></div>
+<p>I also have a tutorial on <a href="http://www.raymondselda.com/professional-dark-css-menu/">coding up a professional menu</a> in case rotating content with tabs is not your thing. You can view a <a href="http://www.raymondselda.com/demo/tabbed-rotator/">working demo</a> of this tutorial in case you’re curious and feel free to download the <a href="http://www.raymondselda.com/downloads/tabbed-rotator.zip">source files</a> for reference.</p>
+<p>Let us begin.</p>
+<h2>Build A Solid Structure – XHTML</h2>
+<p>We have our usual wrapper that wraps the rotator div which contains
+the tabs structured as a list and the content fragments that we’re
+going to rotate. We also reference jQuery and jQuery UI in the head
+section. The key point here are the class names <strong>ui-tabs-selected</strong> and <strong>ui-tabs-hide</strong> for the list and content fragments. Those class names are part responsible for rotating our content.</p>
+<p><strong>Updated</strong>: We just called <code>ui.core.js</code> and <code>ui.tabs.js</code> instead of using a customized code. Please check out the updates. Hope most of you will be able to use this one. Thanks.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span>&lt;!DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;"-//W3C//DTD&nbsp;XHTML&nbsp;1.0&nbsp;Strict//EN"&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"<span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">html</span><span>&nbsp;</span><span class="attribute">xmlns</span><span>=</span><span class="attribute-value">"http://www.w3.org/1999/xhtml"</span><span>&nbsp;</span><span class="attribute">xml:lang</span><span>=</span><span class="attribute-value">"en"</span><span>&nbsp;</span><span class="attribute">lang</span><span>=</span><span class="attribute-value">"en"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">head</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">title</span><span class="tag">&gt;</span><span>Tabbed&nbsp;Content&nbsp;Rotator&nbsp;Using&nbsp;JQuery</span><span class="tag">&lt;/</span><span class="tag-name">title</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">meta</span><span>&nbsp;</span><span class="attribute">http-equiv</span><span>=</span><span class="attribute-value">"content-type"</span><span>&nbsp;</span><span class="attribute">content</span><span>=</span><span class="attribute-value">"text/html;charset=utf-8"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">meta</span><span>&nbsp;</span><span class="attribute">http-equiv</span><span>=</span><span class="attribute-value">"Content-Style-Type"</span><span>&nbsp;</span><span class="attribute">content</span><span>=</span><span class="attribute-value">"text/css"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"ui.core.js"</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"ui.tabs.js"</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">body</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"wrapper"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"rotator"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">&lt;!--&nbsp;Tabs&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">ul</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"ui-tabs-nav"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">li</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"ui-tabs-nav-item&nbsp;ui-tabs-selected"</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"nav-fragment-1"</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#fragment-1"</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">span</span><span class="tag">&gt;</span><span>Maximize&nbsp;Profits</span><span class="tag">&lt;/</span><span class="tag-name">span</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">li</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">li</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"ui-tabs-nav-item"</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"nav-fragment-2"</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#fragment-2"</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">span</span><span class="tag">&gt;</span><span>Flexible&nbsp;Technology</span><span class="tag">&lt;/</span><span class="tag-name">span</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">li</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">li</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"ui-tabs-nav-item"</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"nav-fragment-3"</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#fragment-3"</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">span</span><span class="tag">&gt;</span><span>Practical&nbsp;Solutions</span><span class="tag">&lt;/</span><span class="tag-name">span</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">li</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">li</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"ui-tabs-nav-item"</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"nav-fragment-4"</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#fragment-4"</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">span</span><span class="tag">&gt;</span><span>Customer&nbsp;Support</span><span class="tag">&lt;/</span><span class="tag-name">span</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">li</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">ul</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">&lt;!--&nbsp;First&nbsp;Content&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"fragment-1"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"ui-tabs-panel"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">""</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">h2</span><span class="tag">&gt;</span><span>Maximize&nbsp;Profits</span><span class="tag">&lt;/</span><span class="tag-name">h2</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipiscing&nbsp;elit.&nbsp;Nulla&nbsp;tincidunt&nbsp;condimentum&nbsp;lacus.&nbsp;Pellentesque&nbsp;ut&nbsp;diam.</span><span class="tag">&lt;/</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">p</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"btn_get_started"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#"</span><span class="tag">&gt;</span><span>Get&nbsp;Started</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span>&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"btn_learn_more"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#"</span><span class="tag">&gt;</span><span>Learn&nbsp;More</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">&lt;!--&nbsp;Second&nbsp;Content&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"fragment-2"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"ui-tabs-panel&nbsp;ui-tabs-hide"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">""</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">h2</span><span class="tag">&gt;</span><span>Flexible&nbsp;Technology</span><span class="tag">&lt;/</span><span class="tag-name">h2</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipiscing&nbsp;elit.&nbsp;Nulla&nbsp;tincidunt&nbsp;condimentum&nbsp;lacus.&nbsp;Pellentesque&nbsp;ut&nbsp;diam.</span><span class="tag">&lt;/</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">p</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"btn_get_started"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#"</span><span class="tag">&gt;</span><span>Get&nbsp;Started</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span>&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"btn_learn_more"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#"</span><span class="tag">&gt;</span><span>Learn&nbsp;More</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">&lt;!--&nbsp;Third&nbsp;Content&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"fragment-3"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"ui-tabs-panel&nbsp;ui-tabs-hide"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">""</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">h2</span><span class="tag">&gt;</span><span>Practical&nbsp;Solutions</span><span class="tag">&lt;/</span><span class="tag-name">h2</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipiscing&nbsp;elit.&nbsp;Nulla&nbsp;tincidunt&nbsp;condimentum&nbsp;lacus.&nbsp;Pellentesque&nbsp;ut&nbsp;diam.</span><span class="tag">&lt;/</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">p</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"btn_get_started"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#"</span><span class="tag">&gt;</span><span>Get&nbsp;Started</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span>&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"btn_learn_more"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#"</span><span class="tag">&gt;</span><span>Learn&nbsp;More</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comments">&lt;!--&nbsp;Fourth&nbsp;Content&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"fragment-4"</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"ui-tabs-panel&nbsp;ui-tabs-hide"</span><span>&nbsp;</span><span class="attribute">style</span><span>=</span><span class="attribute-value">""</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">h2</span><span class="tag">&gt;</span><span>Customer&nbsp;Support</span><span class="tag">&lt;/</span><span class="tag-name">h2</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetur&nbsp;adipiscing&nbsp;elit.&nbsp;Nulla&nbsp;tincidunt&nbsp;condimentum&nbsp;lacus.&nbsp;Pellentesque&nbsp;ut&nbsp;diam.</span><span class="tag">&lt;/</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">p</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"btn_get_started"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#"</span><span class="tag">&gt;</span><span>Get&nbsp;Started</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span>&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">a</span><span>&nbsp;</span><span class="attribute">class</span><span>=</span><span class="attribute-value">"btn_learn_more"</span><span>&nbsp;</span><span class="attribute">href</span><span>=</span><span class="attribute-value">"#"</span><span class="tag">&gt;</span><span>Learn&nbsp;More</span><span class="tag">&lt;/</span><span class="tag-name">a</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">p</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span class="comments">&lt;!--&nbsp;end&nbsp;rotator&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span class="comments">&lt;!--&nbsp;end&nbsp;wrapper&nbsp;--&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">body</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">html</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" class="xhtml" name="code">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;
+
+&lt;head&gt;
+&lt;title&gt;Tabbed Content Rotator Using JQuery&lt;/title&gt;
+&lt;meta http-equiv="content-type" content="text/html;charset=utf-8" /&gt;
+&lt;meta http-equiv="Content-Style-Type" content="text/css" /&gt;
+
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="ui.core.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="ui.tabs.js" type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;body&gt;
+&lt;div id="wrapper"&gt;
+	&lt;div id="rotator"&gt;
+		&lt;!-- Tabs --&gt;
+	    &lt;ul class="ui-tabs-nav"&gt;
+	        &lt;li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-1"&gt;&lt;a href="#fragment-1"&gt;&lt;span&gt;Maximize Profits&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	        &lt;li class="ui-tabs-nav-item" id="nav-fragment-2"&gt;&lt;a href="#fragment-2"&gt;&lt;span&gt;Flexible Technology&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	        &lt;li class="ui-tabs-nav-item" id="nav-fragment-3"&gt;&lt;a href="#fragment-3"&gt;&lt;span&gt;Practical Solutions&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	        &lt;li class="ui-tabs-nav-item" id="nav-fragment-4"&gt;&lt;a href="#fragment-4"&gt;&lt;span&gt;Customer Support&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	    &lt;/ul&gt;
+
+	    &lt;!-- First Content --&gt;
+	    &lt;div id="fragment-1" class="ui-tabs-panel" style=""&gt;
+	        &lt;h2&gt;Maximize Profits&lt;/h2&gt;
+	        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt condimentum lacus. Pellentesque ut diam.&lt;/p&gt;
+	        &lt;p&gt;&lt;a class="btn_get_started" href="#"&gt;Get Started&lt;/a&gt; &lt;a class="btn_learn_more" href="#"&gt;Learn More&lt;/a&gt;&lt;/p&gt;
+	    &lt;/div&gt;
+
+	    &lt;!-- Second Content --&gt;
+	    &lt;div id="fragment-2" class="ui-tabs-panel ui-tabs-hide" style=""&gt;
+	        &lt;h2&gt;Flexible Technology&lt;/h2&gt;
+	        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt condimentum lacus. Pellentesque ut diam.&lt;/p&gt;
+	        &lt;p&gt;&lt;a class="btn_get_started" href="#"&gt;Get Started&lt;/a&gt; &lt;a class="btn_learn_more" href="#"&gt;Learn More&lt;/a&gt;&lt;/p&gt;
+	    &lt;/div&gt;
+
+	    &lt;!-- Third Content --&gt;
+	    &lt;div id="fragment-3" class="ui-tabs-panel ui-tabs-hide" style=""&gt;
+	        &lt;h2&gt;Practical Solutions&lt;/h2&gt;
+	        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt condimentum lacus. Pellentesque ut diam.&lt;/p&gt;
+	        &lt;p&gt;&lt;a class="btn_get_started" href="#"&gt;Get Started&lt;/a&gt; &lt;a class="btn_learn_more" href="#"&gt;Learn More&lt;/a&gt;&lt;/p&gt;
+	    &lt;/div&gt;
+
+	    &lt;!-- Fourth Content --&gt;
+	    &lt;div id="fragment-4" class="ui-tabs-panel ui-tabs-hide" style=""&gt;
+	        &lt;h2&gt;Customer Support&lt;/h2&gt;
+	        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt condimentum lacus. Pellentesque ut diam.&lt;/p&gt;
+	        &lt;p&gt;&lt;a class="btn_get_started" href="#"&gt;Get Started&lt;/a&gt; &lt;a class="btn_learn_more" href="#"&gt;Learn More&lt;/a&gt;&lt;/p&gt;
+	    &lt;/div&gt;
+	&lt;/div&gt;&lt;!-- end rotator --&gt;
+&lt;/div&gt;&lt;!-- end wrapper --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h2>Wrapper and Rotator Styles</h2>
+<p>After establishing our structure, we now design our rotator with
+some CSS. Assign a width and a couple of borders to our wrapper then
+center it. We then make some room for the tabs by adding a bottom
+padding to our rotator div. </p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-css" start="1"><li class="alt"><span><span class="comment">/*&nbsp;Rotator&nbsp;Styles&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="colors">#wrappe</span><span>r&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">width</span><span>:</span><span class="string">960px</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">border-top</span><span>:</span><span class="string">3px</span><span>&nbsp;</span><span class="string">solid</span><span>&nbsp;</span><span class="colors">#92a5bc</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">border-bottom</span><span>:</span><span class="string">1px</span><span>&nbsp;</span><span class="string">solid</span><span>&nbsp;</span><span class="colors">#92a5bc</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">margin</span><span>:0&nbsp;</span><span class="string">auto</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="colors">#rotato</span><span>r&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">background</span><span>:</span><span class="colors">#FFF</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">color</span><span>:</span><span class="colors">#000</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">position</span><span>:</span><span class="string">relative</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">padding-bottom</span><span>:2.6em;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">margin</span><span>:0;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">font-size</span><span>:</span><span class="string">16px</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" class="css" name="code">/* Rotator Styles */
+#wrapper {
+	width:960px;
+	border-top:3px solid #92a5bc;
+	border-bottom:1px solid #92a5bc;
+	margin:0 auto;
+}
+
+#rotator {
+	background:#FFF;
+	color:#000;
+	position:relative;
+	padding-bottom:2.6em;
+	margin:0;
+	font-size:16px;
+}
+</pre>
+<h2>Tab Styles</h2>
+<p>Basically we position the tabs below the content fragments and we
+display them horizontally. You’re also going to notice that we stacked
+up a few selectors (the list and the elements inside it) because each
+of them will share the same properties and values and we always strive
+to write optimized CSS.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-css" start="1"><li class="alt"><span><span class="comment">/*&nbsp;Tabs&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>ul.ui-tabs-nav,&nbsp;li.ui-tabs-nav-item,&nbsp;li.ui-tabs-nav-item&nbsp;a:link,&nbsp;li.ui-tabs-nav-item&nbsp;a:visited&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">margin</span><span>:0;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">padding</span><span>:0;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">border</span><span>:0;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">outline</span><span>:0;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">line-height</span><span>:1.3;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">text-decoration</span><span>:</span><span class="string">none</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">font-size</span><span>:100%;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">list-style</span><span>:</span><span class="string">none</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span><span>:</span><span class="string">left</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">font-family</span><span>:</span><span class="string">Arial</span><span>,&nbsp;</span><span class="string">Helvetica</span><span>,&nbsp;</span><span class="string">sans-serif</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>ul.ui-tabs-nav&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">position</span><span>:</span><span class="string">absolute</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">bottom</span><span class="string">bottom</span><span>:</span><span class="string">0px</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">left</span><span>:0;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">z-index</span><span>:1;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">width</span><span>:100%;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">background</span><span>:</span><span class="colors">#FFF</span><span>&nbsp;</span><span class="string">url</span><span>(images/uitabsbg.gif)&nbsp;</span><span class="string">repeat</span><span>-x&nbsp;</span><span class="keyword">bottom</span><span class="string">bottom</span><span>&nbsp;</span><span class="keyword">right</span><span class="string">right</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">border-top</span><span>:</span><span class="string">1px</span><span>&nbsp;</span><span class="string">solid</span><span>&nbsp;</span><span class="colors">#FFF</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" class="css" name="code">/* Tabs */
+ul.ui-tabs-nav, li.ui-tabs-nav-item, li.ui-tabs-nav-item a:link, li.ui-tabs-nav-item a:visited {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	line-height:1.3;
+	text-decoration:none;
+	font-size:100%;
+	list-style:none;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+ul.ui-tabs-nav {
+	position:absolute;
+	bottom:0px;
+	left:0;
+	z-index:1;
+	width:100%;
+	background:#FFF url(images/uitabsbg.gif) repeat-x bottom right;
+	border-top:1px solid #FFF;
+}
+</pre>
+<h2>Non-Selected Tab Styles</h2>
+<p>Assign our tabs some font and border styles. We also tile the same background image from the <strong>ul.ui-tabs-nav</strong></p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-css" start="1"><li class="alt"><span><span class="comment">/*&nbsp;Non-Selected&nbsp;Tabs&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>li.ui-tabs-nav-item&nbsp;a:link,&nbsp;&nbsp;</span></li><li class="alt"><span>li.ui-tabs-nav-item&nbsp;a:visited&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">font-size</span><span>:.8em;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">font-weight</span><span>:</span><span class="string">normal</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">color</span><span>:</span><span class="colors">#999</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">background</span><span>:</span><span class="colors">#FFF</span><span>&nbsp;</span><span class="string">url</span><span>(images/uitabsbg.gif)&nbsp;</span><span class="string">repeat</span><span>-x&nbsp;</span><span class="keyword">bottom</span><span class="string">bottom</span><span>&nbsp;</span><span class="string">left</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">border-left</span><span>:</span><span class="string">1px</span><span>&nbsp;</span><span class="string">solid</span><span>&nbsp;</span><span class="colors">#FFF</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">border-right</span><span>:</span><span class="string">1px</span><span>&nbsp;</span><span class="string">solid</span><span>&nbsp;</span><span class="colors">#c5ced9</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" class="css" name="code">/* Non-Selected Tabs */
+li.ui-tabs-nav-item a:link,
+li.ui-tabs-nav-item a:visited {
+	font-size:.8em;
+	font-weight:normal;
+	color:#999;
+	background:#FFF url(images/uitabsbg.gif) repeat-x bottom left;
+	border-left:1px solid #FFF;
+	border-right:1px solid #c5ced9;
+}
+</pre>
+<h2>Hovered Tab Styles</h2>
+<p>We give our tabs some padding and give the hover state a background graphic.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-css" start="1"><li class="alt"><span><span class="comment">/*&nbsp;Hovered&nbsp;Tab&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="colors">#rotato</span><span>r&nbsp;.ui-tabs-nav-item&nbsp;a:hover,&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="colors">#rotato</span><span>r&nbsp;.ui-tabs-nav-item&nbsp;a:active&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">background</span><span>:</span><span class="colors">#FFF</span><span>&nbsp;</span><span class="string">url</span><span>(images/uiactivetabbg.gif)&nbsp;</span><span class="string">repeat</span><span>-x&nbsp;</span><span class="keyword">bottom</span><span class="string">bottom</span><span>&nbsp;</span><span class="string">left</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">color</span><span>:</span><span class="colors">#333</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="colors">#rotato</span><span>r&nbsp;.ui-tabs-nav-item&nbsp;a&nbsp;span&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span><span>:</span><span class="string">left</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">padding</span><span>:1em;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">cursor</span><span>:</span><span class="string">pointer</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" class="css" name="code">/* Hovered Tab */
+#rotator .ui-tabs-nav-item a:hover,
+#rotator .ui-tabs-nav-item a:active {
+	background:#FFF url(images/uiactivetabbg.gif) repeat-x bottom left;
+	color:#333;
+}
+
+#rotator .ui-tabs-nav-item a span {
+	float:left;
+	padding:1em;
+	cursor:pointer;
+}
+</pre>
+<h2>Active Tab Styles</h2>
+<p>We give all of the link states the same hover background graphic.
+Basically you can customize this graphic according to your design needs.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-css" start="1"><li class="alt"><span><span class="comment">/*&nbsp;Active&nbsp;Tab&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="colors">#rotato</span><span>r&nbsp;.ui-tabs-selected&nbsp;a:link,&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="colors">#rotato</span><span>r&nbsp;.ui-tabs-selected&nbsp;a:visited,&nbsp;&nbsp;</span></span></li><li class=""><span><span class="colors">#rotato</span><span>r&nbsp;.ui-tabs-selected&nbsp;a:hover,&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="colors">#rotato</span><span>r&nbsp;.ui-tabs-selected&nbsp;a:active&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">background</span><span>:</span><span class="colors">#fff</span><span>&nbsp;</span><span class="string">url</span><span>(images/uiactivetabbg.gif)&nbsp;</span><span class="string">repeat</span><span>-x&nbsp;</span><span class="keyword">bottom</span><span class="string">bottom</span><span>&nbsp;</span><span class="string">left</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">color</span><span>:</span><span class="colors">#333</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" class="css" name="code">/* Active Tab */
+#rotator .ui-tabs-selected a:link,
+#rotator .ui-tabs-selected a:visited,
+#rotator .ui-tabs-selected a:hover,
+#rotator .ui-tabs-selected a:active {
+	background:#fff url(images/uiactivetabbg.gif) repeat-x bottom left;
+	color:#333;
+}
+</pre>
+<h2>Content Panel Styles</h2>
+<p>Now we’re going to style the content panel. This is the section that
+holds the content that is being rotated. The key point here is the
+padding which we’re going to use to enclose the text content and make
+some room for the background graphic associated with each rotated
+content. Then we use a class to hide the other panels.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-css" start="1"><li class="alt"><span><span class="comment">/*&nbsp;Content&nbsp;Panels&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="colors">#rotato</span><span>r&nbsp;.ui-tabs-panel&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">font-family</span><span>:</span><span class="string">Arial</span><span>,&nbsp;</span><span class="string">Helvetica</span><span>,&nbsp;</span><span class="string">sans-serif</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">clear</span><span>:</span><span class="string">left</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">color</span><span>:</span><span class="colors">#000</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">padding</span><span>:</span><span class="string">40px</span><span>&nbsp;</span><span class="string">540px</span><span>&nbsp;</span><span class="string">15px</span><span>&nbsp;</span><span class="string">15px</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">height</span><span>:</span><span class="string">225px</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="colors">#rotato</span><span>r&nbsp;.ui-tabs-</span><span class="string">hide</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">display</span><span>:</span><span class="string">none</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" class="css" name="code">/* Content Panels */
+#rotator .ui-tabs-panel {
+	font-family:Arial, Helvetica, sans-serif;
+	clear:left;
+	color:#000;
+	padding:40px 540px 15px 15px;
+	height:225px;
+}
+
+#rotator .ui-tabs-hide {
+	display:none;
+}
+</pre>
+<h2>Content Styles</h2>
+<p>We’re just going to style our header, paragraph and links inside the content panel.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-css" start="1"><li class="alt"><span><span class="colors">#rotato</span><span>r&nbsp;h2&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">color</span><span>:</span><span class="colors">#E75D00</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">font-weight</span><span>:</span><span class="string">normal</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">margin</span><span>:0;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">font-size</span><span>:1.8em;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">line-height</span><span>:1.2em;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="colors">#rotato</span><span>r&nbsp;p&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">font-size</span><span>:1.1em;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">margin</span><span>:.5em&nbsp;0;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">color</span><span>:</span><span class="colors">#333</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="colors">#rotato</span><span>r&nbsp;.btn_get_started&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span><span>:</span><span class="string">left</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">height</span><span>:</span><span class="string">30px</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">width</span><span>:</span><span class="string">99px</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">text-indent</span><span>:-9999em;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">margin-right</span><span>:</span><span class="string">7px</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">overflow</span><span>:</span><span class="string">hidden</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">background</span><span>:</span><span class="string">transparent</span><span>&nbsp;</span><span class="string">url</span><span>(images/getstarted.gif)&nbsp;</span><span class="string">no-repeat</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="colors">#rotato</span><span>r&nbsp;.btn_learn_more&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">float</span><span>:</span><span class="string">left</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">height</span><span>:</span><span class="string">26px</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">font-size</span><span>:.9em;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" class="css" name="code">#rotator h2 {
+	color:#E75D00;
+	font-weight:normal;
+	margin:0;
+	font-size:1.8em;
+	line-height:1.2em;
+}
+
+#rotator p {
+	font-size:1.1em;
+	margin:.5em 0;
+	color:#333;
+}
+
+#rotator .btn_get_started {
+	float:left;
+	height:30px;
+	width:99px;
+	text-indent:-9999em;
+	margin-right:7px;
+	overflow:hidden;
+	background:transparent url(images/getstarted.gif) no-repeat
+}
+
+#rotator .btn_learn_more {
+	float:left;
+	height:26px;
+	font-size:.9em;
+}
+</pre>
+<h2>Background Images</h2>
+<p>Now we’re going to apply the background images. The first 2 panels
+have the images to the right part of the panel so we need to position
+the graphic to the right. Then we’re going to position the images to
+the left for the other 2 panels. Also take note that we need to set a
+new padding to make some room for the images that are positioned to the
+left. And that’s it for the CSS.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-css" start="1"><li class="alt"><span><span class="comment">/*&nbsp;Background&nbsp;Images&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="colors">#rotato</span><span>r&nbsp;</span><span class="colors">#fragme</span><span>nt-1&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">background</span><span>:</span><span class="string">transparent</span><span>&nbsp;</span><span class="string">url</span><span>(images/coins.jpg)&nbsp;</span><span class="string">no-repeat</span><span>&nbsp;</span><span class="string">top</span><span>&nbsp;</span><span class="keyword">right</span><span class="string">right</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="colors">#rotato</span><span>r&nbsp;</span><span class="colors">#fragme</span><span>nt-2&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">background</span><span>:</span><span class="string">transparent</span><span>&nbsp;</span><span class="string">url</span><span>(images/bearings.jpg)&nbsp;</span><span class="string">no-repeat</span><span>&nbsp;</span><span class="string">top</span><span>&nbsp;</span><span class="keyword">right</span><span class="string">right</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="colors">#rotato</span><span>r&nbsp;</span><span class="colors">#fragme</span><span>nt-3&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">background</span><span>:</span><span class="string">transparent</span><span>&nbsp;</span><span class="string">url</span><span>(images/map.jpg)&nbsp;</span><span class="string">no-repeat</span><span>&nbsp;</span><span class="string">top</span><span>&nbsp;</span><span class="string">left</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">padding</span><span>:</span><span class="string">40px</span><span>&nbsp;</span><span class="string">15px</span><span>&nbsp;</span><span class="string">15px</span><span>&nbsp;</span><span class="string">540px</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="colors">#rotato</span><span>r&nbsp;</span><span class="colors">#fragme</span><span>nt-4&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">background</span><span>:</span><span class="string">transparent</span><span>&nbsp;</span><span class="string">url</span><span>(images/support.jpg)&nbsp;</span><span class="string">no-repeat</span><span>&nbsp;</span><span class="string">top</span><span>&nbsp;</span><span class="string">left</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">padding</span><span>:</span><span class="string">40px</span><span>&nbsp;</span><span class="string">15px</span><span>&nbsp;</span><span class="string">15px</span><span>&nbsp;</span><span class="string">540px</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" class="css" name="code">/* Background Images */
+#rotator #fragment-1 {
+	background:transparent url(images/coins.jpg) no-repeat top right;
+}
+
+#rotator #fragment-2 {
+	background:transparent url(images/bearings.jpg) no-repeat top right;
+}
+
+#rotator #fragment-3 {
+	background:transparent url(images/map.jpg) no-repeat top left;
+	padding:40px 15px 15px 540px;
+}
+
+#rotator #fragment-4 {
+	background:transparent url(images/support.jpg) no-repeat top left;
+	padding:40px 15px 15px 540px;
+}
+</pre>
+<h2>Making the Contents Rotate</h2>
+<p>Now it’s time for some jQuery magic! If you’ll notice at the
+beginning when we first built our structure, we referenced two
+Javascript files in the head section. First reference is for jQuery and
+the second is for jQuery UI.</p>
+<p>To make our content rotate we just need to invoke the <a href="http://jqueryui.com/demos/tabs/#method-rotate">function to rotate our tabs</a>
+that is included in jQuery UI library. You just need to point the tabs
+function to the section where it holds the links, in this case we enter
+<strong>#rotator &gt; ul</strong> inside our function.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-c" start="1"><li class="alt"><span><span>&lt;script&nbsp;type=</span><span class="string">"text/javascript"</span><span>&gt;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;$(document).ready(<span class="keyword">function</span><span>(){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">"#rotator"</span><span>).tabs({fx:{opacity:&nbsp;</span><span class="string">"toggle"</span><span>}}).tabs(</span><span class="string">"rotate"</span><span>,&nbsp;4000);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class="alt"><span>&lt;/script&gt;&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" class="javascript" name="code">&lt;script type="text/javascript"&gt;
+	$(document).ready(function(){
+		$("#rotator").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 4000);
+	});
+&lt;/script&gt;
+</pre>
+<h2>Voila! We are Done!</h2>
+<p>Content rotators are one of the neat ways you can showcase your
+products and services without taking up too much screen real estate.
+After you’re finished, you can experiment and try placing the tabs
+above or lining them up vertically. Try looking up some websites that
+use this kind of interface for inspiration. Simple variations to the
+interface can be a great way to learn more about CSS.</p>
+<p>I hope you will find this tutorial helpful. If you have any
+questions or comments please feel free to let me know. Until then, see
+you next week and have fun!</p>
+				
+				<p><em>Did you find this post helpful? Then you need to <a href="http://feeds2.feedburner.com/RaymondSelda">subscribe to my blog via RSS</a> or, if you like, <a href="http://feedburner.google.com/fb/a/mailverify?uri=RaymondSelda&amp;loc=en_US">subscribe via email</a>. Thank you.</em></p>
+				
+				<div id="related">
+					<h2>Related Posts</h2>
+										<ul><li><a href="http://www.raymondselda.com/jquery-looped-slider-tutorial/" rel="bookmark" title="June 18, 2009">jQuery Looped Slider Tutorial</a></li>
+
+<li><a href="http://www.raymondselda.com/convert-a-content-box-design-into-xhtml-and-css/" rel="bookmark" title="May 28, 2009">Convert A Content Box Design Into XHTML and CSS</a></li>
+
+<li><a href="http://www.raymondselda.com/css-layout-w3schools/" rel="bookmark" title="April 9, 2008">CSS Layout Version of W3Schools.com</a></li>
+
+<li><a href="http://www.raymondselda.com/creative-use-of-jquery-cycle-in-fancy-curved-layout/" rel="bookmark" title="July 2, 2009">Creative Use Of jQuery Cycle In Fancy Curved Layout</a></li>
+
+<li><a href="http://www.raymondselda.com/php-contact-form-with-jquery-validation/" rel="bookmark" title="April 9, 2009">PHP Contact Form with jQuery Validation</a></li>
+</ul><!-- Similar Posts took 25.216 ms -->									</div><!-- end related -->
+				
+				<h2>What's next?</h2>
+				<ul id="share">
+					<li id="subscribe"><a href="http://feeds2.feedburner.com/RaymondSelda">Get Free Updates</a></li>
+					<li id="delicious"><a href="http://del.icio.us/post?url=http://www.raymondselda.com/create-a-tabbed-content-rotator-using-jquery/&amp;title=Create%20A%20Tabbed%20Content%20Rotator%20Using%20jQuery">Bookmark on Delicious</a></li>
+					<li id="digg"><a href="http://digg.com/submit?phase=2&amp;url=http://www.raymondselda.com/create-a-tabbed-content-rotator-using-jquery/">Digg This Article</a></li>
+					<li id="stumble"><a href="http://www.stumbleupon.com/submit?url=http://www.raymondselda.com/create-a-tabbed-content-rotator-using-jquery/&amp;title=Create%20A%20Tabbed%20Content%20Rotator%20Using%20jQuery">Stumble This Article</a></li>
+				</ul>
+			</div><!-- end post-entry -->
+			
+			
+<!-- You can start editing here. -->
+
+	<h2 id="comments">Comments &amp; Feedback</h2>
+	
+	<ol id="comment-list">
+
+		
+				
+		<li class="alt" id="comment-742">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/a1d293e691d7df5794adab4e40f696d7.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">Dan Whitmore</div> 
+				<div class="comment-data">May 7th, 2009 <a href="#comment-742" title="Comment Link">#</a> </div>
+				
+									<p>Sweet!</p>
+<p>I’ve been looking for a rotator with a fade effects, bookmarked!</p>
+<p>Dan</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-745">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/150c46ef7c079ef7c440707ed91b4934.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">Rimmer</div> 
+				<div class="comment-data">May 7th, 2009 <a href="#comment-745" title="Comment Link">#</a> </div>
+				
+									<p>Really useful! Thank you so incredibly much for taking the time to do this.</p>
+<p>Rimmer</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-746">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">May 7th, 2009 <a href="#comment-746" title="Comment Link">#</a> </div>
+				
+									<p>@Dan: Thanks for the bookmark. Really appreciate it.</p>
+<p>@Rimmer: You’re most welcome. Always my pleasure to share what I know.</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+						
+						
+						
+				
+		<li id="comment-754">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/4d143ae64a524781f8633b4328f42856.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.mikemeisner.com/" rel="external nofollow" class="url">Mike Meisner</a></div> 
+				<div class="comment-data">May 10th, 2009 <a href="#comment-754" title="Comment Link">#</a> </div>
+				
+									<p>Well
+done. Really nice write-up and tutorial, and the download took minutes
+to implement on a test WordPress site I’m building. Thanks.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-755">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">May 10th, 2009 <a href="#comment-755" title="Comment Link">#</a> </div>
+				
+									<p>@Mike: Thank you for the kind comments. I’m glad it was easy for you to implement on your site.</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+				
+		<li id="comment-759">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/b48ed875be91ffb1679d1d802fcf1208.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">Jerry</div> 
+				<div class="comment-data">May 10th, 2009 <a href="#comment-759" title="Comment Link">#</a> </div>
+				
+									<p>Who is “Viola”? Or did you mean…</p>
+<p>V O I L A?</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-760">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">May 10th, 2009 <a href="#comment-760" title="Comment Link">#</a> </div>
+				
+									<p>@Jerry: Thank you for the correction. hehehe. <img src="jQuery%20Tabbed%20Content%20Rotator_files/icon_biggrin.gif" alt=":D" class="wp-smiley"> </p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-765">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/b0900978888976ff74e6da946d81d53c.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">jede</div> 
+				<div class="comment-data">May 11th, 2009 <a href="#comment-765" title="Comment Link">#</a> </div>
+				
+									<p>this is really cool dude, kip it up <img src="jQuery%20Tabbed%20Content%20Rotator_files/icon_smile.gif" alt=":)" class="wp-smiley">  thanks</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-928">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/be9a54e04c6173baec03b17afc16044f.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">Ann</div> 
+				<div class="comment-data">May 15th, 2009 <a href="#comment-928" title="Comment Link">#</a> </div>
+				
+									<p>This is beautiful.  Is there a way to make it accessible when Javascript is turned off?</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-932">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">May 15th, 2009 <a href="#comment-932" title="Comment Link">#</a> </div>
+				
+									<p>@jede: Thanks dude! Hope I can keep it up.</p>
+<p>@Ann: I’m sure there’s a way but right now I don’t have any idea how to. Maybe this will help you <a href="http://tinyurl.com/qn5koe" rel="nofollow">http://tinyurl.com/qn5koe</a></p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-934">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/be9a54e04c6173baec03b17afc16044f.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">Ann</div> 
+				<div class="comment-data">May 16th, 2009 <a href="#comment-934" title="Comment Link">#</a> </div>
+				
+									<p>Thanks, Raymond.  That looks like a good link.  Nice aesthetic on this, as well as on the dark menu.</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+				
+		<li id="comment-1171">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/6405e53f05057bad9705a32d449799a1.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.theinquisition.eu/" rel="external nofollow" class="url">Ronan</a></div> 
+				<div class="comment-data">May 22nd, 2009 <a href="#comment-1171" title="Comment Link">#</a> </div>
+				
+									<p>very nice. I have seen loads of this kind of thing but this one ticks the right boxes.</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+				
+		<li class="alt" id="comment-1187">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/0b131f7123390db8c568c13a6c7864a3.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">digadao</div> 
+				<div class="comment-data">May 23rd, 2009 <a href="#comment-1187" title="Comment Link">#</a> </div>
+				
+									<p>This is great ! But it would be even better if the rotator could stop when the mouse is over the content</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+						
+						
+				
+		<li id="comment-1256">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/13f3025874375c725001713dfc8b26cf.jpg" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://technopaper.blogspot.com/" rel="external nofollow" class="url">Abdel</a></div> 
+				<div class="comment-data">May 24th, 2009 <a href="#comment-1256" title="Comment Link">#</a> </div>
+				
+									<p>Thanks for this great article !!!  <img src="jQuery%20Tabbed%20Content%20Rotator_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-1288">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/866e58714ded31e275d3f430406dcbfe.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.module23.com/" rel="external nofollow" class="url">Module23</a></div> 
+				<div class="comment-data">May 25th, 2009 <a href="#comment-1288" title="Comment Link">#</a> </div>
+				
+									<p>Thanks for your article, very useful when creating a js-menu. Good work – bookmarked <img src="jQuery%20Tabbed%20Content%20Rotator_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-1342">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/f67f35c5198246ec9b41e29c781b6ebd.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.innovacionweb.com/" rel="external nofollow" class="url">Innovacionweb.com</a></div> 
+				<div class="comment-data">May 26th, 2009 <a href="#comment-1342" title="Comment Link">#</a> </div>
+				
+									<p>How to stop click on a tab?</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+						
+						
+						
+						
+						
+				
+		<li class="alt" id="comment-1395">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/002986234b3a8434697edb74cfa61f90.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://tentonweb.com/" rel="external nofollow" class="url">Jim</a></div> 
+				<div class="comment-data">May 27th, 2009 <a href="#comment-1395" title="Comment Link">#</a> </div>
+				
+									<p>Thanks a lot this is the shizzle! I am fairly new to jQuery this is a huge help, great tutorial!<br>
+Thanks!<br>
+~ Jim<br>
+~ Jacksonville, FL</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+				
+		<li id="comment-1423">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/91774556a96304e7ecb59e2ca2c37531.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">Greg</div> 
+				<div class="comment-data">May 28th, 2009 <a href="#comment-1423" title="Comment Link">#</a> </div>
+				
+									<p>Superb
+work Ray, beautifully written and great tutorial. I was wondering if it
+is possible to “turn off” the rotator – other than to increase the
+delay to near-infinity?. Keep up the great work!</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-1425">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">May 28th, 2009 <a href="#comment-1425" title="Comment Link">#</a> </div>
+				
+									<p>You can stop the rotation upon clicking by removing the “true” parameter when you initialize the plugin.</p>
+<p>From:<br>
+    <code>$("#rotator &gt; ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 4000, <strong>true</strong>);</code></p>
+<p>To:<br>
+    <code>$("#rotator &gt; ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 4000);</code></p>
+<p>Further documentation: <a href="http://jqueryui.com/demos/tabs/" rel="nofollow">http://jqueryui.com/demos/tabs/</a></p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-1448">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/12214f07f54e1ec9a2defe0ddaa48b69.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.shell.com/" rel="external nofollow" class="url">Martyn wynn</a></div> 
+				<div class="comment-data">May 28th, 2009 <a href="#comment-1448" title="Comment Link">#</a> </div>
+				
+									<p>Nice
+effect, but apparent flaw in that JQuery UI is a really common plugin
+that could be potentially used to create any number of effects on a
+page. By creating and packing a custom version of JQUERY.UI there is
+limited opportunity to use the full range of features associated with
+this library. </p>
+<p>It would be nice to see this plug-in working using standard UI/Tab
+libraries otherwise it is just too limited to apply within any
+JQuery-UI site.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-1460">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/bdafe460c764b7171eebdecc62a0ed44.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">Jim F</div> 
+				<div class="comment-data">May 29th, 2009 <a href="#comment-1460" title="Comment Link">#</a> </div>
+				
+									<p>Great job!   Is there a way to make it so the images slide instead of dissolve? </p>
+<p>I wanted to use this but with the slide function of this: <a href="http://www.gcmingati.net/wordpress/wp-content/lab/jquery/imagestrip/imageslide-plugin.html" rel="nofollow">http://www.gcmingati.net/wordpress/wp-content/lab/jquery/imagestrip/imageslide-plugin.html</a></p>
+<p>Can’t quite get it right tho.</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+						
+						
+				
+		<li id="comment-1626">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/002986234b3a8434697edb74cfa61f90.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://tentonweb.com/" rel="external nofollow" class="url">Jim S</a></div> 
+				<div class="comment-data">June 2nd, 2009 <a href="#comment-1626" title="Comment Link">#</a> </div>
+				
+									<p>Hi
+– I implemented this on a section of the webpage that is about 500px
+down the page… so you have to scroll down slightly to see all of the
+content rotating. </p>
+<p>It works great EXCEPT…<br>
+When the content rotates, the page jumps back to the top of the page. I
+am guessing this is because of the #fragment-1 #fragment-2 etc in the
+anchor tags of the tabs, and can anyone suggest a workaround? Other
+than that, working nicely.<br>
+Thanks!<br>
+~ Jim<br>
+~ Jacksonville, FL</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-1627">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">June 3rd, 2009 <a href="#comment-1627" title="Comment Link">#</a> </div>
+				
+									<p>Hi Jim S,</p>
+<p>Good observation. I can see what you’re experiencing. I’m not really
+sure though what causes this but I’ll try to come up with a workaround.
+Thank you for pointing this out.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-1637">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/002986234b3a8434697edb74cfa61f90.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://tentonweb.com/" rel="external nofollow" class="url">Jim S</a></div> 
+				<div class="comment-data">June 3rd, 2009 <a href="#comment-1637" title="Comment Link">#</a> </div>
+				
+									<p>Thanks Raymond. I think it is the hash in the anchor tag of the tabs behaving like a… </p>
+<p>-anchortagEQUALS#&gt; Back To Top &lt;/anchortag- </p>
+<p>… kind of thing – kind of hacked that up to get it to appear in this post.<br>
+Thanks a lot!<br>
+~ Jim</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+						
+				
+		<li class="alt" id="comment-1773">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/06c13330b830d40778f478ab89566467.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://iufoundation.iu.edu/" rel="external nofollow" class="url">Andy</a></div> 
+				<div class="comment-data">June 16th, 2009 <a href="#comment-1773" title="Comment Link">#</a> </div>
+				
+									<p>Thanks for the code! I’m having trouble getting the rotator to appear in IE8. Any suggestions?</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-1774">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">June 16th, 2009 <a href="#comment-1774" title="Comment Link">#</a> </div>
+				
+									<p>Hi Andy,</p>
+<p>Haven’t checked the rotator yet in IE8. I was hoping it would work
+okay in IE8 because it looked somewhat good in IE7. I wonder if someone
+experiences the same. I’ll try to check it out. Thanks</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-1775">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/06c13330b830d40778f478ab89566467.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://iufoundation.iu.edu/" rel="external nofollow" class="url">Andy</a></div> 
+				<div class="comment-data">June 16th, 2009 <a href="#comment-1775" title="Comment Link">#</a> </div>
+				
+									<p>Thanks for your help. Here is a link in case you’d like to view my source. </p>
+<p><a href="http://marketing.iuf.indiana.edu/2009/ad-direct-mail/ert-bday-cardb.html" rel="nofollow">http://marketing.iuf.indiana.edu/2009/ad-direct-mail/ert-bday-cardb.html</a></p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-1776">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">June 16th, 2009 <a href="#comment-1776" title="Comment Link">#</a> </div>
+				
+									<p>Nice work Andy. I love the clean white design. Nice to see that you put the tabs above. Good job.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-1777">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/06c13330b830d40778f478ab89566467.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://iufoundation.iu.edu/" rel="external nofollow" class="url">Andy</a></div> 
+				<div class="comment-data">June 16th, 2009 <a href="#comment-1777" title="Comment Link">#</a> </div>
+				
+									<p>Thanks. Glad you like it. We are working a portfolio site. <img src="jQuery%20Tabbed%20Content%20Rotator_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-1806">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/58946b512f194c404e20bebc2ad1216f.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://smartmill.it/" rel="external nofollow" class="url">Marco</a></div> 
+				<div class="comment-data">June 20th, 2009 <a href="#comment-1806" title="Comment Link">#</a> </div>
+				
+									<p>Hi mate!<br>
+You done a great job but I think that using your own library will cause many people (me for sure) to not use your good work.</p>
+<p>Can’t you release it using standard libraries?</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-1808">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">June 20th, 2009 <a href="#comment-1808" title="Comment Link">#</a> </div>
+				
+									<p>Hi Marco,</p>
+<p>I’ve just updated the tutorial to use the standard libraries of
+jQuery UI. The truth is the previous code was not my own library.
+Javascript is not really my cup of tea so I’m very thankful there’s
+jQuery. I hope you can use the tutorial now.</p>
+<p>Thank you for asking nicely. <img src="jQuery%20Tabbed%20Content%20Rotator_files/icon_smile.gif" alt=":-)" class="wp-smiley"> </p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-1829">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/06c13330b830d40778f478ab89566467.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://iufoundation.iu.edu/" rel="external nofollow" class="url">Andy</a></div> 
+				<div class="comment-data">June 23rd, 2009 <a href="#comment-1829" title="Comment Link">#</a> </div>
+				
+									<p>Thanks
+again for the new code. Wanted to share the css fix I found. I was
+having IE problems and traced it back to position: relative in the
+rotator div. It could have something to do with all of the other things
+I changed in the css, but I just wanted to share in case anyone was
+having the same problem. I removed position: relative and it works fine
+in ie now. <img src="jQuery%20Tabbed%20Content%20Rotator_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-1837">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">June 23rd, 2009 <a href="#comment-1837" title="Comment Link">#</a> </div>
+				
+									<p>Thanks for sharing the CSS fix Andy. Appreciate it. <img src="jQuery%20Tabbed%20Content%20Rotator_files/icon_smile.gif" alt=":-)" class="wp-smiley"> </p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-2066">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/08f8813f05a0a5b11a27b43f6946e9b7.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">GeoffL</div> 
+				<div class="comment-data">June 29th, 2009 <a href="#comment-2066" title="Comment Link">#</a> </div>
+				
+									<p>This is really useful – thanks so much!  </p>
+<p>Quick question. Can this content be rotated without the tabs
+visible? I’d like to use it to simply rotate a few content div’s.
+Thanks for any help.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-2069">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">June 30th, 2009 <a href="#comment-2069" title="Comment Link">#</a> </div>
+				
+									<p>Hi GeoffL,</p>
+<p>That’s a good question. Yeah, actually you can remove the unordered
+list that holds the tabs and just have it rotate. I did the same thing
+in my homepage but I used loopedslider. Good luck!</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-2071">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/08f8813f05a0a5b11a27b43f6946e9b7.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">GeoffL</div> 
+				<div class="comment-data">June 30th, 2009 <a href="#comment-2071" title="Comment Link">#</a> </div>
+				
+									<p>Duh <img src="jQuery%20Tabbed%20Content%20Rotator_files/icon_wink.gif" alt=";)" class="wp-smiley"> .<br>
+Simple.  Thanks so much for the quick reply!  Again, great work on this.  Works EXACTLY how I want it.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-2072">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/08f8813f05a0a5b11a27b43f6946e9b7.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">GeoffL</div> 
+				<div class="comment-data">June 30th, 2009 <a href="#comment-2072" title="Comment Link">#</a> </div>
+				
+									<p>Well, I spoke too soon.  When I remove the unordered list from the code, there is no rotation, only the first appears.  Strange.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-2074">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">June 30th, 2009 <a href="#comment-2074" title="Comment Link">#</a> </div>
+				
+									<p>You’re
+right! hahaha. I tried to remove the tabs using Firebug and I thought
+it’s going to work. Apparently it didn’t. hehehe. A quick workaround
+you can do is to add <code>display:none;</code> for the unordered list <code>ul.ui-tabs-nav</code>. Good luck again.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-2076">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/08f8813f05a0a5b11a27b43f6946e9b7.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">GeoffL</div> 
+				<div class="comment-data">June 30th, 2009 <a href="#comment-2076" title="Comment Link">#</a> </div>
+				
+									<p>Works
+well now, thanks! I’m using this in a very simple way for the site I’m
+working on now, but I think it may help with other projects as well in
+the typical (tabs included) way! So thank you!</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-2222">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/7ead78abdce56b91d710be57440d934e.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://jatnets.co.cc/" rel="external nofollow" class="url">marea</a></div> 
+				<div class="comment-data">July 3rd, 2009 <a href="#comment-2222" title="Comment Link">#</a> </div>
+				
+									<p>good info.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-2295">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/528f56e5130bd3c01020286c81bd41b5.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.lucidemedia.com/" rel="external nofollow" class="url">simon gregory</a></div> 
+				<div class="comment-data">July 5th, 2009 <a href="#comment-2295" title="Comment Link">#</a> </div>
+				
+									<p>hey
+just wondering if anyboby figured out how to fix the issue with this in
+ie8, just doesnt work for me, its great but i need it to work in
+explorer hope somebody can help! thanks</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-2327">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">July 5th, 2009 <a href="#comment-2327" title="Comment Link">#</a> </div>
+				
+									<p>Hi Simon,</p>
+<p>I checked out the rotator in IE8 and it’s working like a charm. What
+problems are you having? Maybe you missed out something. Try checking
+whether you’re calling the Javascript. Good luck.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-2362">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/06c13330b830d40778f478ab89566467.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://iufoundation.iu.edu/" rel="external nofollow" class="url">Andy</a></div> 
+				<div class="comment-data">July 6th, 2009 <a href="#comment-2362" title="Comment Link">#</a> </div>
+				
+									<p>Hi Simon,</p>
+<p>I was having a problem in IE8 initially. In the CSS, I removed
+relative positioning from the rotator div and that fixed everything.</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+				
+		<li id="comment-2405">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/bea443b818fc96f739f1e4a8521807ca.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">Ozkar</div> 
+				<div class="comment-data">July 7th, 2009 <a href="#comment-2405" title="Comment Link">#</a> </div>
+				
+									<p>Es igual que el jqueryTab  e incluso este es mas rapido de implementar. The JqueryTab is more easier than this script.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-2425">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/cd363dcbedfa862b190adda5efee5c1b.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://avellaneda.com.mx/" rel="external nofollow" class="url">Marco Avellaneda</a></div> 
+				<div class="comment-data">July 8th, 2009 <a href="#comment-2425" title="Comment Link">#</a> </div>
+				
+									<p>Thank you ver much. I just want to comment this, in IE 6.0 the fade efect distorts the letters (just a litle).</p>
+			</div>
+		</div>
+		</li>
+
+					
+						
+				
+		<li id="comment-2503">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/a9affab8e506629e7cd2bbdc0c2c99a2.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.wuduwudu.com/" rel="external nofollow" class="url">Pk Anane</a></div> 
+				<div class="comment-data">July 9th, 2009 <a href="#comment-2503" title="Comment Link">#</a> </div>
+				
+									<p>Thanx alot…<br>
+u r a life saver..<br>
+l8r</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-2748">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/f002098eaa60641ac6d0e39756741a89.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.lucas-stanford.com/" rel="external nofollow" class="url">Lucas</a></div> 
+				<div class="comment-data">July 15th, 2009 <a href="#comment-2748" title="Comment Link">#</a> </div>
+				
+									<p>I
+was wondering if anyone fixed the return to top of page on tab switch
+issue? I’m dying to use this but am unable while it’s misbehaving so.</p>
+<p>Thanks,<br>
+Lucas</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-2847">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/3cc2a3976b675aa600e9c59fc1ca071e.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">dmitry</div> 
+				<div class="comment-data">July 17th, 2009 <a href="#comment-2847" title="Comment Link">#</a> </div>
+				
+									<p>Hi Raymond,<br>
+thanks for a wonderful tutorial. I had one question though. Is it
+possible to have the tab to also activate a new page instead of just
+going to the rotator? i.e. I’m trying to replace the navigation bar
+with the rotator element.</p>
+<p>I appreciate any help you can offer w/ achieving this effect.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-2863">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/a9b7eddce37f61ea86a819e009e612dc.jpg" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.sigaspot.com/" rel="external nofollow" class="url">SiGa</a></div> 
+				<div class="comment-data">July 18th, 2009 <a href="#comment-2863" title="Comment Link">#</a> </div>
+				
+									<p>Hi, Raymond!<br>
+Great tutorial and real nice styled slider, highly appreciated! Two questions, please:<br>
+First: If Javascript is turned off, it has got a real funny behavior,
+when links in the nav are clicked several times (try). Normally, the
+divs are displayed in a row, one under another. What would I have to
+change so anyone who´s got JS turned off can see all the divs anyway
+(or every single when clicking a link)?<br>
+Second: Is it allowed to use this for commercial projects, too?<br>
+Thanks a lot!</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-2876">
+			
+		<div class="author-comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/062707cfd1399d53c99bd0fd2a718224.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a></div> 
+				<div class="comment-data">July 18th, 2009 <a href="#comment-2876" title="Comment Link">#</a> </div>
+				
+									<p>@Lucas:
+I can’t remember fixing this but I’ve added dummy content in the demo
+page to show you that the rotator is already behaving in accordance
+with your requirements. Good luck.</p>
+<p>@dmitry: I think it’s possible but I’m not really sure what you’re
+looking for. I would suggest that you try out a different approach for
+what you want to do.</p>
+<p>@SiGa: Having JS turned off is one weakness of this rotator. Try this instead <a href="http://tinyurl.com/qn5koe" rel="nofollow">http://tinyurl.com/qn5koe</a><br>
+For commercial projects you have to send me $20 for the license…
+JOKE!!! hahaha :-p. You can use this for any projects you have as long
+as you give me your soul. hehehe. Good luck.</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li class="alt" id="comment-2886">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/a9b7eddce37f61ea86a819e009e612dc.jpg" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author"><a href="http://www.sigaspot.com/" rel="external nofollow" class="url">SiGa</a></div> 
+				<div class="comment-data">July 18th, 2009 <a href="#comment-2886" title="Comment Link">#</a> </div>
+				
+									<p>Thanks,
+Raymond, for your reply and for pointing me to Jenna´s tutorial (I
+obviously forgot about that one)! I´ve also got Luca´s problem – could
+it depend on the layout maybe? I´ll have to try a variation to find out…<br>
+By the way: Where´s the Paypal-button?? hahaha…  <img src="jQuery%20Tabbed%20Content%20Rotator_files/icon_wink.gif" alt=";-)" class="wp-smiley">  Want to keep my soul! :-p</p>
+			</div>
+		</div>
+		</li>
+
+					
+				
+		<li id="comment-3129">
+			
+		<div class="comment">	
+			<div class="gravatar">
+				<img alt="" src="jQuery%20Tabbed%20Content%20Rotator_files/25c385d85a3822b7d85c8377980d719d.png" class="avatar avatar-50 photo" width="50" height="50">			</div>
+			
+			<div class="entry">
+				<div class="comment-author">Marco Avellaneda</div> 
+				<div class="comment-data">August 1st, 2009 <a href="#comment-3129" title="Comment Link">#</a> </div>
+				
+									<p>This is an automatic traduction (sorry for my english)<br>
+With respect to the exposition (approach) of @Siga for working without javascript, I did the following thing:<br>
+1.-introduce all the div “fragment” (, , y ) together in a div which i
+called div = “contenedor” and with css I gave it the following
+characteristics: </p>
+<p>#contenedor {<br>
+overflow: hidden;/*SO THAT WORK WITHOUT JAVASCRIPT */<br>
+height:240px;<br>
+}<br>
+2.- I eliminated the class “ui-tabs-hide” (NOT THE CLASS
+“ul.ui-tabs-nav”) of the div “fragment-2″,”fragment-3″ y “fragment-4″
+(only i eliminated the class to the divs but didnt touch the css)<br>
+3.-i Moved the menu () complete at the end of the divs “fragments” (but inside the div “rotator”)<br>
+4.-I removed in the css “ul.ui-tabs-nav” the absolute position and I used float:left; </p>
+<p>ul.ui-tabs-nav {<br>
+	float:left;/* take off position:absolute;*/<br>
+	bottom:0px;<br>
+	left:0;<br>
+	z-index:1;<br>
+	width:100%;<br>
+	background:#FFF url(images/uitabsbg.gif) repeat-x bottom right;<br>
+	border-top:1px solid #FFF;<br>
+}<br>
+I hope it works, only i probed in firefox<br>
+I am sure that there are better alternatives, since I am not an expert
+in javascript not even in jquery, but i felt obligatted to comment my
+solution<br>
+Regards</p>
+<p>sorry for my english</p>
+			</div>
+		</div>
+		</li>
+
+				
+	</ol>
+	
+			<h2 id="trackbacks">Pings &amp; Trackbacks</h2>
+		<ul id="trackbacks">
+
+						
+														
+														
+														
+										
+				<li class="alt" id="comment-747">
+				
+					<a href="http://cssbrigit.com/CNews/entrada/2009050705252396" rel="external nofollow" class="url">CSS Brigit | Create A Tabbed Content Rotator Using jQuery</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-748">
+				
+					<a href="http://www.switchonthecode.com/tutorials-around-the-web/create-a-tabbed-content-rotator-using-jquery" rel="external nofollow" class="url">Create A Tabbed Content Rotator Using jQuery | Switch on the Code</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-750">
+				
+					<a href="http://weblogs.asp.net/jgaylord/archive/2009/05/08/technology-related-links-for-may-8th-2009.aspx" rel="external nofollow" class="url">Technology Related Links for May 8th, 2009 - Jason N. Gaylord's Blog</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-751">
+				
+					<a href="http://www.createeve.com.br/como-criar-um-conteudo-rotatorio-usando-jquery/" rel="external nofollow" class="url">Como criar um “Conteúdo rotatório” usando jQuery | Createeve</a>					
+											
+				</li>
+		
+										
+														
+														
+										
+				<li class="alt" id="comment-758">
+				
+					<a href="http://web-design.linkedz.info/2009/05/08/create-a-tabbed-content-rotator-using-jquery-raymond-selda-blog/" rel="external nofollow" class="url">Topics about Web-design | Create A Tabbed Content Rotator Using jQuery - Raymond Selda Blog |…</a>					
+											
+				</li>
+		
+										
+														
+														
+														
+														
+														
+														
+										
+				<li class="alt" id="comment-1166">
+				
+					<a href="http://n3t.ir/devsnippets/create-a-tabbed-content-rotator-using-jquery.html" rel="external nofollow" class="url">Create A Tabbed Content Rotator Using jQuery</a>					
+											
+				</li>
+		
+										
+														
+										
+				<li class="alt" id="comment-1177">
+				
+					<a href="http://reader.misrit.org/2009/05/create-a-tabbed-content-rotator-using-jquery/" rel="external nofollow" class="url">Create A Tabbed Content Rotator Using jQuery | Misr IT Reader</a>					
+											
+				</li>
+		
+										
+														
+										
+				<li class="alt" id="comment-1198">
+				
+					<a href="http://weblogs.asp.net/jgaylord/archive/2009/05/22/the-technology-post-for-may-22nd.aspx" rel="external nofollow" class="url">The Technology Post for May 22nd - Jason N. Gaylord's Blog</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-1213">
+				
+					<a href="http://n3t.ir/delicious-it/create-a-tabbed-content-rotator-using-jquery-raymond-selda-blog-xhtml-css-php-mysql-wordpress-and-all-of-the-fun-stuff-under-the-web.html" rel="external nofollow" class="url">Create
+A Tabbed Content Rotator Using jQuery - Raymond Selda Blog | XHTML,
+CSS, PHP, MySQL, Wordpress, and all of the fun stuff under the Web!</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-1220">
+				
+					<a href="http://www.netcrema.com/?p=894" rel="external nofollow" class="url">Create
+A Tabbed Content Rotator Using jQuery - Raymond Selda | Helping You
+Design and Build Websites « Netcrema - creme de la social news via digg
++ delicious + stumpleupon + reddit</a>					
+											
+				</li>
+		
+										
+														
+														
+														
+										
+				<li class="alt" id="comment-1347">
+				
+					<a href="http://real-url.org/twitted.php?id=1922066501" rel="external nofollow" class="url">Twitted by stinkstiefel</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-1361">
+				
+					<a href="http://www.d-lists.co.uk/2009/05/26/the-best-links-of-the-day-260509/" rel="external nofollow" class="url">The best links of the day 26/05/09 | D-Lists</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-1363">
+				
+					<a href="http://www.candesprojects.com/usability-seo/how-to-create-a-tabbled-content-rotator-with-jquery/" rel="external nofollow" class="url">How to Create a Tabbled Content Rotator with jQuery | Candes | Cristian Neagu - UI Designer, Developer, Consultant</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-1383">
+				
+					<a href="http://www.businessmarketingexperts.com/?p=2672" rel="external nofollow" class="url">How to Create a Tabbled Content Rotator with jQuery | Business Marketing Experts</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-1388">
+				
+					<a href="http://real-url.org/twitted.php?id=1934081381" rel="external nofollow" class="url">Twitted by mathias89</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-1392">
+				
+					<a href="http://reader.misrit.org/2009/05/how-to-create-a-tabbled-content-rotator-with-jquery/" rel="external nofollow" class="url">How to Create a Tabbled Content Rotator with jQuery | Misr IT Reader</a>					
+											
+				</li>
+		
+										
+														
+										
+				<li class="alt" id="comment-1413">
+				
+					<a href="http://www.seaside99.com/blog/gallery/tutorial/270.html" rel="external nofollow" class="url">Tabbed Content Rotator Using jQuery | Seaside99</a>					
+											
+				</li>
+		
+										
+														
+														
+														
+														
+										
+				<li class="alt" id="comment-1475">
+				
+					<a href="http://tutecnologo.com/?p=924" rel="external nofollow" class="url">Como hacer girar el contenido de su pagina web con jQuery — Tu Tecnologo</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-1506">
+				
+					<a href="http://ajaxfinder.com/10497" rel="external nofollow" class="url">又一款TAB，基于JQ - Ajax Finder [Ajax探索者]</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-1611">
+				
+					<a href="http://www.brilang.com/2009/06/02/links-for-2009-06-02/" rel="external nofollow" class="url">Brilang.com » Blog Archive » links for 2009-06-02</a>					
+											
+				</li>
+		
+										
+														
+														
+														
+										
+				<li class="alt" id="comment-1690">
+				
+					<a href="http://xyberneticos.com/index.php/2009/06/07/tabbed-content-rotator/" rel="external nofollow" class="url">Tabbed Content Rotator</a>					
+											
+				</li>
+		
+										
+										
+				<li class="alt" id="comment-1693">
+				
+					<a href="http://www.mixinformatico.com/2009/06/07/tabbed-content-rotator/" rel="external nofollow" class="url">Tabbed Content Rotator | MixInformatico.com</a>					
+											
+				</li>
+		
+										
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+										
+				<li class="alt" id="comment-2390">
+				
+					<a href="http://www.blogreign.com/2009/07/10-cool-accessible-jquery-and-ajax-plugins/" rel="external nofollow" class="url">10 Cool Accessible jQuery and Ajax Plugins - Blog Reign</a>					
+											
+				</li>
+		
+										
+														
+														
+										
+				<li class="alt" id="comment-2438">
+				
+					<a href="http://mahallo.net/multimedia/10-gotini-jquery-i-ajax-plagina" rel="external nofollow" class="url">10 готини jQuery и Ajax плъгина</a>					
+											
+				</li>
+		
+										
+														
+														
+														
+														
+														
+														
+											
+		</ul>
+		
+ 
+
+<h2 id="respond">Leave Your Comment</h2>
+
+
+<form action="http://www.raymondselda.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><label for="author">Name:</label></p>
+<input name="author" id="author" class="comment-input" value="" size="22" tabindex="1" aria-required="true" type="text">
+
+<p><label for="email">E-Mail:</label></p>
+<input name="email" id="email" class="comment-input" value="" size="22" tabindex="2" aria-required="true" type="text">
+
+<p><label for="url">Website:</label></p>
+<input name="url" id="url" class="comment-input" value="" size="22" tabindex="3" type="text">
+
+
+<p><label for="url">Comment:</label></p>		
+<textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea>
+<p><input name="submit" id="submit" tabindex="5" value="Submit Comment" type="submit"></p>
+<input name="comment_post_ID" value="958" type="hidden">
+
+
+
+
+	<p style="clear: both;" class="subscribe-to-comments">
+	<input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" type="checkbox">
+	<label for="subscribe">Notify me of follow up comments via e-mail</label>
+	</p>
+
+
+
+</form>
+
+
+			
+		</div><!-- end main-content -->
+		
+	
+<div id="side-content" class="grid_3">
+			
+	<h2>Search</h2>
+	<form method="get" id="searchform" action="http://www.raymondselda.com/">
+		<fieldset>
+		<div id="search-input">
+		<input value="Search and press Enter" name="s" id="s" onfocus="if (this.value == 'Search and press Enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search and press Enter';}" type="text">
+		</div>
+		
+		</fieldset>
+	</form>
+
+	<h2>Subscribe</h2>
+	<ul id="subscribe">
+		<li><div class="feedcountdiv"><p><a href="http://feeds2.feedburner.com/RaymondSelda"><span class="feedcount">
+ <span class="before">Join the</span>
+<span class="subscribers">212</span>
+ <span class="after">amazing subscribers!</span>
+</span></a></p></div></li>
+		<li id="rss-subscribe"><a href="http://feeds2.feedburner.com/RaymondSelda" title="Subscribe to my blog via RSS" rel="nofollow">Subscribe to my blog via RSS</a></li>
+		<li id="email-subscribe"><a href="http://feedburner.google.com/fb/a/mailverify?uri=RaymondSelda&amp;loc=en_US" title="Subscribe using Email" rel="nofollow">Subscribe to my blog via Email</a></li>
+		<li id="follow-twitter"><a href="http://twitter.com/raymondselda" title="Follow Raymond Selda on Twitter" rel="nofollow">Follow me on Twitter!</a></li>
+	</ul>
+
+	<h2>Latest Articles</h2>
+    <ul>
+    		<li><a href="http://www.raymondselda.com/how-to-make-a-wordpress-theme-using-starkers/" title="How To Make a Wordpress Theme Using Starkers">How To Make a Wordpress Theme Using Starkers</a></li>
+	<li><a href="http://www.raymondselda.com/seo-school-book-review/" title="SEO School Book Review">SEO School Book Review</a></li>
+	<li><a href="http://www.raymondselda.com/create-a-brown-web-portfolio-design-in-photoshop/" title="Create a Brown Web Portfolio Design in Photoshop">Create a Brown Web Portfolio Design in Photoshop</a></li>
+	<li><a href="http://www.raymondselda.com/archetype-wordpress-theme-beta-release/" title="Archetype Wordpress Theme: Beta Release">Archetype Wordpress Theme: Beta Release</a></li>
+	<li><a href="http://www.raymondselda.com/creative-use-of-jquery-cycle-in-fancy-curved-layout/" title="Creative Use Of jQuery Cycle In Fancy Curved Layout">Creative Use Of jQuery Cycle In Fancy Curved Layout</a></li>
+	<li><a href="http://www.raymondselda.com/google-search-options/" title="Google Search Options">Google Search Options</a></li>
+	<li><a href="http://www.raymondselda.com/jquery-looped-slider-tutorial/" title="jQuery Looped Slider Tutorial">jQuery Looped Slider Tutorial</a></li>
+	<li><a href="http://www.raymondselda.com/how-much-should-a-website-template-cost/" title="How Much Should A Website Template Cost?">How Much Should A Website Template Cost?</a></li>
+	<li><a href="http://www.raymondselda.com/understanding-filter-hooks-in-wordpress/" title="Understanding Filter Hooks In Wordpress">Understanding Filter Hooks In Wordpress</a></li>
+	<li><a href="http://www.raymondselda.com/understanding-action-hooks-in-wordpress/" title="Understanding Action Hooks In Wordpress">Understanding Action Hooks In Wordpress</a></li>
+	<li><a href="http://www.raymondselda.com/convert-a-content-box-design-into-xhtml-and-css/" title="Convert A Content Box Design Into XHTML and CSS">Convert A Content Box Design Into XHTML and CSS</a></li>
+	<li><a href="http://www.raymondselda.com/importance-of-html-headings-for-accessibility/" title="Importance of HTML Headings for Accessibility">Importance of HTML Headings for Accessibility</a></li>
+	<li><a href="http://www.raymondselda.com/harness-the-power-of-wordpress-child-themes/" title="Harness The Power of Wordpress Child Themes">Harness The Power of Wordpress Child Themes</a></li>
+	<li><a href="http://www.raymondselda.com/create-a-tabbed-content-rotator-using-jquery/" title="Create A Tabbed Content Rotator Using jQuery">Create A Tabbed Content Rotator Using jQuery</a></li>
+	<li><a href="http://www.raymondselda.com/what-should-i-write-about/" title="What Should I Write About?">What Should I Write About?</a></li>
+	<li><a href="http://www.raymondselda.com/website-monitoring-tools-to-help-prevent-downtime/" title="13 Website Monitoring Tools To Help Prevent Downtime">13 Website Monitoring Tools To Help Prevent Downtime</a></li>
+	<li><a href="http://www.raymondselda.com/professional-dark-css-menu/" title="Professional Dark CSS Menu">Professional Dark CSS Menu</a></li>
+	<li><a href="http://www.raymondselda.com/generate-color-schemes-from-images-in-2-minutes/" title="Generate Color Schemes From Images in 2 Minutes">Generate Color Schemes From Images in 2 Minutes</a></li>
+	<li><a href="http://www.raymondselda.com/php-contact-form-with-jquery-validation/" title="PHP Contact Form with jQuery Validation">PHP Contact Form with jQuery Validation</a></li>
+	<li><a href="http://www.raymondselda.com/bringing-my-blog-back-to-life/" title="Bringing My Blog Back to Life">Bringing My Blog Back to Life</a></li>
+    </ul>
+    
+<h2>Categories</h2>		<ul>
+	<li class="cat-item cat-item-49"><a href="http://www.raymondselda.com/category/freebies/" title="View all posts filed under Freebies">Freebies</a> (4)
+</li>
+	<li class="cat-item cat-item-56"><a href="http://www.raymondselda.com/category/jquery/" title="View all posts filed under jQuery">jQuery</a> (3)
+</li>
+	<li class="cat-item cat-item-55"><a href="http://www.raymondselda.com/category/personal/" title="View all posts filed under Personal">Personal</a> (9)
+</li>
+	<li class="cat-item cat-item-53"><a href="http://www.raymondselda.com/category/photoshop/" title="View all posts filed under Photoshop">Photoshop</a> (2)
+</li>
+	<li class="cat-item cat-item-52"><a href="http://www.raymondselda.com/category/php/" title="View all posts filed under PHP">PHP</a> (3)
+</li>
+	<li class="cat-item cat-item-58"><a href="http://www.raymondselda.com/category/reviews/" title="View all posts filed under Reviews">Reviews</a> (1)
+</li>
+	<li class="cat-item cat-item-57"><a href="http://www.raymondselda.com/category/search-engine-optimization/" title="View all posts filed under Search Engine Optimization">Search Engine Optimization</a> (1)
+</li>
+	<li class="cat-item cat-item-54"><a href="http://www.raymondselda.com/category/tools/" title="View all posts filed under Tools">Tools</a> (5)
+</li>
+	<li class="cat-item cat-item-51"><a href="http://www.raymondselda.com/category/web-articles/" title="View all posts filed under Web Articles">Web Articles</a> (12)
+</li>
+	<li class="cat-item cat-item-6"><a href="http://www.raymondselda.com/category/wordpress/" title="View all posts filed under Wordpress">Wordpress</a> (10)
+</li>
+	<li class="cat-item cat-item-48"><a href="http://www.raymondselda.com/category/xhtml-css/" title="View all posts filed under XHTML and CSS">XHTML and CSS</a> (6)
+</li>
+		</ul>
+					<h2>Recent Comments</h2>			<ul id="recentcomments"><li class="recentcomments"><a href="http://tykhon-ua.com/" rel="external nofollow" class="url">Tykhon Dziuban</a> on <a href="http://www.raymondselda.com/seo-school-book-review/comment-page-1/#comment-3132">SEO School Book Review</a></li><li class="recentcomments">Marco Avellaneda on <a href="http://www.raymondselda.com/create-a-tabbed-content-rotator-using-jquery/comment-page-2/#comment-3129">Create A Tabbed Content Rotator Using jQuery</a></li><li class="recentcomments"><a href="http://www.raymondselda.com/" rel="external nofollow" class="url">Raymond Selda</a> on <a href="http://www.raymondselda.com/php-contact-form-with-jquery-validation/comment-page-2/#comment-3128">PHP Contact Form with jQuery Validation</a></li><li class="recentcomments">Keay on <a href="http://www.raymondselda.com/php-contact-form-with-jquery-validation/comment-page-2/#comment-3127">PHP Contact Form with jQuery Validation</a></li><li class="recentcomments">Keay on <a href="http://www.raymondselda.com/php-contact-form-with-jquery-validation/comment-page-2/#comment-3126">PHP Contact Form with jQuery Validation</a></li></ul>
+			
+	</div><!-- end side-content -->
+<div id="footer" class="grid_12">
+		<h2>Copyright © 2009 <a href="http://www.raymondselda.com/">Raymond Selda</a> and powered by WordPress</h2>
+	</div><!-- end footer -->
+</div><!-- end container -->
+
+<script language="javascript" src="jQuery%20Tabbed%20Content%20Rotator_files/shCore.js" type="text/javascript"></script>
+<script language="javascript" src="jQuery%20Tabbed%20Content%20Rotator_files/shBrushAll.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+dp.SyntaxHighlighter.ClipboardSwf = 'http://www.raymondselda.com/wp-content/plugins/google-syntax-highlighter/Scripts/clipboard.swf';
+dp.SyntaxHighlighter.HighlightAll('code');
+</script><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-css .colors { color: darkred; }.dp-css .vars { color: #d00; }</style><style>.dp-css .colors { color: darkred; }.dp-css .vars { color: #d00; }</style><style>.dp-css .colors { color: darkred; }.dp-css .vars { color: #d00; }</style><style>.dp-css .colors { color: darkred; }.dp-css .vars { color: #d00; }</style><style>.dp-css .colors { color: darkred; }.dp-css .vars { color: #d00; }</style><style>.dp-css .colors { color: darkred; }.dp-css .vars { color: #d00; }</style><style>.dp-css .colors { color: darkred; }.dp-css .vars { color: #d00; }</style><style>.dp-css .colors { color: darkred; }.dp-css .vars { color: #d00; }</style>
+
+<!-- Woopra Code Start -->
+<script type="text/javascript">
+    var _wh = ((document.location.protocol=='https:') ? "https://sec1.woopra.com" : "http://static.woopra.com");
+    document.write(unescape("%3Cscript src='" + _wh + "/js/woopra.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="jQuery%20Tabbed%20Content%20Rotator_files/woopra.js" type="text/javascript"></script>
+<!-- Woopra Code End -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="jQuery%20Tabbed%20Content%20Rotator_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5258218-1");
+pageTracker._trackPageview();
+</script>
+
+	
+</body></html>

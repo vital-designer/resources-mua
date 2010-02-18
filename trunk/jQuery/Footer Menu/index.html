@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head >
+<title>
+</title>
+<link rel='stylesheet' type='text/css' href='mycss.css' />
+
+	</head>
+<body>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" ></script>
+
+
+
+
+
+
+
+
+
+<div id="ctl01_InsecurePanel1" class="addthisbutton">
+
+
+
+</div>
+<script type="text/javascript">
+function HideMenuToolbar(){ $("#toolbar").fadeOut(); $("#toolbarbut").fadeIn("slow");}
+function ShowMenuToolbar(){ $("#toolbar").fadeIn(); $("#toolbarbut").fadeOut("slow");}
+$(document).ready(function(){
+  $("span.downarr a").click(function() {HideMenuToolbar(); Set_Cookie('openstate', 'closed')});
+  $("span.showbar a").click(function() {ShowMenuToolbar(); Set_Cookie('openstate', 'open') });
+  $("span.downarr a, span.showbar a").click(function() { return false; });
+	var openState = Get_Cookie('openstate');
+	if(openState != null){ if(openState == 'closed'){HideMenuToolbar();} if(openState == 'open'){ShowMenuToolbar();}}
+});
+function Set_Cookie(c_name,value)
+{
+var exdate=new Date();
+exdate.setDate(exdate.getDate()+10);
+document.cookie=c_name+ "=" +escape(value)+((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+}
+function Get_Cookie(c_name)
+{
+if (document.cookie.length>0)
+  {
+  c_start=document.cookie.indexOf(c_name + "=");
+  if (c_start!=-1)
+    {
+    c_start=c_start + c_name.length+1;
+    c_end=document.cookie.indexOf(";",c_start);
+    if (c_end==-1) c_end=document.cookie.length;
+    return unescape(document.cookie.substring(c_start,c_end));
+    }
+  }
+return "";
+}
+</script>
+
+<div id="toolbarbut">
+<span class="showbar"><a href="#">show bar</a></span>
+</div>
+<div id="toolbar">
+<div class="toolbarleft">
+  &nbsp;=
+</div>
+<div class="toolbarright">
+  <span class="downarr">
+  <a href="#"></a>
+  </span>
+  <a href="" class="ModuleEditLink adminlink adminmenulink" title="Administration Menu" id="ctl01_lnkAdminMenu">Administration</a>
+  <a href="" onClick="GB_showFullScreen(this.title, this.href); return false;" class="ModuleEditLink adminlink filemanlink" title="File Manager" id="ctl01_lnkFileManager">File Manager</a>
+  <a href="" class="ModuleEditLink adminlink newpagelink" title="Create a new page" id="ctl01_lnkNewPage">New Page</a>
+  <a href="" class="ModuleEditLink adminlink pageeditlink" title="Add or arrange content features on the current page" id="ctl01_lnkPageContent">Edit This Page</a>
+
+  <a href="" class="ModuleEditLink adminlink pagesettingslink" title="Configure settings and permissions for the current page" id="ctl01_lnkPageSettings">Page Settings</a>
+
+</div>
+</div>
+
+
+
+</body>
+
+</html>

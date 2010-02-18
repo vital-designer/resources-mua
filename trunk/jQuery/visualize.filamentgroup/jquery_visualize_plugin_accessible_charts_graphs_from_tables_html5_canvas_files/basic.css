@@ -1,0 +1,82 @@
+
+
+/* ---------------------------------------------------------------
+ Filament Group Basic and Print Stylesheet
+--------------------------------------------------------------- */
+
+html.enhancements body { display: none; }
+
+
+body { font-family:"Segoe UI", Frutiger, Tahoma, Helvetica, "Helvetica Neue", Arial, sans-serif; color:#333; }
+#contain { margin:25px auto; width: 640px; }
+a  { text-decoration:underline; color:#368512; }
+a:visited { color:#8dc262; }
+a:hover { color:#2a7801; }
+a img,fieldset { border:0;padding: 0; }
+#filament_logo { margin:20px 0 10px; font-size:30px; font-weight:bold; color: #368512; border-bottom: 5px solid #368512; padding: 15px 0; }
+#filament_logo a {  color: #368512; text-decoration: none; }
+
+/*nav*/
+p.learnmoreabout { font-style: italic; font-size: 13px; display: inline; }
+#home_nav ul {display: inline; padding: 0;}
+#home_nav,  #primaryNavigation { border-bottom: 1px solid #aaa; padding: 0 0 15px; margin: 20px 0 45px; }
+
+#home_nav li, #primaryNavigation li { display: inline-block; list-style: none; font-size: 13px; font-weight: bold; }
+#home_nav li a, #primaryNavigation li a { color: #368512; margin-right: 10px;}
+
+
+/*basic content*/
+h1 { font-size: 18px; }
+h2 { font-size: 16px; }
+h3 { font-size: 15px; }
+h4 { font-size: 14px; }
+h5 { font-size: 13px; }
+h6 { font-size: 12px; }
+p,li,dt,dd { font-size: 14px; padding: 0; margin: 0; }
+dd { margin-right: 2px; }
+ul,ol{padding:0;}
+
+/*some custom content formatting*/
+p.intro { font-size: 16px; }
+#content #overview { margin:1em 0 2em; }
+#content #overview p { font-family:"Segoe UI","Helvetica Neue", Helvetica, Arial, sans-serif; font-size:15px; padding:0 0 .5em; color:#777;}
+#content #overview.landing p,#whoweare #content #overview p { padding:0 0 1em; }
+#twitterUpdate { padding: 20px 0; margin: 20px 0; border-bottom: 0; }
+.labFeatureItem, .projectList li, .commentEntry { margin: 20px 0; border-bottom: 1px dotted #aaa; padding: 20px; list-style: none; }
+.projectList li:last-child { border: 0; }
+.projectList { padding: 0; }
+.posted, .recentlyHeader { font-size: 13px; font-style: italic; font-weight: bold; color: #666; } 
+.recentlyHeader { font-size: 15px;  }
+.slideShow { padding: 0; }
+.slideShow li, .slideShow li div { list-style: none; display: block;}
+.slideShow li img { margin: 0 5px 5px 0; }
+#content .example_left p,#content .example_right p,#content p.caption {font-size:12px;color:#666;font-style:italic; }
+#copyright, #footerInterior { border-top:1px solid #666; padding:20px 0; margin:10px 0; font-size: 13px; }
+.topics dt, .topics dd { display: inline-block; font-size: 12px;}
+
+#content iframe { width:100%; background:#fff; z-index:999999; position:relative; border:0 !important; }
+#content #overview p.note,#content p.note { padding:10px;  border:1px solid #8cc264; margin:1.5em 0; }
+#content #overview p.outdated,#content p.outdated { border:1px solid #840505;   padding:10px; margin:1.5em 0;  }
+#content #overview p.outdated a,#content p.outdated a { color:#fff; }
+
+
+
+input.text,textarea { display: block; }
+input.text:focus,textarea:focus { background:#efefe7; }
+span.required { font-size:.8em; font-weight:normal; color:red; }
+
+
+
+
+
+/*experience toggle links*/
+.enhancements_fallback_link, .enhancements_toggleResult { font-size:12px; padding:2px 5px 3px; text-align: center; display: block; }
+
+/* ---------------------------------------------------------------
+Print-only styles
+--------------------------------------------------------------- */
+@media print {
+	#contain { width: auto; margin: 25px; }
+	h2.addComment,#comment_form,div.socialData, #whatwerethinking #secondaryContent, #footerInterior, a.enhanced_toggleResult { display:none !important;  }
+	.slideShow li, .slideShow li div, .labFeatureItem { position: static !important; display: block !important; opacity: 1 !important; }
+}

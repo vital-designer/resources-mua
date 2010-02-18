@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Shadowbox.js Media Viewer » API</title>
+
+<link rel="stylesheet" type="text/css" href="api_files/style.css">
+
+</head><body>
+
+<div id="outer-wrapper">
+
+<div id="stripe"></div>
+
+<div id="wrapper">
+
+    <div id="header">
+        <h1><a href="http://www.shadowbox-js.com/index.html">Shadowbox.js</a> - A more powerful and versatile Lightbox</h1>
+        <a href="http://www.shadowbox-js.com/index.html"><img alt="Shadowbox.js" src="api_files/logo.gif"></a>
+        <h2 id="subtitle">by <a href="http://mjijackson.com/">Michael J. I. Jackson</a></h2>
+    </div>
+
+    <ul id="nav">
+        <li><a href="http://www.shadowbox-js.com/index.html">Home</a></li>
+        <li><a href="http://www.shadowbox-js.com/download.html">Download</a></li>
+        <li><a href="http://www.shadowbox-js.com/support.html">Support</a></li>
+        <li><a href="http://www.shadowbox-js.com/usage.html">Usage</a></li>
+        <li><a href="http://www.shadowbox-js.com/options.html">Options</a></li>
+        <li><a class="selected">API</a></li>
+        <li><a href="http://www.shadowbox-js.com/faq.html">FAQ</a></li>
+        <li><a href="http://www.shadowbox-js.com/forum.html">Forum</a></li>
+    </ul>
+
+    <div id="content">
+
+        <p>The
+tables below contain a partial list of the properties and methods of
+the Shadowbox interface. This reference is not intended to be complete,
+but is merely offered as a high-level overview of the interface. For a
+more complete reference including method return and argument types,
+feel free to browse the <a href="http://www.shadowbox-js.com/source/shadowbox.js">source</a>.</p>
+
+        <table border="0" cellpadding="0" cellspacing="1">
+            <thead>
+                <tr><th>Property</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>adapter</code></td><td>The name of the <a href="http://www.shadowbox-js.com/options.html#adapter">adapter</a> currently in use.</td></tr>
+                <tr><td><code><a name="cache">cache</a></code></td><td>A cache of gallery elements that have already been set up for use. May be properly cleared using <a href="#clearCache">clearCache()</a>.</td></tr>
+                <tr><td><code>client</code></td><td>An object containing various flags that have to do with the Shadowbox client.</td></tr>
+                <tr><td><code>content</code></td><td>The current content object.</td></tr>
+                <tr><td><code>current</code></td><td>An integer representing the index of the current content object in the current gallery.</td></tr>
+                <tr><td><code>dimensions</code></td><td>An object containing the current dimensions of the box.</td></tr>
+                <tr><td><code>gallery</code></td><td>An array containing all elements in the current gallery.</td></tr>
+                <tr><td><code>options</code></td><td>An object containing the current options in use.</td></tr>
+                <tr><td><code>path</code></td><td>A string that describes the URL at which the shadowbox.js script is located. This is automatically determined in <a href="http://www.shadowbox-js.com/init">init</a>
+if it is not already set. If the script fails to determine the correct
+path, it will fail to automatically load the needed assets.</td></tr>
+                <tr><td><code>plugins</code></td><td>An object that describes which plugins are installed on the client.</td></tr>
+                <tr><td><code>version</code></td><td>A string containing the current version number.</td></tr>
+            </tbody>
+        </table>
+
+        <table border="0" cellpadding="0" cellspacing="1">
+            <thead>
+                <tr><th>Method</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code><a name="addcache">addCache(link, options)</a></code></td><td>Adds the given link element to the Shadowbox element cache. Elements are cached to speed up lookups when they are needed.</td></tr>
+                <tr><td><code><a name="buildCacheObj">buildCacheObj(link, options)</a></code></td><td>
+                    <p>Builds an object that is suitable to store in the cache. The resulting object should contain (most of) the following properties:</p>
+                    <table style="width: 100%;" border="0" cellpadding="0" cellspacing="1">
+                        <thead>
+                            <tr><th>Property</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>el</code></td><td>the link element</td></tr>
+                            <tr><td><code>title</code></td><td>the object's title</td></tr>
+                            <tr><td><code>player</code></td><td>the player to use for the object</td></tr>
+                            <tr><td><code>content</code></td><td>the object's URL</td></tr>
+                            <tr><td><code>gallery</code></td><td>the gallery the object belongs to (optional)</td></tr>
+                            <tr><td><code>height</code></td><td>the height of the object (only necessary for movies)</td></tr>
+                            <tr><td><code>width</code></td><td>the width of the object (only necessary for movies)</td></tr>
+                            <tr><td><code>options</code></td><td>custom options to use (optional)</td></tr>
+                        </tbody>
+                    </table>
+                </td></tr>
+                <tr><td><code>change(n)</code></td><td>Changes to index <code>n</code> in the current gallery.</td></tr>
+                <tr><td><code><a name="clearCache">clearCache()</a></code></td><td>Clears all elements from the <a href="#cache">cache</a>, removing any event listeners that have been registered.</td></tr>
+                <tr><td><code>getCurrent()</code></td><td>Gets the current content object.</td></tr>
+                <tr><td><code>hasNext()</code></td><td>Returns
+true if there is another item to display in the current gallery. Note
+that this will always be true in galleries that are <a href="http://www.shadowbox-js.com/options.html#continuous">continuous</a>.</td></tr>
+                <tr><td><code><a name="init">init(options)</a></code></td><td>Initializes the Shadowbox environment. This function should only ever be called once, in the <code>&lt;head&gt;</code> of the document.</td></tr>
+                <tr><td><code>inCache(link)</code></td><td>Returns true if the given link element is contained in the cache.</td></tr>
+                <tr><td><code>isActive()</code></td><td>Returns true if Shadowbox is currently activated.</td></tr>
+                <tr><td><code>isPaused()</code></td><td>Returns true if Shadowbox is currently in a paused state. This can happen if <a href="#pause">pause</a> is invoked in the middle of a slideshow.</td></tr>
+                <tr><td><code>next()</code></td><td>Changes to the next element in the current gallery.</td></tr>
+                <tr><td><code>open(object)</code></td><td>Opens the given object. This object can be a link element that has already been <a href="#setup">setup</a>, an object similar to one created by <a href="http://www.shadowbox-js.com/buildCacheObj">buildCacheObj</a>, or an array of objects.</td></tr>
+                <tr><td><code><a name="pause">pause()</a></code></td><td>Pauses the current slideshow (if there is one).</td></tr>
+                <tr><td><code>play()</code></td><td>Resumes the current slideshow (if there is one).</td></tr>
+                <tr><td><code>previous()</code></td><td>Changes to the previous element in the current gallery.</td></tr>
+                <tr><td><code><a name="removecache">removeCache(link)</a></code></td><td>Removes the given link element from the cache.</td></tr>
+                <tr><td><code><a name="setup">setup(links, options)</a></code></td><td>Sets up the given link element(s) and <a href="#addcache">adds</a> it to the cache with the given options. If using the <a href="http://www.shadowbox-js.com/options.html#usesizzle">using</a> the <a href="http://sizzlejs.com/">Sizzle.js</a>
+CSS selector library, this may be a CSS selector or an array in which
+the first element is a CSS selector and the second is the context
+element as described in the <a href="http://wiki.github.com/jeresig/sizzle">Sizzle documentation</a>.</td></tr>
+                <tr><td><code>teardown(links)</code></td><td>Removes event listeners from the given link element(s) and <a href="#removecache">removes</a> it from the cache. If using the <a href="http://www.shadowbox-js.com/options.html#usesizzle">using</a> the <a href="http://sizzlejs.com/">Sizzle.js</a>
+CSS selector library, this may be a CSS selector or an array in which
+the first element is a CSS selector and the second is the context
+element as described in the <a href="http://wiki.github.com/jeresig/sizzle">Sizzle documentation</a>.</td></tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div id="push"></div>
+
+</div>
+
+</div>
+
+<div id="footer">
+    <p>Copyright © 2007-2009 <a href="http://www.mjijackson.com/">Michael J. I. Jackson</a></p>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="api_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-998116-7");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body></html>

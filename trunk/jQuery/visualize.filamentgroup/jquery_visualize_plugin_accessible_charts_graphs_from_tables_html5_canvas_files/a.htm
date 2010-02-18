@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html><head>
+
+	
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Filament Group Lab Example From: jQuery Visualize Plugin: Accessible Charts &amp; Graphs from Table Elements using HTML 5 Canvas</title>	
+		<link rel="shortcut icon" href="http://www.filamentgroup.com/images/favicon2.ico" type="image/x-icon">
+		<link href="a_data/demoPages.css" media="screen" rel="Stylesheet" type="text/css">	
+		<link type="text/css" rel="stylesheet" href="a_data/visualize.css">
+		<link type="text/css" rel="stylesheet" href="a_data/demopage.css">
+		<script type="text/javascript" src="a_data/jquery.js"></script>
+		<!--[if IE]><script type="text/javascript" src="excanvas.compiled.js"></script><![endif]-->
+		<script type="text/javascript" src="a_data/visualize.js"></script>
+		<script type="text/javascript" src="a_data/editabletable.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//make some charts
+				$('table').visualize({type: 'pie', pieMargin: 10, title: '2009 Total Sales by Individual'});	
+				$('table').visualize({type: 'line'});
+				$('table').visualize({type: 'area'});
+				$('table').visualize();
+			});
+		</script>
+	<script src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/a_003" type="text/javascript"></script><script src="a_data/a" type="text/javascript"></script>
+</head><body>	
+
+<style type="text/css">/*for viewing within articles*/body{margin:0;}</style>
+<p class="editableNote"><em>Note: table is editable. Click any cell to change its value.</em></p>
+		<table>
+			<caption>2009 Individual Sales by Category</caption>
+			<thead>
+				<tr>
+					<td></td>
+					<th>food</th>
+					<th>auto</th>
+					<th>household</th>
+					<th>furniture</th>
+					<th>kitchen</th>
+					<th>bath</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Mary</th>
+					<td>150</td>
+					<td>160</td>
+					<td>40</td>
+					<td>120</td>
+					<td class="">30</td>
+					<td>70</td>
+				</tr>
+				<tr>
+					<th>Tom</th>
+					<td>3</td>
+					<td>40</td>
+					<td>30</td>
+					<td class="">45</td>
+					<td>35</td>
+					<td>49</td>
+				</tr>
+				<tr>
+					<th>Brad</th>
+					<td>10</td>
+					<td>180</td>
+					<td>10</td>
+					<td class="">85</td>
+					<td>25</td>
+					<td>79</td>
+				</tr>
+				<tr>
+					<th>Kate</th>
+					<td>40</td>
+					<td>80</td>
+					<td>90</td>
+					<td>25</td>
+					<td>15</td>
+					<td>119</td>
+				</tr>		
+			</tbody>
+		</table><div style="height: 201px; width: 500px;" class="visualize visualize-bar" role="presentation"><ul style="width: 500px; height: 201px;" class="visualize-labels-x"><li style="left: 0px; width: 83.3333px;"><span style="border: medium none ;" class="line"></span><span class="label">food</span></li><li style="left: 83.3333px; width: 83.3333px;"><span class="line"></span><span class="label">auto</span></li><li style="left: 166.667px; width: 83.3333px;"><span class="line"></span><span class="label">household</span></li><li style="left: 250px; width: 83.3333px;"><span class="line"></span><span class="label">furniture</span></li><li style="left: 333.333px; width: 83.3333px;"><span class="line"></span><span class="label">kitchen</span></li><li style="left: 416.667px; width: 83.3333px;"><span class="line"></span><span class="label">bath</span></li></ul><ul style="width: 500px; height: 201px;" class="visualize-labels-y"><li style="bottom: 201px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-top: 0px;">180</span></li><li style="bottom: 167.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">135</span></li><li style="bottom: 134px;"><span class="line"></span><span class="label" style="margin-top: -6px;">108</span></li><li style="bottom: 100.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">81</span></li><li style="bottom: 67px;"><span class="line"></span><span class="label" style="margin-top: -6px;">54</span></li><li style="bottom: 33.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">27</span></li><li style="bottom: 0px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-top: -12px;">0</span></li></ul><canvas style="width: 500px; height: 201px;" width="500" height="201"></canvas><div class="visualize-info"><div class="visualize-title">2009 Individual Sales by Category</div><ul class="visualize-key"><li><span class="visualize-key-color" style="background: rgb(190, 30, 45) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Mary</span></li><li><span class="visualize-key-color" style="background: rgb(102, 102, 153) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Tom</span></li><li><span class="visualize-key-color" style="background: rgb(146, 213, 234) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Brad</span></li><li><span class="visualize-key-color" style="background: rgb(238, 131, 16) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Kate</span></li></ul></div></div><div style="height: 201px; width: 500px;" class="visualize visualize-area" role="presentation"><ul style="width: 500px; height: 201px;" class="visualize-labels-x"><li style="left: 0px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-left: 0px;">food</span></li><li style="left: 100px;"><span class="line"></span><span class="label" style="margin-left: -12.5px;">auto</span></li><li style="left: 200px;"><span class="line"></span><span class="label" style="margin-left: -29px;">household</span></li><li style="left: 300px;"><span class="line"></span><span class="label" style="margin-left: -23.5px;">furniture</span></li><li style="left: 400px;"><span class="line"></span><span class="label" style="margin-left: -20px;">kitchen</span></li><li style="left: 500px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-left: -25px;">bath</span></li></ul><ul style="width: 500px; height: 201px;" class="visualize-labels-y"><li style="bottom: 201px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-top: 0px;">180</span></li><li style="bottom: 167.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">135</span></li><li style="bottom: 134px;"><span class="line"></span><span class="label" style="margin-top: -6px;">108</span></li><li style="bottom: 100.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">81</span></li><li style="bottom: 67px;"><span class="line"></span><span class="label" style="margin-top: -6px;">54</span></li><li style="bottom: 33.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">27</span></li><li style="bottom: 0px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-top: -12px;">0</span></li></ul><canvas style="width: 500px; height: 201px;" width="500" height="201"></canvas><div class="visualize-info"><div class="visualize-title">2009 Individual Sales by Category</div><ul class="visualize-key"><li><span class="visualize-key-color" style="background: rgb(190, 30, 45) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Mary</span></li><li><span class="visualize-key-color" style="background: rgb(102, 102, 153) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Tom</span></li><li><span class="visualize-key-color" style="background: rgb(146, 213, 234) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Brad</span></li><li><span class="visualize-key-color" style="background: rgb(238, 131, 16) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Kate</span></li></ul></div></div><div style="height: 201px; width: 500px;" class="visualize visualize-line" role="presentation"><ul style="width: 500px; height: 201px;" class="visualize-labels-x"><li style="left: 0px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-left: 0px;">food</span></li><li style="left: 100px;"><span class="line"></span><span class="label" style="margin-left: -12.5px;">auto</span></li><li style="left: 200px;"><span class="line"></span><span class="label" style="margin-left: -29px;">household</span></li><li style="left: 300px;"><span class="line"></span><span class="label" style="margin-left: -23.5px;">furniture</span></li><li style="left: 400px;"><span class="line"></span><span class="label" style="margin-left: -20px;">kitchen</span></li><li style="left: 500px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-left: -25px;">bath</span></li></ul><ul style="width: 500px; height: 201px;" class="visualize-labels-y"><li style="bottom: 201px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-top: 0px;">180</span></li><li style="bottom: 167.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">135</span></li><li style="bottom: 134px;"><span class="line"></span><span class="label" style="margin-top: -6px;">108</span></li><li style="bottom: 100.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">81</span></li><li style="bottom: 67px;"><span class="line"></span><span class="label" style="margin-top: -6px;">54</span></li><li style="bottom: 33.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">27</span></li><li style="bottom: 0px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-top: -12px;">0</span></li></ul><canvas style="width: 500px; height: 201px;" width="500" height="201"></canvas><div class="visualize-info"><div class="visualize-title">2009 Individual Sales by Category</div><ul class="visualize-key"><li><span class="visualize-key-color" style="background: rgb(190, 30, 45) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Mary</span></li><li><span class="visualize-key-color" style="background: rgb(102, 102, 153) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Tom</span></li><li><span class="visualize-key-color" style="background: rgb(146, 213, 234) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Brad</span></li><li><span class="visualize-key-color" style="background: rgb(238, 131, 16) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Kate</span></li></ul></div></div><div style="height: 201px; width: 500px;" class="visualize visualize-pie" role="presentation"><canvas style="width: 500px; height: 201px;" width="500" height="201"></canvas><ul class="visualize-labels"><li style="left: 306px; top: 77px;" class="visualize-label-pos"><span style="right: 0px; top: 0px; font-size: 11.375px; margin-right: -15px; margin-top: -6.5px;" class="visualize-label">37%</span></li><li style="left: 273px; top: 157px;" class="visualize-label-pos"><span style="right: 0px; bottom: 0px; font-size: 11.375px; margin-right: -15px; margin-bottom: -6.5px;" class="visualize-label">13%</span></li><li style="left: 205px; top: 142px;" class="visualize-label-pos"><span style="left: 0px; bottom: 0px; font-size: 11.375px; margin-left: -15px; margin-bottom: -6.5px;" class="visualize-label">25%</span></li><li style="left: 208px; top: 57px;" class="visualize-label-pos"><span style="left: 0px; top: 0px; font-size: 11.375px; margin-left: -15px; margin-top: -6.5px;" class="visualize-label">24%</span></li></ul><div class="visualize-info"><div class="visualize-title">2009 Total Sales by Individual</div><ul class="visualize-key"><li><span class="visualize-key-color" style="background: rgb(190, 30, 45) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Mary</span></li><li><span class="visualize-key-color" style="background: rgb(102, 102, 153) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Tom</span></li><li><span class="visualize-key-color" style="background: rgb(146, 213, 234) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Brad</span></li><li><span class="visualize-key-color" style="background: rgb(238, 131, 16) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Kate</span></li></ul></div></div>
+	</body></html>

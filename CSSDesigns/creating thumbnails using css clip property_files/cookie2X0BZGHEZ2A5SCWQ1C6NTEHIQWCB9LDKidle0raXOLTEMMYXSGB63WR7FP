@@ -1,0 +1,1 @@
+setTimeout(function(){woopraTracker.ping();},32 * 1000);

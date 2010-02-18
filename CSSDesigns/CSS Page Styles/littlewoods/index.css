@@ -1,0 +1,76 @@
+/*Littlewoods*/
+.pagenav_row {
+	
+    font-family: arial, verdana, helvetica;
+    font-size: 11px;
+    font-style: normal;
+
+
+}
+
+.pagenav_row .pagenav_navcolumn {
+	width: 170px;
+	margin: 5px 0px 0px 0px;
+	padding: 0px;
+	float:left;
+}
+
+.pagenav_row .pagenav_pagecolumn {
+	width: 126px;
+	margin: 5px 0px 0px 0px;
+	padding: 0px;
+	float:left;
+}
+.pagenav_row .pagenav_pagenavcolumn {
+	width: 236px;
+	margin: 0px;
+	padding: 6px 0px 0px 0px;
+	float:left;
+}
+
+.pagenav_row .pagenav_pagenavcolumn ul li { 
+   display:inline; 
+   margin:0px !important;
+   border:0px !important;
+   padding:0px !important;   
+}
+
+.pagenav_row .pagenav_pagenavcolumn .pagenavitem {
+	margin: 1px 2px 1px 1px;
+	padding: 0px 3px 0px 3px;
+}
+
+.pagenavitem a {
+   font-weight:bold;
+	color:#000000;
+   border:1px solid #616161;
+   text-align:center;  
+   text-decoration:none !important;
+   padding:0px 3px;
+}
+
+.pagenavitem a:hover {
+   font-weight:bold;
+   border:1px solid #616161;
+   text-align:center; 
+   text-decoration:none;
+   background-color:#CCCCCC;    
+}
+
+.pagenavitem a.selected {
+   font-weight:bold;
+   border:1px solid #CCCCCC;
+   text-align:center;  
+   text-decoration:none !important;
+   padding:0px 3px;
+   background-color:#CCCCCC;    
+}
+
+.pagenavitem a.selected:hover {
+   font-weight:bold;
+   border:1px solid #CCCCCC;
+   text-align:center;  
+   text-decoration:none !important;
+   padding:0px 3px;
+   background-color:#CCCCCC;    
+}

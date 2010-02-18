@@ -1,0 +1,72 @@
+
+#paginationWKTOP{
+font: 80%/1.4 Tahoma, arial, helvetica, sans-serif;
+}
+#paginationWKTOP a {
+  color: #FF5917;
+  text-decoration: none;
+}
+#paginationWKTOP a:hover, #paginationWKTOP a:focus  {
+  color: #31627e;
+}
+
+
+#paginationWKTOP li {
+  display: inline;
+}
+
+#paginationWKTOP li span {
+  text-decoration: none;
+}
+
+#paginationWKTOP li a, #paginationWKTOP li span {
+  display: block;
+  min-height: 18px; line-height: 18px;
+  vertical-align: middle;
+  float: left;
+  text-align: center;
+  border: 1px solid #79A3BA;
+  margin-right: 5px;
+  padding: 0 5px;
+  background: url(w_pagination_bg.gif) repeat-x 0 -160px;
+}
+
+.prev-site, .next-site {
+  width: 73px;
+}
+
+#paginationWKTOP li a:hover, #pagination li a:active, #pagination li a:focus
+{
+background: url(w_pagination_bg.gif) repeat-x 0 -200px; text-decoration: none;
+}
+
+#paginationWKTOP li a.prev-site, #pagination li a.next-site,
+#paginationWKTOP li span.prev-site, #pagination li span.next-site
+{ width: 85px; height: 20px; padding: 0; border: none;
+	background: url(w_pagination_bg.gif) 0 0 no-repeat;
+}
+
+#paginationWKTOP li span.prev-site.disabled
+{ 
+	background: url(w_pagination_bg.gif) 0 -241px no-repeat; color: #BBB;
+}
+
+#paginationWKTOP li span.next-site.disabled
+{ 
+	background: url(w_pagination_bg.gif) 0 -281px no-repeat;  color: #BBB;
+}
+
+#paginationWKTOP li a.next-site, #pagination li span.next-site
+{
+	background: url(w_pagination_bg.gif) 1 -81px no-repeat;
+}
+
+#paginationWKTOP li a:hover.prev-site, #paginationWKTOP li a:active.prev-site, #paginationWKTOP li a:focus.prev-site 
+{background: url(w_pagination_bg.gif) 0 -40px no-repeat; text-decoration: none;}
+#paginationWKTOP li a:hover.next-site, #paginationWKTOP li a:active.next-site, #pagination li a:focus.next-site 
+{background: url(w_pagination_bg.gif) 1 -121px no-repeat; text-decoration: none;}
+
+#paginationWKTOP li span.break, #paginationWKTOP li span.current {
+	border: 1px solid #BBB; color: #BBB;
+	background: url(w_pagination_bg.gif) 0 -200px no-repeat;
+}

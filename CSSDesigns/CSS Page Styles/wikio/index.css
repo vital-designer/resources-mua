@@ -1,0 +1,48 @@
+/*Wikio*/
+/* num-page */
+#content{
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+}
+
+#content .num-page {
+	margin:30px 0 0;
+	padding:10px 0 0 55px;
+	list-style:none;
+	clear:left;
+	font-size:110%;
+	color:#848a8c;
+}
+.num2 {
+	margin:10px 0 0 !important;
+	padding:10px 0 0 2px !important;
+}
+#content .num-page li {
+	float:left;
+	padding:0 6px 0 0;
+}
+#content .num-page li.first {
+	border:1px solid #d7dce0;
+	line-height:14px;
+	padding:2px 4px 0;
+	display:inline;
+	margin:0 6px 0 0;
+}
+#content .num-page a {
+	float:left;
+	line-height:14px;
+	padding:2px 4px 0;
+	min-width:8px;
+	border:1px solid #d7dce0;
+	color:#848a8c;
+	text-decoration:none;
+}
+#content .num-page a:hover, #content .num-page li.active a{
+	color:#fff;
+	background:#7f8487;
+	border-bottom-color:#848a8c;
+}
+#content .num-page .lastInfo {
+	line-height:14px;
+	padding:2px 4px 0;
+}

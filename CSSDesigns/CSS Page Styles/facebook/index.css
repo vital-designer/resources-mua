@@ -1,0 +1,9 @@
+/*Facebook*/
+.pagerpro{list-style:none;margin:0;padding:0;font: 15px Arial, Helvetica; }
+.pagerpro li{display:inline;float:left;}
+.pagerpro a{display:block;padding:3px;padding-bottom:2px;color:#000000;}
+.pagerpro a:hover{background:#3B5998;border-color:#D8DFEA;border-bottom:1px solid #3B5998;color:white;text-decoration:none;}
+.pagerpro .current a,
+.pagerpro .current a:hover{background:transparent;border-color:#3B5998;border-bottom:2px solid #3B5998;color:#3B5998;font-weight:bold;padding-left:2px;padding-right:2px;}
+.pagerpro a.disabled{color:#999;cursor:default;background:transparent;border:none;}
+.quail{color:#3B5998;float:left;padding:3px 0px;}

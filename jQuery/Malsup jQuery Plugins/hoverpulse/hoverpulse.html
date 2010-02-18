@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<style type="text/css" media="screen">
+body { margin:0; padding: 0; font-family: 'trebuchet ms', trebuchet, verdana }
+div,pre { margin:0; padding:0 }
+h2 { margin: 20px 0 5px 0; padding: 0 }
+p.intro { margin: 0; padding: 15px; background: #eee; font-size: small; }
+#thumbs { position: relative; width: 198px; height: 198px; }
+div.thumb { float: left; padding: 1px; width: 64px; height: 64px; }
+div.thumb img { border: 2px solid white; }
+</style>
+<script type="text/javascript" src="../jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="jquery.hoverpulse.js"></script>
+<script type="text/javascript">
+$(window).load(function() {
+    $('p.msg').html('Mouse over images for pulse effect');
+});
+$(document).ready(function() {
+    $('div.thumb img').hoverpulse();
+});
+</script>
+</head>
+<body>
+    <p class="intro">This pages demonstrates a little plugin called 'hoverpulse' which grows and then restores an element's
+        size in response to the mouse hovering over it.
+    </p>
+    <div style="padding:0 20px 20px 20px">
+
+        <p class="msg">Loading thumbnails...</p>
+        <div id="thumbs">
+            <div class="thumb"><img src="images/beach1.jpg" width="64" height="64" alt="11" /></div>
+            <div class="thumb"><img src="images/beach2.jpg" width="64" height="64" alt="22" /></div>
+            <div class="thumb"><img src="images/beach3.jpg" width="64" height="64" alt="33" /></div>
+            <div class="thumb"><img src="images/beach4.jpg" width="64" height="64" alt="44" /></div>
+            <div class="thumb"><img src="images/beach5.jpg" width="64" height="64" alt="55" /></div>
+            <div class="thumb"><img src="images/beach6.jpg" width="64" height="64" alt="66" /></div>
+
+            <div class="thumb"><img src="images/beach7.jpg" width="64" height="64" /></div>
+            <div class="thumb"><img src="images/beach8.jpg" width="64" height="64" /></div>
+            <div class="thumb"><img src="images/beach9.jpg" width="64" height="64" /></div>
+        </div>
+        <h2>Basic Usage</h2>
+        <pre><code>
+$(document).ready(function() {
+    $('div.thumb img').hoverpulse();
+});
+        </code></pre>
+
+        <h2>Usage with Options</h2>
+
+        <pre><code>
+$(document).ready(function() {
+    $('div.thumb img').hoverpulse({
+        size: 40,  // number of pixels to pulse element (in each direction)
+        speed: 400 // speed of the animation 
+    });
+});
+        </code></pre>
+        <h2>Download</h2>
+		<a href="jquery.hoverpulse.js">jquery.hoverpulse.js</a>
+    </div>
+</body>
+
+</html>

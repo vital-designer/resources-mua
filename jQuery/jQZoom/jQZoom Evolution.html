@@ -1,0 +1,584 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en_US" xmlns="http://www.w3.org/1999/xhtml" lang="en_US"><head>
+
+ 
+ <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	<title>jQZoom Evolution| siti web,siti internet Macerata,siti internet Ancona</title>
+	<meta name="title" content="jQZoom Evolution,siti internet Macerata,siti internet Ancona- javascript image magnifier for jquery">
+	<meta name="subject" content="jqzoom,javascript, ajax, zoom, jquery, magnify">
+	<meta name="keywords" content="siti internet Macerata,siti internet Ancona,jqzoom,javascript, ajax, zoom, jquery, magnify,">
+	<meta name="description" content="siti internet Macerata,siti internet Ancona,jqzoom,javascript, ajax, zoom, jquery, magnify">
+	<meta name="author" content="Renzi Marco - renzi.mrc@gmail.com">
+	<meta name="robots" content="index,follow">
+	<link rel="stylesheet" type="text/css" href="jQZoom%20Evolution_files/main.css">
+ 	<script type="text/javascript" src="jQZoom%20Evolution_files/jquery-1.js"></script>
+ 	<script type="text/javascript" src="jQZoom%20Evolution_files/jquery.js"></script>
+ 	<script type="text/javascript" src="jQZoom%20Evolution_files/jquery_003.js"></script>
+ 	<script type="text/javascript" src="jQZoom%20Evolution_files/tooltip.js"></script>
+ 	<script type="text/javascript" src="jQZoom%20Evolution_files/jquery_002.js"></script>
+ 	<script type="text/javascript">
+ 	jQuery.noConflict();
+ 	jQuery(document).ready(function(){
+
+	   		 if(jQuery('#msgform').length >0)
+	   		 {
+
+				var formid = '#msgform';
+				var url = 'sendmail.php';
+				var successfn = 'updateMsg';
+				var errbox = '.errbox';
+				var loadbox = '#response';
+				formvalidate(formid,url,'',errbox,successfn,loadbox);
+
+				jQuery('#sendbutton').click(function(){
+					jQuery('#response').hide();
+				});
+
+
+	   		 }
+
+			jQuery('a.top').click(function(){
+				jQuery.scrollTo('#navigation',700);
+				return false;
+			});
+
+
+
+			jQuery('.menu a').click(function(){
+				var exp = '[A-Za-z0-9/\.]+.php(#[A-Za-z0-9]+)';
+				var href= this.href;
+				result = href.match(exp);
+				if(result[1] && jQuery(result[1]).length >0)
+				{
+					jQuery.scrollTo(''+result[1]+'',1200);
+				}
+				//return false;
+			});
+
+
+
+ 	});
+
+	function formvalidate(formid,url,params,errbox,successfn,loadresult){
+
+        var url = url;
+       if(params.lenght >0)
+       {
+       		url = url + '?' + params;
+       }
+
+       var v = jQuery(formid).validate({
+
+       errorLabelContainer: jQuery(errbox),
+
+       submitHandler: function(form) {
+
+       if(loadresult.length!=0) doLoad(loadresult);
+
+       jQuery(form).ajaxSubmit({
+
+       url: url,
+
+ 	   success: function(responseText) {
+
+ 	                                var fn= eval(successfn);
+									fn(responseText,loadresult);
+
+								}
+
+       	 				});
+
+				}
+		});
+	}
+
+	function doLoad(div){
+		cont="<center><img src='images/zoomloader.gif'></center>";
+		jQuery(div).html(cont).show();
+	}
+
+	function updateMsg(msg,div)
+	{
+		var result = msg.split('|');
+		if(result[0] == 'ok')
+		{
+			jQuery(div).empty().html("<div class='success_msg'>"+result[1]+"</div>").show();
+			clearForm('#msgform');
+		}else
+		{
+			jQuery(div).empty().html("<div class='error_msg'>"+result[1]+"</div>").show();
+		}
+	}
+
+	function clearForm(form) {
+	  // iterate over all of the inputs for the form
+	  // element that was passed in
+	  jQuery(':input', form).each(function() {
+		var type = this.type;
+		var tag = this.tagName.toLowerCase(); // normalize case
+		// it's ok to reset the value attr of text inputs,
+		// password inputs, and textareas
+		if (type == 'text' || type == 'password' || tag == 'textarea')
+		  this.value = "";
+		// checkboxes and radios need to have their checked state cleared
+		// but should *not* have their 'value' changed
+		else if (type == 'checkbox' || type == 'radio')
+		  this.checked = false;
+		// select elements need to have their 'selectedIndex' property set to -1
+		// (this works for both single and multiple select elements)
+		else if (tag == 'select')
+		  this.selectedIndex = -1;
+	  });
+	}
+ 	</script>
+
+	 <script type="text/javascript"><!-- Analytics -->
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script><script src="jQZoom%20Evolution_files/ga.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-3217107-1");
+		pageTracker._trackPageview();
+		} catch(err) {}
+	</script><!-- End Analytics -->
+
+ <link media="all" href="jQZoom%20Evolution_files/widget07.css" type="text/css" rel="stylesheet"></head><body><div role="button" tabindex="0" dataAttribute="//bin.clearspring.com/at/v/1/button1.6.swf" title="//bin.clearspring.com/at/v/1/button1.6.swf" style="border: 1px solid rgb(223, 223, 223); background: transparent url(chrome://flashblock/content/flash.png) no-repeat scroll center center; overflow: hidden; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; min-width: 32px ! important; min-height: 32px ! important; width: 32px; height: 32px; cursor: pointer; display: block; visibility: visible ! important; -moz-box-sizing: border-box; margin-right: auto; margin-left: auto;" bgActive="url(chrome://flashblock/content/flashplay.png) no-repeat center" bgInactive="url(chrome://flashblock/content/flash.png) no-repeat center"></div>
+
+
+ <div id="wrapper">
+	 <div id="headerTop">
+	<a href="http://www.mind-projects.it/" id="sitelogo"><img src="jQZoom%20Evolution_files/site_logo.jpg"></a>
+
+	 <div id="topbox">
+		<!--<a class="addthis_top" href="http://www.addthis.com/bookmark.php" onclick="addthis_url   = location.href; addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="http://s7.addthis.com/button1-addthis.gif" width="125" height="16" border="0" alt="Bookmark and Share" /></a> <script type="text/javascript">var addthis_pub = 'celotrovi';</script><script type="text/javascript" src="http://s7.addthis.com/js/widget.php?v=10"></script>-->
+		<ul class="favicons">
+			<li><a href="http://www.mind-projects.it/projects/jqzoom/advertise.php" title="advertise here" class="tooltip"><img src="jQZoom%20Evolution_files/adfav.jpg" title="advertise here" alt="advertise here"></a></li>
+			<li><a href="http://www.mind-projects.it/projects/jqzoom/advertise.php" title="advertise here" class="tooltip"><img src="jQZoom%20Evolution_files/adfav.jpg" title="advertise here" alt="advertise here"></a></li>
+		</ul>
+</div>	 </div>
+
+
+ 	 <div id="content"><!-- start content -->
+	 <div id="header">
+
+	 	&nbsp;
+	 </div>
+		 <div id="navigation"><!-- start navigation -->
+			  <div class="separator">
+				  <ul class="menu">
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#examples">Examples</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#installation">Installation</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#howtouse">How to use</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#documentation">Documentation</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#download">Download</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/contact.php">Contact / Hire me</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#comment">Leave a comment</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/advertise.php"><b>Advertise here</b></a></li>
+				  </ul>
+
+				  <div class="latestVersion" style="display: none;">
+				        <span>Latest version:</span> <a href="#download" class="navlink" rel="license">1.0.1</a> <span class="defaultSmall date">12-12-2008</span>
+				  </div>
+			  </div>
+			  <br>&nbsp;
+		  	  <div id="addthis">
+
+				<!-- AddThis Button BEGIN -->
+				<a href="http://www.addthis.com/bookmark.php" onclick="addthis_url   = location.href; addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="jQZoom%20Evolution_files/button1-addthis.gif" alt="Bookmark and Share" width="125" border="0" height="16"></a> <script type="text/javascript">var addthis_pub = 'celotrovi';</script><script type="text/javascript" src="jQZoom%20Evolution_files/widget.htm"></script>
+				<!-- AddThis Button END -->
+
+			  </div>
+
+			  <div class="separator" style="display: none;">
+			  by Marco Renzi<br>
+			  <span class="defaultSmall">Currenly looking for 2.0 projects?<br>
+			  <a href="http://www.mind-projects.it/projects/jqzoom/contact.php">Hire me</a> if you want.
+			  </span>
+			  </div>
+
+			  <ul class="advertise">
+			  <li class="sponsored"><img src="jQZoom%20Evolution_files/sponsoredby.jpg"></li>
+			  <li><a href="http://www.mind-projects.it/projects/jqzoom/advertise.php"><img src="jQZoom%20Evolution_files/adshere.jpg"></a></li>
+			  </ul>
+			  &nbsp;
+			  <br>
+			  <ul class="advertise textlinks">
+			  <li class="sponsored"><img src="jQZoom%20Evolution_files/textlinks.jpg"></li>
+			  <li><a href="http://www.mind-projects.it/projects/jqzoom/advertise.php"><strong>Advertise Here</strong></a></li>
+			  <li><a href="http://lucaballerini.com/" target="_balnk" alt="Luca Ballerini SEO e Web Marketing" title="Luca Ballerini SEO e Web Marketing">Luca Ballerini SEO e Web Marketing</a></li>
+			  </ul>
+		 </div><!--  end navigation -->		 <div id="maincontent"><!--  start maincontent -->
+		 
+			<div class="section">
+			<div id="intro">
+			    <p>JQZoom is a javascript image magnifier built at the top of the popular <a href="http://www.jquery.com/" target="_blank">jQuery</a> javascript framework.jQzoom is a great and a really easy to use script to magnify what you want.</p>
+				<p>Works on all modern browsers:</p>
+
+		        <div class="testbrowser">
+					<img src="jQZoom%20Evolution_files/browser_ie.gif" alt="" align="middle"> 6+
+					<img src="jQZoom%20Evolution_files/browser_ff.gif" alt="" align="middle"> 2+
+					<img src="jQZoom%20Evolution_files/chrome_small.gif" alt="" align="middle">1.0
+					<img src="jQZoom%20Evolution_files/browser_safari.gif" alt="" align="middle"> 2+
+					<img src="jQZoom%20Evolution_files/browser_opera.gif" alt="" align="middle"> 9+
+
+
+		        </div>
+		        <div class="news">
+		        <ul>
+		        <li>-&nbsp;24-02-2009: Tested and repacked with jQuery 1.3.2...let me know about known bugs</li>
+		        <li>-&nbsp;<strong>NEW</strong>: Source Code released,so everyone can do the best,helping me to keep the plugin updated.</li>
+		        <li>-&nbsp;The old release of jqzoom(not evolution) can be downloaded here: <a href="http://www.mind-projects.it/projects/jqzoom/archives/jqzoom_v2.2.rar">jqzoom v2.2</a></li>
+		        </ul>
+		        </div>
+			</div><!-- end intro -->
+			<div id="introimage">&nbsp;</div>
+			</div>
+
+			<div class="line">&nbsp;</div>
+
+			<div class="section" id="examples">
+
+    			<div class="heading" id="h_examples">&nbsp;<a href="#" class="top"><img src="jQZoom%20Evolution_files/top.jpg"></a></div>
+
+    			<ul class="exlist">
+    				<li><a href="http://www.mind-projects.it/projects/jqzoom/demos.php#demo1">Standard zoom</a></li>
+    				<li><a href="http://www.mind-projects.it/projects/jqzoom/demos.php#demo2">Reverse zoom</a></li>
+    				 <li><a href="http://www.mind-projects.it/projects/jqzoom/demos.php#demo3">Zoom without lens and title</a></li>
+    				<li><a href="http://www.mind-projects.it/projects/jqzoom/demos.php#demo4">Custom positioning the jqzoom window</a></li>
+    				<li><a href="http://www.mind-projects.it/projects/jqzoom/demos.php#demo5">Fade out effect while hiding</a></li>
+    				<li><a href="http://www.mind-projects.it/projects/jqzoom/demos.php#demo6">Fixed IE6- select box bug</a></li>
+    			</ul>
+
+			<div class="adlist">
+	<table style="width: 100%;">
+		<tbody>
+		<tr>
+		<td valign="top" height="74">
+		<a href="http://www.mind-projects.it/projects/jqzoom/advertise.php" style="visibility: hidden;">
+		<img alt="advertise" src="jQZoom%20Evolution_files/adshere2.jpg" width="158" border="0" height="72">
+		</a>
+		</td>
+		<td valign="top" height="74">
+		<a href="http://www.mind-projects.it/projects/jqzoom/advertise.php">
+		<img alt="advertise" src="jQZoom%20Evolution_files/adshere2.jpg" width="158" border="0" height="72">
+		</a>
+		</td>
+		</tr>
+		</tbody>
+	</table>
+</div>			</div><!-- end examples section -->
+
+			<div class="line">&nbsp;</div>
+
+			<div class="section" id="installation"><!-- start installation -->
+
+				<div class="heading" id="h_installation">&nbsp;<a href="#" class="top"><img src="jQZoom%20Evolution_files/top.jpg"></a></div>
+
+
+				<p style="display: none;">Upload all files and directories from the <strong>jQzoom</strong> package to your server.The current package includes the JS,CSS,IMAGES folders.<br>
+				<strong>Note:</strong>
+If you decide to rename folders or to change the directory
+structure,take a look a the image paths inside the CSS and remember to
+specify the correct file paths in your calling page.</p>
+
+			    <p>Add
+first the last jQuery release, then the jQZoom script(don't forget
+this),the correct order is important.Look at the installation code
+below.</p>
+
+				<div class="code">
+			        <pre>&lt;script type='text/javascript' src='js/jquery-1.2.6.js'&gt;&lt;/script&gt;
+&lt;script type='text/javascript' src='js/jquery.jqzoom-1.0.1.js'&gt;&lt;/script&gt;</pre>
+				</div>
+
+			    <p>Add <strong>jqzoom.css</strong> to your header.</p>
+			    <div class="code">
+			        <pre>&lt;link rel="stylesheet" type="text/css" href="css/jqzoom.css" /&gt;</pre>
+			    </div>
+
+
+			    <!-- <p class="tip"><strong>tip:</strong> The <a href="http://code.google.com/apis/ajaxlibs/documentation/index.html#prototype" target="_blank">Google Ajax Libraries API</a> can be used to automatically load the latest version of Prototype. To do this you change the last part of the url to <span class="js">/1.6/prototype.js</span> for the latest <span class="js">1.6.*</span> release, or <span class="js">/1/prototype.js</span> for the latest <span class="js">1.*</span> release.</p>
+				-->
+			</div><!-- end installation section>-->
+
+			<div class="line">&nbsp;</div><!-- start howtouse section>-->
+			<div class="section" id="howtouse">
+
+				<div class="heading" id="h_howtouse">&nbsp;<a href="#" class="top"><img src="jQZoom%20Evolution_files/top.jpg"></a></div>
+				<p>Using jQZoom is easy,but you need to specify the HTML <strong>anchor</strong> element,that is going to generate the zoom
+				revealing a portion of the enlarged image.
+				</p>
+			    <div class="code">
+			        <pre>&lt;a href="images/BIGIMAGE.JPG" class="MYCLASS"  title="MYTITLE"&gt;
+&lt;img src="images/SMALLIMAGE.JPG" title="IMAGE TITLE"  &gt;
+&lt;/a&gt;</pre>
+			    </div>
+
+			    <p>The <strong>anchor</strong> element wraps the small image you would like to zoom.Following this schema the necessary and base elements are:</p>
+				<p><strong>SMALLIMAGE.JPG:</strong> Represents the small image you would like to zoom.<br>
+				<strong>BIGIMAGE.JPG:</strong> Represents the big image that jQZoom will reveal.<br>
+				<strong>MYCLASS:</strong>
+Represents the anchor class,that would be used to instantiate the
+jQZoom script to all the elements matching this class(you can use an ID
+as well).<br>
+				<strong>MYTITLE/IMAGE TITLE:</strong> Anchor title and/or image title that will be used to show the zoom title close to the jQZoom Window.
+				</p>
+				<p>Now load the plugin at window load.</p>
+
+
+			    <div class="code">
+			    	<pre>$(document).ready(function(){
+	$('.MYCLASS).jqzoom();
+});
+			    	</pre>
+			    </div>
+			    <p>
+This would instantiate jQzoom in default(standard) mode.You can pass
+more options(Documentation section),to create special or custom effects
+as in the example below. </p>
+			    <div class="code">
+			    	<pre>$(document).ready(function(){
+	var options = {
+	    zoomWidth: 300,
+	    zoomHeight: 250,
+            xOffset: 10,
+            yOffset: 0,
+            position: "right" //and MORE OPTIONS
+};
+	$('.MYCLASS).jqzoom(options);
+});
+			    	</pre>
+			    </div>
+
+			</div><!-- end howtouse section>-->
+
+			<div class="line">&nbsp;</div>
+			<div class="section" id="documentation">
+				<div class="heading" id="h_documentation">&nbsp;<a href="#" class="top"><img src="jQZoom%20Evolution_files/top.jpg"></a></div>
+
+				<img src="jQZoom%20Evolution_files/exzoom.jpg" style="clear: both;">
+				&nbsp;<br>
+				<p class="api"><strong>Configuration options:</strong></p>
+			    <p>You can choose between these options.</p>
+			    <ul class="functions">
+			      <li class="head">
+			          <div class="function">OPTION NAME</div>
+			          <div class="default">DEFAULT</div>
+			          <div class="explained">DESCRIPTION</div>
+			      </li>
+			      <li class="evenlist">
+			          <div class="function">zoomType</div>
+			          <div class="default">'standard'</div>
+			          <div class="explained">The other admitted option value is <strong>'reverse'</strong>,this is characterized by image opacity.</div>
+			      </li>
+			      <li>
+			          <div class="function">zoomWidth</div>
+					  <div class="default">200</div>
+			          <div class="explained">The popup window width showing the zoomed area.</div>
+			      </li>
+
+			      <li class="evenlist">
+			          <div class="function">zoomHeight</div>
+			          <div class="default">200</div>
+			          <div class="explained">The popup window height showing the zoomed area.</div>
+			      </li>
+			      <li>
+			          <div class="function">xOffset</div>
+			          <div class="default">10</div>
+			          <div class="explained">The popup window x offset from the small image.(always <strong>positive</strong> value if the 'position' option is 'right/left',
+			          <strong>positive/negative</strong> if the 'position' option is 'top/bottom'.</div>
+			      </li>
+			      <li class="evenlist">
+			          <div class="function">yOffset</div>
+			          <div class="default">0</div>
+			          <div class="explained">The popup window y offset from the small image.(<strong>positive/negative</strong> value if the 'position' option is 'right/left',
+			          always <strong>positive</strong> if the 'position' option is 'top/bottom'.</div>
+			      </li>
+			      <li>
+			          <div class="function">position</div>
+			          <div class="default">'right'</div>
+			          <div class="explained">The popup window position.Admitted values:<strong>'right'</strong>&nbsp;,<strong>'left'</strong>&nbsp;,<strong>'top'</strong>&nbsp;,<strong>'bottom'</strong></div>
+			      </li>
+			      <li class="evenlist">
+			          <div class="function">lens</div>
+			          <div class="default">true</div>
+			          <div class="explained">if setted to <strong>false</strong>,the small lens,over the image, won't show.</div>
+			      </li>
+			      <li class="evenlist">
+			          <div class="function">imageOpacity</div>
+			          <div class="default">0.2</div>
+			          <div class="explained">Set the image opacity when the 'zoomType' option is setted to 'reverse'.</div>
+			      </li>
+			      <li>
+			          <div class="function">title</div>
+			          <div class="default">true</div>
+			          <div class="explained">Show a small title over the image it can be the anchor title and if not specified,it will get the small image title.</div>
+			      </li>
+			      <li>
+			          <div class="function">showEffect</div>
+			          <div class="default">'show'</div>
+			          <div class="explained">The Effect by which showing the popup window.Options available: <strong>'show'</strong>&nbsp;,<strong>'fadein'</strong>.</div>
+			      </li>
+			      <li class="evenlist">
+			          <div class="function">hideEffect</div>
+			          <div class="default">'hide'</div>
+			          <div class="explained">The Effect by which hiding the popup window.Options available: <strong>'hide'</strong>&nbsp;,<strong>'fadeout'</strong>.</div>
+			      </li>
+			      <li>
+			          <div class="function">fadeinSpeed</div>
+			          <div class="default">'fast'</div>
+			          <div class="explained">Changes fade in speed,in case the showEffect option is setted to 'fadein'.(options: <strong>'fast'</strong>,<strong>'slow'</strong>,<strong>'medium'</strong>)</div>
+			      </li>
+			      <li class="evenlist">
+			          <div class="function">fadeoutSpeed</div>
+			          <div class="default">'slow'</div>
+			          <div class="explained">Changes fade out speed,in case the hideEffect option is setted to 'fadeout'.(options: <strong>'fast'</strong>,<strong>'slow'</strong>,<strong>'medium'</strong>)</div>
+			      </li>
+			      <li class="evenlist">
+			          <div class="function">showPreload</div>
+			          <div class="default">true</div>
+			          <div class="explained">Show the preload loading indicator.(options: <strong>'true'</strong>,<strong>'false'</strong>)</div>
+			      </li>
+			      <li>
+			          <div class="function">preloadText</div>
+			          <div class="default">'Loading zoom'</div>
+			          <div class="explained">Option to customize the preload indicator text.</div>
+			      </li>
+			      <li class="evenlist">
+			          <div class="function">preloadPosition</div>
+			          <div class="default">'center'</div>
+			          <div class="explained">By default the preload indicator is centered over the small image.You can optionally use the <strong>'bycss'</strong> option
+			          letting you to change its position by css.</div>
+			      </li>
+			      </ul>
+			      <br>&nbsp;
+			      <p>
+			      <strong>Style customizations</strong> are obviously admitted simply changing the right parameters value in the 'jqzoom.css' file.
+			      </p>
+			      <div class="clear">&nbsp;</div>
+
+			</div>
+
+			<div class="line">&nbsp;</div>
+			<div class="section" id="download"><!--  download section -->
+				<div class="heading" id="h_download"><a href="#" class="top"><img src="jQZoom%20Evolution_files/top.jpg"></a>
+				<div id="latest">Latest version: <strong>1.0.1</strong>&nbsp;</div>
+				</div>
+					<p>
+					<strong>This software is licensed under GPL.</strong><br>
+					<strong>Remember:</strong>
+					Develop,mantain,and longtime support in never easy and without efforts.
+					So if you like this plugin and you would like future support for jQZoom,donate something with Paypal,before downloading it.
+					</p>
+
+					<ul class="formpaypal">
+					<li>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="payPalForm20">
+
+					<input name="item_number" value="Donation for jQZoom" type="hidden">
+					<input name="cmd" value="_xclick" type="hidden">
+					<input name="no_note" value="1" type="hidden">
+					<input name="business" value="renzi.mrc@gmail.com" type="hidden">
+					<input name="currency_code" value="USD" type="hidden">
+					<input name="return" value="www.mind-projects.it" type="hidden">
+
+					<input name="item_name" id="item_name" size="45" value="Donation for jQZoom(jQuery javascript image magnifier)." type="hidden">
+
+					<input name="amount" id="amount" size="45" value="20" type="hidden">
+
+					<a href="javascript:void(0);" onclick="jQuery('#payPalForm20').submit();" class="paypalbutton">
+					<img src="jQZoom%20Evolution_files/donate20.gif" border="0">
+					</a>
+
+					</form>
+
+					<!-- <div class="clear">&nbsp;</div>-->
+					</li>
+
+					<li>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="payPalForm5">
+
+					<input name="item_number" value="Donation for jQZoom" type="hidden">
+					<input name="cmd" value="_xclick" type="hidden">
+					<input name="no_note" value="1" type="hidden">
+					<input name="business" value="renzi.mrc@gmail.com" type="hidden">
+					<input name="currency_code" value="USD" type="hidden">
+					<input name="return" value="www.mind-projects.it" type="hidden">
+
+					<input name="item_name" id="item_name" size="45" value="Donation for jQZoom(jQuery javascript image magnifier)." type="hidden">
+
+					<input name="amount" id="amount" size="45" value="5" type="hidden">
+
+					<a href="javascript:void(0);" onclick="jQuery('#payPalForm5').submit();" class="paypalbutton">
+						<img src="jQZoom%20Evolution_files/donate5.gif" border="0">
+					</a>
+
+					</form>
+					</li>
+					<li>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="payPalForm10">
+
+					<input name="item_number" value="Donation for jQZoom" type="hidden">
+					<input name="cmd" value="_xclick" type="hidden">
+					<input name="no_note" value="1" type="hidden">
+					<input name="business" value="renzi.mrc@gmail.com" type="hidden">
+					<input name="currency_code" value="USD" type="hidden">
+					<input name="return" value="www.mind-projects.it" type="hidden">
+
+					<input name="item_name" id="item_name" size="45" value="Donation for jQZoom(jQuery javascript image magnifier)." type="hidden">
+
+					<input name="amount" id="amount" size="45" value="10" type="hidden">
+
+					<a href="javascript:void(0);" onclick="jQuery('#payPalForm10').submit();" class="paypalbutton">
+						<img src="jQZoom%20Evolution_files/donate10.gif" border="0">
+					</a>
+
+
+					</form>
+					</li>
+					<li class="arrow"><a href="http://www.mind-projects.it/projects/jqzoom/archives/jqzoom_ev1.0.1.zip"><img src="jQZoom%20Evolution_files/godownload.jpg"></a></li>
+					<li><a href="http://www.mind-projects.it/projects/jqzoom/archives/jqzoom_ev1.0.1.zip" name="download"><img src="jQZoom%20Evolution_files/zip.gif"></a></li>
+
+
+	    		</ul>
+
+				<p>
+					 <strong>Note: </strong> Choose and click to download.<br>
+				  	 <strong>Note: </strong> When upgrading make sure to <strong>replace all files</strong>.<br>
+	    		</p>
+
+
+				<div class="line">&nbsp;</div>
+
+				<div class="heading" id="h_sponsors">&nbsp;</div>
+ <table style="width: 100%;" class="rowads">
+		<tbody>
+		<tr>
+			<td valign="top">
+			<a href="http://www.mind-projects.it/projects/jqzoom/advertise.php"><img alt="advertise" src="jQZoom%20Evolution_files/adshere3.jpg" border="0"></a>
+			</td>
+			<td valign="top">
+			<a href="http://www.mind-projects.it/projects/jqzoom/contact.php"><img alt="advertise" src="jQZoom%20Evolution_files/hireme2.jpg" border="0"></a>
+			</td>
+		</tr>
+		</tbody>
+</table>				</div><!--  end download section -->
+
+				<div class="section" id="comment"><!-- start comment section -->
+					<div class="heading" id="h_comment">&nbsp;</div>
+					<p>
+					If you would like to leave a comment,feedback,feature requests or bug reports use the support <a href="http://www.mind-projects.it/jqzoom_v10">Blog</a>.
+					<br>For anything else you can contact me <a href="http://www.mind-projects.it/projects/jqzoom/contact.php">here</a>.
+					</p>
+				</div><!-- end comment section -->
+
+		 </div><!--  end maincontent -->
+
+	 <div class="spacer">&nbsp;</div>
+
+	</div><!-- end content -->
+	<div style="">&nbsp;</div>
+ </div>
+
+ </body></html>

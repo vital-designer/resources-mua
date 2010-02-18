@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en_US" xmlns="http://www.w3.org/1999/xhtml" lang="en_US"><head>
+
+
+ 
+ <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	<title>jQZoom Evolution, javascript image magnifier</title>
+	<meta name="title" content="Prototip 2 - Create beautiful tooltips with ease">
+	<meta name="subject" content="javascript, ajax, tooltip, prototip, prototype">
+	<meta name="keywords" content="javascript, ajax, tooltip, prototip, prototype, javascript, effect, hooking, speech bubble, stem, position">
+	<meta name="description" content="Prototip allows you to easily create both simple and complex tooltips using the Prototype javascript framework.">
+	<meta name="author" content="Renzi Marco - renzi.mrc@gmail.com">
+	<meta name="robots" content="index,follow">
+	<link rel="stylesheet" type="text/css" href="demos.php_files/main.css">
+
+ 	<script type="text/javascript" src="demos.php_files/jquery-1.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="demos.php_files/jqzoom.css">
+ 	<script type="text/javascript" src="demos.php_files/jquery.js"></script>
+
+ 	<script type="text/javascript">
+ 	$(document).ready(function(){
+		$(function() {
+			var options =
+			{
+				zoomWidth: 250,
+				zoomHeight: 250
+			}
+			$(".jqzoom").jqzoom(options);
+
+
+			var options2 =
+			{
+				zoomWidth: 250,
+				zoomHeight: 250,
+				zoomType:'reverse'
+			}
+
+			$(".jqzoom2").jqzoom(options2);   //da sistemare top/bottom
+
+
+			var options3 =
+			{
+				zoomWidth: 200,
+				zoomHeight: 200,
+				xOffset: 20,
+				title: false,
+				lens:false
+
+			}
+
+			$(".jqzoom3").jqzoom(options3);   //da sistemare top/bottom
+
+
+			var options4 =
+			{
+
+				zoomWidth: 300,
+				zoomHeight: 200,
+				position : 'right',
+				yOffset :-100,
+				xOffset :100,
+				title :false
+
+
+			}
+			$(".jqzoom4").jqzoom(options4);  //da sistemare errore nella eliminazione zoom window
+
+
+			var options5 =
+			{
+				zoomWidth: 250,
+				zoomHeight: 250,
+				showEffect:'show',
+				hideEffect:'fadeout',
+				fadeoutSpeed: 'slow',
+				title :false
+			}
+			$(".jqzoom5").jqzoom(options5);
+
+
+			var options6 =
+			{
+				zoomWidth: 250,
+				zoomHeight: 250
+			}
+			$(".jqzoom6").jqzoom(options6);   //da sistemare top/bottom
+
+
+		});
+
+ 	$('.expand').click(function(){
+	 	var href= jQuery(this).attr('href');
+	 	var elclass = href.match('#([a-zA-Z]+)([0-9]+)');
+
+	 	if(elclass[1] == 'html')
+	 	{
+	 		jQuery('.html'+elclass[2]+'div').show();
+	 		jQuery('.js'+elclass[2]+'div').hide();
+	 	}else
+	 	{
+	 		jQuery('.html'+elclass[2]+'div').hide();
+	 		jQuery('.js'+elclass[2]+'div').show();
+	 	}
+	 	jQuery(this).addClass('alert').siblings('a').removeClass('alert');
+		return false;
+ 	});
+
+ 	});
+
+ 	</script>
+ <link media="all" href="demos.php_files/widget07.css" type="text/css" rel="stylesheet"></head><body><div role="button" tabindex="0" dataAttribute="//bin.clearspring.com/at/v/1/button1.6.swf" title="//bin.clearspring.com/at/v/1/button1.6.swf" style="border: 1px solid rgb(223, 223, 223); background: transparent url(chrome://flashblock/content/flash.png) no-repeat scroll center center; overflow: hidden; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; min-width: 32px ! important; min-height: 32px ! important; width: 32px; height: 32px; cursor: pointer; display: block; visibility: visible ! important; -moz-box-sizing: border-box; margin-right: auto; margin-left: auto;" bgActive="url(chrome://flashblock/content/flashplay.png) no-repeat center" bgInactive="url(chrome://flashblock/content/flash.png) no-repeat center"></div>
+ <div id="wrapper">
+	 <div id="headerTop">
+	<a href="http://www.mind-projects.it/" id="sitelogo"><img src="demos.php_files/site_logo.jpg"></a>
+	 </div>
+
+
+ 	 <div id="content"><!-- start content -->
+	 <div id="header">
+
+	 	&nbsp;
+	 </div>
+
+
+
+		<div id="navigation"><!-- start navigation -->
+			  <div class="separator">
+				  <ul class="menu">
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#examples">Examples</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#installation">Installation</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#howtouse">How to use</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#documentation">Documentation</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#download">Download</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/contact.php">Contact / Hire me</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/index.php#comment">Leave a comment</a></li>
+				    <li><a href="http://www.mind-projects.it/projects/jqzoom/advertise.php"><b>Advertise here</b></a></li>
+				  </ul>
+
+				  <div class="latestVersion" style="display: none;">
+				        <span>Latest version:</span> <a href="#download" class="navlink" rel="license">1.0.1</a> <span class="defaultSmall date">12-12-2008</span>
+				  </div>
+			  </div>
+			  <br>&nbsp;
+		  	  <div id="addthis">
+
+				<!-- AddThis Button BEGIN -->
+				<a href="http://www.addthis.com/bookmark.php" onclick="addthis_url   = location.href; addthis_title = document.title; return addthis_click(this);" target="_blank"><img src="demos.php_files/button1-addthis.gif" alt="Bookmark and Share" width="125" border="0" height="16"></a> <script type="text/javascript">var addthis_pub = 'celotrovi';</script><script type="text/javascript" src="demos.php_files/widget.htm"></script>
+				<!-- AddThis Button END -->
+
+			  </div>
+
+			  <div class="separator" style="display: none;">
+			  by Marco Renzi<br>
+			  <span class="defaultSmall">Currenly looking for 2.0 projects?<br>
+			  <a href="http://www.mind-projects.it/projects/jqzoom/contact.php">Hire me</a> if you want.
+			  </span>
+			  </div>
+
+			  <ul class="advertise">
+			  <li class="sponsored"><img src="demos.php_files/sponsoredby.jpg"></li>
+			  <li><a href="http://www.mind-projects.it/projects/jqzoom/advertise.php"><img src="demos.php_files/adshere.jpg"></a></li>
+			  </ul>
+			  &nbsp;
+			  <br>
+			  <ul class="advertise textlinks">
+			  <li class="sponsored"><img src="demos.php_files/textlinks.jpg"></li>
+			  <li><a href="http://www.mind-projects.it/projects/jqzoom/advertise.php"><strong>Advertise Here</strong></a></li>
+			  <li><a href="http://lucaballerini.com/" target="_balnk" alt="Luca Ballerini SEO e Web Marketing" title="Luca Ballerini SEO e Web Marketing">Luca Ballerini SEO e Web Marketing</a></li>
+			  </ul>
+		 </div><!--  end navigation -->
+		 <div id="maincontent"><!--  start maincontent -->
+
+		
+			<div class="section" id="examples"><!--  start examples section -->
+
+    			<strong>Example 1 - Standard Zoom</strong>
+				<br>
+				<div class="demo"><!-- demo1 container-->
+					<p style="position: relative;">
+						<a title="" href="http://www.mind-projects.it/projects/jqzoom/demoimg/kawasakigreen.jpg" class="jqzoom" style="outline-style: none; cursor: crosshair; display: block; position: relative; height: 251px; width: 335px;" name="demo1">
+							<img title="" src="demos.php_files/kawasakigreen_small.jpg" style="border: 1px solid rgb(102, 102, 102);">
+						</a>
+					</p>
+					<p class=""><a href="#js1" class="expand alert">JAVASCRIPT</a>&nbsp;(Mouseover the image.)&nbsp;</p>
+					<div class="code js1div">
+<pre><span class="f"></span><span class="k">var </span><span class="f">options </span><span class="k">=
+            {
+                </span><span class="f">zoomWidth</span><span class="k">: </span><span class="f">250</span><span class="k">,
+                </span><span class="f">zoomHeight</span><span class="k">: </span><span class="f">250
+            </span><span class="k">}
+            $(</span><span class="s">".jqzoom"</span><span class="k">).</span><span class="f">jqzoom</span><span class="k">(</span><span class="f">options</span><span class="k">);</span>
+
+
+</pre>
+
+					</div>
+
+
+				</div><!-- end demo1 container-->
+
+
+    			<strong>Example 2 - Reverse Zoom</strong>
+				<br>
+				<div class="demo"><!-- demo2 container-->
+					<p style="position: relative;">
+						<a href="http://www.mind-projects.it/projects/jqzoom/demoimg/kawasakiblack.jpg" class="jqzoom2" style="outline-style: none; cursor: crosshair; display: block; position: relative; height: 251px; width: 335px;" name="demo2">
+							<img src="demos.php_files/kawasakiblack_small.jpg" style="border: 1px solid rgb(102, 102, 102);">
+						</a>
+					</p>
+					<p class=""><a href="#js2" class="expand alert">JAVASCRIPT</a>&nbsp;(Mouseover the image.)&nbsp;</p>
+					<div class="code js2div">
+
+<pre><span class="f">            </span><span class="k">var </span><span class="f">options2 </span><span class="k">=
+            {
+                </span><span class="f">zoomWidth</span><span class="k">: </span><span class="f">250</span><span class="k">,
+                </span><span class="f">zoomHeight</span><span class="k">: </span><span class="f">250</span><span class="k">,
+                </span><span class="f">zoomType</span><span class="k">:</span><span class="s">'reverse'
+            </span><span class="k">}
+
+            $(</span><span class="s">".jqzoom2"</span><span class="k">).</span><span class="f">jqzoom</span><span class="k">(</span><span class="f">options2</span><span class="k">);</span>
+
+
+</pre>
+
+					</div>
+
+				</div><!-- end demo2 container-->
+
+    			<strong>Example 3 - Zoom without lens</strong>
+				<br>
+				<div class="demo"><!-- demo3 container-->
+					<p style="position: relative;">
+						<a href="http://www.mind-projects.it/projects/jqzoom/demoimg/shoe2_big.jpg" class="jqzoom3" style="outline-style: none; cursor: crosshair; display: block; position: relative; height: 174px; width: 174px;" name="demo3">
+							<img src="demos.php_files/shoe2_small.jpg" style="border: 1px solid rgb(102, 102, 102);">
+						</a>
+					</p>
+
+					<p class=""><a href="#js3" class="expand alert">JAVASCRIPT</a>&nbsp;(Mouseover the image.)&nbsp;</p>
+					<div class="code js3div">
+
+<pre><span class="f">            </span><span class="k">var </span><span class="f">options3 </span><span class="k">=
+            {
+                </span><span class="f">zoomWidth</span><span class="k">: </span><span class="f">200</span><span class="k">,
+                </span><span class="f">zoomHeight</span><span class="k">: </span><span class="f">200</span><span class="k">,
+                </span><span class="f">xOffset</span><span class="k">: </span><span class="f">20</span><span class="k">,
+                </span><span class="f">title</span><span class="k">: </span><span class="f">false</span><span class="k">,
+                </span><span class="f">lens</span><span class="k">:</span><span class="f">false
+
+            </span><span class="k">}
+
+            $(</span><span class="s">".jqzoom3"</span><span class="k">).</span><span class="f">jqzoom</span><span class="k">(</span><span class="f">options3</span><span class="k">);</span>
+
+
+</pre>
+
+					</div>
+
+				</div><!-- end demo3 container-->
+
+    			<strong>Example 4 - Custom positioning</strong>
+				<br>
+				<div class="demo"><!-- demo4 container-->
+					<p style="position: relative;">
+						<a href="http://www.mind-projects.it/projects/jqzoom/demoimg/surf.jpg" class="jqzoom4" style="outline-style: none; cursor: crosshair; display: block; position: relative; height: 274px; width: 218px;" name="demo4">
+							<img src="demos.php_files/surf_small.jpg" style="border: 1px solid rgb(102, 102, 102);">
+						</a>
+					</p>
+					<p class=""><a href="#js4" class="expand alert">JAVASCRIPT</a>&nbsp;(Mouseover the image.)&nbsp;</p>
+					<div class="code js4div">
+
+<pre><span class="f">            </span><span class="k">var </span><span class="f">options4 </span><span class="k">=
+            {
+
+                </span><span class="f">zoomWidth</span><span class="k">: </span><span class="f">300</span><span class="k">,
+                </span><span class="f">zoomHeight</span><span class="k">: </span><span class="f">200</span><span class="k">,
+                </span><span class="f">position </span><span class="k">: </span><span class="s">'right'</span><span class="k">,
+                </span><span class="f">yOffset </span><span class="k">:-</span><span class="f">100</span><span class="k">,
+                </span><span class="f">xOffset </span><span class="k">:</span><span class="f">100</span><span class="k">,
+                </span><span class="f">title </span><span class="k">:</span><span class="f">false
+
+
+            </span><span class="k">}
+            $(</span><span class="s">".jqzoom4"</span><span class="k">).</span><span class="f">jqzoom</span><span class="k">(</span><span class="f">options4</span><span class="k">);</span>
+</pre>
+
+					</div>
+
+
+				</div><!-- end demo4 container-->
+
+    			<strong>Example 5 - Fade out effect while hiding</strong>
+				<br>
+				<div class="demo"><!-- demo5 container-->
+					<p style="position: relative;">
+						<a href="http://www.mind-projects.it/projects/jqzoom/demoimg/poster.jpg" class="jqzoom5" style="outline-style: none; cursor: crosshair; display: block; position: relative; height: 274px; width: 199px;" name="demo5">
+							<img src="demos.php_files/poster_small.jpg" style="border: 1px solid rgb(102, 102, 102);">
+						</a>
+					</p>
+					<p class=""><a href="#js5" class="expand alert">JAVASCRIPT</a>&nbsp;(Mouseover the image.)&nbsp;</p>
+					<div class="code js5div">
+
+<pre><span class="f">            </span><span class="k">var </span><span class="f">options5 </span><span class="k">=
+            {
+                </span><span class="f">zoomWidth</span><span class="k">: </span><span class="f">250</span><span class="k">,
+                </span><span class="f">zoomHeight</span><span class="k">: </span><span class="f">250</span><span class="k">,
+                </span><span class="f">showEffect</span><span class="k">:</span><span class="s">'show'</span><span class="k">,
+                </span><span class="f">hideEffect</span><span class="k">:</span><span class="s">'fadeout'</span><span class="k">,
+                </span><span class="f">fadeoutSpeed</span><span class="k">: </span><span class="s">'slow'</span><span class="k">,
+                </span><span class="f">title </span><span class="k">:</span><span class="f">false
+            </span><span class="k">}
+            $(</span><span class="s">".jqzoom5"</span><span class="k">).</span><span class="f">jqzoom</span><span class="k">(</span><span class="f">options5</span><span class="k">);</span>
+</pre>
+
+					</div>
+
+				</div><!-- end demo5 container-->
+
+
+   			<strong>Example 6 - Fixed IE6- select box bug(for IE)</strong>
+				<br>
+				<div class="demo"><!-- demo6 container-->
+					<p style="position: relative;">
+						<a href="http://www.mind-projects.it/projects/jqzoom/demoimg/vespa.jpg" class="jqzoom6" style="outline-style: none; cursor: crosshair; display: block; position: relative; height: 232px; width: 310px;" name="demo6">
+							<img src="demos.php_files/vespa_small.jpg" style="border: 1px solid rgb(102, 102, 102);">
+						</a>
+						<select style="position: absolute; left: 380px; top: 10px;"><option>Fixed IE6 select boxes bug</option></select>
+					</p>
+					<p class=""><a href="#js6" class="expand alert">JAVASCRIPT</a>&nbsp;(Mouseover the image.)&nbsp;</p>
+					<div class="code js6div">
+
+<pre><span class="f">            </span><span class="k">var </span><span class="f">options6 </span><span class="k">=
+            {
+                </span><span class="f">zoomWidth</span><span class="k">: </span><span class="f">250</span><span class="k">,
+                </span><span class="f">zoomHeight</span><span class="k">: </span><span class="f">250
+            </span><span class="k">}
+            $(</span><span class="s">".jqzoom6"</span><span class="k">).</span><span class="f">jqzoom</span><span class="k">(</span><span class="f">options6</span><span class="k">);</span>
+</pre>
+
+					</div>
+
+
+				</div><!-- end demo6 container-->
+
+
+		 <div class="adlist">
+	<table style="width: 100%;">
+		<tbody>
+		<tr>
+		<td valign="top" height="74">
+		<a href="" style="visibility: hidden;">
+		<img alt="jqzoom javascript imaga magnifier" src="demos.php_files/adshere2.jpg" width="158" border="0" height="72">
+		</a>
+		</td>
+		<td valign="top" height="74">
+		<a href="http://www.mind-projects.it/projects/jqzoom/advertise.php">
+		<img alt="Advertise here" src="demos.php_files/adshere2.jpg" width="158" border="0" height="72">
+		</a>
+		</td>
+		</tr>
+		<tr>
+		<td valign="top" height="74">
+		<a href="" style="visibility: hidden;">
+		<img alt="jqzoom javascript imaga magnifier" src="demos.php_files/adshere2.jpg" width="158" border="0" height="72">
+		</a>
+		</td>
+		<td valign="top" height="74">
+		<a href="http://www.mind-projects.it/projects/jqzoom/contact.php">
+		<img alt="Advertise here" src="demos.php_files/hireme3.jpg" width="158" border="0" height="72">
+		</a>
+		</td>
+		</tr>
+		</tbody>
+	</table>
+</div><!--  end adlist -->
+			</div><!-- end examples section -->
+
+		 </div><!--  end maincontent -->
+
+		 <div class="spacer">
+		 &nbsp;
+		 </div>
+
+	</div><!-- end content -->
+
+ </div><!--  wrapper -->
+ <div style="">&nbsp;</div>
+ <img src="demos.php_files/kawasakiblack.jpg" style="position: absolute; display: none; left: -5000px; top: 10px;"><img src="demos.php_files/shoe2_big.jpg" style="position: absolute; display: none; left: -5000px; top: 10px;"><img src="demos.php_files/vespa.jpg" style="position: absolute; display: none; left: -5000px; top: 10px;"><img src="demos.php_files/surf.jpg" style="position: absolute; display: none; left: -5000px; top: 10px;"><img src="demos.php_files/poster.jpg" style="position: absolute; display: none; left: -5000px; top: 10px;"><img src="http://www.mind-projects.it/projects/jqzoom/demoimg/kawasakigreen.jpg" style="position: absolute; display: none; left: -5000px; top: 10px;"></body></html>

@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html style="margin: 0pt; padding: 0pt; height: 100%;" xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Meerkat - A jQuery Plugin</title>
+<link rel="stylesheet" type="text/css" href="demo3.php_files/main.css">
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="http://vhosts/meerkat/css/ie6.css" />
+<![endif]-->
+<script type="text/javascript" src="demo3.php_files/jquery-1.js"></script>
+<script type="text/javascript" src="demo3.php_files/jquery.js"></script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){	
+	meerkat({
+		showMeerkatOnLoad: 'true',
+		close: '.enter-site',
+		dontShow: '.dont-show',
+		animation: 'fade',
+		animationSpeed: 1200,
+		dontShowExpire: 0,
+		removeCookie: '.remove-cookie',
+		meerkatPosition: 'bottom',
+		background: '#FFF url(/meerkat/images/top-bg.png) repeat-x 0 0',
+		height: '100%'
+	});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){	
+	
+	$(".test-1").click(function(){
+		meerkat({
+		close: '.close-meerkat2',
+		meerkatPosition: 'bottom',
+		animation: 'slide',
+		animationSpeed: 'slow',
+		height: '100px',
+		background: '#463c30'
+		});
+	});
+	
+	$(".donate-btn").hover(function(){
+		/*$(this).css("height","100px");*/
+		this.src = this.src.replace( /1\.png$/, '2.png' );
+	}, function () {
+		 this.src = this.src.replace( /2\.png$/, '1.png' );
+	});
+});
+</script>
+</head><body style="margin: 0pt; padding: 0pt; height: 100%;">	
+    <div id="container">
+        <div id="header">
+            <h2 id="logo"><a href="http://jarodtaylor.com/meerkat/">Meerkat : A jQuery Plugin By Jarod Taylor</a></h2>
+            <ul id="nav-menu">
+                <li><a class="demos" href="http://jarodtaylor.com/meerkat/demos/">Demos</a></li>
+                <li><a class="how-to-use" href="http://jarodtaylor.com/meerkat/howto/">How-To Use</a></li>
+                <li><a class="how-its-made" href="http://www.noobcube.com/tutorials/jquery/creating-a-jquery-plugin-a-beginners-guide-/">How It's Made</a></li>
+                <li><a class="contact-us" href="mailto:info@jarodtaylor.com">Contact Us</a></li>
+            </ul>
+        </div>        
+        <ul id="main-content">
+			<li>
+            	<ul id="demo-links">
+                	<li class="demo-1"><a href="http://jarodtaylor.com/meerkat/demos/demo1.php">Demo 1</a></li>
+                    <li class="demo-2"><a href="http://jarodtaylor.com/meerkat/demos/demo2.php">Demo 2</a></li>
+                    <li class="demo-3"><a class="active" href="http://jarodtaylor.com/meerkat/demos/demo3.php">Demo 3</a></li>
+                </ul>
+				<h1 class="clear">Meerkat Demo 3</h1>
+                <p>The following options have been set for this Meerkat function.</p>
+<pre>meerkat({
+  showMeerkatOnLoad: 'true',
+  close: '.enter-site',
+  animation: 'fade',
+  animationSpeed: 1200,
+  meerkatPosition: 'bottom',
+  background: '#FFF url(images/top-bg.png) repeat-x 0 0',
+  height: '100%'
+});
+</pre>
+				<p>In this demonstration we're using Meerkat as an "entry"
+or "splash" page. The user would come to the URL and see a landing page
+with the Meerkat option "close" assigned to an anchor element with the
+class "enter-site".</p>
+                
+                <p>In this
+particular demonstration, I did not use the "dontShow" option. I would
+not recommend this, for it would really annoy the page viewer. Instead
+of assigning the <em>enter-site</em> class to the "close" option, I
+would assign it to the "dontShow" option. This way it doesn't pop up
+everytime the user reloads the page. You could simply set your
+"dontShowExpire" option to 1 (<em>dontShowExpire: 1</em>), for instance, and it wouldn't show the entry page for 24 hours. You could also leave the <em>dontShowExpire</em> default of 0 and the user would not see your entry page again until they restarted their browser and visited the URL again. </p>
+
+                
+                <p><em><small>Note: If you're not seeing the Meerkat demo, you've activated the "dontShow" option and need to <a class="remove-cookie">remove the "dontShow" cookie</a></small></em>.</p>
+		</li>
+        </ul><!--end ul#main-content-->
+				<div id="sidebar">
+        	<div id="download">
+                <a class="download-btn" href="http://jarodtaylor.com/meerkat/js/jquery.meerkat.1.0.js">Download Latest Version</a>
+                <em>Latest version jquery.meerkat.1.0.js</em>
+            </div>
+           <h2>Default Settings</h2>
+			<ul class="default-settings">
+				<li><a href="http://jarodtaylor.com/meerkat/howto/#showMeerkatOnLoad">showMeerkatOnLoad: 'false'</a></li>
+				<li><a href="http://jarodtaylor.com/meerkat/howto/#close">close: 'none'</a></li>
+				<li><a href="http://jarodtaylor.com/meerkat/howto/#dontShow">dontShow: 'none'</a></li>
+				<li><a href="http://jarodtaylor.com/meerkat/howto/#dontShowExpire">dontShowExpire: 0</a></li>
+				<li><a href="http://jarodtaylor.com/meerkat/howto/#removeCookie">removeCookie: 'none'</a></li>
+				<li><a href="http://jarodtaylor.com/meerkat/howto/#meerkatPosition">meerkatPosition: 'bottom'</a></li>
+				<li><a href="http://jarodtaylor.com/meerkat/howto/#animation">animation: 'slide'</a></li>
+				<li><a href="http://jarodtaylor.com/meerkat/howto/#animationSpeed">animationSpeed: 'slow'</a></li>
+				<li><a href="http://jarodtaylor.com/meerkat/howto/#height">height: 'auto'</a></li>
+				<li class="last"><a href="http://jarodtaylor.com/meerkat/howto/#background">background: 'none'</a></li>
+			</ul>
+        	<div id="donate">
+                <h2>Kids' College Fund</h2>
+				<p>I
+spend a lot of time and effort in designing and developing plugins and
+tutorials. If you find my resources useful and want to donate a little
+money — I'll keep them comin' and even cook you tacos!</p>
+				<!--<a class="donate-btn" href="">Donate</a>-->
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input name="cmd" value="_s-xclick" type="hidden">
+<input name="hosted_button_id" value="6829246" type="hidden">
+<input class="donate-btn" src="demo3.php_files/donate-btn1.png" name="submit" alt="PayPal - The safer, easier way to pay online!" border="0" type="image">
+<img alt="" src="demo3.php_files/pixel.gif" width="1" border="0" height="1">
+</form>
+
+            </div>
+        </div>
+        <div id="footer">
+        	<div class="left"><a href="http://jarodtaylor.com/meerkat/">Home</a> | <a href="http://jarodtaylor.com/meerkat/demos/">Demos</a> | <a href="http://jarodtaylor.com/meerkat/howto/">How-To Use</a> | <a href="http://www.noobcube.com/resources/plugins/meet-meerkat-a-jquery-plugin-youll-be-creating-/">How It's Made</a> | <a href="mailto:info@jarodtaylor.com">Contact</a></div>
+            <div class="right">©2009 <a class="jarodtaylor" href="http://www.jarodtaylor.com/">JarodTaylor.com</a></div>
+        </div>
+    </div><!--END CONTENTAINER-->    <div style="position: fixed; width: 100%; height: 100%; bottom: 0pt;" id="meerkat-wrap"><div style="background: rgb(255, 255, 255) url(/meerkat/images/top-bg.png) repeat-x scroll 0pt 0pt; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; height: 100%;" id="meerkat-container"><div id="meerkat" style="height: 100%; display: block;">
+        <div id="meerkat-content" style="height: 100%;">			
+			<a style="cursor: pointer;" class="enter-site">Enter Site</a>
+		</div>
+    </div></div></div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="demo3.php_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5275393-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

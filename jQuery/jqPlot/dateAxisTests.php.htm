@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head>
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>jqPlot Date Axis Renderer Plugin</title>
+  <!--[if IE]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
+  <link rel="stylesheet" type="text/css" href="dateAxisTests.php_files/jquery.css">
+  
+  <!-- BEGIN: load jquery -->
+  <script language="javascript" type="text/javascript" src="dateAxisTests.php_files/jquery-1.js"></script>
+  <!-- END: load jquery -->
+  
+  <!-- BEGIN: load extras -->
+  <script language="javascript" type="text/javascript" src="dateAxisTests.php_files/jspec.js"></script>
+  <script language="javascript" type="text/javascript" src="dateAxisTests.php_files/beautify.js"></script>
+  <script language="javascript" type="text/javascript" src="dateAxisTests.php_files/prettify.js"></script>
+  <link rel="stylesheet" href="dateAxisTests.php_files/jspec.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <link href="dateAxisTests.php_files/prettify.css" type="text/css" rel="stylesheet">
+  <!-- END: load extras -->
+  
+  <!-- BEGIN: load jqplot -->
+  <script language="javascript" type="text/javascript" src="dateAxisTests.php_files/jquery.js"></script>
+  <script language="javascript" type="text/javascript" src="dateAxisTests.php_files/jqplot.js"></script>  <!-- END: load jqplot -->
+
+  <link rel="stylesheet" type="text/css" href="dateAxisTests.php_files/unittests.css">
+  
+    <script language="javascript" type="text/javascript">
+    $.jqplot.installPath = "../src";
+    $.jqplot.pluginsPath = "../plugins";
+    var uID = (function() {
+      var id = 1;
+      return function(){return id++};
+    })();
+    
+    function genplot(o, c, vs) {
+      var nid, n, no;
+      nid = uID();
+      o = o.replace(/_target_/, 'chart'+nid);
+      n = js_beautify(o, {preserve_newlines:true, indent_size:4, var_space: vs});
+      if (c) $('<div class="description"></div>').insertBefore('.nav:last').html(c);
+      $('<div class="jqPlot"  id="chart'+nid+'" style="height:380px; width:540px;"></div>').insertBefore('.nav:last');
+      $('<pre id="code'+nid+'" class="prettyprint">'+n+'</pre>').insertBefore('.nav:last');
+      eval(o);
+    }
+  </script>  
+  <script language="javascript" type="text/javascript">
+  
+    function runSuites() {
+      var o, n, nid;
+          
+      nid = uID();
+      
+      o = "line1=[['2008-09-30', 4], ['2008-10-30', 6.5], ['2008-11-30', 5.7], ['2008-12-30', 9], ['2009-01-30', 8.2]]; \
+      plot9 = $.jqplot('_target_', [line1], \
+      {title:'Default Date Axis', \
+      axes:{xaxis:{renderer:$.jqplot.DateAxisRenderer}}, \
+      series:[{lineWidth:4, markerOptions:{style:'square'}}]});";
+      
+      genplot(o, '', false);
+      
+      o = "line1=[['2008-06-30', 4], ['2008-7-30', 6.5], ['2008-8-30', 5.7], ['2008-9-30', 9], ['2008-10-30', 8.2]]; \
+      plot10 = $.jqplot('_target_', [line1], \
+      {title:'Customized Date Axis', gridPadding:{right:45}, \
+      axes:{xaxis:{renderer:$.jqplot.DateAxisRenderer, tickOptions:{formatString:'%b %#d, %y'}, min:'May 30, 2008', tickInterval:'1 month'}}, \
+      series:[{lineWidth:4, markerOptions:{style:'square'}}]});";
+      
+      genplot(o, '', false);
+  
+      prettyPrint();
+      
+      JSpec.options.profile = false;
+      JSpec
+      .exec('dateAxisTests.js')
+      .run()
+      .report()
+    }
+  </script>
+
+
+</head><body onload="runSuites();">
+    <div id="main">
+      <div class="logo">  
+        <a href="http://www.jqplot.com/index.html" id="home"><span>Home</span></a> <a href="http://www.jqplot.com/tests/index.html" id="examples"><span>Examples</span></a> <a href="http://www.jqplot.com/docs/" id="docs"><span>Docs</span></a> <a href="http://www.bitbucket.org/cleonello/jqplot/downloads/" id="download"><span>Download</span></a>
+      </div>
+    
+      <div id="content">
+        <div id="jspec-top">
+          <div id="jspec-title">jqPlot Date Axis Renderer Plugin Tests and Examples</div>
+          <div class="nav top">
+            <a href="http://www.jqplot.com/tests/logAxisTests.php"><img src="dateAxisTests.php_files/arrow_left_48.png" width="24" height="24"></a> 
+            <a href="http://www.jqplot.com/tests/index.html"><img src="dateAxisTests.php_files/arrow_up_48.png" width="24" height="24"></a> 
+            <a href="http://www.jqplot.com/tests/categoryAxisTests.php"><img src="dateAxisTests.php_files/arrow_right_48.png" width="24" height="24"></a>          </div>
+        </div>
+        <div id="jspec"><div id="jspec-report" class=""><div class="heading">                   <span class="passes">Passes: <em>8</em></span>               <span class="failures">Failures: <em>0</em></span>         </div><table class="suites"><tbody><tr class="description"><td colspan="2">Date Axis Renderer Plugin</td></tr><tr class="even"><td class="pass">Default Date Axis</td><td><span class="assertion passed"></span><span class="assertion passed"></span><span class="assertion passed"></span></td></tr><tr class="body"><td colspan="2"><pre><br>expect(plot9.axes.xaxis).should(have_property, "_elem");
+expect(plot9.seriesCanvas).should(have_property, "_elem");
+expect(plot9.axes.xaxis.renderer.constructor).should(be, $.jqplot.DateAxisRenderer);
+</pre></td></tr><tr class="odd"><td class="pass">Customized Date Axis</td><td><span class="assertion passed"></span><span class="assertion passed"></span><span class="assertion passed"></span><span class="assertion passed"></span><span class="assertion passed"></span></td></tr><tr class="body"><td colspan="2"><pre><br>expect(plot10.axes.xaxis).should(have_property, "_elem");
+expect(plot10.seriesCanvas).should(have_property, "_elem");
+expect(plot10.axes.xaxis.renderer.constructor).should(be, $.jqplot.DateAxisRenderer);
+expect(plot10.axes.xaxis.tickInterval).should(be, "1 month");
+expect(plot10.axes.xaxis.numberTicks).should(be, 7);
+</pre></td></tr></tbody></table></div></div>
+        <div id="jspec-bottom"></div>
+    
+        <div class="jqPlot jqplot-target" id="chart2" style="height: 380px; width: 540px; position: relative;"><canvas style="position: absolute; left: 0px; top: 0px;" class="jqplot-base-canvas" height="380" width="540"></canvas><div class="jqplot-title" style="position: absolute; top: 0px; left: 0px; width: 540px; text-align: center;">Default Date Axis</div><div class="jqplot-axis jqplot-xaxis" style="position: absolute; height: 28px; left: 0px; bottom: 0px; width: 540px;"><div style="left: -5px;" class="jqplot-xaxis-tick">2008/09/17</div><div style="left: 66.7143px;" class="jqplot-xaxis-tick">2008/10/08</div><div style="left: 138.429px;" class="jqplot-xaxis-tick">2008/10/29</div><div style="left: 210.143px;" class="jqplot-xaxis-tick">2008/11/19</div><div style="left: 281.857px;" class="jqplot-xaxis-tick">2008/12/10</div><div style="left: 353.571px;" class="jqplot-xaxis-tick">2008/12/31</div><div style="left: 425.286px;" class="jqplot-xaxis-tick">2009/01/21</div><div style="left: 497px;" class="jqplot-xaxis-tick">2009/02/11</div></div><div class="jqplot-axis jqplot-yaxis" style="position: absolute; width: 28px; left: 0px; top: 0px; height: 380px;"><div style="white-space: nowrap; top: 343px;" class="jqplot-yaxis-tick">3.5</div><div style="white-space: nowrap; top: 279.6px;" class="jqplot-yaxis-tick">4.7</div><div style="white-space: nowrap; top: 216.2px;" class="jqplot-yaxis-tick">5.9</div><div style="white-space: nowrap; top: 152.8px;" class="jqplot-yaxis-tick">7.1</div><div style="white-space: nowrap; top: 89.4px;" class="jqplot-yaxis-tick">8.3</div><div style="white-space: nowrap; top: 26px;" class="jqplot-yaxis-tick">9.5</div></div><canvas style="position: absolute; left: 0px; top: 0px;" class="jqplot-grid-canvas" height="380" width="540"></canvas><canvas style="position: absolute; left: 28px; top: 35px;" class="jqplot-series-canvas" height="317" width="502"></canvas><canvas style="position: absolute; left: 28px; top: 35px;" class="jqplot-event-canvas" height="317" width="502"></canvas></div><pre id="code2" class="prettyprint"><span class="pln">line1 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[[</span><span class="str">'2008-09-30'</span><span class="pun">,</span><span class="lit">4</span><span class="pun">],[</span><span class="str">'2008-10-30'</span><span class="pun">,</span><span class="lit">6.5</span><span class="pun">],[</span><span class="str">'2008-11-30'</span><span class="pun">,</span><span class="lit">5.7</span><span class="pun">],[</span><span class="str">'2008-12-30'</span><span class="pun">,</span><span class="lit">9</span><span class="pun">],[</span><span class="str">'2009-01-30'</span><span class="pun">,</span><span class="lit">8.2</span><span class="pun">]];</span><span class="pln"><br>plot9 </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">.</span><span class="pln">jqplot</span><span class="pun">(</span><span class="str">'chart2'</span><span class="pun">,[</span><span class="pln">line1</span><span class="pun">],{</span><span class="pln"><br>&nbsp; &nbsp; title</span><span class="pun">:</span><span class="pln"> </span><span class="str">'Default Date Axis'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; axes</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; xaxis</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; renderer</span><span class="pun">:</span><span class="pln"> $</span><span class="pun">.</span><span class="pln">jqplot</span><span class="pun">.</span><span class="typ">DateAxisRenderer</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">},</span><span class="pln"><br>&nbsp; &nbsp; series</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; lineWidth</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; markerOptions</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; style</span><span class="pun">:</span><span class="pln"> </span><span class="str">'square'</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}]</span><span class="pln"><br></span><span class="pun">});</span></pre><div class="jqPlot jqplot-target" id="chart3" style="height: 380px; width: 540px; position: relative;"><canvas style="position: absolute; left: 0px; top: 0px;" class="jqplot-base-canvas" height="380" width="540"></canvas><div class="jqplot-title" style="position: absolute; top: 0px; left: 0px; width: 540px; text-align: center;">Customized Date Axis</div><div class="jqplot-axis jqplot-xaxis" style="position: absolute; height: 63px; left: 0px; bottom: 0px; width: 540px;"><div style="left: -1.5px;" class="jqplot-xaxis-tick">May 30, 08</div><div style="left: 78.6793px;" class="jqplot-xaxis-tick">Jun 30, 08</div><div style="left: 156.821px;" class="jqplot-xaxis-tick">Jul 30, 08</div><div style="left: 233px;" class="jqplot-xaxis-tick">Aug 30, 08</div><div style="left: 312.179px;" class="jqplot-xaxis-tick">Sep 30, 08</div><div style="left: 387.321px;" class="jqplot-xaxis-tick">Oct 30, 08</div><div style="left: 466px;" class="jqplot-xaxis-tick">Nov 30, 08</div></div><div class="jqplot-axis jqplot-yaxis" style="position: absolute; width: 28px; left: 0px; top: 0px; height: 380px;"><div style="white-space: nowrap; top: 308px;" class="jqplot-yaxis-tick">3.5</div><div style="white-space: nowrap; top: 251.6px;" class="jqplot-yaxis-tick">4.7</div><div style="white-space: nowrap; top: 195.2px;" class="jqplot-yaxis-tick">5.9</div><div style="white-space: nowrap; top: 138.8px;" class="jqplot-yaxis-tick">7.1</div><div style="white-space: nowrap; top: 82.4px;" class="jqplot-yaxis-tick">8.3</div><div style="white-space: nowrap; top: 26px;" class="jqplot-yaxis-tick">9.5</div></div><canvas style="position: absolute; left: 0px; top: 0px;" class="jqplot-grid-canvas" height="380" width="540"></canvas><canvas style="position: absolute; left: 28px; top: 35px;" class="jqplot-series-canvas" height="282" width="467"></canvas><canvas style="position: absolute; left: 28px; top: 35px;" class="jqplot-event-canvas" height="282" width="467"></canvas></div><pre id="code3" class="prettyprint"><span class="pln">line1 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[[</span><span class="str">'2008-06-30'</span><span class="pun">,</span><span class="lit">4</span><span class="pun">],[</span><span class="str">'2008-7-30'</span><span class="pun">,</span><span class="lit">6.5</span><span class="pun">],[</span><span class="str">'2008-8-30'</span><span class="pun">,</span><span class="lit">5.7</span><span class="pun">],[</span><span class="str">'2008-9-30'</span><span class="pun">,</span><span class="lit">9</span><span class="pun">],[</span><span class="str">'2008-10-30'</span><span class="pun">,</span><span class="lit">8.2</span><span class="pun">]];</span><span class="pln"><br>plot10 </span><span class="pun">=</span><span class="pln"> $</span><span class="pun">.</span><span class="pln">jqplot</span><span class="pun">(</span><span class="str">'chart3'</span><span class="pun">,[</span><span class="pln">line1</span><span class="pun">],{</span><span class="pln"><br>&nbsp; &nbsp; title</span><span class="pun">:</span><span class="pln"> </span><span class="str">'Customized Date Axis'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; gridPadding</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; right</span><span class="pun">:</span><span class="pln"> </span><span class="lit">45</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">},</span><span class="pln"><br>&nbsp; &nbsp; axes</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; xaxis</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; renderer</span><span class="pun">:</span><span class="pln"> $</span><span class="pun">.</span><span class="pln">jqplot</span><span class="pun">.</span><span class="typ">DateAxisRenderer</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tickOptions</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; formatString</span><span class="pun">:</span><span class="pln"> </span><span class="str">'%b %#d, %y'</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">},</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min</span><span class="pun">:</span><span class="pln"> </span><span class="str">'May 30, 2008'</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tickInterval</span><span class="pun">:</span><span class="pln"> </span><span class="str">'1 month'</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">},</span><span class="pln"><br>&nbsp; &nbsp; series</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; lineWidth</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4</span><span class="pun">,</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; markerOptions</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; style</span><span class="pun">:</span><span class="pln"> </span><span class="str">'square'</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}]</span><span class="pln"><br></span><span class="pun">});</span></pre><div class="nav">
+          <a href="http://www.jqplot.com/tests/logAxisTests.php"><img src="dateAxisTests.php_files/arrow_left_48.png" width="24" height="24"></a> 
+          <a href="http://www.jqplot.com/tests/index.html"><img src="dateAxisTests.php_files/arrow_up_48.png" width="24" height="24"></a> 
+          <a href="http://www.jqplot.com/tests/categoryAxisTests.php"><img src="dateAxisTests.php_files/arrow_right_48.png" width="24" height="24"></a>        </div>
+      </div>
+    </div>
+        <div id="preloader" style="display: none;">
+        <img src="dateAxisTests.php_files/navdownloadover.png" alt="navdownloadover" width="89" height="26">
+        <img src="dateAxisTests.php_files/navexamplesover.png" alt="navexamplesover" width="88" height="26">
+        <img src="dateAxisTests.php_files/navhomeover.png" alt="navhomeover" width="59" height="26">
+        <img src="dateAxisTests.php_files/navdocsover.png" alt="navdocsover" width="55" height="26">
+        <img src="dateAxisTests.php_files/downloadnowover.png" alt="downloadnowover" width="102" height="39">
+    </div>
+  </body></html>

@@ -1,0 +1,1207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html class="cufon-active cufon-ready" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>jQuery Roundabout</title>
+		<link href="jQuery%20Roundabout_files/roundabout.css" rel="stylesheet" media="all" type="text/css">
+	<style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style></head><body>
+		<style type="text/css" media="all">
+	/* <![CDATA[  */
+	#fhq-header { font-size: 16px; position: relative; top: 0; left: 0; width: 100%; height: 50px; background-color: #000; border-bottom: 1px solid #333; }
+	#fhq-header-holder { width: 870px; margin: 0 auto; }
+	#fhq-header-logo { display: block; width: 50px; height: 50px; border: none; float: left; }
+	#fhq-header-nav { list-style: none; padding: 0; margin: 0; float: right; }
+	#fhq-header-nav li { 
+		float: left; 
+		padding-top: 13px;
+	}
+	#fhq-header-nav a {
+		height: 23px;
+		text-indent: -9999px;
+		display: block;
+		float: left;
+		background: transparent url('/assets/img/sprite.gif') scroll no-repeat 0 0; 
+		color: #fff;
+		outline: none;
+	}
+	
+	#fhq-header-nav-about a { width: 75px; }	
+	#fhq-header-nav-about.active a { background-position: 0 -22px; }	
+	#fhq-header-nav-about a:hover { background-position: 0 -44px; }
+
+	#fhq-header-nav-projects { }	
+	#fhq-header-nav-projects a { width: 61px; background-position: -74px 0; }	
+	#fhq-header-nav-projects.active a { background-position: -74px -22px; }	
+	#fhq-header-nav-projects a:hover { background-position: -74px -44px; }
+
+	#fhq-header-nav-contact { }	
+	#fhq-header-nav-contact a { width: 59px; background-position: -133px 0; }	
+	#fhq-header-nav-contact.active a { background-position: -133px -22px; }	
+	#fhq-header-nav-contact a:hover { background-position: -133px -44px; }
+
+	#fhq-header-nav li span { 
+		display: block;
+		height: 23px;
+		float: right;
+		width: 16px; 
+		background: transparent url('/assets/img/sprite.gif') scroll no-repeat -187px 0; 
+	}
+	/* ]]> */
+</style>
+<div id="fhq-header">
+	<div id="fhq-header-holder">
+		<a href="http://fredhq.com/"><img src="jQuery%20Roundabout_files/logo.gif" alt="fredhq" id="fhq-header-logo"></a>
+		<ul id="fhq-header-nav">
+			<li id="fhq-header-nav-about"><a href="http://fredhq.com/about">About</a><span></span></li>
+			<li id="fhq-header-nav-projects"><a href="http://fredhq.com/">Projects</a><span></span></li>
+			<li id="fhq-header-nav-contact"><a href="http://fredhq.com/contact">Contact</a></li>
+		</ul>
+	</div>
+</div>		<div id="prelude">
+			<img src="jQuery%20Roundabout_files/bg.png" alt="" class="bg">
+			<div class="stage">
+				<h1><cufon style="width: 181px; height: 39px;" alt="Roundabout " class="cufon cufon-canvas"><canvas style="width: 214px; height: 39px; top: -3px; left: -1px;" height="39" width="214"></canvas><cufontext>Roundabout </cufontext></cufon><em><cufon style="width: 21px; height: 15.6px;" alt="for " class="cufon cufon-canvas"><canvas style="width: 34px; height: 16px; top: -1px; left: -1px;" height="16" width="34"></canvas><cufontext>for </cufontext></cufon><cufon style="width: 38px; height: 15.6px;" alt="jQuery" class="cufon cufon-canvas"><canvas style="width: 49px; height: 16px; top: -1px; left: -1px;" height="16" width="49"></canvas><cufontext>jQuery</cufontext></cufon></em></h1>
+				<small>v1.0 by Fred LeBlanc</small>
+			</div>
+		</div>
+		<div id="page">
+			<div class="stage">			
+				<h2 id="overview">Move Elements with Style</h2>
+				
+				<div id="example">
+					<ul childselector="li" debug="false" period="72" shape="lazySusan" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="easeOutExpo" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder">
+						<li current-scale="1.0000" startpos="84,112,28" degrees="0" style="position: absolute; left: 81.75px; top: 7.25px; width: 84px; height: 112px; opacity: 1; z-index: 400; font-size: 28px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+						<li current-scale="0.7927" startpos="84,112,28" degrees="72" style="position: absolute; left: -16.54px; top: 18.86px; width: 66.59px; height: 88.78px; opacity: 0.79; z-index: 296; font-size: 22.2px;" class="roundabout-moveable-item">:D</li>
+						<li current-scale="0.4573" startpos="84,112,28" degrees="144" style="position: absolute; left: 38.42px; top: 37.64px; width: 38.41px; height: 51.22px; opacity: 0.46; z-index: 128; font-size: 12.8px;" class="roundabout-moveable-item">:p</li>
+						<li current-scale="0.4573" startpos="84,112,28" degrees="216" style="position: absolute; left: 170.67px; top: 37.64px; width: 38.41px; height: 51.22px; opacity: 0.46; z-index: 128; font-size: 12.8px;" class="roundabout-moveable-item">:*</li>
+						<li current-scale="0.7927" startpos="84,112,28" degrees="288" style="position: absolute; left: 197.45px; top: 18.86px; width: 66.59px; height: 88.78px; opacity: 0.79; z-index: 296; font-size: 22.2px;" class="roundabout-moveable-item">:B</li>
+					</ul>
+					
+					<div class="caption">
+						<strong>Try it!</strong> Click on a box in the back.
+						<div id="amazing">&nbsp;</div>
+					</div>
+				</div>
+				
+				<p>
+					Roundabout is a <a href="http://jquery.com/">jQuery</a> plugin that converts a
+					structure of static HTML elements into a highly customizable turntable-like
+					interactive area. (And now, not just turntables, but 
+					<a href="http://fredhq.com/projects/roundabout-shapes">many shapes</a>!)
+				</p>
+			
+				<p>
+					In its simplest configuration, Roundabout works with ordered- and unordered-lists,
+					however after some quick configuration, Roundabout can work with an set of nested
+					elements.
+				</p>
+				
+				<p>
+					Oh, and Roundabout is released under the BSD license. If you’re not sure what
+					that is, you can find the entire license in the source code. Go nuts, I encourage it.
+				</p>
+				
+				<p>
+					<strong>Update, December 22:</strong> There were some errors in the example code 
+					blurbs. These have hopefully all been fixed. Thankfully 
+					<a href="http://paulbkelley.com/">Paul Kelley</a> and 
+					<a href="http://wonderwheelcreative.com/">Tim Merrill</a>
+					have eyes like eagles. If you find something that isn’t working as it should,
+					please <a href="http://fredhq.com/contact">let me know</a>!
+				</p>
+				
+				<h2 id="requirements">Requirements &amp; Add-Ons</h2>
+				
+				<p>
+					Requires jQuery 1.2.3+ or 1.3.x* and has been built to play nicely with the following plugins:
+				</p>
+
+				<ul>
+					<li><a href="http://fredhq.com/projects/roundabout-shapes">Roundabout Shapes</a> by Fred LeBlanc</li>
+					<li><a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing</a> by George McGinley Smith</li>
+				</ul>
+
+				<div class="footnote">
+					*All appears to be working fine in 1.4.x thus far as well.
+				</div>
+				
+				<h2 id="demo">Mind-Blowing Demonstrations</h2>
+				
+				<p>
+					Here are just a couple of ways that Roundabouts can be configured.
+				</p>
+				
+				<ul>
+					<li><a href="http://fredhq.com/projects/roundabout/demo/standard">Standard Roundabout in Action</a></li>
+					<li><a href="http://fredhq.com/projects/roundabout/demo/images">Moving Images &amp; Cat Pictures</a></li>
+					<li><a href="http://fredhq.com/projects/roundabout/demo/clock">Clock</a></li>
+					<li><a href="http://fredhq.com/projects/roundabout/demo/events">Using Events</a></li>
+					<li><a href="http://fredhq.com/projects/roundabout/demo/around">Moving Things Around Things</a></li>
+					<li><a href="http://fredhq.com/projects/roundabout/demo/toggles">Controlling via HTML &amp; jQuery UI Toggles</a></li>
+					<li><a href="http://fredhq.com/projects/roundabout/demo/form">As a Form Element</a></li>
+					<li><a href="http://fredhq.com/projects/roundabout/demo/angry">Angry Man!</a></li>
+				</ul>
+				
+				<h3>Roundabouts in the Wild</h3>
+				
+				<p>
+					Have you seen a Roundabout somewhere around the Internet? Are you using Roundabouts 
+					in your own projects? <a href="http://fredhq.com/contact">Let me know!</a> I’d love to
+					link to some real-world examples out there.
+				</p>
+				
+				<h2 id="getting-started">Your Very First Roundabout</h2>
+				
+				<p>
+					This three-step guide will assist you in converting a boring unordered-list into
+					an exciting Roundabout! Once this tutorial is complete, check out 
+					<a href="#customize">how to customize your Roundabout</a>. Once you’ve
+					mastered that, learn about <a href="#advanced">Advanced Techniques</a>.
+				</p>
+				
+				<p>
+					This guide assumes that you have an unordered-list in your HTML somewhere, maybe one
+					that looks like this:
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;ul id=<span class="string">"myRoundabout"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="html-tag">&lt;li&gt;</span>Box 1<span class="html-tag">&lt;/li&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="html-tag">&lt;li&gt;</span>Box 2<span class="html-tag">&lt;/li&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="html-tag">&lt;li&gt;</span>Box 3<span class="html-tag">&lt;/li&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="html-tag">&lt;li&gt;</span>Box 4<span class="html-tag">&lt;/li&gt;</span><br>
+					<span class="html-tag">&lt;/ul&gt;</span>
+				</code>
+				
+				<h3 id="step1">1. Include Your Scripts</h3>
+				
+				<p>
+					Before we can set our Roundabouts loose, we must first include the Roundabout script
+					on our page. Because this script believes in unobtrusive JavaScript, you can put
+					these lines right before the <tt>&lt;/body&gt;</tt> of your HTML document.
+				</p>
+
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"jquery.min.js"</span>&gt;&lt;/script&gt;</span><br>
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"jquery.roundabout.1.0.min.js"</span>&gt;&lt;/script&gt;</span>
+				</code>
+				
+				<div class="copy-and-paste-warning">
+					<h3>Copy &amp; Paste Warning!</h3>
+					<p>
+						The paths used here will only work if the HTML page is in the same directory as
+						our scripts. This is not usually good organization, so change your paths 
+						accordingly.
+					</p>
+				</div>
+				
+				<h3 id="step2">2. Set Up Your CSS</h3>
+				
+				<p>
+					Due to unordered-lists having bullets and built-in indenting by default in most 
+					browsers, we’re going to need to make some CSS changes so that these feautres
+					don’t get in the way once Roundabout is up and running. Below is some sample
+					CSS that will set up a nice, standard Roundabout.
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;style type=<span class="string">"text/css"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">/* &lt;![CDATA[ */</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="css-selector">.roundabout-holder</span> { <span class="css-attribute">padding</span>: <span class="number">0</span>; <span class="css-attribute">height</span>: <span class="number">5</span><span class="unit">em</span>; }<br>
+					&nbsp;&nbsp;&nbsp;<span class="css-selector">.roundabout-moveable-item</span> { <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="css-attribute">height</span>: <span class="number">4</span><span class="unit">em</span>; <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="css-attribute">width</span>: <span class="number">4</span><span class="unit">em</span>; <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="css-attribute">cursor</span>: <span class="keyword">pointer</span>;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="css-attribute">background-color</span>: <span class="keyword">#ffc</span>;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="css-attribute">border</span>: <span class="number">1</span><span class="unit">px</span> <span class="keyword">solid #999</span>;<br>
+					&nbsp;&nbsp;&nbsp;}<br>
+					&nbsp;&nbsp;&nbsp;<span class="css-selector">.roundabout-in-focus</span> { <span class="css-attribute">cursor</span>: <span class="keyword">auto</span>; }<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">/* ]]&gt; */</span><br>
+					<span class="html-tag">&lt;/style&gt;</span>
+				</code>
+
+				<div class="footnote">
+					By the way: Like this syntax highlighting? Use
+					<a href="http://macromates.com/">TextMate</a>? Get the 
+					<a href="http://fredhq.com/projects/clouds">Clouds</a> theme now!
+				</div>
+				
+				<div class="copy-and-paste-warning">
+					<h3>Copy &amp; Paste Warning!</h3>
+					
+					<p>
+						Feel free to use this code on your site, but it’s much more important to
+						know what classes are being applied (and when), and what they mean. It’s a
+						<a href="#css">5-minute read</a>, take the time to learn it.
+					</p>
+				</div>
+				
+				<h3 id="step3">3. Attach Roundabout</h3>
+				
+				<p>
+					This can happen in a separate file (included after your jQuery and Roundabout script
+					calls from <a href="#step1">step 1</a>), or it can be right on the page. Let’s
+					put it right on the page for the sake of this example.
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul#myRoundabout'</span>).roundabout();<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+
+				<div class="copy-and-paste-warning">
+					<h3>Copy &amp; Paste Warning!</h3>
+
+					<p>
+						Make sure you change the jQuery selector to point to the right elements. If
+						you’ve been copying and pasting this whole time you should be OK.
+					</p>
+				</div>
+				
+				<p>
+					There are two things happening here: first, we’re using the
+					<tt>document</tt>’s ready state to trigger our Roundabout’s loading. This
+					is important; we don’t want Roundabout looking for an HTML element that
+					isn’t in the DOM yet.
+				</p>
+				
+				<p>
+					Second, we select all of the HTML elements that we want to turn into Roundabouts with
+					a jQuery selector and then attach the <tt>.roundabout()</tt> method onto it.
+				</p>
+				
+				<p>
+					Save your file and load it in a browser. If all of your paths are correct and the
+					CSS is in place, you should have a Roundabout!
+				</p>
+				
+				<h2 id="css">Roundabout CSS</h2>
+
+				<p>			
+					There are three classes that will be applied to elements that are apart of
+					Roundabouts. For a more unobtrusive solution, it is best practice to style using 
+					these classes rather than styling the actual HTML elements themselves. Otherwise,
+					your anti-JavaScript users will see the styles of a Roundabout without the
+					positioning. The results may be messy.
+				</p>
+				
+				<h3 id="css-roundabout-holder"><tt>.roundabout-holder</tt></h3>
+				
+				<p>
+					This class is always added to the element(s) holding the elements that will be moving
+					around. In default scenarios, this will be applied to the <tt>&lt;ul&gt;</tt> or
+					<tt>&lt;ol&gt;</tt> element — whichever elements are selected by the jQuery
+					selector onto which you attach <tt>.roundabout();</tt>.
+				</p>
+
+				<h3 id="css-roundabout-moveable-item"><tt>.roundabout-moveable-item</tt></h3>
+				
+				<p>
+					This class is always added to all elements that will be moving around within your
+					Roundabout. In default scenarios, this will be applied to all <tt>&lt;li&gt;</tt>
+					elements that are immediate children of your <tt>&lt;ul&gt;</tt> or
+					<tt>&lt;ol&gt;</tt> tags that have had <tt>roundabout-holder</tt> applied to them.
+				</p>
+
+
+				<h3 id="css-roundabout-in-focus"><tt>.roundabout-in-focus</tt></h3>
+				
+				<p>
+					This class is temporarily added to an element with a class of
+					<tt>roundabout-moveable-item</tt> that is “in focus.” An element is only
+					in focus when its position matches the <tt>focusBearing</tt> <em>and</em> no
+					animations are playing within that Roundabout
+				</p>
+				
+				<h4>Why can’t items be in focus while animations are running?</h4>
+				
+				<p>
+					 Let’s say, for example, you’ve set your <tt>.roundabout-in-focus</tt>
+					 elements to change background-color. We don’t want items flashing as they pass
+					 through the <tt>focusBearing</tt>.
+				</p>
+				
+				<p>
+					Knowing this, it should follow that only one or fewer elements per Roundabout will
+					ever have this class applied to it at any one time.
+				</p>
+
+				<h2 id="customize">Customize Your Roundabout</h2>
+
+				<p>
+					Now that you know the basics, it’s easy to customize your Roundabout to fit
+					better into your site. While each example below only lists one or two options at a
+					time, you can combine as many effects as you’d like into one big set of
+					customization options.
+				</p>
+
+				<h3 id="starting-child">Start Wherever</h3>
+				
+				<p>
+					By default, your Roundabout will start with the first moveable item in focus, but 
+					this doesn’t have to be the case. Change which moveable item starts in focus by
+					setting the <tt>startingChild</tt> option. Set this to the zero-based position of the 
+					child (as listed among all of the children that can move in the Roundabout).
+				</p>
+				
+				<p>
+					For example, continuing our <a href="#getting-started">three-step example</a> above,
+					if we want the Roundabout to start on the <tt>&lt;li&gt;</tt> containing “Box
+					3”:
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startingChild: <span class="constant">2</span> <span class="comment">// the third box, so: 0, 1, *2*</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="duration">Speed Up, Slow Down</h3>
+				
+				<p>
+					If your animations aren’t happening at the right speed, you can easily make
+					them faster or slow them down with the <tt>duration</tt> option.
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'div.moveMe'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duration: <span class="number">1200</span> <span class="comment">// in milliseconds, of course</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="opacity-and-scale">Opacity &amp; Scale</h3>
+				
+				<p>
+					To make your Roundabout more (or less) dramatic, you can set the minimum and maximum
+					values for your moveable items’ opacity and scale. 
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minOpacity: <span class="number">0.0</span>, <span class="comment">// invisible!</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minScale: <span class="number">0.1</span> <span class="comment">// tiny!</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<p>
+					Moveable items exactly opposite of the <tt>focusBearing</tt> will have whatever is
+					set as the <tt>minScale</tt>, <tt>minOpacity</tt> and <tt>minZ</tt> applied as their
+					values for scale, opacity and z-index (respectively). Try adjusting from the 
+					<a href="#options-minOpacity">default settings</a> for each until you find something 
+					that you like.
+				</p>				
+				
+				<h3 id="next-and-previous">Triggering Roundabout Animations</h3>
+				
+				<p>
+					There are two settable options that let you easily trigger the Roundabout to animate
+					to the next and previous moveable item. Use the <tt>btnNext</tt> option to connect
+					any element’s <tt>click</tt> event to animate the Roundabout to the next
+					moveable item not in focus. Use the <tt>btnPrev</tt> to do the same thing in the
+					other direction.
+				</p>
+				
+				<p>
+					To continue the example from the <a href="#getting-started">three-step process</a>
+					above, add two links under the unordered-list.
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;a href=<span class="string">"#"</span> id=<span class="string">"next"</span>&gt;Next!&lt;/a&gt;</span><br>
+					<span class="html-tag">&lt;a href=<span class="string">"#"</span> id=<span class="string">"previous"</span>&gt;Previous!&lt;/a&gt;</span><br>
+				</code>
+				
+				<p>
+					Now, set <tt>btnNext</tt> and <tt>btnPrev</tt> options to connect your links to your
+					Roundabout. You can enter any selector you’d like, as this is getting passed
+					straight to jQuery on the inside.
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnNext: <span class="string">'#next'</span>,<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btnPrev: <span class="string">'#previous'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<p>
+					Simple as that. Now, when a user clicks on either your “Next!” or 
+					“Previous!” links, your Roundabout will move like they’re clicking
+					on boxes in the Roundabout itself.
+				</p>
+				
+				<h3 id="turn-off-click">Don’t Let Users Click</h3>
+				
+				<p>
+					Clicking on out-of-focus items in your Roundabout will cause them animate into focus
+					by default, but this can be turned off if you’re not into that kind of thing.
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clickToFocus: <span class="constant">false</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<p>
+					When this is <tt>true</tt> (as it is in its default state), links clicked on within out-of-focus
+					moveable items will be short-circuited and the animation will happen instead. If you
+					turn this <tt>false</tt> (as in the example above), links will work no matter what their
+					position around the Roundabout.
+				</p>				
+				
+				<h3 id="focus">“In Focus” is Relative</h3>
+				
+				<p>
+					While the default value is set to be the item that appears closest to you, you can
+					set the <tt>focusBearing</tt> to be any angle. Try this configuration, and then see
+					where things point:
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;focusBearing: <span class="number">90.0</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="beyond-lists">Not Just For Lists</h3>
+				
+				<p>
+					While using a <tt>&lt;ul&gt;</tt> or <tt>&lt;ol&gt;</tt> is the default set up, you
+					can apply Roundabout to <em>anything</em>. To do so, attach <tt>.roundabout();</tt>
+					onto a jQuery selection of any element type you wish (let’s say a special
+					<tt>&lt;div&gt;</tt> with the class <tt>moveMe</tt>. To tell Roundabout which child
+					objects you wish to move around, use the <tt>childSelector</tt> option to pass a
+					string that jQuery can use to select all of this element’s children.
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'div.moveMe'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;childSelector: <span class="string">'div.moveable'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<p>
+					This example will look inside of any <tt>&lt;div class="moveMe"&gt;&lt;/div&gt;</tt>
+					for any <tt>&lt;div class="moveable"&gt;&lt;/div&gt;</tt> and will use those elements
+					to move around. The <tt>childSelector</tt> option is literally being passed to jQuery
+					on the inside, so any valid jQuery selector will work here.
+				</p>
+
+				<p>
+					One advantage to not using lists is that you can place other items inside your
+					holder-elements. By absolutely positioning these elements in the right spot, you can
+					have your moveable-elements <a href="http://fredhq.com/projects/roundabout/demo/around" title="As the mighty Neo once said: ”Whoa.“">moving around these 
+					positioned elements</a>!
+				</p>
+				
+				<h3 id="easing">Using the jQuery Easing Plugin</h3>
+				
+				<p>
+					Don’t get me wrong, jQuery’s built in easing techniques are nice, but to
+					get the most bang for your buck you should check out the 
+					<a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing plugin</a>. 
+					The implementation is simple.
+				</p>
+				
+				<p>
+					First, include the easing script.
+				</p>
+
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"jquery.easing.1.3.js"</span>&gt;&lt;/script&gt;</span><br>
+				</code>
+				
+				<div class="copy-and-paste-warning">
+					<h3>Copy &amp; Paste Warning!</h3>
+					
+					<p>
+						Your filename, file path and version may vary.
+					</p>
+				</div>
+				
+				<p>
+					Second, set the easing option in your roundabout.
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;easing: <span class="string">'easeInOutExpo'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<p>
+					Use any of the easing names provided by the plugin and Roundabout will do the rest.
+					Learn more about these names 
+					<a href="http://gsgd.co.uk/sandbox/jquery/easing/">here</a>.
+				</p>
+				
+				<h3 id="shapes">Roundabout Shapes</h3>
+				
+				<p>
+					Roundabout can now do more than just turntables. Check out the 
+					<a href="http://fredhq.com/projects/roundabout-shapes">Roundabout Shapes</a> plugin for more paths 
+					along which your moveable items can travel. There are also instructions on how to
+					use different shapes as well.
+				</p>
+				
+				<p>
+					(It’s easy, I promise.)
+				</p>
+
+				<h2 id="advanced">Advanced Techniques</h2>
+				
+				<p>
+					Ready to knock it out of the park? Here are a couple of more advanced ways that you
+					can use Roundabout to really wrangle its true power.
+				</p>
+				
+				<h3 id="debug">See Exactly What’s Going On</h3>
+				
+				<p>
+					If you wish to dive deeper into what makes Roundabout tick, turn on debugging.
+				</p>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug: <span class="constant">true</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<p>
+					This will change the HTML in your moving elements to a full slate of styling
+					information.
+				</p>
+				
+				<h3 id="events">Hooking Into Events</h3>
+				
+				<p>
+					Two events can fire during each jQuery animation. A moving item’s
+					<tt>focus</tt> event will be fired if it completes an animation in the focus
+					position. A moving item’s <tt>blur</tt> event will be fired if it starts an
+					animation in the focus position and moves off of it.
+				</p>
+				<p>
+					<strong>Two notes of caution about events:</strong> 
+				</p>
+				
+				<ol>
+					<li>
+						The first <tt>focus</tt> event will occur once <tt>.roundabout()</tt> is called,
+						so be sure to set up all event handling prior to attaching Roundabout.
+					</li>
+					<li>
+						The events listed above <em>can</em> fire during each animation, but are 
+						<em>not</em> guaranteed to do so. However, this will only occur in situations of
+						more complex animations where moveable items aren’t starting and stopping
+						in focus.
+					</li>
+				</ol>
+								
+				<h3 id="methods">Methods for Advanced Control</h3>
+				
+				<p>
+					Aside from the standard animation that comes turned on by default, a roundabout can
+					be controlled by more than just buttons. A number of methods can be used to change
+					the way the Roundabout is positioned.
+				</p>
+				
+				<p>
+					These methods affect any Roundabout-enabled elements that are included in your jQuery
+					selector, and all of these methods can be inserted anywhere into a standard chain of 
+					jQuery method calls. These examples use <tt>ul</tt> as a sample selector, but 
+					as you’ll so smartly recall: <a href="#beyond-lists" title="Oh yeah.">anything 
+					can be put there</a>.
+				</p>
+				
+				<h4 id="method-set-bearing">Set Bearing</h4>
+				
+				<code class="clouds">
+					$(<span class="string">'ul'</span>).roundabout_setBearing(<span class="unit">float</span> <span class="number">newBearing</span>);
+				</code>
+				
+				<p>
+					Sets the current bearing of the Roundabout to <tt>newBearing</tt>. This is used as a
+					step function within animations, but can also work well, for example, as being set to
+					a slider’s value.
+				</p>
+
+				<h4 id="method-set-tilt">Set Tilt</h4>
+				
+				<code class="clouds">
+					$(<span class="string">'ul'</span>).roundabout_setTilt(<span class="unit">float</span> <span class="number">newTilt</span>);
+				</code>
+				
+				<p>
+					Sets the current tilt of the Roundabout to <tt>newTilt</tt>. This value is less
+					mathematically precise than the other calculations, and thus will probably take some
+					fidgeting to get right. Also a good candidate for being set to a slider’s
+					value.
+				</p>
+				
+				<h4 id="method-adjust-bearing">Adjust Bearing</h4>
+				
+				<code class="clouds">
+					$(<span class="string">'ul'</span>).roundabout_adjustBearing(<span class="unit">float</span> <span class="number">delta</span>);
+				</code>
+				
+				<p>
+					Sets the current bearing by changing the value <tt>delta</tt> degrees. This value can
+					be positive or negative to move in both directions.
+				</p>
+				
+				<h4 id="method-adjust-tilt">Adjust Tilt</h4>
+				
+				<code class="clouds">
+					$(<span class="string">'ul'</span>).roundabout_adjustTilt(<span class="unit">float</span> <span class="number">delta</span>);
+				</code>
+				
+				<p>
+					Sets the current tilt by changing the value by <tt>delta</tt>. This value can be
+					positive or negative to move in both directions.
+				</p>
+				
+				<h4 id="method-animate-to-bearing">Animate to Bearing</h4>
+				
+				<code class="clouds">
+					$(<span class="string">'ul'</span>).roundabout_animateToBearing(<span class="unit">float</span> <span class="number">bearing</span>[, <span class="unit">int</span> <span class="number">duration</span>[, <span class="unit">string</span> <span class="number">easing</span>]]);
+				</code>
+				
+				<p>
+					Changes the Roundabout’s bearing by animating to it. Will use the
+					Roundabout’s default values for <tt>duration</tt> and <tt>easing</tt> if none
+					are provided.
+				</p>
+				
+				<h4 id="method-animate-to-delta">Animate to Delta</h4>
+				
+				<code class="clouds">
+					$(<span class="string">'ul'</span>).roundabout_animateToDelta(<span class="unit">float</span> <span class="number">delta</span> [, <span class="unit">int</span> <span class="number">duration</span>[, <span class="unit">string</span> <span class="number">easing</span>]]);
+				</code>
+				
+				<p>
+					Changes the Roundabout’s bearing by <tt>delta</tt> degrees by animating to it.
+					Will use the Roundabout’s default values for <tt>duration</tt> and
+					<tt>easing</tt> if none are provided.
+				</p>
+				
+				<h4 id="method-animate-to-child">Animate to Child</h4>
+				
+				<code class="clouds">
+					$(<span class="string">'ul'</span>).roundabout_animateToChild(<span class="unit">int</span> <span class="number">child</span>[, <span class="unit">int</span> <span class="number">duration</span>[, <span class="unit">string</span> <span class="number">easing</span>]]);
+				</code>
+				
+				<p>
+					Changes the Roundabout’s bearing to a zero-based <tt>child</tt>’s bearing
+					by animating to it. Will use the Roundabout’s default values for
+					<tt>duration</tt> and <tt>easing</tt> if none are provided.
+				</p>
+				
+				<h4 id="method-animate-to-next-child">Animate to Next Child</h4>
+				
+				<code class="clouds">
+					$(<span class="string">'ul'</span>).roundabout_animateToNextChild([<span class="unit">int</span> <span class="number">duration</span>[, <span class="unit">string</span> <span class="number">easing</span>]]);
+				</code>
+				
+				<p>
+					Changes the Roundabout’s bearing by animating to the next child’s
+					position (traveling counterclockwise). Will use the Roundabout’s default values
+					for <tt>duration</tt> and <tt>easing</tt> if none are provided.
+				</p>
+				
+				<h4 id="method-animate-to-previous-child">Animate to Previous Child</h4>
+				
+				<code class="clouds">
+					$(<span class="string">'ul'</span>).roundabout_animateToPreviousChild([<span class="unit">int</span> <span class="number">duration</span>[, <span class="unit">string</span> <span class="number">easing</span>]]);
+				</code>
+				
+				<p>
+					Changes the Roundabout’s bearing by animating to the previous child’s
+					position (traveling clockwise). Will use the Roundabout’s default values for
+					<tt>duration</tt> and <tt>easing</tt> if none are provided.
+				</p>
+				
+				<h4 id="method-animate-angle-to-focus">Animate Angle to Focus</h4>
+				
+				<code class="clouds">
+					$(<span class="string">'ul'</span>).roundabout_animateAngleToFocus(<span class="unit">float</span> <span class="number">target</span>[, <span class="unit">int</span> <span class="number">duration</span>[, <span class="unit">string</span> <span class="number">easing</span>]]);
+				</code>
+				
+				<p>
+					Changes the Roundabout’s bearing by animating a given angle to focus. Will
+					always take the shortest route (clockwise or counterclockwise). Will use the
+					Roundabout’s default values for <tt>duration</tt> and <tt>easing</tt> if none
+					are provided.
+				</p>
+				
+				<h2 id="options">Option Reference</h2>
+				
+				<p>
+					The following is a complete list of settable options for your Roundabout, each with a
+					description as to what it controls, its expected data type and its default value.
+				</p>
+				
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">Option</th>
+							<th scope="col">Description</th>
+							<th scope="col">Data Type</th>
+							<th scope="col">Default</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr id="options-bearing">
+							<td><tt>bearing</tt></td>
+							<td>The starting direction in which the Roundabout should point.</td>
+							<td>float</td>
+							<td><tt>0.0</tt></td>
+						</tr>
+
+						<tr id="options-tilt">
+							<td><tt>tilt</tt></td>
+							<td>The starting angle at which the Roundabout’s plane should be tipped.</td>
+							<td>float</td>
+							<td><tt>0.0</tt></td>
+						</tr>
+
+						<tr id="options-minZ">
+							<td><tt>minZ</tt></td>
+							<td>The lowest z-index value that a moveable item can be assigned. (Will be the z-index of the item farthest from the <tt>focusBearing</tt>.)</td>
+							<td>integer</td>
+							<td><tt>100</tt></td>
+						</tr>
+
+						<tr id="options-maxZ">
+							<td><tt>maxZ</tt></td>
+							<td>The greatest z-index value that a moveable item can be assigned. (Will be the z-index of the item in focus.)</td>
+							<td>integer</td>
+							<td><tt>100</tt></td>
+						</tr>
+
+						<tr id="options-minOpacity">
+							<td><tt>minOpacity</tt></td>
+							<td>The
+lowest opacity value that a moveable item can be assigned. (Will be the
+opacity of the item farthest from the focus bearing.)</td>
+							<td>float</td>
+							<td><tt>0.4</tt></td>
+						</tr>
+
+						<tr id="options-maxOpacity">
+							<td><tt>maxOpacity</tt></td>
+							<td>The greatest opacity value that a moveable item can be assigned. (Will be the opacity of the item in focus.)</td>
+							<td>float</td>
+							<td><tt>1.0</tt></td>
+						</tr>
+
+						<tr id="options-minScale">
+							<td><tt>minScale</tt></td>
+							<td>The
+lowest percentage of font-size that a moveable item can be assigned.
+(Will be the scale of the item farthest from the focus bearing.)</td>
+							<td>float</td>
+							<td><tt>0.4</tt></td>
+						</tr>
+
+						<tr id="options-maxScale">
+							<td><tt>maxScale</tt></td>
+							<td>The greatest percentage of font-size that a moveable item can be assigned. (Will be the scale of the item in focus.)</td>
+							<td>float</td>
+							<td><tt>1.0</tt></td>
+						</tr>
+
+						<tr id="options-duration">
+							<td><tt>duration</tt></td>
+							<td>The length of time (in milliseconds) that all animations take to complete by default.</td>
+							<td>integer</td>
+							<td><tt>600</tt></td>
+						</tr>
+
+						<tr id="options-btnNext">
+							<td><tt>btnNext</tt></td>
+							<td>A
+jQuery selector of elements that will have a click event assigned to
+them. On click, the Roundabout will move to the next child
+(counterclockwise).</td>
+							<td>string</td>
+							<td><tt>null</tt></td>
+						</tr>
+
+						<tr id="options-btnPrev">
+							<td><tt>btnPrev</tt></td>
+							<td>A
+jQuery selector of elements that will have a click event assigned to
+them. On click, the Roundabout will move to the previous child
+(clockwise).</td>
+							<td>string</td>
+							<td><tt>null</tt></td>
+						</tr>
+
+						<tr id="options-easing">
+							<td><tt>easing</tt></td>
+							<td>The easing method to be used for animations by default. jQuery comes with “linear” and “swing,” although any of the <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing</a> plugin’s values can be used if the easing plugin is included.</td>
+							<td>string</td>
+							<td><tt>'swing'</tt></td>
+						</tr>
+
+						<tr id="options-clickToFocus">
+							<td><tt>clickToFocus</tt></td>
+							<td>When
+an item is not in focus, should it be brought into focus via an
+animation? If true, will disable any click events on elements within
+the moving element that was clicked. Once the element is in focus,
+click events will no longer be blocked.</td>
+							<td>boolean</td>
+							<td><tt>true</tt></td>
+						</tr>
+
+						<tr id="options-focusBearing">
+							<td><tt>focusBearing</tt></td>
+							<td>The bearing at which a moving item’s position must match on the Roundabout to be considered “in focus.”</td>
+							<td>float</td>
+							<td><tt>0.0</tt></td>
+						</tr>
+
+						<tr id="options-shape">
+							<td><tt>shape</tt></td>
+							<td>For use with the <a href="http://fredhq.com/projects/roundabout-shapes">Roundabout Shapes</a> plugin. Sets the shape of the path over which moveable items will travel.</td>
+							<td>string</td>
+							<td><tt>'lazySusan'</tt></td>
+						</tr>
+
+						<tr id="options-debug">
+							<td><tt>debug</tt></td>
+							<td>Changes the HTML within moving elements into a list of information about that element. Helpful for advanced configurations.</td>
+							<td>boolean</td>
+							<td><tt>false</tt></td>
+						</tr>
+
+						<tr id="options-childSelector">
+							<td><tt>childSelector</tt></td>
+							<td>Changes the set of elements Roundabout will look for within the holding element for moving.</td>
+							<td>string</td>
+							<td><tt>'li'</tt></td>
+						</tr>
+
+						<tr id="options-startingChild">
+							<td><tt>startingChild</tt></td>
+							<td>Starts
+a given child at the focus of the Roundabout. This is a zero-based
+number positioned in order of appearance in the HTML file.</td>
+							<td>integer</td>
+							<td><tt>null</tt></td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<h2 id="worth-noting">Things I’ve Found</h2>
+				
+				<ul>
+					<li>
+						When using Roundabout with the 
+						<a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing</a> plugin, 
+						easing methods like <tt>easeOutBounce</tt>, <tt>easeOutElastic</tt> and
+						<tt>easeOutBack</tt> work better if you increase the <tt>duration</tt> time. 
+						Somewhere in the range of 1200–1600 milliseconds always rocks <em>my</em> world.
+					</li>
+					<li>
+						It’s important to remember that as things move around the Roundabout, their 
+						insides are only going to scale if they have dynamic, em-based widths.
+					</li>
+					<li>
+						The greater the difference between <tt>minScale</tt> and <tt>maxScale</tt> (in 
+						concert with <tt>minOpacity</tt> and <tt>maxOpacity</tt>), the more dramatic the 
+						effect.
+					</li>
+				</ul>
+				
+				<!-- sidebar -->
+				<div style="top: 14.9667px;" id="sidebar">
+					<div class="wrap first">
+						<h2 id="toc"><cufon style="width: 48px; height: 23.4px;" alt="Learn" class="cufon cufon-canvas"><canvas style="width: 63px; height: 23px; top: -2px; left: -1px;" height="23" width="63"></canvas><cufontext>Learn</cufontext></cufon></h2>
+						
+						<ul>
+							<li><a href="#requirements">Requirements &amp; Add-Ons</a></li>
+							<li><a href="#demo">See Examples</a></li>
+							<li><a href="#getting-started">Getting Started</a></li>
+							<li><a href="#css">The CSS of it All</a></li>
+							<li><a href="#customize">Customize Roundabout</a></li>
+							<li><a href="#advanced">Advanced Techniques</a></li>
+							<li><a href="#options">Option Reference</a></li>
+						</ul>
+					</div>
+					<div class="wrap">
+						<h2 id="download"><cufon style="width: 82px; height: 23.4px;" alt="Download" class="cufon cufon-canvas"><canvas style="width: 97px; height: 23px; top: -2px; left: -1px;" height="23" width="97"></canvas><cufontext>Download</cufontext></cufon></h2>
+
+						<ul>
+							<li><a href="http://fredhq.com/projects/roundabout/js/jquery.roundabout-1.0.min.js">For Production <small>14kb</small></a></li>
+							<li><a href="http://fredhq.com/projects/roundabout/js/jquery.roundabout-1.0.js">For Development <small>17kb</small></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="jQuery%20Roundabout_files/latest.js"></script>
+		<script type="text/javascript" src="jQuery%20Roundabout_files/jquery.js"></script>
+		<script type="text/javascript" src="jQuery%20Roundabout_files/jquery_002.js"></script>
+		<script type="text/javascript" src="jQuery%20Roundabout_files/jquery_003.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var clickCount = 0;
+				var offset = $('#sidebar').offset();
+				updatePos($('#sidebar'), offset);
+				
+				$(window).scroll(function() {
+					updatePos($('#sidebar'), offset);
+				});
+				
+				$('#example li:not(".roundabout-in-focus")').click(function() {
+					clickCount++;
+
+					if (clickCount == 1) {
+						$('#amazing').html('Amazing, right?').fadeIn('fast');
+					}
+					
+					if (clickCount == 5) {
+						$('#amazing').append('<div class="footnote" style="margin-top: 1em; display: none;">(You know, if you keep reading, users can be<br />having this much fun on <em>your</em> site.)</div>');
+						$('#amazing .footnote').fadeIn('fast');
+					}
+					
+					if (clickCount == 20) {
+						$('#amazing .footnote').fadeOut('fast', function() {
+							$(this).html("Wow, you&rsquo;re really into this thing, eh?").fadeIn('fast');
+						});
+					}
+				});
+				
+				$('#example ul').roundabout({
+					easing: 'easeOutExpo'
+				});
+			});
+			
+			function updatePos(el, offset, doAnimation) {
+				if ($(window).scrollTop() + 16 > offset.top) {
+					$(el).css('top', ($(window).scrollTop() - offset.top + 16) + 'px');
+				} else {
+					$(el).stop().css('top', '0px')
+				}
+			}
+		</script>
+		<script type="text/javascript" src="jQuery%20Roundabout_files/cufon.js"></script>
+		<script type="text/javascript" src="jQuery%20Roundabout_files/TradeGothic.js"></script>
+		<script type="text/javascript">
+			Cufon.replace('h1, #sidebar h2');
+			Cufon.now();
+		</script>
+		<style type="text/css">
+	/* <![CDATA[  */
+	#fhq-footer { 
+		height: 116px; 
+		background-color: #000; 
+		color: #6c6c6c; 
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		line-height: 1.4;
+		border-top: 1px solid #333;
+		clear: both;
+	}
+	#fhq-footer a img { border: none; }
+	#fhq-footer p { width: 230px; }
+	#fhq-footer p a { color: #d13b3b; text-decoration: none; }
+	#fhq-footer-holder { width: 870px; margin: 0 auto; position: relative; }
+	
+	#fhq-footer-side-column { float: right; width: 40%; height: 116px; position: relative; }
+	#fhq-footer-social-media { float: right; list-style: none; margin: 10px 0 16px; padding: 0; }
+	#fhq-footer-social-media li { float: left; margin-left: 15px; }
+	#fhq-footer-social-media li a { 
+		display: block; 
+		width: 29px; 
+		height: 32px; 
+		text-indent: -9999px; 
+		outline: none; 
+		background: transparent url('') scroll no-repeat 0 0;
+	}
+	
+	#fhq-footer-twitter { background-image: url('/assets/img/icons/twitter.gif'); }
+	#fhq-footer-gowalla { background-image: url('/assets/img/icons/gowalla.gif'); }
+	#fhq-footer-linkedin { background-image: url('/assets/img/icons/linkedin.gif'); }
+	#fhq-footer-youtube { background-image: url('/assets/img/icons/youtube.gif'); }
+	#fhq-footer-aim { background-image: url('/assets/img/icons/aim.gif'); }
+	
+	#fhq-footer-nav { float: right; list-style: none; padding: 8px 0 4px; margin: 0; clear: both; }
+	#fhq-footer-nav li { float: left; }
+	
+	#fhq-footer-nav a { 
+		height: 20px; 
+		display: block; 
+		text-indent: -9999px; 
+		outline: none; 
+		float: left; 
+		color: #fff;
+		background: transparent url('/assets/img/footer-sprite.gif') scroll no-repeat 0 0; 
+	}
+	
+	#fhq-footer-nav-about a { width: 42px; background-position: 0 0; }
+	#fhq-footer-nav-about a:hover { background-position: 0 -20px; }
+	
+	#fhq-footer-nav-contact a { width: 51px; background-position: -40px 0; }
+	#fhq-footer-nav-contact a:hover { background-position: -40px -20px; }
+
+	#fhq-footer-nav li span { 
+		display: block;
+		height: 20px;
+		float: right;
+		width: 16px; 
+		background: transparent url('/assets/img/footer-sprite.gif') scroll no-repeat -92px 1px; 
+	}
+	
+	#fhq-footer-man { position: absolute; top: 5px; left: 0; height: 111px; width: 119px; }
+	#fhq-footer-cite { position: absolute; top: 21px; left: 138px; }
+	#fhq-footer-cite img { width: 94px; height: 28px; margin-bottom: 1em; }
+	#fhq-footer-cite p { margin-top: 0; }
+	#fhq-footer-copyright { font-size: 0.75em; float: right; clear: both; font-family: 'Lucida Grande', Verdana, sans-serif; }
+	#fhq-footer-blurb { 
+		position: absolute; 
+		top: -16px;
+		padding: 0 0 7px 0;
+		right: 0px; 
+		display: none;
+		background: transparent url('/assets/img/blurb-spout.gif') scroll no-repeat 100% 100%;
+	}
+	#fhq-footer-blurb span { 
+		background-color: #2a2a2a;
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		padding: .4em .8em;
+		font-size: 12px;
+		color: #ddd;
+		font-family: 'Lucida Grande', Verdana, sans-serif;
+	}
+	#fhq-footer-blurb em { font-style: normal; color: #777; }
+	/* ]]> */
+</style>
+<div id="fhq-footer">
+	<div id="fhq-footer-holder">
+		<div id="fhq-footer-side-column">
+			<ul id="fhq-footer-social-media">
+				<li setright="175" id="fhq-footer-twitter"><a href="http://twitter.com/fredleblanc"><em>@</em>fredleblanc</a></li>
+				<li setright="131" id="fhq-footer-gowalla"><a href="http://gowalla.com/users/fredleblanc"><em>user:</em> fredleblanc</a></li>
+				<li setright="87" id="fhq-footer-linkedin"><a href="http://www.linkedin.com/in/fredleblanc"><em>/in/</em>fredleblanc</a></li>
+				<li setright="43" id="fhq-footer-youtube"><a href="http://www.youtube.com/freddybeanbag"><em>user:</em> freddybeanbag</a></li>
+				<li setright="-1" id="fhq-footer-aim"><a href="aim:goim?screenname=freddybeanbag"><em>screenname:</em> freddybeanbag</a></li>		
+			</ul>
+			
+			<ul id="fhq-footer-nav">
+				<li id="fhq-footer-nav-about"><a href="http://fredhq.com/about">About</a><span></span></li>
+				<li id="fhq-footer-nav-contact"><a href="http://fredhq.com/contact">Contact</a></li>
+			</ul>
+			
+			<div id="fhq-footer-copyright">
+				Copyright © 2009 by Fred LeBlanc. All rights reserved worldwide.
+			</div>
+			
+			<div id="fhq-footer-blurb"><span></span></div>
+		</div>
+		
+		<a href="http://fredhq.com/about"><img src="jQuery%20Roundabout_files/fred.jpg" alt="The Man Himself: Fred LeBlanc" id="fhq-footer-man"></a>
+		<div id="fhq-footer-cite">
+			<a href="http://fredhq.com/about"><img src="jQuery%20Roundabout_files/created-by.gif" alt="Created by Fred LeBlanc"></a>
+			
+			<p>
+				Web developer, writer, photographer, beer-drinker, husband, doodler &amp; <a href="http://fredhq.com/about">more</a>.
+			</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	// <![CDATA[
+	
+	jQuery('#fhq-footer-twitter').attr('setright', '175');
+	jQuery('#fhq-footer-gowalla').attr('setright', '131');
+	jQuery('#fhq-footer-linkedin').attr('setright', '87');
+	jQuery('#fhq-footer-youtube').attr('setright', '43');
+	jQuery('#fhq-footer-aim').attr('setright', '-1');
+	
+	jQuery('#fhq-footer-social-media li').hover(
+		function() { jQuery('#fhq-footer-blurb').show(0).css('right', jQuery(this).attr('setright') + 'px').children('span').html(jQuery(this).children('a').html()); },
+		function() { jQuery('#fhq-footer-blurb').hide(0, function() { jQuery(this).css('right', '0px').children('span').html(''); }); }
+	);
+	// ]]>
+</script>
+<script type="text/javascript">
+// <![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+// ]]>
+</script><script src="jQuery%20Roundabout_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+// <![CDATA[
+try {
+var pageTracker = _gat._getTracker("UA-12086558-1");
+pageTracker._trackPageview();
+} catch(err) {}// ]]>
+</script>	</body></html>

@@ -1,0 +1,219 @@
+html, body {
+	color: #333;
+	font: normal normal normal 13px/1.6 "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #132c67;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-family: Georgia, "Times New Roman", serif;
+	margin: 1em 0 0;
+}
+
+h1 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 3em;
+	margin-top: .8em;
+	margin-bottom: 0;
+	line-height: 1;
+	position: relative;
+}
+
+h1 em {
+	font-style: normal;
+	font-size: .4em;
+	color: rgba(255, 255, 255, .3);
+}
+h2 { font-size: 1.8em; margin-top: 1.2em; }
+h3 {
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	margin-bottom: -.75em;
+	margin-top: 1.6em;
+}
+h4 { font-weight: bold; font-size: 1em; }
+h5 { 
+	color: #8da; 
+	font-style: italic; 
+	margin: 0 0 1em; 
+	font-size: 1.1em; 
+}
+h6 {
+	font-size: 1em;
+	border-bottom: 1px solid rgba(255, 255, 255, .3);
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	padding-bottom: .2em;
+}
+
+a, a:hover {
+	text-decoration: none;
+	color: #479;
+}
+
+p { padding-right: 11em; }
+
+code { 
+	display: block; 
+	padding: .4em 0 .4em 2em; 
+	border: 1px dashed #ccc;
+	border-left: none;
+	margin: 1em -2em 1em -2em;
+	background-color: #fff;
+	position: relative;
+	width: 45%;
+}
+
+code, tt {
+	font-family: Consolas, Monaco, Courier, fixed; 
+	font-size: 0.95em;
+}
+
+tt { 
+	color: #843; 
+	background-color: #ddd; 
+	padding: .1em .2em; 
+	border-radius: .2em;
+	-moz-border-radius: .2em;
+	-webkit-border-radius: .2em;
+	white-space: nowrap;
+}
+
+table { width: 100%; border-collapse: collapse; }
+th { white-space: nowrap; text-align: left; text-transform: lowercase; padding-right: 1em; border-bottom: 1px solid #999; }
+td { padding: .4em 1em .4em 0; vertical-align: top; border-bottom: 1px solid #ddd; }
+
+#prelude { 
+	width: 870px; 
+	margin: 0 auto; 
+	color: #ddd;
+}
+#page { width: 870px; margin: 0 auto 2em; position: relative; }
+.stage { 
+	width: 590px; 
+	padding: 1em 2em;
+	border-radius: .5em;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+}
+#page .stage { background-color: #f3f3f3; }
+h2:first-child { margin-top: 0.2em; }
+#prelude .stage { width: 870px; padding-top: .7em; }
+#prelude small { 
+	color: #69b; 
+	font-size: .9em; 
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif; 
+	font-weight: normal;
+	display: block;
+	position: relative;
+	z-index: 10;
+	margin-left: .1em;
+	margin-bottom: .6em;
+}
+
+.footnote { font-size: 0.8em; color: #888; }
+.copy-and-paste-warning { 
+	background-color: #ffc; 
+	border: 1px solid #cca; 
+	padding: 0 1em; 
+	margin: 0 11em 0 -1em; 
+	border-radius: .5em;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+}
+.copy-and-paste-warning h3 { margin-top: .6em; margin-bottom: 0em; }
+.copy-and-paste-warning p { padding-right: 0; }
+
+.clouds .html-tag, .clouds .css-attribute { color: rgb(96, 96, 96); }
+.clouds .string { color: rgb(93, 144, 205); }
+.clouds .comment { color: rgb(188, 200, 186); }
+.clouds .css-selector, .clouds .storage { color: rgb(197, 39, 39); }
+.clouds .number { color: rgb(70, 166, 9); }
+.clouds .unit { color: rgb(150, 220, 95); }
+.clouds .keyword { color: rgb(175, 149, 111); }
+.clouds .helper { color: rgb(191, 120, 204); }
+.clouds .constant { color: rgb(57, 148, 106); }
+
+#sidebar { 
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	width: 210px;
+	color: #cec;
+}
+#sidebar .wrap { 
+	padding: .6em 1em; 
+	background-color: rgba(255, 255, 255, .3);
+	border-radius: .5em;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	margin-top: 1.2em;
+}
+#sidebar .wrap.first { margin: 0; }
+#sidebar h2 {
+	font-family: Helvetica, Arial, sans-serif;
+	color: #ddd;
+	font-weight: bold;
+	margin-top: 0;
+}
+
+#sidebar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#sidebar a {
+	color: #bdf;
+}
+
+/* example */
+.example {
+	float: right;
+	margin-left: 1em;
+	width: 50%;
+}
+
+.example .show {
+	height: 12em;
+	border: 1px solid #ddd;
+	background-color: #eee;
+	overflow: hidden;
+}
+
+.example .roundabout-holder {
+	list-style: none;
+	height: 10em;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+.example .roundabout-moveable-item {
+	cursor: pointer;
+	width: 3em;
+	height: 3em;
+	border: 1px solid #999;
+	background-color: #fff;
+	text-align: center;
+	line-height: 2.6em;
+	font-size: 24px;
+}
+
+.example .roundabout-in-focus {
+	cursor: auto;
+}
+
+.example .caption {
+	font-size: 0.75em; 
+	color: #555; 
+	text-align: center;
+	margin-left: 1em;
+	padding-top: 1em;
+}
+
+.example .caption .footnote {
+	font-size: 0.8em; 
+	color: #888;
+}

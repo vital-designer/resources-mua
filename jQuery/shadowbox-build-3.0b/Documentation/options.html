@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Shadowbox.js Media Viewer » Options</title>
+
+<link rel="stylesheet" type="text/css" href="options_files/style.css">
+
+</head><body>
+
+<div id="outer-wrapper">
+
+<div id="stripe"></div>
+
+<div id="wrapper">
+
+    <div id="header">
+        <h1><a href="http://www.shadowbox-js.com/index.html">Shadowbox.js</a> - A more powerful and versatile Lightbox</h1>
+        <a href="http://www.shadowbox-js.com/index.html"><img alt="Shadowbox.js" src="options_files/logo.gif"></a>
+        <h2 id="subtitle">by <a href="http://mjijackson.com/">Michael J. I. Jackson</a></h2>
+    </div>
+
+    <ul id="nav">
+        <li><a href="http://www.shadowbox-js.com/index.html">Home</a></li>
+        <li><a href="http://www.shadowbox-js.com/download.html">Download</a></li>
+        <li><a href="http://www.shadowbox-js.com/support.html">Support</a></li>
+        <li><a href="http://www.shadowbox-js.com/usage.html">Usage</a></li>
+        <li><a class="selected">Options</a></li>
+        <li><a href="http://www.shadowbox-js.com/api.html">API</a></li>
+        <li><a href="http://www.shadowbox-js.com/faq.html">FAQ</a></li>
+        <li><a href="http://www.shadowbox-js.com/forum.html">Forum</a></li>
+    </ul>
+
+    <div id="content">
+
+        <p>The table below contains a list of options that may be used to configure Shadowbox.</p>
+
+        <table border="0" cellpadding="0" cellspacing="1">
+            <thead>
+                <tr><th>Option</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><a name="adapter">adapter</a><sup><a href="#requiredinit">†</a></sup></td><td>The <a href="http://www.shadowbox-js.com/support.html#adapters">adapter</a>
+to use with Shadowbox. If not given, Shadowbox will automatically
+determine which adapter to use based on which libraries are already
+loaded on the page. If no other libraries are loaded, will default to
+using the "base" adapter.</td></tr>
+                <tr><td>animate</td><td>Set this <code>false</code> to disable all fancy animations (except <a href="#animatefade">fades</a>). This can improve the overall effect on computers with poor performance. Defaults to <code>true</code>.</td></tr>
+                <tr><td><a name="animatefade">animateFade</a></td><td>Set this <code>false</code> to disable all fading animations. Defaults to <code>true</code>.</td></tr>
+                <tr><td><a name="animsequence">animSequence</a></td><td>The animation sequence to use when resizing Shadowbox. May be either <code>"wh"</code> (width first, then height), <code>"hw"</code> (height first, then width), or <code>"sync"</code> (both simultaneously). Defaults to <code>"sync"</code>.</td></tr>
+                <tr><td>autoplayMovies</td><td>Set this <code>false</code> to disable automatically playing movies when they are loaded. Defaults to <code>true</code>.</td></tr>
+                <tr><td>autoDimensions</td><td>Set this <code>true</code> to automatically set the <a href="#initialheight">initialHeight</a> and <a href="#initialwidth">initialWidth</a> automatically from the configured object's height and width. Defaults to <code>false</code>.</td></tr>
+                <tr><td><a name="continuous">continuous</a></td><td>Set this <code>true</code>
+to enable "continuous" galleries. By default, the galleries will not
+let a user go before the first image or after the last. Enabling this
+feature will let the user go directly to the first image in a gallery
+from the last one by selecting "Next". Defaults to <code>false</code>.</td></tr>
+                <tr><td>counterLimit</td><td>Limits the number of counter links that will be displayed in a "skip" <a href="#countertype">style counter</a>.
+If the actual number of gallery elements is greater than this value,
+the counter will be restrained to the elements immediately preceding
+and following the current element. Defaults to <code>10</code>.</td></tr>
+                <tr><td><a name="countertype">counterType</a></td><td>The mode to use for the gallery counter. May be either <code>"default"</code> or <code>"skip"</code>.
+The default counter is a simple "1 of 5" message. The skip counter
+displays a separate link to each piece in the gallery, enabling quick
+navigation in large galleries. Defaults to <code>"default"</code>.</td></tr>
+                <tr><td>displayCounter</td><td>Set this <code>false</code> to hide the gallery counter. Counters are never displayed on elements that are not part of a gallery. Defaults to <code>true</code>.</td></tr>
+                <tr><td>displayNav</td><td>Set this <code>false</code> to hide the gallery navigation controls. Defaults to <code>true</code>.</td></tr>
+                <tr><td>ease</td><td>An
+easing function to use for all Shadowbox animations. This function
+accepts one parameter that represents the state of the animation (%
+complete) and should return a value on [0, 1] (or close to it) that
+represents the multiple that should be applied to the pixel value.
+Defaults to a cubic polynomial.</td></tr>
+                <tr><td>enableKeys</td><td>Set this false to disable keyboard navigation of galleries. Defaults to <code>true</code>.</td></tr>
+                <tr><td>errors</td><td>An object containing the names and URL's of plugins and their respective download pages.</td></tr>
+                <tr><td>ext<sup><a href="#requiredinit">†</a></sup></td><td>A map of players to their supported extensions. See the <a href="http://www.shadowbox-js.com/source/shadowbox.js">source</a> for further details.</td></tr>
+                <tr><td>fadeDuration</td><td>The duration (in seconds) of the fade animations. Defaults to <code>0.35</code>.</td></tr>
+                <tr><td>flashParams</td><td>A list of parameters (in a JavaScript object) that will be passed to a flash <code>&lt;object&gt;</code>. For a partial list of available parameters, see <a href="http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_12701">this page</a>. Only one parameter is specified by default: <code>bgcolor</code>. Defaults to <code>{bgcolor:"#000000"}</code>.</td></tr>
+                <tr><td>flashVars</td><td>A list of variables (in a JavaScript object) that will be passed to a flash movie as <a href="http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_16417">FlashVars</a>. Defaults to <code>{}</code>.</td></tr>
+                <tr><td>flashVersion</td><td>The minimum Flash version required to play a flash movie (as a string). Defaults to <code>"9.0.0"</code>.</td></tr>
+                <tr><td><a name="handleoversize">handleOversize</a></td><td>The mode to use for handling content that is too large for the viewport. May be one of <code>"none"</code>, <code>"resize"</code>, or <code>"drag"</code> (for images). The <code>"none"</code> setting will not alter the image dimensions, though clipping may occur. Setting this to <code>"resize"</code>
+enables on-the-fly resizing of large content. In this mode, the height
+and width of large, resizable content will be adjusted so that it may
+still be viewed in its entirety while maintaining its original aspect
+ratio. The <code>"drag"</code> mode will display an oversized image at
+its original resolution, but will allow the user to drag it within the
+view to see portions that may be clipped. See the <a href="http://www.shadowbox-js.com/index.html#lgimage-demo">demo</a> for a demonstration of all three modes of operation. Defaults to <code>"resize"</code>.</td></tr>
+                <tr><td><a name="handleunsupported">handleUnsupported</a></td><td>The mode to use for handling unsupported media. May be either <code>"link"</code> or <code>"remove"</code>.
+Media are unsupported when the browser plugin required to display the
+media properly is not installed. The link option will display a
+user-friendly error message with a link to a page where the needed
+plugin can be downloaded. The remove option will simply remove any
+unsupported gallery elements from the gallery before displaying it.
+With this option, if the element is not part of a gallery, the link
+will simply be followed. Defaults to <code>"link"</code>.</td></tr>
+                <tr><td><a name="initialheight">initialHeight</a></td><td>The height of Shadowbox (in pixels) when it first appears on the screen. Defaults to <code>160</code>.</td></tr>
+                <tr><td><a name="initialwidth">initialWidth</a></td><td>The width of Shadowbox (in pixels) when it first appears on the screen. Defaults to <code>320</code>.</td></tr>
+                <tr><td><a name="language">language</a><sup><a href="#requiredinit">†</a></sup></td><td>The two-letter language code (according to <a href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a>)
+that specifies the language that Shadowbox will use to display messages
+to the user. All language files are contained in the languages
+directory and are prefixed with "shadowbox-" followed by the language
+code. Defaults to <code>"en"</code>.</td></tr>
+                <tr><td>modal</td><td>Set this <code>true</code> to prevent mouse clicks on the overlay from closing Shadowbox. Defaults to <code>false</code>.</td></tr>
+                <tr><td>onChange</td><td>A
+hook function that will be fired when Shadowbox changes from one
+gallery element to another. The single argument of this function will
+be the gallery element that is about to be displayed.</td></tr>
+                <tr><td>onClose</td><td>A
+hook function that will be fired when Shadowbox closes. The single
+argument of this function will be the gallery element that was last
+displayed.</td></tr>
+                <tr><td>onFinish</td><td>A hook
+function that will fire when Shadowbox finishes loading the current
+gallery piece (after all animations are complete). The single argument
+of this function will be the current gallery element.</td></tr>
+                <tr><td>onOpen</td><td>A
+hook function that will be fired when Shadowbox opens. The single
+argument of this function will be the current gallery element.</td></tr>
+                <tr><td>overlayColor</td><td>The color to use for the modal overlay (in hex). Defaults to <code>"#000"</code>.</td></tr>
+                <tr><td>overlayOpacity</td><td>The opacity to use for the modal overlay. Defaults to <code>0.8</code>.</td></tr>
+                <tr><td><a name="players">players</a><sup><a href="#requiredinit">†</a></sup></td><td>
+                    <p>Shadowbox supports a wide range of <a href="http://www.shadowbox-js.com/support.html#media">media formats</a>.
+This option specifies an array of player(s) to load for your content.
+The following table describes which players are available:</p>
+                    <table border="0" cellpadding="0" cellspacing="1">
+                        <thead>
+                            <tr><th>Player</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>img</td><td>Used to display various image formats including gif, jpeg, and png. Supports dragging of oversized images via the <a href="#handleoversize">handleOversize</a> configuration option.</td></tr>
+                            <tr><td>swf</td><td>Used to display SWF's (Flash).</td></tr>
+                            <tr><td>flv</td><td>Used to play Flash video via the <a href="http://www.longtailvideo.com/players/jw-flv-player/">JW FLV Player</a>. See <a href="http://www.shadowbox-js.com/faq.html">the FAQ</a> for instructions on how to install and use this player.</td></tr>
+                            <tr><td>qt</td><td>Uses the <a href="http://www.apple.com/quicktime/">QuickTime</a> browser plugin to play content.</td></tr>
+                            <tr><td>wmp</td><td>Uses the <a href="http://www.microsoft.com/windows/windowsmedia/">Windows Media Player</a> browser plugin to play content.</td></tr>
+                            <tr><td>iframe</td><td>Displays
+content in an HTML Iframe. Useful for playing videos from YouTube and
+Google video, as well as displaying exterior web sites.</td></tr>
+                            <tr><td>html</td><td>Injects some pure HTML code into the Shadowbox display. Useful for displaying inline tables and forms.</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Defaults to <code>["img"]</code>.</p>
+                </td></tr>
+                <tr><td>resizeDuration</td><td>The duration (in seconds) of the resizing animations. Defaults to <code>0.35</code>.</td></tr>
+                <tr><td>showOverlay</td><td>Determines whether the overlay will be shown at all. Defaults to <code>true</code>.</td></tr>
+                <tr><td>showMovieControls</td><td>Set this <code>false</code> to disable displaying QuickTime and Windows Media player movie control bars. Defaults to <code>true</code>.</td></tr>
+                <tr><td>skipSetup<sup><a href="#requiredinit">†</a></sup></td><td>Set this <code>true</code> to skip automatically calling <code>Shadowbox.setup</code> when Shadowbox initializes. Defaults to <code>true</code>.</td></tr>
+                <tr><td>slideshowDelay</td><td>A
+delay (in seconds) to use for slideshows. If set to anything other than
+0, this value determines an interval at which Shadowbox will
+automatically proceed to the next piece in the gallery. Defaults to <code>0</code>.</td></tr>
+                <tr><td><a name="usesizzle">useSizzle</a><sup><a href="#requiredinit">†</a></sup></td><td>Set this <code>false</code> to disable loading the <a href="http://sizzlejs.com/">Sizzle.js</a>
+CSS selector library. Note that if you choose not to use Sizzle you may
+not use CSS selectors to set up your links. Defaults to <code>true</code>.</td></tr>
+                <tr><td>viewportPadding</td><td>The amount of padding (in pixels) to maintain around the edge of the browser window. Defaults to <code>20</code>.</td></tr>
+            </tbody>
+        </table>
+
+        <p><sup><a name="requiredinit">†</a></sup> This option may only be used in <code>Shadowbox.init</code> and will not work on a per-link basis</p>
+
+        <p>Any of these options may be passed to <code>Shadowbox.init</code> in a JavaScript object, like this:</p>
+
+<pre><code>&lt;link rel="stylesheet" type="text/css" href="shadowbox.css"&gt;
+&lt;script type="text/javascript" src="shadowbox.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+Shadowbox.init({
+    handleOversize:     "drag",
+    displayNav:         false,
+    handleUnsupported:  "remove",
+    autoplayMovies:     false
+});
+&lt;/script&gt;
+</code></pre>
+
+        <p>If options are passed to <code>Shadowbox.init</code>,
+they will be applied as the default for all instances of Shadowbox on a
+page. However, options may also be used on a per-link basis as
+described on <a href="http://www.shadowbox-js.com/usage.html">the usage page</a>.</p>
+
+    </div>
+
+    <div id="push"></div>
+
+</div>
+
+</div>
+
+<div id="footer">
+    <p>Copyright © 2007-2009 <a href="http://www.mjijackson.com/">Michael J. I. Jackson</a></p>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="options_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-998116-7");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body></html>

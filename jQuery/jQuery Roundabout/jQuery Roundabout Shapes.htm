@@ -1,0 +1,676 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html class="cufon-active cufon-ready" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>jQuery Roundabout Shapes</title>
+		<link href="jQuery%20Roundabout%20Shapes_files/shapes.css" rel="stylesheet" media="all" type="text/css">
+	<style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style></head><body>
+		<style type="text/css" media="all">
+	/* <![CDATA[  */
+	#fhq-header { font-size: 16px; position: relative; top: 0; left: 0; width: 100%; height: 50px; background-color: #000; border-bottom: 1px solid #333; }
+	#fhq-header-holder { width: 870px; margin: 0 auto; }
+	#fhq-header-logo { display: block; width: 50px; height: 50px; border: none; float: left; }
+	#fhq-header-nav { list-style: none; padding: 0; margin: 0; float: right; }
+	#fhq-header-nav li { 
+		float: left; 
+		padding-top: 13px;
+	}
+	#fhq-header-nav a {
+		height: 23px;
+		text-indent: -9999px;
+		display: block;
+		float: left;
+		background: transparent url('/assets/img/sprite.gif') scroll no-repeat 0 0; 
+		color: #fff;
+		outline: none;
+	}
+	
+	#fhq-header-nav-about a { width: 75px; }	
+	#fhq-header-nav-about.active a { background-position: 0 -22px; }	
+	#fhq-header-nav-about a:hover { background-position: 0 -44px; }
+
+	#fhq-header-nav-projects { }	
+	#fhq-header-nav-projects a { width: 61px; background-position: -74px 0; }	
+	#fhq-header-nav-projects.active a { background-position: -74px -22px; }	
+	#fhq-header-nav-projects a:hover { background-position: -74px -44px; }
+
+	#fhq-header-nav-contact { }	
+	#fhq-header-nav-contact a { width: 59px; background-position: -133px 0; }	
+	#fhq-header-nav-contact.active a { background-position: -133px -22px; }	
+	#fhq-header-nav-contact a:hover { background-position: -133px -44px; }
+
+	#fhq-header-nav li span { 
+		display: block;
+		height: 23px;
+		float: right;
+		width: 16px; 
+		background: transparent url('/assets/img/sprite.gif') scroll no-repeat -187px 0; 
+	}
+	/* ]]> */
+</style>
+<div id="fhq-header">
+	<div id="fhq-header-holder">
+		<a href="http://fredhq.com/"><img src="jQuery%20Roundabout%20Shapes_files/logo.gif" alt="fredhq" id="fhq-header-logo"></a>
+		<ul id="fhq-header-nav">
+			<li id="fhq-header-nav-about"><a href="http://fredhq.com/about">About</a><span></span></li>
+			<li id="fhq-header-nav-projects"><a href="http://fredhq.com/">Projects</a><span></span></li>
+			<li id="fhq-header-nav-contact"><a href="http://fredhq.com/contact">Contact</a></li>
+		</ul>
+	</div>
+</div>		<div id="prelude">
+			<div class="stage">
+				<h1><cufon style="width: 181px; height: 39px;" alt="Roundabout " class="cufon cufon-canvas"><canvas style="width: 214px; height: 39px; top: -3px; left: -1px;" height="39" width="214"></canvas><cufontext>Roundabout </cufontext></cufon><cufon style="width: 113px; height: 39px;" alt="Shapes " class="cufon cufon-canvas"><canvas style="width: 146px; height: 39px; top: -3px; left: -1px;" height="39" width="146"></canvas><cufontext>Shapes </cufontext></cufon><em><cufon style="width: 21px; height: 15.6px;" alt="for " class="cufon cufon-canvas"><canvas style="width: 34px; height: 16px; top: -1px; left: -1px;" height="16" width="34"></canvas><cufontext>for </cufontext></cufon><cufon style="width: 42px; height: 15.6px;" alt="jQuery " class="cufon cufon-canvas"><canvas style="width: 55px; height: 16px; top: -1px; left: -1px;" height="16" width="55"></canvas><cufontext>jQuery </cufontext></cufon><cufon style="width: 13px; height: 15.6px;" alt="&amp; " class="cufon cufon-canvas"><canvas style="width: 26px; height: 16px; top: -1px; left: -1px;" height="16" width="26"></canvas><cufontext>&amp; </cufontext></cufon><a href="http://fredhq.com/projects/roundabout"><cufon style="width: 71px; height: 15.6px;" alt="Roundabout" class="cufon cufon-canvas"><canvas style="width: 83px; height: 16px; top: -1px; left: -1px;" height="16" width="83"></canvas><cufontext>Roundabout</cufontext></cufon></a></em></h1>
+				<small>v1.0 by Fred LeBlanc</small>
+			</div>
+		</div>
+		<div id="page">
+			<div class="stage">			
+				<h2 id="overview">Move Elements with <em>Even More</em> Style</h2>
+				
+				<p>
+					Roundabout Shapes provide even more paths along which your 
+					<a href="http://fredhq.com/projects/roundabout">Roundabout</a> can move. The current version of 
+					Roundabout Shapes offers <strong>nine</strong> additional movements.
+				</p>
+				
+				<p>
+					Like its <a href="http://fredhq.com/projects/roundabout">Roundabout</a> companion, Roundabout Shpaes
+					is released under the BSD license. If you’re unsure of what that means exactly,
+					the entire license can be found in the source code. Please, have a ball with it!
+				</p>
+				
+				<p>
+					<strong>Update, December 22:</strong> There were some errors in the example code 
+					blurbs. These have hopefully all been fixed. If you find anything that isn’t
+					working like it should, please <a href="http://fredhq.com/contact">let me know</a>!
+				</p>
+				
+				<h2>Requirements</h2>
+				
+				<p>
+					Requires jQuery 1.2.3+, 1.3.x or 1.4.x* and the 
+					<a href="http://fredhq.com/projects/roundabout">Roundabout</a> plugin by Fred LeBlanc.
+				</p>
+
+				<div class="footnote">
+					*Not yet released, but rest assured! This plugin will work.
+				</div>
+				
+				<h2 id="shapes">More Useful Shapes</h2>
+				
+				<p>
+					Below are all of the ways that your Roundabout will be able to move, each with a
+					demonstration of the shape in action. 
+				</p>
+				
+				<div class="copy-and-paste-warning">
+					<h3>Copy &amp; Paste Warning!</h3>
+					<p>
+						All of the sample code below assumes that your Roundabout is being applied to all
+						<tt>&lt;ul&gt;</tt> on your page. You should update this accordingly.
+					</p>
+				</div>
+				
+				<h3 id="shape-lazySusan">Lazy Susan</h3>
+				
+				<p>
+					The default movement of a <a href="http://fredhq.com/projects/roundabout">Roundabout</a>. This shape
+					is included with the <a href="http://fredhq.com/projects/roundabout">Roundabout plugin</a>, but can be
+					specified like any other shape.
+				</p>
+				
+				<div class="example">
+					<div class="show">
+						<ul childselector="li" debug="false" period="72" shape="lazySusan" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="swing" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder" id="example-lazySusan">
+							<li current-scale="1.0000" startpos="72,72,24" degrees="0" style="position: absolute; left: 82.8px; top: 28.35px; width: 72px; height: 72px; opacity: 1; z-index: 400; font-size: 24px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="72" style="position: absolute; left: -12.45px; top: 35.81px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:D</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="144" style="position: absolute; left: 38.86px; top: 47.89px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:p</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="216" style="position: absolute; left: 165.82px; top: 47.89px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:*</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="288" style="position: absolute; left: 192.98px; top: 35.81px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:B</li>
+						</ul>
+					</div>
+					
+					<div class="caption">
+						<strong>Try it!</strong> The Lazy Susan.
+					</div>
+				</div>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape: <span class="string">'lazySusan'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="shape-waterWheel">Water Wheel</h3>
+				
+				<p>
+					A vertical version of the <a href="#shape-lazySusan">Lazy Susan</a> shape.
+				</p>
+				
+				<div class="example">
+					<div class="show">
+						<ul childselector="li" debug="false" period="72" shape="waterWheel" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="swing" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder" id="example-waterWheel">
+							<li current-scale="1.0000" startpos="72,72,24" degrees="0" style="position: absolute; left: 82.8px; top: 28.35px; width: 72px; height: 72px; opacity: 1; z-index: 400; font-size: 24px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="72" style="position: absolute; left: 90.26px; top: 0.39px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:D</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="144" style="position: absolute; left: 102.34px; top: 26px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:p</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="216" style="position: absolute; left: 102.34px; top: 69.78px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:*</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="288" style="position: absolute; left: 90.26px; top: 71.23px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:B</li>
+						</ul>
+					</div>
+					
+					<div class="caption">
+						<strong>Try it!</strong> The Water Wheel.
+					</div>
+				</div>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape: <span class="string">'waterWheel'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="shape-figure8">Figure 8</h3>
+				
+				<p>
+					Items travel in a horizontal figure-8.
+				</p>
+				
+				<div class="example">
+					<div class="show">
+						<ul childselector="li" debug="false" period="72" shape="figure8" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="swing" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder" id="example-figure8">
+							<li current-scale="1.0000" startpos="72,72,24" degrees="0" style="position: absolute; left: 82.8px; top: 28.35px; width: 72px; height: 72px; opacity: 1; z-index: 400; font-size: 24px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="72" style="position: absolute; left: 26.78px; top: 35.81px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:D</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="144" style="position: absolute; left: 205.05px; top: 47.89px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:p</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="216" style="position: absolute; left: -0.38px; top: 47.89px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:*</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="288" style="position: absolute; left: 153.74px; top: 35.81px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:B</li>
+						</ul>
+					</div>
+					
+					<div class="caption">
+						<strong>Try it!</strong> The Figure 8.
+					</div>
+				</div>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape: <span class="string">'figure8'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="shape-square">Square</h3>
+				
+				<p>
+					Items move in a flat, square shape.
+				</p>
+				
+				<div class="example">
+					<div class="show">
+						<ul childselector="li" debug="false" period="90" shape="square" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="swing" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder" id="example-square">
+							<li current-scale="1.0000" startpos="72,72,24" degrees="0" style="position: absolute; left: 82.8px; top: 28.35px; width: 72px; height: 72px; opacity: 1; z-index: 400; font-size: 24px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+							<li current-scale="0.7000" startpos="72,72,24" degrees="90" style="position: absolute; left: -14.4px; top: 39.15px; width: 50.4px; height: 50.4px; opacity: 0.7; z-index: 250; font-size: 16.8px;" class="roundabout-moveable-item">:D</li>
+							<li current-scale="0.4000" startpos="72,72,24" degrees="180" style="position: absolute; left: 104.4px; top: 49.95px; width: 28.8px; height: 28.8px; opacity: 0.4; z-index: 100; font-size: 9.6px;" class="roundabout-moveable-item">:p</li>
+							<li current-scale="0.7000" startpos="72,72,24" degrees="270" style="position: absolute; left: 201.6px; top: 39.15px; width: 50.4px; height: 50.4px; opacity: 0.7; z-index: 250; font-size: 16.8px;" class="roundabout-moveable-item">:*</li>
+						</ul>
+					</div>
+					
+					<div class="caption">
+						<strong>Try it!</strong> The Square.
+					</div>
+				</div>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape: <span class="string">'square'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="shape-conveyorBeltLeft">Conveyor Belt (Left)</h3>
+				
+				<p>
+					Items travel in a conveyor-belt angled towards the left.
+				</p>
+				
+				<div class="example">
+					<div class="show">
+						<ul childselector="li" debug="false" period="72" shape="conveyorBeltLeft" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="swing" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder" id="example-conveyorBeltLeft">
+							<li current-scale="1.0000" startpos="72,72,24" degrees="0" style="position: absolute; left: -25.2px; top: 28.35px; width: 72px; height: 72px; opacity: 1; z-index: 250; font-size: 24px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="72" style="position: absolute; left: 56.89px; top: 35.81px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 107; font-size: 19.02px;" class="roundabout-moveable-item">:D</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="144" style="position: absolute; left: 189.71px; top: 47.89px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 161; font-size: 10.98px;" class="roundabout-moveable-item">:p</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="216" style="position: absolute; left: 189.71px; top: 47.89px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 338; font-size: 10.98px;" class="roundabout-moveable-item">:*</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="288" style="position: absolute; left: 56.89px; top: 35.81px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 392; font-size: 19.02px;" class="roundabout-moveable-item">:B</li>
+						</ul>
+					</div>
+					
+					<div class="caption">
+						<strong>Try it!</strong> The Conveyor Belt (Left).
+					</div>
+				</div>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape: <span class="string">'conveyorBeltLeft'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="shape-conveyorBeltRight">Conveyor Belt (Right)</h3>
+				
+				<p>
+					Items travel in a conveyor-belt angled towards the right.
+				</p>
+				
+				<div class="example">
+					<div class="show">
+						<ul childselector="li" debug="false" period="72" shape="conveyorBeltRight" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="swing" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder" id="example-conveyorBeltRight">
+							<li current-scale="1.0000" startpos="72,72,24" degrees="0" style="position: absolute; left: 190.8px; top: 28.35px; width: 72px; height: 72px; opacity: 1; z-index: 250; font-size: 24px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="72" style="position: absolute; left: 123.64px; top: 35.81px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 107; font-size: 19.02px;" class="roundabout-moveable-item">:D</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="144" style="position: absolute; left: 14.96px; top: 47.89px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 161; font-size: 10.98px;" class="roundabout-moveable-item">:p</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="216" style="position: absolute; left: 14.96px; top: 47.89px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 338; font-size: 10.98px;" class="roundabout-moveable-item">:*</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="288" style="position: absolute; left: 123.64px; top: 35.81px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 392; font-size: 19.02px;" class="roundabout-moveable-item">:B</li>
+						</ul>
+					</div>
+					
+					<div class="caption">
+						<strong>Try it!</strong> The Conveyor Belt (Right).
+					</div>
+				</div>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape: <span class="string">'conveyorBeltRight'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="shape-diagonalRingLeft">Diagonal Ring (Left)</h3>
+				
+				<p>
+					Similar to the <a href="#shape-lazySusan">Lazy Susan</a>, but the left side is tilted
+					up.
+				</p>
+				
+				<div class="example">
+					<div class="show">
+						<ul childselector="li" debug="false" period="72" shape="diagonalRingLeft" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="swing" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder" id="example-diagonalRingLeft">
+							<li current-scale="1.0000" startpos="72,72,24" degrees="0" style="position: absolute; left: 82.8px; top: 27.83px; width: 72px; height: 72px; opacity: 1; z-index: 400; font-size: 24px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="72" style="position: absolute; left: -12.45px; top: -1.44px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:D</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="144" style="position: absolute; left: 38.86px; top: 25.39px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:p</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="216" style="position: absolute; left: 165.82px; top: 71.23px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:*</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="288" style="position: absolute; left: 192.98px; top: 72.74px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:B</li>
+						</ul>
+					</div>
+					
+					<div class="caption">
+						<strong>Try it!</strong> The Diagonal Ring (Left).
+					</div>
+				</div>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape: <span class="string">'diagonalRingLeft'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="shape-diagonalRingRight">Diagonal Ring (Right)</h3>
+				
+				<p>
+					Similar to the <a href="#shape-lazySusan">Lazy Susan</a>, but the right side is 
+					tilted up.
+				</p>
+				
+				<div class="example">
+					<div class="show">
+						<ul childselector="li" debug="false" period="72" shape="diagonalRingRight" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="swing" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder" id="example-diagonalRingRight">
+							<li current-scale="1.0000" startpos="72,72,24" degrees="0" style="position: absolute; left: 82.8px; top: 28.87px; width: 72px; height: 72px; opacity: 1; z-index: 400; font-size: 24px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="72" style="position: absolute; left: -12.45px; top: 73.06px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:D</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="144" style="position: absolute; left: 38.86px; top: 70.39px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:p</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="216" style="position: absolute; left: 165.82px; top: 24.54px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:*</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="288" style="position: absolute; left: 192.98px; top: -1.11px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:B</li>
+						</ul>
+					</div>
+					
+					<div class="caption">
+						<strong>Try it!</strong> The Diagonal Ring (Right).
+					</div>
+				</div>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape: <span class="string">'diagonalRingRight'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h2 id="other-shapes">More Shapes, More Fun than Useful</h2>
+				
+				<h3 id="shape-theJuggler">The Juggler</h3>
+				
+				<p>
+					Sort of a helix-type path.
+				</p>
+				
+				<div class="example">
+					<div class="show">
+						<ul childselector="li" debug="false" period="72" shape="theJuggler" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="swing" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder" id="example-theJuggler">
+							<li current-scale="1.0000" startpos="72,72,24" degrees="0" style="position: absolute; left: 82.8px; top: 28.35px; width: 72px; height: 72px; opacity: 1; z-index: 400; font-size: 24px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="72" style="position: absolute; left: -12.45px; top: 215.86px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:D</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="144" style="position: absolute; left: 38.86px; top: 5.38px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:p</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="216" style="position: absolute; left: 165.82px; top: 90.39px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 128; font-size: 10.98px;" class="roundabout-moveable-item">:*</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="288" style="position: absolute; left: 192.98px; top: -144.23px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 296; font-size: 19.02px;" class="roundabout-moveable-item">:B</li>
+						</ul>
+					</div>
+					
+					<div class="caption">
+						<strong>Try it!</strong> The Juggler.
+					</div>
+				</div>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape: <span class="string">'theJuggler'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h3 id="shape-theJuggler">Goodbye Cruel World</h3>
+				
+				<p>
+					Towards the end of an animation that will put a moving item into focus, the item
+					drops sharply off the screen. (Or, will jump quickly out of no where, depending on
+					which direction you move.)
+				</p>
+				
+				<div class="example">
+					<div class="show">
+						<ul childselector="li" debug="false" period="72" shape="goodbyeCruelWorld" childinfocus="0" animating="0" focusbearing="0" clicktofocus="true" easing="swing" duration="600" maxscale="1" minscale="0.4" maxopacity="1" minopacity="0.4" maxz="400" minz="100" tilt="0" bearing="0" style="padding: 0px; position: relative; z-index: 100;" class="roundabout-holder" id="example-goodbyeCruelWorld">
+							<li current-scale="1.0000" startpos="72,72,24" degrees="0" style="position: absolute; left: 82.8px; top: 1.99037e+16px; width: 72px; height: 72px; opacity: 1; z-index: 250; font-size: 24px;" class="roundabout-moveable-item roundabout-in-focus">:)</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="72" style="position: absolute; left: -12.45px; top: 37px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 107; font-size: 19.02px;" class="roundabout-moveable-item">:D</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="144" style="position: absolute; left: 38.86px; top: 42.85px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 161; font-size: 10.98px;" class="roundabout-moveable-item">:p</li>
+							<li current-scale="0.4573" startpos="72,72,24" degrees="216" style="position: absolute; left: 165.82px; top: 52.92px; width: 32.93px; height: 32.93px; opacity: 0.46; z-index: 338; font-size: 10.98px;" class="roundabout-moveable-item">:*</li>
+							<li current-scale="0.7927" startpos="72,72,24" degrees="288" style="position: absolute; left: 192.98px; top: 34.62px; width: 57.07px; height: 57.07px; opacity: 0.79; z-index: 392; font-size: 19.02px;" class="roundabout-moveable-item">:B</li>
+						</ul>
+					</div>
+					
+					<div class="caption">
+						<strong>Try it!</strong> The Goodbye Cruel World.
+					</div>
+				</div>
+				
+				<code class="clouds">
+					<span class="html-tag">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// &lt;![CDATA[</span><br>
+					&nbsp;&nbsp;&nbsp;$(<span class="helper">document</span>).ready(<span class="storage">function</span>() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="string">'ul'</span>).roundabout({<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape: <span class="string">'goodbyeCruelWorld'</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;<span class="comment">// ]]&gt;</span><br>
+					<span class="html-tag">&lt;/script&gt;</span>
+				</code>
+				
+				<h2 id="customization">Further Customization</h2>
+				
+				<p>
+					Playing with the <tt>tilt</tt> of your Roundabouts while using these shapes may
+					result in even better shapes for your site. Give it a whirl!
+				</p>
+				
+				<!-- sidebar -->
+				<div style="top: 641.967px;" id="sidebar">
+					<div class="wrap first">
+						<h2 id="download"><cufon style="width: 82px; height: 23.4px;" alt="Download" class="cufon cufon-canvas"><canvas style="width: 97px; height: 23px; top: -2px; left: -1px;" height="23" width="97"></canvas><cufontext>Download</cufontext></cufon></h2>
+						
+						<ul>
+							<li><a href="http://fredhq.com/projects/roundabout-shapes/js/jquery.roundabout-shapes-1.0.min.js">For Production <small>4kb</small></a></li>
+							<li><a href="http://fredhq.com/projects/roundabout-shapes/js/jquery.roundabout-shapes-1.0.js">For Development <small>5kb</small></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="jQuery%20Roundabout%20Shapes_files/latest.js"></script>
+		<script type="text/javascript" src="jQuery%20Roundabout%20Shapes_files/jquery.js"></script>
+		<script type="text/javascript" src="jQuery%20Roundabout%20Shapes_files/jquery_003.js"></script>
+		<script type="text/javascript" src="jQuery%20Roundabout%20Shapes_files/jquery_002.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var offset = $('#sidebar').offset();
+				updatePos($('#sidebar'), offset, false);
+				
+				$(window).scroll(function() {
+					updatePos($('#sidebar'), offset, false);
+				});
+				
+				$('ul#example-lazySusan').roundabout();
+				$('ul#example-waterWheel').roundabout({shape: 'waterWheel'});
+				$('ul#example-figure8').roundabout({shape: 'figure8'});
+				$('ul#example-square').roundabout({shape: 'square'});
+				$('ul#example-conveyorBeltLeft').roundabout({shape: 'conveyorBeltLeft'});
+				$('ul#example-conveyorBeltRight').roundabout({shape: 'conveyorBeltRight'});
+				$('ul#example-diagonalRingLeft').roundabout({shape: 'diagonalRingLeft'});
+				$('ul#example-diagonalRingRight').roundabout({shape: 'diagonalRingRight'});
+				$('ul#example-theJuggler').roundabout({shape: 'theJuggler'});
+				$('ul#example-goodbyeCruelWorld').roundabout({shape: 'goodbyeCruelWorld'});
+			});
+			
+			function updatePos(el, offset, doAnimation) {
+				if ($(window).scrollTop() + 16 > offset.top) {
+					if (doAnimation === true) {
+						$(el).stop().animate({
+							top: ($(window).scrollTop() - offset.top + 16) + 'px'
+						}, {duration: 200, easing: 'easeOutBack'});
+					} else {
+						$(el).css('top', ($(window).scrollTop() - offset.top + 16) + 'px');
+					}					
+				} else {
+					$(el).stop().css('top', '0px')
+				}
+			}
+		</script>
+		<script type="text/javascript" src="jQuery%20Roundabout%20Shapes_files/cufon.js"></script>
+		<script type="text/javascript" src="jQuery%20Roundabout%20Shapes_files/TradeGothic.js"></script>
+		<script type="text/javascript">
+			Cufon.replace('h1, #sidebar h2');
+			Cufon.now();
+		</script>
+		<style type="text/css">
+	/* <![CDATA[  */
+	#fhq-footer { 
+		height: 116px; 
+		background-color: #000; 
+		color: #6c6c6c; 
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		line-height: 1.4;
+		border-top: 1px solid #333;
+		clear: both;
+	}
+	#fhq-footer a img { border: none; }
+	#fhq-footer p { width: 230px; }
+	#fhq-footer p a { color: #d13b3b; text-decoration: none; }
+	#fhq-footer-holder { width: 870px; margin: 0 auto; position: relative; }
+	
+	#fhq-footer-side-column { float: right; width: 40%; height: 116px; position: relative; }
+	#fhq-footer-social-media { float: right; list-style: none; margin: 10px 0 16px; padding: 0; }
+	#fhq-footer-social-media li { float: left; margin-left: 15px; }
+	#fhq-footer-social-media li a { 
+		display: block; 
+		width: 29px; 
+		height: 32px; 
+		text-indent: -9999px; 
+		outline: none; 
+		background: transparent url('') scroll no-repeat 0 0;
+	}
+	
+	#fhq-footer-twitter { background-image: url('/assets/img/icons/twitter.gif'); }
+	#fhq-footer-gowalla { background-image: url('/assets/img/icons/gowalla.gif'); }
+	#fhq-footer-linkedin { background-image: url('/assets/img/icons/linkedin.gif'); }
+	#fhq-footer-youtube { background-image: url('/assets/img/icons/youtube.gif'); }
+	#fhq-footer-aim { background-image: url('/assets/img/icons/aim.gif'); }
+	
+	#fhq-footer-nav { float: right; list-style: none; padding: 8px 0 4px; margin: 0; clear: both; }
+	#fhq-footer-nav li { float: left; }
+	
+	#fhq-footer-nav a { 
+		height: 20px; 
+		display: block; 
+		text-indent: -9999px; 
+		outline: none; 
+		float: left; 
+		color: #fff;
+		background: transparent url('/assets/img/footer-sprite.gif') scroll no-repeat 0 0; 
+	}
+	
+	#fhq-footer-nav-about a { width: 42px; background-position: 0 0; }
+	#fhq-footer-nav-about a:hover { background-position: 0 -20px; }
+	
+	#fhq-footer-nav-contact a { width: 51px; background-position: -40px 0; }
+	#fhq-footer-nav-contact a:hover { background-position: -40px -20px; }
+
+	#fhq-footer-nav li span { 
+		display: block;
+		height: 20px;
+		float: right;
+		width: 16px; 
+		background: transparent url('/assets/img/footer-sprite.gif') scroll no-repeat -92px 1px; 
+	}
+	
+	#fhq-footer-man { position: absolute; top: 5px; left: 0; height: 111px; width: 119px; }
+	#fhq-footer-cite { position: absolute; top: 21px; left: 138px; }
+	#fhq-footer-cite img { width: 94px; height: 28px; margin-bottom: 1em; }
+	#fhq-footer-cite p { margin-top: 0; }
+	#fhq-footer-copyright { font-size: 0.75em; float: right; clear: both; font-family: 'Lucida Grande', Verdana, sans-serif; }
+	#fhq-footer-blurb { 
+		position: absolute; 
+		top: -16px;
+		padding: 0 0 7px 0;
+		right: 0px; 
+		display: none;
+		background: transparent url('/assets/img/blurb-spout.gif') scroll no-repeat 100% 100%;
+	}
+	#fhq-footer-blurb span { 
+		background-color: #2a2a2a;
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		padding: .4em .8em;
+		font-size: 12px;
+		color: #ddd;
+		font-family: 'Lucida Grande', Verdana, sans-serif;
+	}
+	#fhq-footer-blurb em { font-style: normal; color: #777; }
+	/* ]]> */
+</style>
+<div id="fhq-footer">
+	<div id="fhq-footer-holder">
+		<div id="fhq-footer-side-column">
+			<ul id="fhq-footer-social-media">
+				<li setright="175" id="fhq-footer-twitter"><a href="http://twitter.com/fredleblanc"><em>@</em>fredleblanc</a></li>
+				<li setright="131" id="fhq-footer-gowalla"><a href="http://gowalla.com/users/fredleblanc"><em>user:</em> fredleblanc</a></li>
+				<li setright="87" id="fhq-footer-linkedin"><a href="http://www.linkedin.com/in/fredleblanc"><em>/in/</em>fredleblanc</a></li>
+				<li setright="43" id="fhq-footer-youtube"><a href="http://www.youtube.com/freddybeanbag"><em>user:</em> freddybeanbag</a></li>
+				<li setright="-1" id="fhq-footer-aim"><a href="aim:goim?screenname=freddybeanbag"><em>screenname:</em> freddybeanbag</a></li>		
+			</ul>
+			
+			<ul id="fhq-footer-nav">
+				<li id="fhq-footer-nav-about"><a href="http://fredhq.com/about">About</a><span></span></li>
+				<li id="fhq-footer-nav-contact"><a href="http://fredhq.com/contact">Contact</a></li>
+			</ul>
+			
+			<div id="fhq-footer-copyright">
+				Copyright © 2009 by Fred LeBlanc. All rights reserved worldwide.
+			</div>
+			
+			<div id="fhq-footer-blurb"><span></span></div>
+		</div>
+		
+		<a href="http://fredhq.com/about"><img src="jQuery%20Roundabout%20Shapes_files/fred.jpg" alt="The Man Himself: Fred LeBlanc" id="fhq-footer-man"></a>
+		<div id="fhq-footer-cite">
+			<a href="http://fredhq.com/about"><img src="jQuery%20Roundabout%20Shapes_files/created-by.gif" alt="Created by Fred LeBlanc"></a>
+			
+			<p>
+				Web developer, writer, photographer, beer-drinker, husband, doodler &amp; <a href="http://fredhq.com/about">more</a>.
+			</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	// <![CDATA[
+	
+	jQuery('#fhq-footer-twitter').attr('setright', '175');
+	jQuery('#fhq-footer-gowalla').attr('setright', '131');
+	jQuery('#fhq-footer-linkedin').attr('setright', '87');
+	jQuery('#fhq-footer-youtube').attr('setright', '43');
+	jQuery('#fhq-footer-aim').attr('setright', '-1');
+	
+	jQuery('#fhq-footer-social-media li').hover(
+		function() { jQuery('#fhq-footer-blurb').show(0).css('right', jQuery(this).attr('setright') + 'px').children('span').html(jQuery(this).children('a').html()); },
+		function() { jQuery('#fhq-footer-blurb').hide(0, function() { jQuery(this).css('right', '0px').children('span').html(''); }); }
+	);
+	// ]]>
+</script>
+<script type="text/javascript">
+// <![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+// ]]>
+</script><script src="jQuery%20Roundabout%20Shapes_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+// <![CDATA[
+try {
+var pageTracker = _gat._getTracker("UA-12086558-1");
+pageTracker._trackPageview();
+} catch(err) {}// ]]>
+</script>	</body></html>

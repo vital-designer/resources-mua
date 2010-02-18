@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html><head>
+
+	
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Filament Group Lab Example From: jQuery Visualize Plugin: Accessible Charts &amp; Graphs from Table Elements using HTML 5 Canvas</title>	
+		<link rel="shortcut icon" href="http://www.filamentgroup.com/images/favicon2.ico" type="image/x-icon">
+		<link href="a_data/demoPages.css" media="screen" rel="Stylesheet" type="text/css">
+		<link type="text/css" rel="stylesheet" href="a_data/visualize.css">
+		<link type="text/css" rel="stylesheet" href="a_data/demopage.css">
+		<script type="text/javascript" src="a_data/jquery.js"></script>
+		<!--[if IE]><script type="text/javascript" src="excanvas.compiled.js"></script><![endif]-->
+		<script type="text/javascript" src="a_data/visualize.js"></script>
+		<script type="text/javascript">
+		
+			$(function(){
+				$('table').visualize();
+			
+				//hide table
+				$('table').addClass('accessHide');
+				
+				$('.chartConfiguratorThingy')
+					.show()
+					.find('.typeOptions>.fieldGroup>input[type=radio]')
+						.bind('updateDependencies',function(){
+							if($(this).is(':checked')){
+								$(this).next().next(':hidden').slideDown(function(){ $(this).find('input,select').removeAttr('disabled');  });
+							}
+							else{
+								$(this).next().next(':visible').slideUp(function(){ $(this).find('input,select').attr('disabled','disabled'); });
+							}
+						})
+						.trigger('updateDependencies')
+						.click(function(){ $('.typeOptions>.fieldGroup>input[type=radio]').trigger('updateDependencies'); })
+						.end()
+					.bind('click keyup',function(){
+						var chartOptions = {};
+						var formVars = $(this).serialize();
+						$.each(formVars.split('&'),function(){
+							var thisPair = this.split('=');
+							if(thisPair[1]){ 
+								//fix non-string types
+								var thisVal = unescape(thisPair[1]);
+								//bool true
+								if(thisVal == 'true'){ thisVal = true; }
+								//bool false
+								if(thisVal == 'false'){ thisVal = false; }
+								//arrays
+								if(thisPair[0] == 'colors' || thisPair[0] == 'textColors'){
+									thisVal = thisVal.replace(/[\[\]\']/g,'').split(',');
+								}
+								
+								chartOptions[thisPair[0]] = thisVal;
+							}
+						});
+						$('.visualize').remove();
+						$('table').visualize(chartOptions);
+					});	
+				
+			});
+		</script>
+	<script src="jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas_files/a_003" type="text/javascript"></script><script src="index_2_data/a" type="text/javascript"></script>
+</head><body>	
+<style type="text/css">/*for viewing within articles*/body{margin:0;}</style>	<form style="display: block;" class="chartConfiguratorThingy">
+		<h2>Visualize Options:</h2>
+		<fieldset class="typeOptions">
+			<legend>Chart Type Options</legend>
+			
+				<div class="fieldGroup">
+					<input name="type" id="bar" value="bar" checked="checked" type="radio">
+					<label for="bar" class="radio">Bar</label>
+					<div class="dependencies">
+						<div class="fieldGroup">
+							<label for="barMargin">barMargin:</label>
+							<input name="barMargin" id="barMargin" value="1" type="text">
+						</div>
+						<div class="fieldGroup">
+							<label for="barGroupMargin">barGroupMargin:</label>
+							<input name="barGroupMargin" id="barGroupMargin" value="10" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="fieldGroup">
+					<input name="type" id="line" value="line" type="radio">
+					<label for="line" class="radio">Line</label>
+					<div style="display: none;" class="dependencies">
+						<div class="fieldGroup">
+							<label for="lineWeight">lineWeight</label>
+							<input disabled="disabled" name="lineWeight" id="lineWeight" value="4" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="fieldGroup">
+					<input name="type" id="area" value="area" type="radio">
+					<label for="area" class="radio">Area</label>
+					<div style="display: none;" class="dependencies">
+						<div class="fieldGroup">
+							<label for="lineWeight">lineWeight</label>
+							<input disabled="disabled" name="lineWeight" id="lineWeight" value="4" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="fieldGroup">
+					<input name="type" id="pie" value="pie" type="radio">
+					<label for="pie" class="radio">Pie</label>
+					<div style="display: none;" class="dependencies">
+						<div class="fieldGroup">
+							<label for="pieMargin">pieMargin</label>
+							<input disabled="disabled" name="pieMargin" id="pieMargin" value="20" type="text">
+						</div>
+						<div class="fieldGroup">
+							<label for="pieLabelPos">pieLabelPos:</label>
+							<select disabled="disabled" name="pieLabelPos" id="pieLabelPos">
+								<option value="inside">inside</option>
+								<option value="outside">outside</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			
+			
+			<fieldset>
+			<legend>Global Options:</legend>
+			
+			<div class="fieldGroup">
+				<label for="width">Width:</label>
+				<input name="width" id="width" value="" type="text">
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="height">Height:</label>
+				<input name="height" id="height" value="" type="text">
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="appendTitle">appendTitle:</label>
+				<select name="appendTitle" id="appendTitle">
+					<option value="true">True</option>
+					<option value="false">False</option>
+				</select>
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="title">title:</label>
+				<input name="title" id="title" value="" type="text">
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="appendKey">appendKey:</label>
+				<select name="appendKey" id="appendKey">
+					<option value="true">True</option>
+					<option value="false">False</option>
+				</select>
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="colors">colors:</label>
+				<input name="colors" id="colors" value="['#be1e2d','#666699','#92d5ea','#ee8310','#8d10ee','#5a3b16','#26a4ed','#f45a90','#e9e744']" type="text">
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="textColors">textColors:</label>
+				<input name="textColors" id="textColors" value="[]" type="text">
+			</div>
+			
+			<div class="fieldGroup">
+				<label for="parseDirection">parseDirection:</label>
+				<select name="parseDirection" id="parseDirection">
+					<option value="x">x</option>
+					<option value="y">y</option>
+				</select>
+			</div>
+			
+		</fieldset>
+	
+	</form>
+
+
+
+<table class="accessHide">
+	<caption>2009 Individual Sales by Category</caption>
+	<thead>
+		<tr>
+			<td></td>
+			<th>food</th>
+			<th>auto</th>
+			<th>household</th>
+			<th>furniture</th>
+			<th>kitchen</th>
+			<th>bath</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Mary</th>
+			<td>150</td>
+			<td>160</td>
+			<td>40</td>
+			<td>120</td>
+			<td>30</td>
+			<td>70</td>
+		</tr>
+		<tr>
+			<th>Tom</th>
+			<td>3</td>
+			<td>40</td>
+			<td>30</td>
+			<td>45</td>
+			<td>35</td>
+			<td>49</td>
+		</tr>
+		<tr>
+			<th>Brad</th>
+			<td>10</td>
+			<td>180</td>
+			<td>10</td>
+			<td>85</td>
+			<td>25</td>
+			<td>79</td>
+		</tr>
+		<tr>
+			<th>Kate</th>
+			<td>40</td>
+			<td>80</td>
+			<td>90</td>
+			<td>25</td>
+			<td>15</td>
+			<td>119</td>
+		</tr>		
+	</tbody>
+</table><div style="height: 201px; width: 500px;" class="visualize visualize-bar" role="presentation"><ul style="width: 500px; height: 201px;" class="visualize-labels-x"><li style="left: 0px; width: 83.3333px;"><span style="border: medium none ;" class="line"></span><span class="label">food</span></li><li style="left: 83.3333px; width: 83.3333px;"><span class="line"></span><span class="label">auto</span></li><li style="left: 166.667px; width: 83.3333px;"><span class="line"></span><span class="label">household</span></li><li style="left: 250px; width: 83.3333px;"><span class="line"></span><span class="label">furniture</span></li><li style="left: 333.333px; width: 83.3333px;"><span class="line"></span><span class="label">kitchen</span></li><li style="left: 416.667px; width: 83.3333px;"><span class="line"></span><span class="label">bath</span></li></ul><ul style="width: 500px; height: 201px;" class="visualize-labels-y"><li style="bottom: 201px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-top: 0px;">180</span></li><li style="bottom: 167.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">135</span></li><li style="bottom: 134px;"><span class="line"></span><span class="label" style="margin-top: -6px;">108</span></li><li style="bottom: 100.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">81</span></li><li style="bottom: 67px;"><span class="line"></span><span class="label" style="margin-top: -6px;">54</span></li><li style="bottom: 33.5px;"><span class="line"></span><span class="label" style="margin-top: -6px;">27</span></li><li style="bottom: 0px;"><span style="border: medium none ;" class="line"></span><span class="label" style="margin-top: -12px;">0</span></li></ul><canvas style="width: 500px; height: 201px;" width="500" height="201"></canvas><div class="visualize-info"><div class="visualize-title">2009 Individual Sales by Category</div><ul class="visualize-key"><li><span class="visualize-key-color" style="background: rgb(190, 30, 45) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Mary</span></li><li><span class="visualize-key-color" style="background: rgb(102, 102, 153) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Tom</span></li><li><span class="visualize-key-color" style="background: rgb(146, 213, 234) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Brad</span></li><li><span class="visualize-key-color" style="background: rgb(238, 131, 16) none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"></span><span class="visualize-key-label">Kate</span></li></ul></div></div>
+	</body></html>

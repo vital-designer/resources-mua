@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script>
+/*
+*  How to translate text.
+*/
+
+google.load("language", "1");
+
+function translate() {
+
+  var text = document.getElementById("txt").value;
+  var translated = document.getElementById("translation");
+  var lang;
+  
+ for (lang in google.language.Languages) 
+ {
+    var langCode = google.language.Languages[lang];
+    if (google.language.isTranslatable(langCode) && langCode != '') 
+	{
+		  google.language.translate(text, 'en', langCode, function(result) {
+			if (result.translation) {
+			  translated.innerHTML = translated.innerHTML + result.translation  + "<br />";
+			}
+		  });
+	}
+ }	  
+
+}
+
+/**
+* Function : dump()
+* Arguments: The data - array,hash(associative array),object
+*    The level - OPTIONAL
+* Returns  : The textual representation of the array.
+* This function was inspired by the print_r function of PHP.
+* This will accept some data as the argument and return a
+* text that will be a more readable version of the
+* array/hash/object that is given.
+*/
+function dump(arr,level) {
+var dumped_text = "";
+if(!level) level = 0;
+
+//The padding given at the beginning of the line.
+var level_padding = "";
+for(var j=0;j<level+1;j++) level_padding += "    ";
+
+if(typeof(arr) == 'object') { //Array/Hashes/Objects
+ for(var item in arr) {
+  var value = arr[item];
+ 
+  if(typeof(value) == 'object') { //If it is an array,
+   dumped_text += level_padding + "'" + item + "' ...\n";
+   dumped_text += dump(value,level+1);
+  } else {
+   dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+  }
+ }
+} else { //Stings/Chars/Numbers etc.
+ dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
+}
+return dumped_text;
+} 
+
+//google.setOnLoadCallback(result);
+</script>
+</head>
+<body>
+<textarea id="txt" rows="5" cols="48"></textarea>
+<input type="button" onclick="translate();" value="Tranlsate"  />
+<div id="translation"></div>
+
+</body>
+</html>

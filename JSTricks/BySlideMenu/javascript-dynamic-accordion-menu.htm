@@ -1,0 +1,553 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en_US" xmlns="http://www.w3.org/1999/xhtml" lang="en_US"><head>
+
+
+	<title>BySlideMenu : Accordion Menu - Free and Open Source Mootools plugin to create accordion menu</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="BySlideMenu is a Mootools plugin which allow you to easily create an accordion menu, vertical or horizontal, and customizable. Mootools is a javascript framework">
+	<link type="text/css" rel="stylesheet" href="javascript-dynamic-accordion-menu_files/byslidemenu.css" media="all">
+<link type="text/css" rel="stylesheet" href="javascript-dynamic-accordion-menu_files/style.css" media="all">
+	<script type="text/javascript" src="javascript-dynamic-accordion-menu_files/mootools-core.js"></script>
+<script type="text/javascript" src="javascript-dynamic-accordion-menu_files/byslidemenu.js"></script>
+<script type="text/javascript" src="javascript-dynamic-accordion-menu_files/byslidemenu_demo.js"></script>
+</head><body>
+
+<div id="container">
+	<div id="header">
+		<h1><a id="logo" href="http://www.byscripts.info/javascript-dynamic-menus"><span class="by">By</span><span class="scripts">Scripts</span></a></h1>
+	</div>
+	<div id="top_menu">
+		Plugins gratuits pour le framework <strong>JavaScript</strong> <strong><a onclick="window.open(this.href); return false;" href="http://www.mootools.net/">Mootools 1.2</a></strong> |
+		<script type="text/javascript">
+		var a = 'com';
+		var b = '@';
+		var c = 'gmail.';
+		var d = ('byscripts' + b + c + a);
+		document.write('<a href="mailto:' + d + '">' + 'Contact' + '</a>')
+		</script><a href="mailto:byscripts@gmail.com">Contact</a>
+	</div>
+	<div id="change_lang">
+					<img class="icon" alt="" src="javascript-dynamic-accordion-menu_files/fr.png"> <a href="http://www.byscripts.info/scripts/javascript-menu-dynamic">Français</a>			</div>
+	
+	<div id="content">
+		<p class="to_home"><a href="http://www.byscripts.info/javascript-dynamic-menus">&lt;&lt; BACK TO HOME</a></p>
+		<div id="adsense">
+			<script type="text/javascript">
+				<!--
+				google_ad_client = "pub-3308852610912371";
+				/* ByScripts - Top */
+				google_ad_slot = "9652888190";
+				google_ad_width = 728;
+				google_ad_height = 90;
+				//-->
+			</script>
+			<script type="text/javascript" src="javascript-dynamic-accordion-menu_files/show_ads.js"></script><script src="javascript-dynamic-accordion-menu_files/expansion_embed.js"></script><script src="javascript-dynamic-accordion-menu_files/test_domain.js"></script><script>window.google_render_ad();</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="javascript-dynamic-accordion-menu_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" scrolling="no" width="728" frameborder="0" height="90"></iframe></ins></ins>
+		</div>
+		
+<h1><span class="scripts">BySlideMenu</span> - Nice and powerful accordion menu</h1>
+	
+	<h2>What is BySlideMenu?</h2>
+	
+	<div class="desc">BySlideMenu is a <strong>plugin for Mootools</strong> which allow you to easily create a beautiful <strong>accordion menu</strong> (sliding menu) on any element you want (ul/li, div, p ...) using images and/or text.</div>
+	
+	<h2>Features</h2>
+
+	<div class="desc">
+		<ul>
+			<li>Works horizontally or vertically.</li>
+			<li>Automatic size - The container width/height can be adjusted automatically.</li>
+			<li>Menu is expandable by mouseover or by click, as you want.</li>
+			<li>Menu can be pinned or not, by mouseover or click, you choose.</li>
+			<li>A default index can be defined.</li>
+			<li>Can be used with any elements (ul/li, div, p...)</li>
+			<li>Overflow support.</li>
+		</ul>
+	</div>
+	
+	<h2>Usage</h2>
+	
+	<h3>HTML</h3>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"byslidemenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"picture1.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"picture2.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"picture3.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<div class="desc">
+		<p class="note"><strong>Note:</strong> You can use any element you want. Instead of ul / li you can use div / div or div / p ...</p>
+	</div>
+	
+	<h3>Javascript</h3>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> mySlideMenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span>container<span class="sy0">,</span> options<span class="br0">)</span>;</div></li></ol></div>
+	
+	<h4>Container</h4>
+	<div class="desc">The ID of the container to transform into sliding menu.</div>
+	
+	<h4>Options</h4>
+	<table>
+		<thead>
+			<tr>
+				<th>Option</th>
+				<th>Type</th>
+				<th>Default</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>defaultIndex</code></td>
+				<td class="type">int</td>
+				<td class="default">false</td>
+				<td>
+					Index of the element to expand at start. Set to <code>false</code> if none.<br>
+					If you want to expand the third element at start, set <code>defaultIndex</code> to <code>3</code>.				</td>
+			</tr>
+			<tr>
+				<td><code>expandMode</code></td>
+				<td class="type">string</td>
+				<td class="default">"mouseover"</td>
+				<td>
+					<code>"mouseover"</code>: elements will expand on mouse over.<br>
+					<code>"click"</code>: elements will expand on mouse clic.<br>
+					<code>false</code>: elements will not expand by mouse.				</td>
+			</tr>
+			<tr>
+				<td><code>pinMode</code></td>
+				<td class="type">string</td>
+				<td class="default">false</td>
+				<td>
+					<code>"mouseover"</code>: Elements stay opened on mouse over.<br>
+					<code>"click"</code>: Elements stay opened on mouse click.<br>
+					<code>false</code>: Elements don't stay opened.				</td>
+			</tr>
+			<tr>
+				<td><code>vertical</code></td>
+				<td class="type">bool</td>
+				<td class="default">false</td>
+				<td>Set to <code>true</code> to switch in vertical mode.</td>
+			</tr>
+			<tr>
+				<td><code>compressSize</code></td>
+				<td class="type">int</td>
+				<td class="default">40</td>
+				<td>The width (or height, in vertical mode) of the elements when "compressed".</td>
+			</tr>
+			<tr>
+				<td><code>autoSize</code></td>
+				<td class="type">bool</td>
+				<td class="default">true</td>
+				<td>
+					If <code>true</code>, the script will try to detect elements size by checking the first founded image.<br>
+					If <code>false</code>, or if no image is found, the two options below will be used.				</td>
+			</tr>
+			<tr>
+				<td><code>containerWidth</code></td>
+				<td class="type">int</td>
+				<td class="default"></td>
+				<td>Container width. The width of elements will be automatically calculated from container width. If value is set to <code>"full"</code>, then the container width will be its parent's width.</td>
+			</tr>
+			<tr>
+				<td><code>containerHeight</code></td>
+				<td class="type">int</td>
+				<td class="default"></td>
+				<td>Container height. The height of elements will be automatically calculated from container height. If value is set to <code>"full"</code>, then the container height will be its parent's height.</td>
+			</tr>
+			<tr>
+				<td><code>elementWidth</code></td>
+				<td class="type">int</td>
+				<td class="default">320</td>
+				<td>The width of expanded elements. This option will be used if <code>autoSize</code> is set to <code>false</code>, or if no image is found in menu, and if <code>containerWidth</code> is not defined.</td>
+			</tr>
+			<tr>
+				<td><code>elementHeight</code></td>
+				<td class="type">int</td>
+				<td class="default">240</td>
+				<td>The height of expanded elements. This option will be used if <code>autoSize</code> is set to <code>false</code>, or if no image is found in menu, and if <code>containerHeight</code> is not defined.</td>
+			</tr>
+			<tr>
+				<td><code>useOverflow</code></td>
+				<td class="type">bool</td>
+				<td class="default">false</td>
+				<td>If this option is set to <code>true</code>, then overflow will be activated when displaying an element.</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<h4>Public method</h4>
+	<div class="desc">The <code>mySlideMenu.expand(index, setDefault)</code> method can be called to expand the <code>index</code>th element, and pin it if <code>setDefault</code> is <code>true</code>.</div>
+	
+	<h2>Requirements</h2>
+	<div class="desc">
+		<p>BySlideMenu is written for Mootools v1.2</p>
+		<p>It requires these modules (and their dependencies):</p>
+		<ul>
+			<li>Element.Dimensions</li>
+			<li>Element.Event</li>
+			<li>Fx.Tween</li>
+			<li>Fx.Transitions</li>
+		</ul>
+	</div>
+	
+	<h2>Participate</h2>
+	
+	<h3>Donate</h3>
+	<div class="desc">
+		<p>If
+you like this script, and want to participate, you can send some money.
+You can give anything you want by clicking here (and you can give
+nothing by NOT clicking here ^^):</p>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+			<input name="cmd" value="_donations" type="hidden">
+			<input name="business" value="paypal@byscripts.info" type="hidden">
+			<input name="item_name" value="BySlideMenu" type="hidden">
+			<input name="page_style" value="ByScripts" type="hidden">
+			<input name="no_shipping" value="1" type="hidden">
+			<input name="return" value="http://www.byscripts.info/donate/success" type="hidden">
+			<input name="cancel_return" value="http://www.byscripts.info/donate/cancel" type="hidden">
+			<input name="cn" value="Commentaire facultatif" type="hidden">
+			<input name="currency_code" value="EUR" type="hidden">
+			<input name="tax" value="0" type="hidden">
+			<input name="lc" value="FR" type="hidden">
+			<input name="bn" value="PP-DonationsBF" type="hidden">
+			<input src="javascript-dynamic-accordion-menu_files/paypal_en_US.gif" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !" type="image">
+		</form>
+	</div>
+	
+	<h2>Get it!</h2>
+	
+	<div style="text-align: center;">
+		<div id="adsense">
+			<script type="text/javascript">
+				<!--
+				google_ad_client = "pub-3308852610912371";
+				/* ByScripts - Top */
+				google_ad_slot = "9652888190";
+				google_ad_width = 728;
+				google_ad_height = 90;
+				//-->
+			</script>
+			<script type="text/javascript" src="javascript-dynamic-accordion-menu_files/show_ads.js"></script><script>window.google_render_ad();</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="javascript-dynamic-accordion-menu_files/ads_002.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" scrolling="no" width="728" frameborder="0" height="90"></iframe></ins></ins>
+		</div>
+	</div>
+		
+	<h3>How much I need to pay to get it?</h3>
+	<div class="desc">Nothing!
+It's totally free. You can download it, modify it and use it in any
+commercial project as long as you respect the license. It's Open Source
+!</div>
+	
+	<h3>Download</h3>
+	<div class="desc">
+		<ul>
+			<li><a href="http://www.byscripts.info/mootools/download/byslidemenu/1.1">Download BySlideMenu</a> (7.83 KB - Last modification: Mon Apr 20 17:27:41 2009)</li>
+		</ul>
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-3308852610912371";
+		/* ByScripts - Inside */
+		google_ad_slot = "8288876319";
+		google_ad_width = 728;
+		google_ad_height = 15;
+		//-->
+		</script>
+		<script type="text/javascript" src="javascript-dynamic-accordion-menu_files/show_ads.js">
+		</script><script>window.google_render_ad();</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 15px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 15px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame3" marginheight="0" marginwidth="0" name="google_ads_frame" src="javascript-dynamic-accordion-menu_files/ads_003.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" scrolling="no" width="728" frameborder="0" height="15"></iframe></ins></ins>
+	</div>
+	
+	<h3>License</h3>
+	<div class="desc">
+		<p><a href="http://www.byscripts.info/scripts/javascript-dynamic-accordion-menu">BySlideMenu</a> by <a href="http://www.byscripts.info/javascript-dynamic-menus">ByScripts</a> is licensed under a <a onclick="window.open(this.href); return false;" href="http://www.opensource.org/licenses/mit-license.php">Open Source MIT License</a>.</p>
+	</div>
+	
+	<h2>Changelog</h2>
+	
+	<h3>1.1 beta</h3>
+	<div class="desc">
+		<p>+ Possibility to set a container width and/or height, instead of setting the elements width and/or height.</p>
+		<p>+ Possibility to activate overflow on elements, when displayed.</p>
+		<p>* Enhancement of the calculation of the elements width/height. Now taking in account the padding and the border width.</p>
+	</div>
+	
+	<h3>0.9 beta</h3>
+	<div class="desc">
+		<p># First release</p>
+	</div>
+	
+	<h2>Examples</h2>
+	
+	<!-- EXAMPLE 1 START -->
+	<h3>Example 1: Default options</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"byslidemenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"creditcards.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"games.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"computer.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"eiffeltower.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"electronic.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> slideMenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<ul style="padding: 0px; overflow: hidden; position: relative; width: 160px; height: 0px;" class="bsm" id="byslidemenu">
+		<li id="byslidemenu_Elm1" style="position: absolute; height: 0px; width: 0px; left: 0px;" class="first"><img alt="" src="javascript-dynamic-accordion-menu_files/creditcards.jpg"></li>
+		<li id="byslidemenu_Elm2" style="position: absolute; height: 0px; width: 0px; left: 32px;"><img alt="" src="javascript-dynamic-accordion-menu_files/games.jpg"></li>
+		<li id="byslidemenu_Elm3" style="position: absolute; height: 0px; width: 0px; left: 64px;"><img alt="" src="javascript-dynamic-accordion-menu_files/computer.jpg"></li>
+		<li id="byslidemenu_Elm4" style="position: absolute; height: 0px; width: 0px; left: 96px;"><img alt="" src="javascript-dynamic-accordion-menu_files/eiffeltower.jpg"></li>
+		<li id="byslidemenu_Elm5" style="position: absolute; height: 0px; width: 0px; left: 128px;"><img alt="" src="javascript-dynamic-accordion-menu_files/electronic.jpg"></li>
+	</ul>
+	<!-- EXAMPLE 1 END -->
+	
+	
+	<!-- EXAMPLE 2 START -->
+	<h3>Example 2: Same as above, but changing compression width and duration</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"compressmenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"creditcards.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"games.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"computer.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"eiffeltower.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"electronic.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> compressmenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="st0">'compressmenu'</span><span class="sy0">,</span> <span class="br0">{</span></div></li><li class="li2"><div class="de2">	compressSize<span class="sy0">:</span> <span class="nu0">10</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">	duration<span class="sy0">:</span> <span class="nu0">250</span></div></li><li class="li2"><div class="de2"><span class="br0">}</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<ul style="padding: 0px; overflow: hidden; position: relative; width: 40px; height: 0px;" class="bsm" id="compressmenu">
+		<li id="compressmenu_Elm1" style="position: absolute; height: 0px; width: 0px; left: 0px;" class="first"><img alt="" src="javascript-dynamic-accordion-menu_files/creditcards.jpg"></li>
+		<li id="compressmenu_Elm2" style="position: absolute; height: 0px; width: 0px; left: 8px;"><img alt="" src="javascript-dynamic-accordion-menu_files/games.jpg"></li>
+		<li id="compressmenu_Elm3" style="position: absolute; height: 0px; width: 0px; left: 16px;"><img alt="" src="javascript-dynamic-accordion-menu_files/computer.jpg"></li>
+		<li id="compressmenu_Elm4" style="position: absolute; height: 0px; width: 0px; left: 24px;"><img alt="" src="javascript-dynamic-accordion-menu_files/eiffeltower.jpg"></li>
+		<li id="compressmenu_Elm5" style="position: absolute; height: 0px; width: 0px; left: 32px;"><img alt="" src="javascript-dynamic-accordion-menu_files/electronic.jpg"></li>
+	</ul>
+	<!-- EXAMPLE 2 START -->
+	
+	<!-- EXAMPLE 3 START -->
+	<h3>Example 3: Vertical menu</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"verticalmenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"creditcardsV.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"gamesV.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"computerV.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"eiffeltowerV.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"electronicV.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> verticalmenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="st0">'verticalmenu'</span><span class="sy0">,</span> <span class="br0">{</span>vertical<span class="sy0">:</span> <span class="kw2">true</span><span class="br0">}</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<ul style="padding: 0px; overflow: hidden; position: relative; width: 0px; height: 160px;" class="bsm vertical" id="verticalmenu">
+		<li id="verticalmenu_Elm1" style="position: absolute; height: 0px; width: 0px; top: 0px;" class="first"><img alt="" src="javascript-dynamic-accordion-menu_files/creditcardsV.jpg"></li>
+		<li id="verticalmenu_Elm2" style="position: absolute; height: 0px; width: 0px; top: 32px;"><img alt="" src="javascript-dynamic-accordion-menu_files/gamesV.jpg"></li>
+		<li id="verticalmenu_Elm3" style="position: absolute; height: 0px; width: 0px; top: 64px;"><img alt="" src="javascript-dynamic-accordion-menu_files/computerV.jpg"></li>
+		<li id="verticalmenu_Elm4" style="position: absolute; height: 0px; width: 0px; top: 96px;"><img alt="" src="javascript-dynamic-accordion-menu_files/eiffeltowerV.jpg"></li>
+		<li id="verticalmenu_Elm5" style="position: absolute; height: 0px; width: 0px; top: 128px;"><img alt="" src="javascript-dynamic-accordion-menu_files/electronicV.jpg"></li>
+	</ul>
+	<!-- EXAMPLE 3 END -->
+	
+	<!-- EXAMPLE 4 START -->
+	<h3>Example 4: Menu using default index and Bounce transition</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"indexmenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">p</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"creditcards.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">p</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">p</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"games.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">p</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">p</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"computer.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">p</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">p</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"eiffeltower.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">p</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">p</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"electronic.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">p</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> indexmenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="st0">'indexmenu'</span><span class="sy0">,</span> <span class="br0">{</span></div></li><li class="li2"><div class="de2">	defaultIndex<span class="sy0">:</span> <span class="nu0">4</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">	transition<span class="sy0">:</span> Fx.<span class="me1">Transitions</span>.<span class="me1">Bounce</span>.<span class="me1">easeOut</span></div></li><li class="li2"><div class="de2"><span class="br0">}</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<ul style="padding: 0px; overflow: hidden; position: relative; width: 160px; height: 0px;" class="bsm" id="indexmenu">
+		<li id="indexmenu_Elm1" style="position: absolute; height: 0px; width: 0px; left: 0px;" class="first"><img alt="" src="javascript-dynamic-accordion-menu_files/creditcards.jpg"></li>
+		<li id="indexmenu_Elm2" style="position: absolute; height: 0px; width: 0px; left: 40px;"><img alt="" src="javascript-dynamic-accordion-menu_files/games.jpg"></li>
+		<li id="indexmenu_Elm3" style="position: absolute; height: 0px; width: 0px; left: 80px;"><img alt="" src="javascript-dynamic-accordion-menu_files/computer.jpg"></li>
+		<li id="indexmenu_Elm4" style="position: absolute; height: 0px; width: 0px; left: 120px;"><img alt="" src="javascript-dynamic-accordion-menu_files/eiffeltower.jpg"></li>
+		<li id="indexmenu_Elm5" style="position: absolute; height: 0px; width: 0px; left: 120px;"><img alt="" src="javascript-dynamic-accordion-menu_files/electronic.jpg"></li>
+	</ul>
+	<!-- EXAMPLE 4 END -->
+	
+	<!-- EXAMPLE 5 START -->
+	<h3>Example 5: Menu expanded by mouse click</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"expandclickmenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"creditcards.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"games.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"computer.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"eiffeltower.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"electronic.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> expandclickmenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="st0">'expandclickmenu'</span><span class="sy0">,</span> <span class="br0">{</span>expandMode<span class="sy0">:</span> <span class="st0">'click'</span><span class="br0">}</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<ul style="padding: 0px; overflow: hidden; position: relative; width: 160px; height: 0px;" class="bsm" id="expandclickmenu">
+		<li id="expandclickmenu_Elm1" style="position: absolute; height: 0px; width: 0px; left: 0px;" class="first"><img alt="" src="javascript-dynamic-accordion-menu_files/creditcards.jpg"></li>
+		<li id="expandclickmenu_Elm2" style="position: absolute; height: 0px; width: 0px; left: 32px;"><img alt="" src="javascript-dynamic-accordion-menu_files/games.jpg"></li>
+		<li id="expandclickmenu_Elm3" style="position: absolute; height: 0px; width: 0px; left: 64px;"><img alt="" src="javascript-dynamic-accordion-menu_files/computer.jpg"></li>
+		<li id="expandclickmenu_Elm4" style="position: absolute; height: 0px; width: 0px; left: 96px;"><img alt="" src="javascript-dynamic-accordion-menu_files/eiffeltower.jpg"></li>
+		<li id="expandclickmenu_Elm5" style="position: absolute; height: 0px; width: 0px; left: 128px;"><img alt="" src="javascript-dynamic-accordion-menu_files/electronic.jpg"></li>
+	</ul>
+	<!-- EXAMPLE 5 END -->
+	
+	<!-- EXAMPLE 6 START -->
+	<h3>Example 6: Menu pinned by mouse click</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"pinclickmenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"creditcards.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"games.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"computer.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"eiffeltower.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"electronic.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> pinclickmenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="st0">'pinclickmenu'</span><span class="sy0">,</span> <span class="br0">{</span>pinMode<span class="sy0">:</span> <span class="st0">'click'</span><span class="br0">}</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<ul style="padding: 0px; overflow: hidden; position: relative; width: 160px; height: 0px;" class="bsm" id="pinclickmenu">
+		<li id="pinclickmenu_Elm1" style="position: absolute; height: 0px; width: 0px; left: 0px;" class="first"><img alt="" src="javascript-dynamic-accordion-menu_files/creditcards.jpg"></li>
+		<li id="pinclickmenu_Elm2" style="position: absolute; height: 0px; width: 0px; left: 32px;"><img alt="" src="javascript-dynamic-accordion-menu_files/games.jpg"></li>
+		<li id="pinclickmenu_Elm3" style="position: absolute; height: 0px; width: 0px; left: 64px;"><img alt="" src="javascript-dynamic-accordion-menu_files/computer.jpg"></li>
+		<li id="pinclickmenu_Elm4" style="position: absolute; height: 0px; width: 0px; left: 96px;"><img alt="" src="javascript-dynamic-accordion-menu_files/eiffeltower.jpg"></li>
+		<li id="pinclickmenu_Elm5" style="position: absolute; height: 0px; width: 0px; left: 128px;"><img alt="" src="javascript-dynamic-accordion-menu_files/electronic.jpg"></li>
+	</ul>
+	<!-- EXAMPLE 6 END -->
+	
+	<!-- EXAMPLE 7 START -->
+	<h3>Example 7: Menu pinned by mouse over</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"pinovermenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"creditcards.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"games.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"computer.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"eiffeltower.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"electronic.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> pinovermenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="st0">'pinovermenu'</span><span class="sy0">,</span> <span class="br0">{</span>pinMode<span class="sy0">:</span> <span class="st0">'mouseover'</span><span class="br0">}</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<ul style="padding: 0px; overflow: hidden; position: relative; width: 160px; height: 0px;" class="bsm" id="pinovermenu">
+		<li id="pinovermenu_Elm1" style="position: absolute; height: 0px; width: 0px; left: 0px;" class="first"><img alt="" src="javascript-dynamic-accordion-menu_files/creditcards.jpg"></li>
+		<li id="pinovermenu_Elm2" style="position: absolute; height: 0px; width: 0px; left: 32px;"><img alt="" src="javascript-dynamic-accordion-menu_files/games.jpg"></li>
+		<li id="pinovermenu_Elm3" style="position: absolute; height: 0px; width: 0px; left: 64px;"><img alt="" src="javascript-dynamic-accordion-menu_files/computer.jpg"></li>
+		<li id="pinovermenu_Elm4" style="position: absolute; height: 0px; width: 0px; left: 96px;"><img alt="" src="javascript-dynamic-accordion-menu_files/eiffeltower.jpg"></li>
+		<li id="pinovermenu_Elm5" style="position: absolute; height: 0px; width: 0px; left: 128px;"><img alt="" src="javascript-dynamic-accordion-menu_files/electronic.jpg"></li>
+	</ul>
+	<!-- EXAMPLE 7 END -->
+	
+	<!-- EXAMPLE 8 START -->
+	<h3>Example 8: Menu expanded and pinned by mouse click</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"clickmenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"creditcards.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"games.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"computer.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"eiffeltower.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">img</span> <span class="kw3">src</span><span class="sy0">=</span><span class="st0">"electronic.jpg"</span> <span class="sy0">/</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> clickmenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="st0">'clickmenu'</span><span class="sy0">,</span> <span class="br0">{</span></div></li><li class="li2"><div class="de2">	expandMode<span class="sy0">:</span> <span class="st0">'click'</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">	pinMode<span class="sy0">:</span> <span class="st0">'click'</span></div></li><li class="li2"><div class="de2"><span class="br0">}</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<ul style="padding: 0px; overflow: hidden; position: relative; width: 160px; height: 0px;" class="bsm" id="clickmenu">
+		<li id="clickmenu_Elm1" style="position: absolute; height: 0px; width: 0px; left: 0px;" class="first"><img alt="" src="javascript-dynamic-accordion-menu_files/creditcards.jpg"></li>
+		<li id="clickmenu_Elm2" style="position: absolute; height: 0px; width: 0px; left: 32px;"><img alt="" src="javascript-dynamic-accordion-menu_files/games.jpg"></li>
+		<li id="clickmenu_Elm3" style="position: absolute; height: 0px; width: 0px; left: 64px;"><img alt="" src="javascript-dynamic-accordion-menu_files/computer.jpg"></li>
+		<li id="clickmenu_Elm4" style="position: absolute; height: 0px; width: 0px; left: 96px;"><img alt="" src="javascript-dynamic-accordion-menu_files/eiffeltower.jpg"></li>
+		<li id="clickmenu_Elm5" style="position: absolute; height: 0px; width: 0px; left: 128px;"><img alt="" src="javascript-dynamic-accordion-menu_files/electronic.jpg"></li>
+	</ul>
+	<!-- EXAMPLE 8 END -->
+	
+	<!-- EXAMPLE 9 START -->
+	<h3>Example 9: Text menu</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"textmenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 icon1"</span>&gt;</span>Element 1<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg2 icon2"</span>&gt;</span>Element 2<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 icon3"</span>&gt;</span>Element 3<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg2 icon4"</span>&gt;</span>Element 4<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 icon5"</span>&gt;</span>Element 5<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg2 icon6"</span>&gt;</span>Element 6<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 icon7"</span>&gt;</span>Element 7<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg2 icon8"</span>&gt;</span>Element 8<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 icon9"</span>&gt;</span>Element 9<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> textmenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="st0">'textmenu'</span><span class="sy0">,</span> <span class="br0">{</span></div></li><li class="li2"><div class="de2">	defaultIndex<span class="sy0">:</span> <span class="nu0">1</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">	elementHeight<span class="sy0">:</span> <span class="nu0">30</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">	elementWidth<span class="sy0">:</span> <span class="nu0">175</span></div></li><li class="li1"><div class="de1"><span class="br0">}</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<ul style="padding: 0px; overflow: hidden; position: relative; width: 505px; height: 30px;" class="bsm" id="textmenu">
+		<li id="textmenu_Elm1" style="position: absolute; height: 26px; width: 145px; left: 0px;" class="first bg1 icon1">Element 1</li>
+		<li id="textmenu_Elm2" style="position: absolute; height: 26px; width: 145px; left: 185px;" class="bg2 icon2">Element 2</li>
+		<li id="textmenu_Elm3" style="position: absolute; height: 26px; width: 145px; left: 225px;" class="bg1 icon3">Element 3</li>
+		<li id="textmenu_Elm4" style="position: absolute; height: 26px; width: 145px; left: 265px;" class="bg2 icon4">Element 4</li>
+		<li id="textmenu_Elm5" style="position: absolute; height: 26px; width: 145px; left: 305px;" class="bg1 icon5">Element 5</li>
+		<li id="textmenu_Elm6" style="position: absolute; height: 26px; width: 145px; left: 345px;" class="bg2 icon6">Element 6</li>
+		<li id="textmenu_Elm7" style="position: absolute; height: 26px; width: 145px; left: 385px;" class="bg1 icon7">Element 7</li>
+		<li id="textmenu_Elm8" style="position: absolute; height: 26px; width: 145px; left: 425px;" class="bg2 icon8">Element 8</li>
+		<li id="textmenu_Elm9" style="position: absolute; height: 26px; width: 145px; left: 465px;" class="bg1 icon9">Element 9</li>
+	</ul>
+
+	<!-- EXAMPLE 9 END -->
+	
+	<!-- EXAMPLE 10 START -->
+	<h3>Example 10: Vertical text menu with overflow</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"verticaltextmenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 first"</span>&gt;</span></div></li><li class="li1"><div class="de1">        <span class="sc2">&lt;<span class="kw2">h5</span>&gt;</span>Title 1<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">h5</span>&gt;</span></div></li><li class="li2"><div class="de2">        <span class="sc2">&lt;<span class="kw2">p</span>&gt;</span>This is the first content. Don't you think it's great ?<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">p</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg2"</span>&gt;</span></div></li><li class="li1"><div class="de1">        <span class="sc2">&lt;<span class="kw2">h5</span>&gt;</span>Title 2<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">h5</span>&gt;</span></div></li><li class="li2"><div class="de2">        <span class="sc2">&lt;<span class="kw2">p</span>&gt;</span>And now, the second content.<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">p</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1"</span>&gt;</span></div></li><li class="li1"><div class="de1">        <span class="sc2">&lt;<span class="kw2">h5</span>&gt;</span>Title 3<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">h5</span>&gt;</span></div></li><li class="li2"><div class="de2">        <span class="sc2">&lt;<span class="kw2">p</span>&gt;</span>Another one. It may be useful for many things no ?<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">p</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg2"</span>&gt;</span></div></li><li class="li1"><div class="de1">        <span class="sc2">&lt;<span class="kw2">h5</span>&gt;</span>Title 4<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">h5</span>&gt;</span></div></li><li class="li2"><div class="de2">        <span class="sc2">&lt;<span class="kw2">p</span>&gt;</span>And the last one... So, what's your opinion on this script ?<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">p</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li><li class="li2"><div class="de2"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1">verticaltextmenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="st0">'verticaltextmenu'</span><span class="sy0">,</span> <span class="br0">{</span></div></li><li class="li2"><div class="de2">	defaultIndex<span class="sy0">:</span> <span class="nu0">1</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">	vertical<span class="sy0">:</span> <span class="kw2">true</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">	elementHeight<span class="sy0">:</span> <span class="nu0">110</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">	elementWidth<span class="sy0">:</span> <span class="nu0">200</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">	compressSize<span class="sy0">:</span> <span class="nu0">30</span><span class="sy0">,</span></div></li><li class="li1"><div class="de2">	useOverflow<span class="sy0">:</span> <span class="kw2">true</span></div></li><li class="li2"><div class="de1"><span class="br0">}</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<div style="padding: 0px; overflow: hidden; position: relative; width: 200px; height: 220px;" class="vertical" id="verticaltextmenu">
+		<div id="verticaltextmenu_Elm1" style="overflow: auto; position: absolute; height: 130px; width: 200px; top: 0px;" class="bg1 first">
+			<h5>Title 1</h5>
+			<p>This is the first content. Don't you think it's great ?</p>
+		</div>
+		<div id="verticaltextmenu_Elm2" style="position: absolute; height: 130px; width: 200px; top: 130px;" class="bg2">
+			<h5>Title 2</h5>
+			<p>And now, the second content.</p>
+		</div>
+		<div id="verticaltextmenu_Elm3" style="position: absolute; height: 130px; width: 200px; top: 160px;" class="bg1">
+			<h5>Title 3</h5>
+			<p>Another one. It may be useful for many things no ?</p>
+		</div>
+		<div id="verticaltextmenu_Elm4" style="position: absolute; height: 130px; width: 200px; top: 190px;" class="bg2">
+			<h5>Title 4</h5>
+			<p>Et le dernier. Alors, votre opinion sur ce script ? Ce texte est long, et devrait dépasser du cadre. Merci useOverflow.</p>
+		</div>
+	</div>
+	<!-- EXAMPLE 10 END -->
+	
+	<!-- EXAMPLE 11 START -->
+	<h3>Example 11: Act on menu with links</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">style</span><span class="sy0">=</span><span class="st0">"font-size: 16pt;"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">a</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">"javascript:verticaltextmenu.expand(3)"</span>&gt;</span></div></li><li class="li1"><div class="de1">        Display the third element, but don't pin it.<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">a</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span>&gt;&lt;<span class="kw2">a</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">"#"</span> <span class="kw3">onclick</span><span class="sy0">=</span><span class="st0">"verticaltextmenu.expand(4, true); return false;"</span>&gt;</span></div></li><li class="li1"><div class="de1">        Display and pin the fourth element.<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">a</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<h4>Output</h4>
+	<div class="desc">
+		<ul>
+			<li><a href="#" onclick="verticaltextmenu.expand(3); return false;">Display the third element, but don't pin it.</a></li>
+			<li><a href="#" onclick="verticaltextmenu.expand(4, true); return false;">Display and pin the fourth element.</a></li>
+		</ul>
+	</div>
+	<!-- EXAMPLE 11 END -->
+
+	<!-- EXAMPLE 12 START -->
+	<h3>Example 12 : Setting the container width and height</h3>
+	
+	<h4>HTML</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">ul</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">"fullwidthmenu"</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 icon1"</span>&gt;</span>Element 1<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg2 icon2"</span>&gt;</span>Element 2<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 icon3"</span>&gt;</span>Element 3<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg2 icon4"</span>&gt;</span>Element 4<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 icon5"</span>&gt;</span>Element 5<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg2 icon6"</span>&gt;</span>Element 6<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 icon7"</span>&gt;</span>Element 7<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg2 icon8"</span>&gt;</span>Element 8<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li2"><div class="de2">    <span class="sc2">&lt;<span class="kw2">li</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"bg1 icon9"</span>&gt;</span>Element 9<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">li</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">ul</span>&gt;</span></div></li></ol></div>
+
+	<h4>Javascript</h4>
+	<div class="pre"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> fullwidthmenu <span class="sy0">=</span> <span class="kw2">new</span> BySlideMenu<span class="br0">(</span><span class="st0">'fullwidthmenu'</span><span class="sy0">,</span> <span class="br0">{</span></div></li><li class="li2"><div class="de2">	defaultIndex<span class="sy0">:</span> <span class="nu0">1</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">	containerHeight<span class="sy0">:</span> <span class="nu0">30</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">	containerWidth<span class="sy0">:</span> <span class="nu0">"full"</span></div></li><li class="li1"><div class="de1"><span class="br0">}</span><span class="br0">)</span>;</div></li></ol></div>
+
+	<h4>Output</h4>
+	<ul style="padding: 0px; overflow: hidden; position: relative; width: 814px; height: 30px;" class="bsm" id="fullwidthmenu">
+		<li id="fullwidthmenu_Elm1" style="position: absolute; height: 26px; width: 454px; left: 0px;" class="first bg1 icon1">Element 1</li>
+		<li id="fullwidthmenu_Elm2" style="position: absolute; height: 26px; width: 454px; left: 494px;" class="bg2 icon2">Element 2</li>
+		<li id="fullwidthmenu_Elm3" style="position: absolute; height: 26px; width: 454px; left: 534px;" class="bg1 icon3">Element 3</li>
+		<li id="fullwidthmenu_Elm4" style="position: absolute; height: 26px; width: 454px; left: 574px;" class="bg2 icon4">Element 4</li>
+		<li id="fullwidthmenu_Elm5" style="position: absolute; height: 26px; width: 454px; left: 614px;" class="bg1 icon5">Element 5</li>
+		<li id="fullwidthmenu_Elm6" style="position: absolute; height: 26px; width: 454px; left: 654px;" class="bg2 icon6">Element 6</li>
+		<li id="fullwidthmenu_Elm7" style="position: absolute; height: 26px; width: 454px; left: 694px;" class="bg1 icon7">Element 7</li>
+		<li id="fullwidthmenu_Elm8" style="position: absolute; height: 26px; width: 454px; left: 734px;" class="bg2 icon8">Element 8</li>
+		<li id="fullwidthmenu_Elm9" style="position: absolute; height: 26px; width: 454px; left: 774px;" class="bg1 icon9">Element 9</li>
+	</ul>
+
+	<!-- EXAMPLE 12 END -->
+	
+<script type="text/javascript">
+$$('ol').addEvent('dblclick', function(){
+	
+	var div = this.retrieve('div');
+	if(!div)
+	{	
+		div = new Element('div').addEvent('dblclick', function(){
+			this.retrieve('ol').replaces(this);
+		});
+		div.store('ol', this);
+		this.getElements('li').each(function(li){
+			div.adopt(new Element('div', {
+				html: li.get('html')
+			}));
+		});
+		
+		this.store('div', div);
+	}
+	
+	div.replaces(this);
+});
+</script>	</div>
+	<div id="footer">
+		© 2008 - ByScripts.info
+	</div>
+</div>
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="javascript-dynamic-accordion-menu_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var pageTracker = _gat._getTracker("UA-5624737-3");
+	pageTracker._trackPageview();
+</script>
+</body></html>

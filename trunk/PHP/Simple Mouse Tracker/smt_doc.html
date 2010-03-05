@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>(smt) simple mouse tracking : documentation</title>
+  
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Title" content="simple mouse tracking" />
+  <meta name="Title" content="simple mouse tracking" />
+  <meta name="Author" content="Luis Leiva" />
+  <meta name="Robots" content="index, follow" />
+  <meta name="Description" content="simple mouse tracking (smt) is a tracking system to follow and record mouse trajectories in a web page, with the proposal to infere Internet human behaviours." />
+  <meta name="Keywords" content="smt, (smt), mouse, tracking, track, tracker, trail, path, simple, simpler, simplest, web, page, behaviour, behaviours, trend, trends, design" />
+  <meta name="Distribution" content="global" />
+  
+  <style type="text/css">
+  * { margin:0; padding:0; }
+  body { background-color:#EEE; width:80%; margin:auto; font:90% sans-serif; } 
+  #header { background-color:#CCC; padding:1.1em; font-size:200%; color:#FFF; text-align:center; } 
+  #content { background-color:#FFF; padding:1.4em; border-right:1px solid #CCC; border-left:1px solid #CCC; } 
+  #footer { clear:both; font-size:85%; background-color:#CCC; padding:1em 0; margin:0; } 
+  
+  .toc { clear:both; border-top:1px solid #DDD; text-align:right; font-size:130%; margin-top:3em; padding-bottom:3em; } 
+  ul { list-style-type:square; } 
+  ul, ol, p { margin-left:3em; }
+  ul li, ol li { margin:.3em auto; } 
+  ol#toc, ol#chapters { list-style-type:lower-roman; } 
+  ol#toc li { font-size:150%; } 
+  
+  h1, h2 { padding:1em; font-weight:lighter; } 
+  p { color:#555; line-height:160%; margin:1em 3em 0 1em; } 
+  p.lastmodified { text-align:right; } 
+  p.textnote { font-size:80%; margin-top:4em; } 
+  code { font:120% courier; background:#EEE; padding:.1em; }
+  acronym { cursor:help; border-bottom:1x dotted #000; }
+  
+  a:link    { text-decoration:underline; color:#000; } 
+  a:visited { text-decoration:underline; color:#888; }
+  a:hover   { text-decoration:none;      color:#BBB; } 
+  a:active  { text-decoration:none;      color:#AAA; }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="header"><strong>(smt)</strong> simple mouse tracking <strong>documentation</strong></div>
+  
+  <div id="content">
+  
+    <h1>Table Of Contents</h1>
+    
+    <ol id="toc">
+      <li><a href="#intro" title="A little introduction">Introduction</a></li>
+      <li><a href="#quick" title="Default and simple (smt) installation">Quick installation guide</a></li>
+      <li><a href="#pages" title="How to prepare the monitored pages">Preparing the <acronym title="HyperText Markup Language">HTML</acronym> pages</a></li>
+      <li><a href="#server" title="How to set up the server">Server settings</a></li>
+      <li><a href="#paths" title="How to configue paths">Configuring <strong>(smt)</strong></a></li>
+      <li><a href="#tricks" title="Some tricks &amp; tips">Tricks &amp; tips</a></li>
+    </ol>
+    
+    <div class="toc"><a href="#content" title="Table Of Contents">&uarr;</a></div>
+    
+    <ol id="chapters">
+    
+      <!-- 
+      ====================== introduction ============================================
+      -->
+      <li id="intro">
+      
+        <h2>Introduction</h2>
+      
+        <p>
+        This tool has been designed to help administrators and webmasters to make fast usability tests and mainly to analyze the gathered data. 
+        Although in this page the system <strong>(smt)</strong> is introduced like a tool for real time mouse tracking visualization, 
+        its main goal goes beyond: to analyze user behaviour and to infer a visitor profile by means of psychological, 
+        social and statistical relations.
+        </p>
+        
+        <p>
+        Usually webmasters only want to track a certain <acronym title="HyperText Markup Language">HTML</acronym> page, 
+        which is normally the one with the new layout or the most visited one.
+        But sometimes a set of files is required to be tracked. It doesn't matter, 
+        this tool works in each <acronym title="HyperText Markup Language">HTML</acronym> file marked with the needed line of JavaScript code. 
+        See <a href="#pages" title="How to prepare the monitored pages">preparing <acronym title="HyperText Markup Language">HTML</acronym> pages</a> to read more.
+        </p>
+        
+        <div class="toc"><a href="#content" title="Table Of Contents">&uarr;</a></div>
+      
+      </li>
+      
+      <!-- 
+      ====================== quick installation guide  ===============================
+      -->
+      <li id="quick">
+        
+        <h2>Quick installation guide</h2>
+        
+        <ol>
+          <li>
+            Unzip the <strong>(smt)</strong> system in a folder called <code>smt</code> on your server root (<code>/smt</code>).
+          </li>
+          <li>
+            Add this line in the <code>&lt;head&gt;</code> section of any <acronym title="HyperText Markup Language">HTML</acronym> page that you wish to track:
+            <br />
+            <code>&lt;script type="text/javascript" src="/smt/smt_record.js"&gt;&lt;/script&gt;</code>
+          </li>
+          <li>
+            That's all! Navigate to playground folder (<code>/smt/playground</code>) and see how users behave in your site.
+          </li>
+        </ol>
+
+        <p>
+        See next chapters to know more about <strong>(smt)</strong>.
+        </p>
+        
+        <div class="toc"><a href="#content" title="Table Of Contents">&uarr;</a></div>
+      
+      </li>
+      
+      <!-- 
+      ====================== preparing the HTML pages ================================ 
+      -->
+      <li id="pages">
+      
+        <h2>Preparing the <acronym title="HyperText Markup Language">HTML</acronym> pages</h2>
+      
+        <p>
+        You need to add the following line of JavaScript code in each page that you wish to monitore, 
+        in your <code>&lt;head&gt;</code> section: 
+        <code>&lt;script type="text/javascript" src="/smt/smt_record.js"&gt;&lt;/script&gt;</code>,
+        assuming that you have downloaded <strong>(smt)</strong> in a folder called <code>/smt</code> (recommended).
+        You can also put the above-mentioned JavaScript line in your <code>&lt;body&gt;</code> section if you wish.
+        </p>
+        
+        <div class="toc"><a href="#content" title="Table Of Contents">&uarr;</a></div>
+      
+      </li>
+      
+      <!-- 
+      ====================== server settings ========================================= 
+      -->
+      <li id="server">
+      
+        <h2>Server settings</h2>
+        
+        <p>
+        The server must be able to run <acronym title="PHP Hypertext Preprocessor">PHP</acronym> code 
+        (99&#37; of traditional[<a href="#note1" title="Note">1</a>] web servers can), preferably version 5. 
+        When writing this documentation the last <acronym title="PHP Hypertext Preprocessor">PHP</acronym> stable versions were 4.4.7 and 5.2.3.
+        </p>
+        
+        <p> 
+        Your server also needs one (only one) of the following options, to write successfully the <acronym title="HyperText Markup Language">HTML</acronym> logs:
+        </p>
+        <ul>
+          <li><code>allow_url_fopen</code> directive <strong>on</strong>, or</li>
+          <li><code>cURL</code> module <strong>installed</strong></li>
+        </ul>
+        
+        <p>
+        You need to unzip the <strong>(smt)</strong> system in your server root folder (<code>/smt</code>). 
+        Otherwise, you will need to configure manually the <acronym title="PHP Hypertext Preprocessor">PHP</acronym> and JavaScript files provided.
+        Please read <a href="#paths" title="Configuring (smt)">next chapter</a> to achieve this task.
+        </p>
+        
+        <p class="textnote" id="note1">
+        [1] A &#39;traditional web server&#39; means &#39;the one that you pay for a hosting service&#39;. You can also try <strong>(smt)</strong> in your localhost. 
+        Check <a href="http://www.php.net" title="PHP official website">www.php.net</a> for more info.
+        </p>
+        
+        <div class="toc"><a href="#content" title="Table Of Contents">&uarr;</a></div>
+      
+      </li>
+      
+      <!-- 
+      ====================== configuring (smt) ======================================= 
+      -->
+      <li id="paths">
+      
+        <h2>Configuring <strong>(smt)</strong></h2>
+        
+        <p>
+        Maybe you want to install <strong>(smt)</strong> in a different directory that the default one (<code>/smt</code>).
+        For example, let's say you want to use the path <code>/mysubdir/smt</code>:
+        </p>
+        
+        <ol>
+          <li>
+            You must include this line in your monitored <acronym title="HyperText Markup Language">HTML</acronym> page(s):
+            <br />
+            <code>&lt;script type="text/javascript" src="/mysubdir/smt/smt_record.js"&gt;&lt;/script&gt;</code>, 
+          </li>
+          <li>
+            Open <code>smt_config.php</code> and write the JavaScript path (<code>JS_PATH</code>) accordingly to your <strong>(smt)</strong> dir:
+            <br />
+            [line 12] <code>define ('JS_PATH', "/mysubdir/smt");</code>.
+          </li>
+          <li>
+            Open <code>smt_recod.js</code> and write:
+            <br />
+            [line 21] <code>smtPath: "/mysubdir/smt"</code>.
+          </li>
+        </ol>
+        
+        <p>
+        Due to the fact that a copy of your <acronym title="HyperText Markup Language">HTML</acronym> page is created in <code>/smt/logs_html</code> folder, 
+        a <code>&lt;base /&gt;</code> element is automatically included in the <acronym title="HyperText Markup Language">HTML</acronym> head, 
+        for linking correctly path-relative external files (such as <acronym title="Cascading Style Sheets">CSS</acronym> or images) when replaying mouse tracking data.
+        If you have previously included a <code>&lt;base /&gt;</code> element to link your external files, please edit <code>smt_storeData.php</code> and comment line 98 as follows:         
+        <code>//$parse_url = str_replace(HEAD_TAG, $head_fix, $parse_url);</code>
+        </p>
+        
+        <p>
+        <small>disclaimer!</small> By default, <strong>(smt)</strong> works with 
+        <a href="http://en.wikipedia.org/wiki/Sampling_(statistics)">random sampling</a>; that is, some visits are tracked and others not.
+        If you need to track <strong>all</strong> visits, edit line 24 of <code>smt_record.js</code> and write <code>disabled: false</code>.
+        </p>
+        
+        <div class="toc"><a href="#content" title="Table Of Contents">&uarr;</a></div>
+      
+      </li>
+      
+      <!-- 
+      ====================== tricks & tips =========================================== 
+      -->
+      <li id="tricks">
+      
+        <h2>Tricks &amp; Tips</h2>
+        
+        <p>
+        <small>deprecated!</small> <strong>Did you know that the mouse tracking background layer can be customized?</strong>
+        Open the file <code>smt_replay.js</code> and edit the function <code>setBgCanvas</code>, on line 74. 
+        You can change the background color, the layer opacity and add some offsets to its dimensions (both in width and height).
+        </p>
+        
+        <p>
+        <strong>Colors in mouse tracking layer can be customized</strong>. 
+        Just open <code>smt_replay.js</code> and edit the <strong>(smt)</strong> default options. 
+        Color values must be enclosed in quotation marks, and should be hexadecimal following the pattern "#rrggbb" or "#rgb" 
+        (as usual with <acronym title="HyperText Markup Language">HTML</acronym>). 
+        Color names availables in <acronym title="HyperText Markup Language">HTML</acronym> (for instance "maroon") may be used as well.
+        </p>
+        
+        <p>
+        <strong>You can track the mouse activity over Flash animations</strong>. 
+        For each Flash object, the system will set automatically the <code>wmode</code> to <code>transparent</code>, being able to track mouse movements over these embed objects too.
+        </p>
+        
+        <p>
+        <strong>What about tracking an entire site?</strong> 
+        You can track all your site's pages at once if all of them share the same header or footer (a very very common case). 
+        In this case, place <a href="#quick" title="Quick installation guide">the line of JavaScript code</a> on the common header (or footer) and you're done.
+        </p>
+        
+        <div class="toc"><a href="#content" title="Table Of Contents">&uarr;</a></div>
+      
+      </li>
+    
+    </ol><!-- end chapters -->
+  
+  </div><!-- end content -->
+  
+  <div id="footer">
+    <p>This work is licensed under a Creative Commons License.</p>
+    <p>&copy; 2006-2008 Luis Leiva; <a href="http://creativecommons.org/licenses/by/2.5/" title="This work is licensed under a Creative Commons License" rel="external">some rights reserved</a>.</p>
+    <p>This page is <acronym title="eXtensible HyperText Markup Language">XHTML</acronym> and <acronym title="Cascading Style Sheets">CSS</acronym> valid.</p>
+  
+    <p class="lastmodified">
+    $ Last modified: 2009/15/06 13:21:11 $
+    </p>
+  </div>
+
+</body>
+</html>

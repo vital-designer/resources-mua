@@ -1,0 +1,1689 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>How to Syndicate Content Without Utilizing a News Feed - Nettuts+</title>
+<link rel="stylesheet" href="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/print.css" type="text/css" media="print">
+
+<link rel="shortcut icon" href="http://net.tutsplus.com/wp-content/themes/tuts_theme/images/favicon.ico">
+
+<link rel="stylesheet" href="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/switcher.css" type="text/css" media="screen">
+<script type="text/javascript" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/jquery.js"></script>
+
+<script type="text/javascript" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/lazyload.js"></script>
+<script type="text/javascript">
+$(function() {
+  $(".tutorial_image img").lazyload({
+    placeholder : "http://net.tutsplus.com/wp-content/themes/tuts_theme/images/box.gif",
+    threshold : 200
+  });
+  $(".exerpt img").lazyload({
+    placeholder : "http://net.tutsplus.com/wp-content/themes/tuts_theme/images/box.gif",
+    threshold : 200
+  });
+  $(".comment_author img").lazyload({
+    placeholder : "http://net.tutsplus.com/wp-content/themes/tuts_theme/images/box.gif",
+    threshold : 200
+  });
+});
+</script>
+
+<script type="text/javascript" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/switcher.js"></script>
+<script type="text/javascript" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comments.js"></script>
+
+<!--[if IE]>
+<link rel="stylesheet" href="http://net.tutsplus.com/wp-content/themes/tuts_theme/css/ie.css" type="text/css" media="screen" />
+<![endif]-->
+
+<!--[if lt IE 7.]>
+<link rel="stylesheet" href="http://net.tutsplus.com/wp-content/themes/tuts_theme/css/ie6.css" type="text/css" media="screen" />
+<script type="text/javascript" src="http://net.tutsplus.com/wp-content/themes/tuts_theme/js/ie6.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="Nettuts+ RSS Feed" href="http://net.tutsplus.com/feed/">
+<link rel="pingback" href="http://net.tutsplus.com/xmlrpc.php">
+
+<link rel="alternate" type="application/rss+xml" title="Nettuts+ » How to Syndicate Content Without Utilizing a News Feed Comments Feed" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/feed/">
+<script type="text/javascript" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://net.tutsplus.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://net.tutsplus.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Nettuts+" href="http://net.tutsplus.com/">
+<link rel="start" title="Launch!" href="http://net.tutsplus.com/articles/news/launch/">
+<link rel="prev" title="Secure Your Forms With Form Keys" href="http://net.tutsplus.com/tutorials/php/secure-your-forms-with-form-keys/">
+<link rel="next" title="24 JavaScript Best Practices for Beginners" href="http://net.tutsplus.com/tutorials/javascript-ajax/24-javascript-best-practices-for-beginners/">
+
+<!-- Start Valen SEO -->
+<meta name="description" content="Many websites offer syndication formats such as RSS, JSON, or XML based services to allow for easy content delivery. But what happens when a website">
+<meta name="keywords" content="php,nbsp,content,nbsp nbsp,lt,src,jquery,function,load,lt script">
+<!-- End Valen SEO -->
+
+<script type="text/javascript" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/swfobject.js"></script>
+<style type="text/css" media="screen">.infoLeft{ width:140px; } #wpUserLinks_form label { display:block; } #wpUserLinks_form { text-align:left; } .req { color:red; } </style><link rel="alternate" type="application/rss+xml" title="" href="http://feedproxy.google.com/NettutsUserLinkFeed">
+</head><body>
+<div id="header_wrap">
+<!-- begin header -->
+<div id="header"> 
+  <img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/header_gradient.jpg" alt="" class="gradient">
+  <a href="http://net.tutsplus.com/"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/logo.gif" alt="Logo" class="logo"></a>
+
+  <div id="switcher">
+    <h6 id="switcher-trigger"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/Button_NETTUTS.png" alt=""></h6>
+    <div id="links">
+      <div id="first">
+        <table>
+        	<tbody><tr>
+            <td class="alt"><a href="http://tutsplus.com/">Tuts+</a></td>
+            <td><a href="http://tutsplus.com/">Tutorials &amp; Resources</a></td>
+          </tr>
+          <tr>
+            <td class="alt"><a href="http://psd.tutsplus.com/">Psdtuts+</a></td>
+            <td><a href="http://psd.tutsplus.com/">Photoshop &amp; Graphics</a></td>
+          </tr>
+          <tr>
+            <td class="alt"><a href="http://net.tutsplus.com/">Nettuts+</a></td>
+            <td><a href="http://net.tutsplus.com/">Web Design &amp; Development</a></td>
+          </tr>
+          <tr>
+            <td class="alt"><a href="http://vector.tutsplus.com/">Vectortuts+</a></td>
+            <td><a href="http://vector.tutsplus.com/">Vectors &amp; Illustration</a></td>
+          </tr>
+          <tr>
+            <td class="alt"><a href="http://audio.tutsplus.com/">Audiotuts+</a></td>
+            <td><a href="http://audio.tutsplus.com/">Music &amp; Sound</a></td>
+          </tr>         
+          <tr>
+            <td class="alt"><a href="http://ae.tutsplus.com/">Aetuts+</a></td>
+            <td><a href="http://ae.tutsplus.com/">AfterEffects &amp; Motion</a></td>
+          </tr>
+          <tr>
+            <td class="alt"><a href="http://flash.tutsplus.com/">Flashtuts+</a></td>
+            <td><a href="http://flash.tutsplus.com/">Flash Tutorials</a></td>
+          </tr>
+          <tr>
+            <td class="alt"><a href="http://cg.tutsplus.com/">Cgtuts+</a></td>
+            <td><a href="http://cg.tutsplus.com/">Computer Graphics</a></td>
+          </tr>
+        </tbody></table>
+      </div>
+      <div id="second">
+      
+      	<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/envato_marketplace.gif" alt="Envato Marketplaces" style="margin: 0pt auto 10px; display: block;">
+        <table>
+          <tbody><tr>
+            <td class="alt"><a href="http://flashden.net/">FlashDen</a></td>
+            <td><a href="http://flashden.net/">Flash Marketplace</a></td>
+          </tr>
+          <tr>
+            <td class="alt"><a href="http://themeforest.net/">ThemeForest</a></td>
+            <td><a href="http://themeforest.net/">Web &amp; CMS Themes</a></td>
+          </tr>         
+          <tr>
+          	<td class="alt"><a href="http://graphicriver.net/">GraphicRiver</a></td>
+            <td><a href="http://graphicriver.net/">Graphics, Vectors &amp; Icons</a></td>
+		 			</tr>
+          <tr>
+          	<td class="alt"><a href="http://videohive.net/">VideoHive</a></td>
+            <td><a href="http://videohive.net/">Motion Graphics &amp; Projects</a></td>
+		 			</tr>
+          <tr>
+            <td class="alt"><a href="http://audiojungle.net/">AudioJungle</a></td>
+            <td><a href="http://audiojungle.net/">Loops &amp; Effects</a></td>
+          </tr>       
+		 		</tbody></table>
+		 		
+		 		<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/envato_sites.gif" alt="Envato Sites" style="margin: 10px auto; display: block;">
+		 		<table>
+          <tbody><tr>
+            <td class="alt"><a href="http://freelanceswitch.com/">FreelanceSw</a></td>
+            <td><a href="http://freelanceswitch.com/">Freelance Jobs &amp; Community</a></td>
+          </tr>
+          <tr>
+            <td class="alt"><a href="http://rockablepress.com/">Rockable</a></td>
+            <td><a href="http://rockablepress.com/">Books &amp; How-To</a></td>
+          </tr>
+          <tr>
+            <td class="alt"><a href="http://creattica.com/">Creattica</a></td>
+            <td><a href="http://creattica.com/">Design Community</a></td>
+          </tr>
+          <tr>
+	    			<td class="alt"><a href="http://mac.appstorm.net/">Mac.AppStorm</a></td>
+	    			<td><a href="http://mac.appstorm.net/">Mac Apps</a></td>
+	  			</tr>
+	  			<tr>
+	    			<td class="alt"><a href="http://mac.appstorm.net/">Web.AppStorm</a></td>
+	    			<td><a href="http://mac.appstorm.net/">Web Apps</a></td>
+	  			</tr>
+	  			<tr>
+	    			<td class="alt"><a href="http://mac.appstorm.net/">Air.AppStorm</a></td>
+	    			<td><a href="http://mac.appstorm.net/">Adobe Air Apps</a></td>
+	  			</tr>
+          <tr>
+            <td class="alt"><a href="http://www.envato.com/">Envato</a></td>
+            <td><a href="http://www.envato.com/">About Us</a></td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+    <!-- #lists -->
+  </div>
+  <!-- #switcher -->
+  
+  <div id="localize_head">
+    <h6 id="localize_head_trigger"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/english.png" alt=""></h6>
+    <div id="localize">
+      <div>
+        <table>
+          <tbody><tr>
+            <td>More Coming Soon!</td>
+          </tr>
+        </tbody></table>
+      </div>
+    </div>
+    <!-- #lists -->
+  </div>
+  <!-- #localize_head -->
+  
+  <!-- Search -->
+  <form action="http://net.tutsplus.com/" id="searchForm" method="get">
+    <fieldset>
+    <input id="search_term" name="s" value="SEARCH NETTUTS" onblur="if(this.value.length == 0) this.value='SEARCH NETTUTS';" onclick="if(this.value == 'SEARCH NETTUTS') this.value='';" type="text">
+    <input class="submit_button" value="Search" type="submit">
+    </fieldset>
+  </form>
+  
+  <div id="AdobeBanner">
+  <script type="text/javascript">
+Vertical1240469 = false;
+ShowAdHereBanner1240469 = false;
+RepeatAll1240469 = false;
+NoFollowAll1240469 = false;
+BannerStyles1240469 = new Array(
+    "a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;}",
+    "img{border:0;clear:right;}",
+    "a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}",
+    "a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
+);
+document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1240469/1240469.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/1240469.txt" type="text/javascript"></script><div id="bsaz_1240469" class="adblock"><style type="text/css">div#bsaz_1240469.adblock {width:100%;display:block;} div#bsaz_1240469.adblock a{width:768px;} div#bsaz_1240469.adblock a img{padding:0;} div#bsaz_1240469.adblock a em{font-style:normal;} div#bsaz_1240469.adblock a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;} div#bsaz_1240469.adblock img{border:0;clear:right;} div#bsaz_1240469.adblock a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;} div#bsaz_1240469.adblock a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;} div#bsaz_1240469.adblock a.adhere{width:768px;height:90px;line-height:720%;} html>body div#bsaz_1240469.adblock a.adhere{width:766px;height:88px;} div#bsaz_1240469.adblock img.s{height:0;width:0;}</style></div>
+  </div>
+
+</div>
+<!-- end header -->
+</div>
+<!-- begin navigation -->
+<div id="navigation_wrap">
+<div id="navigation">
+  <ul id="main_nav">
+    <li><a href="http://net.tutsplus.com/">Home</a></li>
+    <li class="current_page_item"><a href="http://net.tutsplus.com/category/tutorials/">Tutorials</a></li>
+    <li><a href="http://net.tutsplus.com/category/articles/">Articles</a></li>
+    <li><a href="http://net.tutsplus.com/category/freebies/">Freebies</a></li>
+    <li><a href="http://net.tutsplus.com/category/videos/">Videos</a></li>
+    <li><a href="http://net.tutsplus.com/about">About</a></li>
+  </ul>
+  <ul id="navigation_rss">
+    <li>Subscribe By</li>
+    <li><a href="http://feeds.feedburner.com/nettuts">RSS</a> | </li>
+    <li><a href="http://feedburner.google.com/fb/a/mailverify?uri=nettuts">Email</a> | </li>
+    <li><a href="http://net.tutsplus.com/about/rss-feeds/">Other</a></li>
+  </ul>
+  <a href="http://feeds.feedburner.com/nettuts"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/navigation_rss.png" alt="RSS" class="navigation_rss_icon" width="59" height="45"></a> 
+</div>
+<!-- end navigation -->
+<div id="bc_extended"></div>
+</div>
+<!-- begin page wrap -->
+
+<div id="page_wrap">
+  <!-- begin page -->
+  <div id="page" class="clearfix">
+   <div id="content_wrap">
+    <div id="breadcrumb">
+	<ul class="crumb">
+	  <li><a href="http://net.tutsplus.com/">Home</a>&nbsp;&nbsp;\&nbsp;</li>
+<!-- Breadcrumb NavXT 3.3.0 -->
+<li><a title="Go to the Tutorials category archives." href="http://net.tutsplus.com/category/tutorials/">Tutorials</a></li>&nbsp;&nbsp;\&nbsp;&nbsp;<li><a title="Go to the PHP category archives." href="http://net.tutsplus.com/category/tutorials/php/">PHP</a></li>&nbsp;&nbsp;\&nbsp;&nbsp;<li>How to Syndicate Content…</li>    </ul>
+        	            <ul id="categories">
+              <li><span><a href="#" class="arrow">Categories</a></span>
+                <ul>
+                	<li class="cat-item cat-item-286"><a href="http://net.tutsplus.com/category/tutorials/design-tutorials/" title="View all posts filed under Design">Design</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://net.tutsplus.com/category/tutorials/html-css-techniques/" title="View all posts filed under HTML &amp; CSS">HTML &amp; CSS</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://net.tutsplus.com/category/tutorials/javascript-ajax/" title="View all posts filed under Javascript &amp; AJAX">Javascript &amp; AJAX</a>
+</li>
+	<li class="cat-item cat-item-153"><a href="http://net.tutsplus.com/category/tutorials/other/" title="View all posts filed under Other">Other</a>
+</li>
+	<li class="cat-item cat-item-41"><a href="http://net.tutsplus.com/category/tutorials/php/" title="View all posts filed under PHP">PHP</a>
+</li>
+	<li class="cat-item cat-item-124"><a href="http://net.tutsplus.com/category/tutorials/ruby/" title="View all posts filed under Ruby">Ruby</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://net.tutsplus.com/category/tutorials/site-builds/" title="View all posts filed under Site Builds">Site Builds</a>
+</li>
+	<li class="cat-item cat-item-29"><a href="http://net.tutsplus.com/category/tutorials/tools-and-tips/" title="View all posts filed under Tools &amp; Tips">Tools &amp; Tips</a>
+</li>
+	<li class="cat-item cat-item-35"><a href="http://net.tutsplus.com/category/tutorials/wordpress/" title="View all posts filed under Wordpress">Wordpress</a>
+</li>
+                </ul>
+              </li>
+            </ul>
+                 </div>
+	
+    <div id="content">
+    <div id="entry">
+	  	  <div class="exerpt" id="post-5381">
+	    <img original="http://nettuts.s3.amazonaws.com/349_syndicate/200x200.png" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/200x200.png" alt="Syndicate Content from Sites without a Newsfeed (Using JQuery + PHP)">	    <h1>How to Syndicate Content Without Utilizing a News Feed</h1>
+	    <small>Jun 15th in <a href="http://net.tutsplus.com/category/tutorials/php/" title="View all posts in PHP" rel="category tag">PHP</a>		 by <a href="http://net.tutsplus.com/author/marcloney/" title="Posts by Marc Loney">Marc Loney</a></small>
+                   <div class="text">
+	      <p>Many
+websites offer syndication formats such as RSS, JSON, or XML based
+services to allow for easy content delivery. But what happens when a
+website doesn’t offer one of these services? How do you syndicate
+content from a website that doesn’t offer a news feed? This is what I
+set out to solve. </p>
+	
+	    
+           		
+	    </div>
+        <div class="clear"></div>
+	  </div>
+            <div id="about_author" class="clearfix"> 
+	  <img alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/4da9ef11435fd03f72f9caea438c88a7.jpg" class="avatar avatar-80 photo" width="80" height="80">              <div class="author_text">
+          <h4>Author: <a href="http://culturalmusings.wordpress.com/" title="Visit Marc Loney’s website" rel="external">Marc Loney</a></h4>
+                    <p>Marc
+Loney is a web developer working from Perth, Western Australia. He
+enjoys developing online applications using new web technologies and
+enjoys pondering on how far these technologies can be pushed.</p>
+                    
+        </div>
+        <div class="clear"></div>
+      </div>
+            
+<div class="tutorial_image">
+<a href="http://nettuts.s3.amazonaws.com/349_syndicate/source.zip"><img original="http://nettuts.com/wp-content/themes/nettuts/site_images/button_src_nm.jpg" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/button_src_nm.jpg"></a>
+</div>
+
+<p> I received a project lately from a client with an outline and brief
+of the website and the objectives they wish to accomplish. Along with
+this brief were notes indicating they were a real estate company and
+regularly posted property to a well known real estate website and
+wished to be able syndicate their content on this external site onto
+their own website without having to update both sites. The catch: This
+well known real estate site did not offer a syndication service or API
+for developers to access their listings.</p>
+<div class="tutorial_image">
+<img original="http://nettuts.s3.amazonaws.com/349_syndicate/images/preview3.png" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/preview3.png" alt="Finished Project">
+</div>
+
+<h2>Using JQuery’s load()</h2>
+<div class="tutorial_image">
+<img style="display: inline;" original="http://nettuts.s3.amazonaws.com/349_syndicate/./images/path1.png" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/path1.png" alt="Visual Process Map 1">
+</div>
+<p>After scouring the internet I discovered that most solutions to this
+problem were inelegant and most of the time they were browser-specific
+or ineffective. I decided to code my own solution using the popular
+javascript library JQuery. </p><p>
+  To access information from another website I needed to  utilize the AJAX functions of the JQuery library.</p>
+  <div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"http://code.jquery.com/jquery-latest.js"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;$("document").ready(function()&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;$("#content").load("http://net.tutsplus.com/”);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="html">  &lt;script  src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript"&gt;
+  &nbsp; $("document").ready(function()  {
+  &nbsp;&nbsp;&nbsp; $("#content").load("http://net.tutsplus.com/”);
+  &nbsp; });
+  &lt;/script&gt;
+  </pre>
+<p> If you are familiar with JQuery the above shouldn’t be too
+difficult to understand. We are using the AJAX&nbsp; load function to
+load a webpage’s content into an element with id #content. The solution
+seemed too easy but alas the problem, as you will soon realize, is that
+the code will only work in Internet Explorer 6 or 7. The reason for
+this soon became apparent – all other browsers block the loading in of
+websites from alternative domains due to local security settings. This
+meant we can only load relative pages not absolute URLs.</p>
+<h2>A Server-Side Solution</h2>
+<div class="tutorial_image">
+<img style="display: inline;" original="http://nettuts.s3.amazonaws.com/349_syndicate/./images/path2.png" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/path2.png" alt="Visual Process Map 2">
+</div>
+<p>I looked around online for a solution to this problem and to my
+dismay, most people were either under the impression that it was not
+possible to bypass the local security settings of most browsers or it
+was too complicating a task so not worth doing. This is when I
+discovered the cURL library. </p><p> cURL is quite useful in that it
+allows you to communicate with other servers using URLs and standard
+web protocols such as HTTP, HTTPS or SSL. Using cURL I was able to
+build a bypass to our local security problem by using loading in the
+whole website to a local URL server-side.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span class="tag">&lt;?</span><span class="tag-name">php</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>$<span class="attribute">ch</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">curl_int</span><span>(“http://net.tutsplus.com”);&nbsp;&nbsp;</span></span></li><li class="alt"><span>$<span class="attribute">html</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">curl_exec</span><span>($ch);&nbsp;&nbsp;</span></span></li><li class=""><span>print&nbsp;“$html”;&nbsp;&nbsp;</span></li><li class="alt"><span><span class="tag">?&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="html">  
+  &lt;?php
+  $ch = curl_int(“http://net.tutsplus.com”);
+  $html = curl_exec($ch);
+  print “$html”;
+  ?&gt;
+</pre>  
+<p> This code initiates cURL object from an external URL – the benefit
+being the URL is loaded on the server rather than on the client. The
+server security settings in the PHP environment are a lot more flexible
+than the local security settings of most modern browsers. After
+initiating the cURL object we simply print the whole contents of the
+URL. If we now save this document as ‘curl.php’ onto our web server we
+now have a local file that will load in the entire website contents of
+our external URL. </p><p>
+  Let’s go back to our original code and put in our  modifications:</p>
+  <div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"http://code.jquery.com/jquery-latest.js"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;$("document").ready(function()&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;$("#content").load("curl.php”);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="html">  &lt;script  src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript"&gt;
+  &nbsp; $("document").ready(function()  {
+  &nbsp;&nbsp;&nbsp; $("#content").load("curl.php”);
+  &nbsp; });
+  &lt;/script&gt;
+  </pre>
+<p>  Our script now supports all browsers and isn’t accomplished  using any unorthodox local security hacks.</p>
+<h2>Why use JQuery?</h2>
+<div class="tutorial_image">
+<img style="display: inline;" original="http://nettuts.s3.amazonaws.com/349_syndicate/./images/jquery.png" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/jquery.png" alt="JQuery">
+</div>
+<p>Now you might wonder what are the advantages of working with this
+document in JQuery as compared to just manipulating our document using
+PHP? The main reason for my choice in using JQuery is the ability to
+use its CSS-styled selectors to choose what content on our page we
+actually want to syndicate, like the following:</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"http://code.jquery.com/jquery-latest.js"</span><span class="tag">&gt;</span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;$("document").ready(function()&nbsp;&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;$("#content").load("curl.php&nbsp;#content”);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class=""><span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="html">  &lt;script  src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript"&gt;
+  &nbsp; $("document").ready(function()  {
+  &nbsp;&nbsp;&nbsp; $("#content").load("curl.php #content”);
+  &nbsp; });
+  &lt;/script&gt;</pre>
+  <p>
+Rather than loading in the whole document we now just load in the
+contents of an element with id #content. We will get to the benefits of
+this later on in the article. </p>
+  <h2>Images and Anchors</h2>
+<p>After playing around with this for a bit you may notice the next big
+problem. Although we have managed to syndicate an external sites
+content, all relative links and images are no longer working. <em>Another reason for working in JQuery</em>.
+Using the JQuery each() function we can create a loop that goes through
+all &lt;a&gt; and &lt;img&gt; elements grabbing the current HREF or SRC
+attribute and prepending the external domain onto it.</p>
+<div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">script</span><span>&nbsp;&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"text/javascript"</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>var&nbsp;<span class="attribute">domain</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">"http://www.google.com"</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>$(document).ready(function(){&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;$("a").each(function&nbsp;(i)&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;<span class="attribute">href</span><span>&nbsp;=&nbsp;$(this).attr('href');&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;<span class="attribute">new_href</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">domain</span><span>&nbsp;+&nbsp;href;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;$(this).attr('href',new_href);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;});<span class="tag">&lt;</span><span class="tag-name">br</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;$("img").each(function&nbsp;(i)&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;<span class="attribute">src</span><span>&nbsp;=&nbsp;$(this).attr('src');&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;<span class="attribute">new_src</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">domain</span><span>&nbsp;+&nbsp;src;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;$(this).attr('src',new_src);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">script</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="html">  &lt;script  type="text/javascript"&gt;
+  var domain = "http://www.google.com";
+  $(document).ready(function(){
+  &nbsp; $("a").each(function (i) {
+  &nbsp;&nbsp;&nbsp; var href = $(this).attr('href');
+  &nbsp;&nbsp;&nbsp; var new_href = domain + href;
+  &nbsp;&nbsp;&nbsp; $(this).attr('href',new_href);
+  &nbsp; });<br>
+  &nbsp; $("img").each(function (i) {
+  &nbsp;&nbsp;&nbsp; var src = $(this).attr('src');
+  &nbsp;&nbsp;&nbsp; var new_src = domain + src;
+  &nbsp;&nbsp;&nbsp; $(this).attr('src',new_src);
+  &nbsp; });
+  });
+  &lt;/script&gt;</pre>
+  <p>
+We first select all &lt;a&gt; elements and cycle through them
+extracting the href attribute and then prepending our chosen domain to
+it. We could also if we want add in an attribute to open all links in
+new windows, etc. Secondly we select all &lt;img&gt; elements and again
+cycle through them extracting the src attribute, etc. </p><p>
+Now the problem at this point we run into is where do we integrate our
+new code into our existing code? The problem I originally came across
+was no matter where you put it the external markup did not load quickly
+enough for our code to change the domain to come into effect after the
+fact. The solution involves combining the two into quite an elegant
+JQuery solution. </p>
+  <div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span>$("document").ready(function()&nbsp;&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;$("#content").load("curl.php&nbsp;#content",{},function(){&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;$("a").each(function&nbsp;(i)&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;&nbsp;<span class="attribute">href</span><span>&nbsp;=&nbsp;$(this).attr('href');&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;<span class="attribute">new_href</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">domain</span><span>&nbsp;+&nbsp;href;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).attr('href',new_href);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;});<span class="tag">&lt;</span><span class="tag-name">br</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;$("img").each(function&nbsp;(i)&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;<span class="attribute">src</span><span>&nbsp;=&nbsp;$(this).attr('src');&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;<span class="attribute">new_src</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">domain</span><span>&nbsp;+&nbsp;src;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(this).attr('src',new_src);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;});&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="html">  $("document").ready(function()  {
+  &nbsp;  $("#content").load("curl.php #content",{},function(){
+  &nbsp; &nbsp;&nbsp;$("a").each(function (i) {
+  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;var  href = $(this).attr('href');
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;var new_href = domain + href;
+  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;$(this).attr('href',new_href);
+  &nbsp; &nbsp;&nbsp;});<br>
+  &nbsp; &nbsp;&nbsp;$("img").each(function (i) {
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var src = $(this).attr('src');
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var new_src = domain + src;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(this).attr('src',new_src);
+  &nbsp; &nbsp;&nbsp;});
+  &nbsp; });
+  });</pre>
+  <p>
+The load function has two more properties it can take, one being
+variables you want to submit to your external URL. For example you
+could be trying to retrieve data from the results of a POST form. The
+other property being a callback function or what to do once the load()
+function has finished. In our case this is perfect – we place our code
+in the callback function which prevents it from running until we
+completely load in our external page.</p>
+<div class="tutorial_image">
+<img style="display: inline;" original="http://nettuts.s3.amazonaws.com/349_syndicate/./images/preview.png" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/preview.png" alt="Previews">
+</div>
+  <p>As you can see now we are now able to simply pull into any
+element on our page content from another website. This is very
+practical for not just syndicating content like news feeds but any
+dynamically updated content. </p>
+  <h2>Styling Our Content </h2>
+<p>Now that we can have pulled in our content the next step shows the
+superiority in using this code over say an &lt;iframe&gt;. While an
+&lt;iframe&gt; solves many of messy issues with links, etc we went
+through above we are not able to seamlessly integrate it into a website
+with a completely different style. The content will essentially always
+be just a window into another website. As seen earlier when I first
+introduced the idea of using CSS-styled selectors in style sheet we can
+select any id or class or any selector by just placing it in the load()
+function:</p>
+  <div class="dp-highlighter"><ol class="dp-xml" start="1"><li class="alt"><span><span>$("document").ready(function()&nbsp;&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;$("#content").load("curl.php&nbsp;#content",{},function(){&nbsp;&nbsp;</span></li><li class="alt"><span>...&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="html">  $("document").ready(function()  {
+  &nbsp;  $("#content").load("curl.php #content",{},function(){
+  ...
+</pre>
+<p>In this case we are only selecting a &lt;div&gt; from the homepage
+of Net Tuts+ which happens to correspond with the main content
+&lt;div&gt; We are now syndicating just an extract of the page, not
+pulling in any of styles (as they are contained in the &lt;head&gt;)
+nor any effects (if they exist). We are only pulling in markup.</p>
+<p>We are now going to add some styles to our page using CSS.</p>
+  <div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span>body,a&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;font-family:&nbsp;'Tahoma';&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;color:&nbsp;#fff;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;background-color:&nbsp;#000;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;font-size:&nbsp;12px;&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>#content&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;width:&nbsp;600px;&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>#content&nbsp;small,&nbsp;#content&nbsp;span,&nbsp;#content&nbsp;.more-link&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;display:none;&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>#content&nbsp;img&nbsp;{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;float:left;&nbsp;margin-right:&nbsp;5px;&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>#content&nbsp;h1&nbsp;{<span class="tag">&lt;</span><span class="tag-name">br</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;font-size:&nbsp;14px;</span><span class="tag">&lt;</span><span class="tag-name">br</span><span class="tag">&gt;</span><span>}&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="html">body,a {
+  font-family: 'Tahoma';
+  color: #fff;
+  background-color: #000;
+  font-size: 12px;
+}
+#content {
+  width: 600px;
+}
+#content small, #content span, #content .more-link {
+  display:none;
+}
+#content img {
+  float:left; margin-right: 5px;
+}
+#content h1 {<br>  font-size: 14px;<br>}
+</pre>
+  <p>This CSS is more about demonstrating a few important
+features than being aesthetically appealing. A few important things to
+note at this point is that we have to remember to assign styles exactly
+to the tags we are looking at styling -- I.E. don't style all
+&lt;small&gt; tags - we only want to style the ones in the #content
+&lt;div&gt;. The second thing to note is what I've done to the
+&lt;small&gt;,&lt;span&gt; tags and .more-link class. Rather than
+displaying all the content we have syndicated it may be useful to hide
+some of it - we could even use that content in dropdown effect or
+something similar. We are instead hiding the tags completely using the
+display property. We use display rather than visibility for a reason -
+visibility still leaves the outline of where the content was. Display
+hides this completely. </p>
+<div class="tutorial_image">
+<img style="display: inline;" original="http://nettuts.s3.amazonaws.com/349_syndicate/images/preview2.png" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/preview2.png" alt="Preview">
+</div>
+<h2>Modify Images using JQuery</h2>
+<p> Another thing we can do to make our news syndicator take up less
+space on our screen is modify the images. This could be done using CSS
+but instead I want to demonstrating using JQuery to modify the source
+of the image.</p>
+<p>We are going to modify our JQuery to use the attr() function to
+modify the source of our image to one on our own server - a nice,
+little link button.</p>
+  <div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span>...&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;$("#content&nbsp;img").each(function&nbsp;(i)&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>var&nbsp;<span class="attribute">src</span><span>&nbsp;=&nbsp;$(this).attr('src');&nbsp;&nbsp;</span></span></li><li class=""><span>var&nbsp;<span class="attribute">new_src</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">domain</span><span>&nbsp;+&nbsp;src;&nbsp;&nbsp;</span></span></li><li class="alt"><span>$(this).attr('href',new_src);&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li><li class="alt"><span>$("#content&nbsp;img").attr('src','link.png');&nbsp;&nbsp;</span></li><li class=""><span>});&nbsp;&nbsp;</span></li><li class="alt"><span>});&nbsp;&nbsp;</span></li></ol></div><pre style="display: none;" name="code" class="html">...
+  $("#content img").each(function (i) {
+var src = $(this).attr('src');
+var new_src = domain + src;
+$(this).attr('href',new_src);
+});
+$("#content img").attr('src','link.png');
+});
+});</pre>
+<p>Now lets modify our CSS slightly to make our image float nicely to the left.</p>
+  <div class="dp-highlighter"><ol class="dp-xml" start="1"><li class="alt"><span><span>#content&nbsp;img&nbsp;{&nbsp;float:left;&nbsp;margin-right:&nbsp;5px;}&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="html">#content img { float:left; margin-right: 5px;}</pre>
+<div class="tutorial_image">
+<img style="display: inline;" original="http://nettuts.s3.amazonaws.com/349_syndicate/images/preview3.png" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/preview3.png" alt="Preview">
+</div>
+<p>Now, using only content syndicated from the Net Tuts+ homepage, we
+have managed to build a news syndicator with completely different
+styling to the original site.</p>
+<div class="tutorial_image">
+<img original="http://nettuts.s3.amazonaws.com/349_syndicate/images/preview4.png" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" alt="Preview">
+</div>
+<h2>Preloader</h2>
+<p>What you may notice when you use this code is that it takes a while
+for JQuery to process and load the external site. A nice feature to add
+is a loading bar to the #content &lt;div&gt; while we wait for the
+content to load. </p>
+<p>The easiest way to make our loading bar is to place a loading bar
+image inside our #content &lt;div&gt; in our mark up. Our loading image
+will appear when the site first loads but once the JQuery has finished
+loading our external content it will replace the current content, being
+the loading bar, with our new content. A site I use quite often when
+generating loading bars is <a href="http://www.ajaxload.info/">http://www.ajaxload.info/</a>. It has a very decent generator for creating a variety of loading images.</p>
+  <div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><a href="#" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy to clipboard</a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span>...</span><span class="tag">&lt;</span><span class="tag-name">br</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">h1</span><span class="tag">&gt;</span><span>My&nbsp;Content&nbsp;Syndication&nbsp;Service</span><span class="tag">&lt;/</span><span class="tag-name">h1</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">div</span><span>&nbsp;</span><span class="attribute">id</span><span>=</span><span class="attribute-value">"content"</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">img</span><span>&nbsp;</span><span class="attribute">src</span><span>=</span><span class="attribute-value">"ajax-loader.gif"</span><span>&nbsp;</span><span class="attribute">alt</span><span>=</span><span class="attribute-value">"Loading..."</span><span>&nbsp;</span><span class="tag">/&gt;</span><span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span><span class="tag">&lt;</span><span class="tag-name">br</span><span class="tag">&gt;</span><span>...&nbsp;&nbsp;</span></span></li></ol></div><pre style="display: none;" name="code" class="html">...<br>&lt;h1&gt;My Content Syndication Service&lt;/h1&gt;
+&lt;div id="content"&gt;&lt;img src="ajax-loader.gif" alt="Loading..." /&gt;&lt;/div&gt;<br>...
+</pre>
+  <p>We now have a nice little application which will show a preloading image until our content is ready to show. </p>
+  <div class="tutorial_image"><img style="display: inline;" original="http://nettuts.s3.amazonaws.com/349_syndicate/images/preview5.png" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/preview5.png" alt="Preview">
+  </div>
+<p>While the preloader is a nice feature it isn't a replacement for
+optimised code. In this tutorial we are using JQuery to choose what
+elements we should select or not when in actual fact the most speed
+optimal solution would be to do that in our PHP code. This though, is
+outside the scope of this tutorial. </p>
+<h2>Conclusion</h2>
+<p>There we have it – a simple solution using JQuery’s AJAX functions
+and PHP’s cURL library that allows us to syndicate external content.
+This is a simple solution if you require content from an external
+website. As I have already stated, although JQuery's easy syntax and
+CSS-selectors give us the convenience of styling and selecting what we
+want from the client-side, this is not speed optimized. The best thing
+would be for us to remove the tags we don't want using Regular
+Expressions in PHP. I would also note one of the most common mistakes
+is being too specific when styling; remember you have no control over
+whether or not the content creator changes what tags and classes they
+use, it is always best to style general elements that will be commonly
+used.</p>
+<p>Another thing worth taking into account is that this tutorial is
+meant to generate a content syndicator - it is not intended for use as
+a site content 'scraper'. If you are going to implement this in a
+commercial project, make sure you have the permission of the copyright
+holder to use the content on your page. </p>
+
+<ul class="webroundup">
+    <li>Follow us on <a href="http://www.twitter.com/nettuts">Twitter</a>, or subscribe to the <a href="http://feeds.feedburner.com/nettuts" title="NETTUTS RSS Feed">NETTUTS RSS Feed</a> for more daily web development tuts and articles.</li></ul>
+
+<p>
+<script type="text/javascript"><!--digg_url = "post permalink (not digg url)"; // -->
+</script>
+<script src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/diggthis_003.htm" type="text/javascript"></script><iframe src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/diggthis_002.htm" scrolling="no" width="52" frameborder="0" height="80"></iframe></p><br class="clear">      </div>
+      
+      <div id="post_meta" class="clearfix">
+        <div id="realted_post_text">
+          <h3>Related Posts</h3><p>Check out some more great tutorials and articles that you might like</p>          </div>
+          <div id="related_posts">          
+          <ul><li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-to-load-in-and-animate-content-with-jquery/" rel="bookmark" title="May 25, 2008">How to Load In and Animate Content with jQuery</a> <span>Javascript &amp; AJAX </span></li>
+
+<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/use-jquery-to-retrieve-data-from-an-xml-file/" rel="bookmark" title="August 14, 2008">Evening Tip: Use jQuery To Retrieve Data From An XML File</a> <span>Javascript &amp; AJAX </span></li>
+
+<li><a href="http://net.tutsplus.com/videos/screencasts/scanning-folders-with-php/" rel="bookmark" title="November 13, 2008">Scanning Folders with PHP</a> <span>Screencasts </span></li>
+</ul><!-- Similar Posts took 41.055 ms -->        </div>
+        <div class="clear"></div>
+        <div id="social_text">
+        <h3>Enjoy this Post?</h3>
+          <p>Your vote will help us grow this site and provide even more awesomeness</p>
+        </div>
+        <div id="social_bookmarks">
+          <div class="social_images">
+            <div class="digg">
+              <script type="text/javascript">
+				digg_url = "http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/";
+			  </script>
+			  <script src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/diggthis_003.htm" type="text/javascript"></script><iframe src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/diggthis_002.htm" scrolling="no" width="52" frameborder="0" height="80"></iframe>
+            </div>
+            <div class="dzone">
+              <script type="text/javascript">var dzone_url = 'http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/';</script>
+              <script type="text/javascript">var dzone_title = 'How to Syndicate Content Without Utilizing a News Feed';</script>
+              <script type="text/javascript">var dzone_style = '1';</script>
+              <script language="javascript" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/zoneit.js"></script><iframe src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/zoneit.htm" scrolling="no" width="50" frameborder="0" height="70"></iframe>
+            </div>
+            <div class="dzone">
+              <script>reddit_url='http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/'</script>
+              <script>reddit_title='How to Syndicate Content Without Utilizing a News Feed'</script>
+              <script type="text/javascript" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/button.js"></script><iframe src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/button_content.htm" scrolling="no" width="51" frameborder="0" height="69"></iframe>
+            </div>
+            <ul>
+            <li><a href="http://www.stumbleupon.com/submit?url=http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/&amp;title=How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/bookmark_su.jpg" alt="Add to StumbleUpon" class="push_r_img push_d_img"></a></li>
+            <li><a href="http://www.mixx.com/submit?page_url=http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/bookmark_mixx.jpg" alt="Add to Mixx" class="push_d_img"></a></li>
+            <li><a href="http://del.icio.us/post?url=http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/&amp;title=How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/bookmark_delicious.jpg" alt="Add to Delicious" class="push_r_img"></a></li>
+            <li><a href="http://www.designfloat.com/submit.php?url=http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/&amp;title=How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/bookmark_designfloat.jpg" alt="Add to designfloat"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      	  					<div id="tuts_plus" class="non_subscriber clear clearfix">
+	      	<h2 class="tutsplus_header">Plus Members</h2>
+	      	<p class="tuts_text">Source Files, Bonus Tutorials and <br>More for $9 a month for all TUTS+ <br>sites in one subscription.</p>
+	        <p class="button"><a href="http://tutsplus.com/amember/signup.php" class="join_tuts">Join Now</a></p>
+	        <form name="login" method="post" action="http://tutsplus.com/amember/member.php" id="signIn">
+	          <fieldset>
+	          <input name="amember_login" id="username" class="input" type="text">
+	          <input name="amember_pass" id="password" class="input" type="password">
+	          <input id="submit_plus" class="submit_button" value="Sign In" type="submit">
+	          </fieldset>
+	        </form>
+	      </div>
+			            
+	  <div id="comments_wrap" class="clearfix">
+	<div id="comments" class="clearfix">
+  <div class="clearfix">
+		<h3 class="left">User Comments</h3><span class="get_avatar right">( <a href="#add">ADD YOURS</a> )</span>
+              <br class="clear">
+	</div>
+     
+		<ol class="comment_list parent">
+			
+	<li id="comment-71787">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/1c8ebfb81e7e2d474ed11ca58baf0f35?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>BB <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>useful stuff. thanks for sharing.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71787#respond" onclick='return addComment.moveForm("comment-71787", "71787", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71789">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/293a5974506862f153de2d9315e980a4?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Pete <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Now that’s cool.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71789#respond" onclick='return addComment.moveForm("comment-71789", "71789", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71792">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/9f6d6ad1e6c0f917d9845f7d729116fc?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://labs.dariux.com/" rel="external nofollow" class="url">Dario Gutierrez</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Very interesting, jQuery rocks! The best.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71792#respond" onclick='return addComment.moveForm("comment-71792", "71792", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71796">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/08b9424426c8e8ac89b6decebe141dd0?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://patareco.carbonmade.com/" rel="external nofollow" class="url">Zé Miguel</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>today most of websites already have a convenient feed, but this could be pretty useful for some projects!</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71796#respond" onclick='return addComment.moveForm("comment-71796", "71796", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71803">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/1e3b760b6c489ba61c581eb6c29f020b?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Joe <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Hi
+dude, rocks! Good problem solving! While I’m thinking if the external
+site changes its page code, then we have to change our selector.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71803#respond" onclick='return addComment.moveForm("comment-71803", "71803", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71807">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/1e3b760b6c489ba61c581eb6c29f020b?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Joe <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>I downloaded the source code, but when I tested it in the WAMP servver, I could not get the content, only black background.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71807#respond" onclick='return addComment.moveForm("comment-71807", "71807", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+<ol class="children">
+
+	<li id="comment-72587">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/79f7d3013cfe69bad18cdc716174b0dd?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Sumit <span>June 18th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>you need enable the curl extension in u’r php.ini file..normally it’s disabled by default in WAMP SERVER…</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72587#respond" onclick='return addComment.moveForm("comment-72587", "72587", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li></ol>
+</li>
+	<li id="comment-71808">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/639fe915f5edd8cfdecbff39a020d48e?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.net-breeze.com/" rel="external nofollow" class="url">Yoosuf</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>its a grat one</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71808#respond" onclick='return addComment.moveForm("comment-71808", "71808", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71810">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/c859b1fd063c8fa9687fb595b6cd139d?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.imblog.info/" rel="external nofollow" class="url">Muhammad Adnan</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>nice tut. Jquery Rocks !</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71810#respond" onclick='return addComment.moveForm("comment-71810", "71810", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71813">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/e44d2bf7da7c4bdb6cfe4618adfe6670?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://myfacefriends.com/" rel="external nofollow" class="url">Myfacefriends</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Thanks for sharing this very useful.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71813#respond" onclick='return addComment.moveForm("comment-71813", "71813", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71823">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/0e9552c0945694c766e45ce58a99bc29?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Paul <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>EXACTLY what I’ve been looking for! Thank you SO much!</p>
+<p>The only issue that I’ve found is that the href isn’t re-writing correctly in IE. It works fine in FF. Any ideas?</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71823#respond" onclick='return addComment.moveForm("comment-71823", "71823", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71835">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/55bf597f5324f93c1cd297f79a117567?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.gsmobil.cz/" rel="external nofollow" class="url">Rob</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>interesting ideas, thanx!</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71835#respond" onclick='return addComment.moveForm("comment-71835", "71835", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71837">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/75a48567f62a4e91ee64cf3cbfeb19d8?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Ed Baxter <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Great tutorial! <img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/icon_biggrin.gif" alt=":D" class="wp-smiley"> </p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71837#respond" onclick='return addComment.moveForm("comment-71837", "71837", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71845">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/5620d3c9e50d69d9fbeff45f1ec45c1f?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.cetan.ca/" rel="external nofollow" class="url">Nathan</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Never thought about doing this. It will be useful for a future project</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71845#respond" onclick='return addComment.moveForm("comment-71845", "71845", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71850">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/527a8cda25c00da9a8eae89333919c0c?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Melissa <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Great
+idea, but it appears to me have a huge potential for abuse. How do you
+stop people from stealing your content and displaying it on their
+website? All they need is an url. Do you just rely on other people
+following the copyright laws?</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71850#respond" onclick='return addComment.moveForm("comment-71850", "71850", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+<ol class="children">
+
+	<li id="comment-71885">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/cac90fb33accbfe76d9f074ac1ec3dbc?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.vileworks.com/" rel="external nofollow" class="url">Stefan</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>I’m affraid that’s all you can rely on.</p>
+<p>If humans can see the content, scripts can get it.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71885#respond" onclick='return addComment.moveForm("comment-71885", "71885", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li></ol>
+</li>
+	<li id="comment-71855">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/3216be4afbf25fd6ec055e7287da6d4a?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Jake <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Wow, great stuff. Thanks for sharing your work and your discoveries! Only hope I can make as great of a contribution sometime.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71855#respond" onclick='return addComment.moveForm("comment-71855", "71855", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71857">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/e9d4878633adce5e6634c71652cde19e?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.lotusboost.com/" rel="external nofollow" class="url">Harnish</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>You
+need to actually modify your code to say curl_init instead of curl_int.
+You also need a variable $url where the URL goes in and then invoke $ch
+= curl_init($url);</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71857#respond" onclick='return addComment.moveForm("comment-71857", "71857", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71859">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/a5a953784007811f92c6f478bed00326?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>bussurfer <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Hi
+Mark, thanks for the great tutorial. Though I’m new to jQuery
+everything is pretty clear. I was wondering if there’s a way to replace
+the relative SRC and HREF attributes of the and elements with the
+absolute ones. Thanks</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71859#respond" onclick='return addComment.moveForm("comment-71859", "71859", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71860">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/a5a953784007811f92c6f478bed00326?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>bussurfer <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Hi
+Mark, thanks for the great tutorial. Though I’m new to jQuery
+everything is pretty clear. I was wondering if there’s a way to replace
+the relative SRC and HREF attributes of the SCRIPT and LINK elements
+with the absolute ones. Thanks</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71860#respond" onclick='return addComment.moveForm("comment-71860", "71860", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71862">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/56ed852fb9de0c166822d517d607b532?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://blogs.oc.edu/sbell" rel="external nofollow" class="url">Stephen</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>If you’re trying to get content off of another site, you could also use a service like Feed43 ( <a href="http://www.feed43.com/" rel="nofollow">http://www.feed43.com/</a>
+) to scrape to a feed. We’ve done this to get content from third party
+sites that we use that don’t have the option of XML output.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71862#respond" onclick='return addComment.moveForm("comment-71862", "71862", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71864">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/15e10eaa69a500ab4e5acea7f2b3b7f9?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Dave <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Very nice TUT</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71864#respond" onclick='return addComment.moveForm("comment-71864", "71864", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71870">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/75b1b72743bb6f0e9585ca6032d631aa?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>michael <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>This
+tutorial retrieves the data via JQuery pretty nicely. But what would
+you do if JavaScript was disabled? I would suggest you just put links
+to the original articles in that situation, but then why not just
+implement the whole thing server side? In Australia a lot of internet
+connections are that slow that loading up external articles via JQuery
+and stripping all additional content just doesn’t seem viable.</p>
+<p>Also I want to reiterate Joe’s point – if the external site changed
+it’s markup your syndicator would no longer work. But then again
+theoretically their site should know you’re syndicating their content
+and should let you know in advance. And it would seem that in that
+situation they should just provide you with an RSS feed.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71870#respond" onclick='return addComment.moveForm("comment-71870", "71870", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71909">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/7607a038c75cf77c5d646e0c20c8e418?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Adrian <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>You could also just use Yahoo! Pipes.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71909#respond" onclick='return addComment.moveForm("comment-71909", "71909", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+<ol class="children">
+
+	<li id="comment-72611">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/edec6052c080757015d97691c2fe27d0?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://spanishgringo.blogspot.com/" rel="external nofollow" class="url">Michael Freeman</a> <span>June 18th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>That
+is what I already do and it works great in most cases. I have found
+that most pages from Google Video are not valid HTML so the Yahoo Pipes
+parser breaks.</p>
+<p>In those cases I use java with the htmlcleaner.jar to put the junky response into a proper DOM</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72611#respond" onclick='return addComment.moveForm("comment-72611", "72611", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li></ol>
+</li>
+	<li id="comment-71920">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/cb03ba6fa851e7ba94a28284e346e969?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.dynamicguru.com/" rel="external nofollow" class="url">Mujtaba</a> <span>June 15th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Just what i needed for my upcoming site…<br>
+Thnx 4 sharing</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71920#respond" onclick='return addComment.moveForm("comment-71920", "71920", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+<ol class="children">
+
+	<li id="comment-71998">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/68cbf5a6ad76c4a54c41a16e916b8b2c?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Tim <span>June 16th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Me too. Thanks!</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71998#respond" onclick='return addComment.moveForm("comment-71998", "71998", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li></ol>
+</li>
+	<li id="comment-71948">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/13961c14b9ad47f8a604143ba65a6caa?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://twitter.com/aheadzen" rel="external nofollow" class="url">Arpit Tambi</a> <span>June 16th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>More performance improvements -</p>
+<p>Perhaps on the PHP side, the page can be very well cached for 12
+hours or 24 hours. This way servers don’t load the url on every request
+and saves bandwidth plus time.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71948#respond" onclick='return addComment.moveForm("comment-71948", "71948", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71958">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/98ad051caa0a926676cf47e40ba371b0?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Thomas <span>June 16th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Personally
+I would prefer to do the whole thing server side and then cache it.
+Seems a lot better to me, and no JS enabled/whatever problems.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71958#respond" onclick='return addComment.moveForm("comment-71958", "71958", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-71996">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/2334ebcfbf94844fbe0ddff75802e77d?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>David <span>June 16th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>What about using something like the php explode or implode commands?</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=71996#respond" onclick='return addComment.moveForm("comment-71996", "71996", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-72069">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/e687aeec6465e187c58e900ef09b6a56?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://shinokada.blogspot.com/" rel="external nofollow" class="url">shin</a> <span>June 16th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Actually you don’t need the following code.<br>
+ $(”a”).each(function (i) {<br>
+       var  href = $(this).attr(’href’);<br>
+       var new_href = domain + href;<br>
+       $(this).attr(’href’,new_href);<br>
+     });<br>
+     $(”img”).each(function (i) {<br>
+       var src = $(this).attr(’src’);<br>
+       var new_src = domain + src;<br>
+….</p>
+<p>This will create the following link. <a href="http://net.tutsplus.com/" rel="nofollow">http://net.tutsplus.com/</a> will be repeated twice.</p>
+<p><a href="http://net.tutsplus.com/http://net.tutsplus.com/tutorials/javascript-ajax/24-javascript-best-practices-for-beginners/" rel="nofollow">http://net.tutsplus.com/http://net.tutsplus.com/tutorials/javascript-ajax/24-javascript-best-practices-for-beginners/</a></p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72069#respond" onclick='return addComment.moveForm("comment-72069", "72069", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-72111">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/f49ae2d2d248534a4f44be580a9e22b3?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.twitter.com/natguy" rel="external nofollow" class="url">Nat</a> <span>June 16th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>I’d have to agree with Melissa that this post raises warning flags. </p>
+<p>If the site doesn’t have an RSS feed, it could be that they do not
+want to and have not licensed that content to be consumed and displayed
+anywhere BUT on their domain. </p>
+<p>Always check the copyright at the footer of the site you are trying
+to scrape. I could be wrong but if the site doesn’t have a Creative
+Common license or similar stated, and it doesn’t offer an RSS or Atom
+feed, and you don’t have their permission you could be illegally
+stealing their content?</p>
+<p>Also, they could do a simple blocking of your server where your php cUlr script resides and you no longer have the service.</p>
+<p>Thoughts?</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72111#respond" onclick='return addComment.moveForm("comment-72111", "72111", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+<ol class="children">
+
+	<li id="comment-72235">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/4da9ef11435fd03f72f9caea438c88a7?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://culturalmusings.wordpress.com/" rel="external nofollow" class="url">Marc Loney</a> <span>June 17th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Hi everyone, </p>
+<p>Thanks for your comments, this is my first tutorial for this site so i’m keen for as much feedback as possible!</p>
+<p>In terms of the copyright issues brought up I briefly mention them
+in my last paragraph. While something like this, server side or client
+side can be implimented as a’scrapper’ essentially stealing content
+from other sites that is not the only method. There are plenty of
+examples of technology out there that have the potential for abuse and
+at the end of the day all you can make sure is that you are doing the
+right thing. Always make sure you have the permission of the copyright
+owner to publish their content.</p>
+<p>On the other issue of implimenting this server-side, I mention a bit
+about the performance increase by doing this but in the end I ended up
+wanting to write it on the client-side purely to show a different
+application of jQuery for those starting to get into it.</p>
+<p>Cheers!</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72235#respond" onclick='return addComment.moveForm("comment-72235", "72235", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li></ol>
+</li>
+	<li id="comment-72243">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/6d6e055fc613b8d74593c3533d983861?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://gogs.info/" rel="external nofollow" class="url">Goran Juric</a> <span>June 17th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>You
+wrote that “The main reason for my choice in using JQuery is the
+ability to use its CSS-styled selectors to choose what content on our
+page we actually want to syndicate, ….”.</p>
+<p>Have a look at Zend_Dom_Query. You can use css selectors to grab
+content on the server site. Add Zend_Http_Client for fetching the page
+and Zend_Cache for caching the content and you will have a solution
+that does not depend on the other site being available all the time in
+no time.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72243#respond" onclick='return addComment.moveForm("comment-72243", "72243", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+<ol class="children">
+
+	<li id="comment-72501">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/1bb0ea156c7154f63c261bc6b83587dc?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://blog.complimedia.com/" rel="external nofollow" class="url">Montana Flynn</a> <span>June 17th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>That would certainly be the most elegant solution.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72501#respond" onclick='return addComment.moveForm("comment-72501", "72501", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li></ol>
+</li>
+	<li id="comment-72305">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/26a6294f8ae826200b3eadccafbc325e?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.texturelovers.com/" rel="external nofollow" class="url">Max Stanworth</a> <span>June 17th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>I think im going to use this in a prjoect im doing, love the pre loader</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72305#respond" onclick='return addComment.moveForm("comment-72305", "72305", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-72339">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/2f2c720c8ccb638f8285d1226a56850f?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.aplaceformyhead.co.uk/" rel="external nofollow" class="url">Matt Fairbrass</a> <span>June 17th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Interesting
+article and shows a nice proof of concept to solve a problem should an
+external site not provide you with any feeds to syndicate. But as many
+others have pointed out using this method is not without its flaws,
+most notably:</p>
+<p>- Loading time<br>
+- Disabling Javascript in the web browser<br>
+- External site changing their mark up.</p>
+<p>But aside from that the tutorial itself was very well written and
+explained the steps to implement such a method in a clear and concise
+way. Nice tutorial.</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72339#respond" onclick='return addComment.moveForm("comment-72339", "72339", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-72653">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/50a5866be28fceb796e3ad48ce554a9e?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Paul du Long <span>June 18th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>TYPO!!!!!!!!!!</p>
+<p>$ch = curl_int(“http://net.tutsplus.com”);  </p>
+<p>must be</p>
+<p>$ch = curl_init(“http://net.tutsplus.com”);</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72653#respond" onclick='return addComment.moveForm("comment-72653", "72653", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-72671">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/5c06120f0798bd281fe623f274620a4c?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://twitter.com/luker/" rel="external nofollow" class="url">Luke Robinson</a> <span>June 18th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>This tut just made my day. Many thanks!</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72671#respond" onclick='return addComment.moveForm("comment-72671", "72671", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-72746">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/7dadef88642b0dc70e967b47f7f9afde?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.dsaportfolio.com.br/" rel="external nofollow" class="url">Diego SA</a> <span>June 18th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Wow, normally I don’t use feed, but this tutorial is awesome! Nice!</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=72746#respond" onclick='return addComment.moveForm("comment-72746", "72746", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-73738">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/67a6e98f170ba041f4fcd03a4fb34b02?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://viperfish.com.au/" rel="external nofollow" class="url">John Pitchers</a> <span>June 22nd</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Hmmm. I can hear the scraping already. <img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=73738#respond" onclick='return addComment.moveForm("comment-73738", "73738", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-76758">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/3b00b797d383671f8950bf01d955a704?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Elery <span>July 3rd</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Hi guys this tutorial is exactly what i’m looking for but it doesn’t seem to be working…how do i get it to work with XAMPP?</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=76758#respond" onclick='return addComment.moveForm("comment-76758", "76758", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-76955">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/a64cdb261b6a215e0610cc3b1ddc30f1?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://lysenshi.me/" rel="external nofollow" class="url">lysenshi</a> <span>July 4th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>I just read your article, it is really wonderful.<br>
+I am new to jQuery, and currently exploring its features and what it can do. I can see it can do so much.<br>
+Thanks for the article <img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/icon_wink.gif" alt=";)" class="wp-smiley"> </p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=76955#respond" onclick='return addComment.moveForm("comment-76955", "76955", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-77672">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/025f614bc9ca74b11e280f820e940653?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>moshe <span>July 7th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>thanks for this!</p>
+<p>my curl script works great (thanks guys!) but seems to print the digit ‘1′ after it brings in the URL content.</p>
+<p>anyone know why?</p>
+<p>thanks!</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=77672#respond" onclick='return addComment.moveForm("comment-77672", "77672", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-78842">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/c9a8c480af774d89acb1cced211ec52d?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p>Gecko <span>July 11th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>my site get suspended after scrapping 4shared.com<br>
+Reason: high cpu usage or leech</p>
+<p>How to minimize cpu usage when use curl?</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=78842#respond" onclick='return addComment.moveForm("comment-78842", "78842", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-80260">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/57203b84e336239762aaf31c24e7cb47?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.international-homes.com/" rel="external nofollow" class="url">Ty Fairclough</a> <span>July 14th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>Right
+I have stumbled a problem with the appending of the domain to make
+relative links work. Simply if the site includes static and relative
+links those static links end up looking a bit like this:</p>
+<p><a href="http://yourdomain.comhttp//yourdomain.com/externalorrelativelink.html" rel="nofollow">http://yourdomain.comhttp://yourdomain.com/externalorrelativelink.html</a></p>
+<p>and of course this breaks the links.</p>
+<p>Im useless at js, i couldn’t even get the script to select a class
+instead of an id to suit my needs. But would some kind of if statement
+that looks for the ‘domain’ in the url first be a good idea? Then you
+could continue the script as normal I would presume. </p>
+<p>Assistance on this would be of great help folks! Great tutorial here, its going to be really useful!</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=80260#respond" onclick='return addComment.moveForm("comment-80260", "80260", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>
+	<li id="comment-84478">
+	<div class="comment_wrap">
+	
+		<div class="comment_author">
+			<img original="http://www.gravatar.com/avatar/536c5f9b90c535f596c8cb15b3b40c74?s=80&amp;d=http%3A%2F%2Fpsdtuts.s3.amazonaws.com%2FMisc%2Freader_psdtuts.jpg%3Fs%3D80&amp;r=PG" alt="PG" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" class="avatar avatar-80 photo" width="80" height="80">      <p><a href="http://www.magicandy28.com/" rel="external nofollow" class="url">Andy</a> <span>July 27th</span></p>
+    </div>
+
+		<div class="single_comment"> 
+			<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow.png" alt="" class="comment_arrow">
+      	      <p>What a great list!</p>
+      <span class="comment-reply">( <a rel="nofollow" class="comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/?replytocom=84478#respond" onclick='return addComment.moveForm("comment-84478", "84478", "respond", "5381")'>Reply</a> )</span>    </div>
+  </div>
+
+</li>		</ol>	
+    
+
+
+
+	  <div id="respond">       
+	    <div class="clearfix form_header">
+	    	<a name="add"><h3 class="left">Add Your Comment</h3></a><span class="get_avatar right">( <a href="http://en.gravatar.com/">GET A GRAVATAR</a> )</span><br class="clear">
+	    </div>
+			<ol class="comment_form_wrap">
+				<li>
+				<img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/comment_arrow_002.png" alt="Arrow" class="textarea_arrow">
+	      	      <div class="comment_author">
+					<img original="http://psdtuts.s3.amazonaws.com/Misc/reader_psdtuts.jpg" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/box.gif" alt="Gravatar">
+			    <p>Your Name <br><span>July 27th</span></p>
+			  </div>
+	      <form action="http://net.tutsplus.com/wp-comments-post.php" method="post" id="comment_form">
+	      	<fieldset>
+	          
+	          <input name="comment_post_ID" value="5381" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+	          
+	          <textarea name="comment" id="comment" rows="8" cols="10" tabindex="1" class="input textarea required" defaultvalue="Your Message..."></textarea>
+	          
+	          	            <input name="author" id="author" size="22" tabindex="2" class="input required" defaultvalue="Name" value="" type="text">
+	      			<input name="email" id="email" size="22" tabindex="3" class="input required" defaultvalue="Email" value="" type="text">
+	      			<input name="url" id="url" size="22" tabindex="4" class="input" defaultvalue="URL (Optional)" value="" type="text">
+	          	          
+	  				<div id="cancel-comment-reply"><a rel="nofollow" id="cancel-comment-reply-link" href="http://net.tutsplus.com/tutorials/php/how-to-syndicate-content-without-utilizing-a-news-feed/#respond" style="display: none;">Cancel</a></div>
+	          <button name="submit" type="submit" id="submit_comment" class="submit_button" tabindex="5">Add Comment</button>
+	          	  			</fieldset>
+	  			<br class="clear">
+	      </form>
+	      </li>
+	    </ol>
+		</div>
+
+	</div>
+</div>
+
+
+	  	
+	      </div>
+  </div>
+    <div id="sidebar" class="clearfix">
+      <div class="sidebar_plus"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/sidebar_net_plus.png" alt="NET Plus" class="img">
+        					<ul class="non_subscriber">
+	          <li><a href="http://tutsplus.com/plus-program/net-plus/" title="Learn More">Learn More &amp; SignUp</a> | </li>
+	          <li><a href="http://tutsplus.com/amember/login.php" title="Login Here">Login Here</a></li>
+	        </ul>
+				      </div>
+      <div class="sidebar_adspace">
+        <div class="image_wrap clearfix">
+        <script type="text/javascript">
+Vertical1239725 = false;
+ShowAdHereBanner1239725 = true;
+RepeatAll1239725 = false;
+NoFollowAll1239725 = false;
+BannerStyles1239725 = new Array(
+							"a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 10px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}",
+							"img{border:0;clear:right;}",
+							"a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}",
+							"a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
+						);
+document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1239725/1239725.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/1239725.txt" type="text/javascript"></script><div id="bsaz_1239725" class="adblock"><style type="text/css">div#bsaz_1239725.adblock {width:100%;display:block;} div#bsaz_1239725.adblock a{width:260px;} div#bsaz_1239725.adblock a img{padding:0;} div#bsaz_1239725.adblock a em{font-style:normal;} div#bsaz_1239725.adblock a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 10px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;} div#bsaz_1239725.adblock img{border:0;clear:right;} div#bsaz_1239725.adblock a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;} div#bsaz_1239725.adblock a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;} div#bsaz_1239725.adblock a.adhere{width:260px;height:125px;line-height:1000%;} html>body div#bsaz_1239725.adblock a.adhere{width:258px;height:123px;} div#bsaz_1239725.adblock img.s{height:0;width:0;}</style><a href="http://www.wix.com/free/website-new?utm_campaign=nettuts.com&amp;experiment_id=nettuts.com" onclick="_bsa.rocks('click',8111,1239725)" title="Web Design" id="bsa_8111" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/e7a9f774f96195fcfa68a73252decbcf-1246454353.jpg" alt="Web Design" width="260" height="125"></a></div>
+        <script type="text/javascript">
+						Vertical1616 = false;
+						ShowAdHereBanner1616 = true;
+						RepeatAll1616 = false;
+						NoFollowAll1616 = false;
+						BannerStyles1616 = new Array(
+							"a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 10px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}",
+							"img{border:0;clear:right;}",
+							"a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}",
+							"a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
+						);
+						
+						document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1616/1616.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+					</script><script src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/1616.txt" type="text/javascript"></script><div id="bsaz_1616" class="adblock"><style type="text/css">div#bsaz_1616.adblock {width:100%;display:block;} div#bsaz_1616.adblock a{width:125px;} div#bsaz_1616.adblock a img{padding:0;} div#bsaz_1616.adblock a em{font-style:normal;} div#bsaz_1616.adblock a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 10px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;} div#bsaz_1616.adblock img{border:0;clear:right;} div#bsaz_1616.adblock a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;} div#bsaz_1616.adblock a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;} div#bsaz_1616.adblock a.adhere{width:125px;height:125px;line-height:1000%;} html>body div#bsaz_1616.adblock a.adhere{width:123px;height:123px;} div#bsaz_1616.adblock img.s{height:0;width:0;}</style><a href="http://www.shopify.com/designer?utm_source=nettuts&amp;utm_medium=bsa&amp;utm_content=4d&amp;utm_campaign=designers" onclick="_bsa.rocks('click',3434,1616)" title="Shopify, Perfect Online Store - With Partner Program" id="bsa_3434" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/942e2c5be0eeedfde3ceb607a5be7b71-1248466231.jpg" alt="Shopify, Perfect Online Store - With Partner Program" width="125" height="125"></a><a href="http://www.psd2html.com/order-now.html" onclick="_bsa.rocks('click',305,1616)" title="PSD to XHTML" id="bsa_305" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/3416_2009012753639_1616.jpg" alt="PSD to XHTML" width="125" height="125"></a><a href="http://www.speaklight.com/" onclick="_bsa.rocks('click',7054,1616)" title="The friendly CMS for designers and their clients" id="bsa_7054" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/f2ef6ac58e741aaf4dc42592a0c1a2a3-1243977474.jpg" alt="The friendly CMS for designers and their clients" width="125" height="125"></a><a href="http://www.mailchimp.com/indexx.phtml?pid=blogs&amp;source=website" onclick="_bsa.rocks('click',7448,1616)" title="MailChimp Email Marketing" id="bsa_7448" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/2b9a19783b17f1898f90cb0bdc8e3054-1248360396.png" alt="MailChimp Email Marketing" width="125" height="125"></a><a href="http://www.helpdeskpilot.com/?utm_source=nettuts&amp;utm_medium=banner125&amp;utm_content=css125&amp;utm_campaign=HDP_CSS" onclick="_bsa.rocks('click',8363,1616)" title="Help desk Pilot Customer Support Software" id="bsa_8363" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/0829f9fbdbb5a6fd15aadf6e6d447f68-1247051908.png" alt="Help desk Pilot Customer Support Software" width="125" height="125"></a><a href="http://www.interspire.com/?utm_source=nettuts&amp;utm_medium=banner&amp;utm_campaign=nettuts" onclick="_bsa.rocks('click',8673,1616)" title="Private label ecommerce &amp; email marketing software for smart designers" id="bsa_8673" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/c1f1bd2e2118f42180d00010037287da-1247706479.gif" alt="Private label ecommerce &amp; email marketing software for smart designers" width="125" height="125"></a><a href="http://www.themelayouts.com/" onclick="_bsa.rocks('click',5302,1616)" title="Wordpress Themes" id="bsa_5302" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/bf4f33b912675432d171d5643ea9a696-1239831064.gif" alt="Wordpress Themes" width="125" height="125"></a><a href="http://www.tophosts.com/top25-page1.html?utm_source=nettuts&amp;utm_medium=banner&amp;utm_content=125x125banner&amp;utm_campaign=nettutsbanner" onclick="_bsa.rocks('click',5245,1616)" title="Top 25 Web Hosts" id="bsa_5245" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/7e6895ceffd8802cee19ce35cb18d2e0-1242327607.jpg" alt="Top 25 Web Hosts" width="125" height="125"></a><a href="http://www.iconshock.com/professional-icons.php?res=nettuts" onclick="_bsa.rocks('click',6421,1616)" title="More than 700.000 professional icons" id="bsa_6421" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/6521bdebce4a1c8daaf8c06882bc4010-1242426605.jpg" alt="More than 700.000 professional icons" width="125" height="125"></a><a href="http://w3-markup.com/order" onclick="_bsa.rocks('click',424,1616)" title="PSD to XHTML" id="bsa_424" target="_blank"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/1598_20080925134428_1616.jpg" alt="PSD to XHTML" width="125" height="125"></a></div>
+        </div>
+      </div>
+      
+      <div class="sidebar_subscribe"> <img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/sidebar_subscribe.gif" alt="" class="img">
+        <div class="sidebar_subscribe_text">
+          <h2>Subscribe</h2>
+          <p>Subscribe to an update feed:</p>
+          <ul class="button clearfix">
+            <li><a href="http://feeds.feedburner.com/nettuts">Full RSS</a></li>
+            <li><a href="http://feedproxy.google.com/nettuts-summary">Short RSS</a></li>
+            <li><a href="http://twitter.com/nettuts">Twitter</a></li>
+            <li><a href="http://feedburner.google.com/fb/a/mailverify?uri=nettuts">Email</a></li>
+            <li><a href="http://feedproxy.google.com/NettutsUserLinkFeed">Link Feed</a></li>
+            <li><a href="http://feedproxy.google.com/NETTUTSFreebies">Freebies</a></li>
+            <li><a href="http://feeds.feedburner.com/NETTUTSVideos">Videos</a></li>
+          </ul>
+          <p class="clear" style="padding-bottom: 10px;"><a href="http://feeds.feedburner.com/nettuts"><img style="border: 0pt none ;" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/nettuts.gif" alt="" width="88" height="26"></a></p>
+          <p class="clear">Confused? <a href="http://net.tutsplus.com/about/rss-feeds/">Click Here!</a></p>
+        </div>
+      </div>
+      
+      <div class="sidebar_adspace">
+        <div class="image_wrap clearfix">
+          <script type="text/javascript">
+            Vertical1240383 = false;
+            ShowAdHereBanner1240383 = true;
+            RepeatAll1240383 = false;
+            NoFollowAll1240383 = false;
+            BannerStyles1240383 = new Array(
+  							"a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 10px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}",
+  							"img{border:0;clear:right;}",
+  							"a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}",
+  							"a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
+  						  );
+            document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1240383/1240383.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+          </script><script src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/1240383.txt" type="text/javascript"></script><div id="bsaz_1240383" class="adblock"><style type="text/css">div#bsaz_1240383.adblock {width:100%;display:block;} div#bsaz_1240383.adblock a{width:260px;} div#bsaz_1240383.adblock a img{padding:0;} div#bsaz_1240383.adblock a em{font-style:normal;} div#bsaz_1240383.adblock a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 10px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;} div#bsaz_1240383.adblock img{border:0;clear:right;} div#bsaz_1240383.adblock a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;} div#bsaz_1240383.adblock a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;} div#bsaz_1240383.adblock a.adhere{width:260px;height:260px;line-height:2080%;} html>body div#bsaz_1240383.adblock a.adhere{width:258px;height:258px;} div#bsaz_1240383.adblock img.s{height:0;width:0;}</style><a href="http://buysellads.com/buy/detail/197" title="Advertise Here" id="bsa_197000" class="adhere" target="_blank">Advertise Here</a></div>
+        </div>
+      </div>
+      
+      <div class="sidebar_write"> <img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/sidebar_write.gif" alt="" class="img">
+        <h2>Write for us!</h2>
+        <p>We pay $150 for user submitted tutorials and articles that we publish. Anyone can send in a contribution</p>
+        <p class="button"><a href="http://net.tutsplus.com/about/write-a-tutorial/">Learn More</a></p>
+      </div>
+            <div class="sidebar_user_plus_link">
+        <div class="sidebar_user_plus"> <img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/sidebar_user_plus_feed.gif" alt="" class="img">
+          <h2>User Plus</h2>
+          <p>Community Link Feed</p>
+        </div>
+			
+            <div class="wpUserLinks"><h4></h4><ul><li><a href="http://http//eyoosuf.blogspot.com/2009/02/simple-jquery-filtering-and-highlight.html" rel="NOFOLLOW" class="wpUserLinks_link">Simple JQuery Filtering And Highlight Portfolio </a><br>
+				<span class="wpUserLinks_descript">Anyone
+needed to know how to make a simple portfolio? Basically we are doing
+something with jQuery and doing a handy and nice highlighting portfolio.</span>
+				</li><li><a href="http://www.freelanceapple.com/a-sexy-portfolio-the-key-to-pulling-clients/" rel="NOFOLLOW" class="wpUserLinks_link">A Sexy Portfolio: The Key To Pulling Clients</a><br>
+				<span class="wpUserLinks_descript">Courting
+the opposite sex and pitching a potential client have uncanny
+resemblances. Here are some tips to spruce up your portfolio and hit
+more clients.</span>
+				</li><li><a href="http://www.1stwebdesigner.com/resources/52-really-high-quality-free-fonts-for-modern-and-cool-design/" rel="NOFOLLOW" class="wpUserLinks_link">52 Really High Quality Free Modern Fonts</a><br>
+				<span class="wpUserLinks_descript">In
+this list you will find very professional and high quality fonts hand
+picked and carefully selected to offer you only the best resources
+available!</span>
+				</li><li><a href="http://slodive.com/web-development/27-firefox-addons-for-power-blogging/" rel="NOFOLLOW" class="wpUserLinks_link">27 Firefox Addons For Power Blogging</a><br>
+				<span class="wpUserLinks_descript">They
+are 3.5 version compatible! This list serves as a great way for
+bloggers to find new techniques that may turn one into a power blogger.</span>
+				</li><li><a href="http://www.photomarketingguru.com/2009/07/31/creating-a-great-photography-website-part-2/" rel="NOFOLLOW" class="wpUserLinks_link">Creating A Great Photography Website : Part 2</a><br>
+				<span class="wpUserLinks_descript">Part
+2 of our special on Creating a Great Photography Website. This article
+explores music players, blogs, site width and how that matters to
+viewers and gallery design. Plus, we look at what should be included on
+the homepage for maximum impact.</span>
+				</li><li><a href="http://www.webdesignbooth.com/40-really-useful-photoshop-text-effect-tutorials/" rel="NOFOLLOW" class="wpUserLinks_link">40 Really Useful Photoshop Text Effect Tutorials</a><br>
+				<span class="wpUserLinks_descript">This
+article shares the most useful Photoshop text effect tutorials which
+will attract readers' attention and delivers a better message.</span>
+				</li><li><a href="http://get-simple.info/" rel="NOFOLLOW" class="wpUserLinks_link">GetSimple CMS Launched!</a><br>
+				<span class="wpUserLinks_descript">GetSimple
+is an XML based lite Content Management System. To go along with it's
+best-in-class user interface, we have loaded it with features that
+every website needs, but with nothing it doesn't. GetSimple is truly
+the simplest way to manage a small-business website.</span>
+				</li><li><a href="http://www.webdesigntoolslist.com/2009/07/webmastertools/roundup-of-css-grid-generators-css-grid-layout-generators/" rel="NOFOLLOW" class="wpUserLinks_link">Roundup Of CSS Grid Generators</a><br>
+				<span class="wpUserLinks_descript">These
+tools will help you create and visualize different web design layouts
+and draw grids in various ways to assist you in your design process.</span>
+				</li><li><a href="http://oncemade.com/2009/07/28/animated-page-scroll-with-jquery/" rel="NOFOLLOW" class="wpUserLinks_link">Animated Page Scroll With JQuery</a><br>
+				<span class="wpUserLinks_descript">Animated page scroll with a little bit of jQuery magic.</span>
+				</li><li><a href="http://www.webdevcodex.com/" rel="NOFOLLOW" class="wpUserLinks_link">Web Development Codex</a><br>
+				<span class="wpUserLinks_descript">Resource site for all your web development needs. Also features SEO, blogging, Wordpress Customizations.</span>
+				</li></ul></div> 
+			
+            <ul id="feed_links" class="button">
+              <li class="left"><a href="http://net.tutsplus.com/link-feed/#add">Submit</a></li>
+              <li class="left"><a href="http://net.tutsplus.com/link-feed/">More</a></li>
+              <li class="right"><a href="http://feedproxy.google.com/NettutsUserLinkFeed">Subscribe</a></li>
+           </ul>
+      </div>
+<a href="http://rockablepress.com/books/rockstar-wordpress-designer/"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/WP_250x250.jpg" style="margin: 25px 0px 25px 25px;"></a>
+    </div>   <div class="clear"></div>
+  </div>
+  <!-- end page -->
+</div>
+<!-- end page wrap -->
+<div id="footer_wrap">
+  <div id="footer" class="clearfix"> 
+  <a href="http://net.tutsplus.com/"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/logo_footer.gif" alt="Logo" class="logo"></a>
+  <img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/footer_spoon.png" alt="Spoonfed Photoshop Tutorials" class="spoon"> <span><a href="http://www.youtube.com/watch?v=ONmhQJy1ViA">Oh Long John</a></span>
+    <div class="clearfix">
+      <div class="box">
+        <h1>Copyright &amp; Usage</h1>
+        <p>The
+effects and techniques demonstrated in tutorials on the Tuts+ network
+can be used in whatever manner you wish without attribution.</p>
+        <p>The text, images and tutorials themselves are copyright their respective owners.</p>
+        <p>You cannot copy whole tutorials, either in English or translated to another language.</p>
+      </div>
+      <div class="box">
+        <h1>Write a Tutorial</h1>
+        <p>Writing
+a tutorial or article for the site is not only a great way to get
+exposure and give back to the community, but we'll also give you $150
+cash to boot!</p>
+        <p><a href="http://net.tutsplus.com/about/write-a-tutorial/">Read More Details</a></p>
+      </div>
+      <div class="box">
+        <h1>Suggestions?</h1>
+        <p>This
+is YOUR site, so if you have suggestions or feedback on how we can
+improve it for you, please let us know! We do our best to keep up!</p>
+        <p><a href="http://psdtuts.uservoice.com/pages/nettuts_tutorial_suggestions">Make a Suggestion</a></p>
+      </div>
+      <div class="box">
+        <h1>Related Sites</h1>
+        <ul>
+          <li><a href="http://envato.com/">Envato</a></li>
+          <li><a href="http://psd.tutsplus.com/">Psdtuts+</a></li>
+          <li><a href="http://net.tutsplus.com/">Nettuts+</a></li>
+          <li><a href="http://audio.tutsplus.com/">Audiotuts+</a></li>
+          <li><a href="http://vector.tutsplus.com/">Vectortuts+</a></li>
+          <li><a href="http://ae.tutsplus.com/">Aetuts+</a></li>
+          <li><a href="http://flash.tutsplus.com/">Flashtuts+</a></li>
+          <li><a href="http://cg.tutsplus.com/">Cgtuts+</a></li>
+          <li><a href="http://wiki.psdtuts.com/">Photoshop Wiki</a></li>
+          <li><a href="http://tutsplus.com/">Tuts+ Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="icons clear"> <a href="http://tutsplus.com/"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/envato_tuts_plus.gif" alt="Envato Tuts+"></a>  <a href="http://wefunction.com/"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/function.gif" alt="Icons by: Function"></a> <a href="http://envato.com/"><img src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/envato_logo.gif" alt="Envato" class="last"></a> </div>
+  </div>
+</div>
+<script class="javascript" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/shCore.js"></script>
+<script class="javascript" src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/shBrushAll.js"></script>
+	<script class="javascript">
+dp.SyntaxHighlighter.ClipboardSwf = 'http://net.tutsplus.com/wp-content/plugins/google-syntax-highlighter/Scripts/clipboard.swf';
+dp.SyntaxHighlighter.HighlightAll('code');
+</script><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style>.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style>
+<script src="How%20to%20Syndicate%20Content%20Without%20Utilizing%20a%20News%20Feed_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-249823-22";
+urchinTracker();
+</script>
+<!-- Dynamic page generated in 0.407 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2009-08-05 21:38:03 -->
+</body></html>
